@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;
+         top: 10px;
+         left: 10px;
+         z-index: 9999;
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+
+                 fontChanged = false;
+             }
+         }
+      </script>
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don't know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+               <p>Being on a screen 24/7 has fucked me up in innumerable ways, one of them being the suffocating of my imagination, my ability to daydream. I think that's why I am so miserable all the time, because I have forgotten the ability to simply escape. The internet is a form of escapism too, I suppose, which is one of the reasons I find myself so addicted to it, but it rarely does anything beyond making life feel even more futile. Daydreams, however, are untouched by algorithms and product placement and generative AI. Daydreams provide hope, inspiration. Even if not tangible, they are a form of creation, and creation makes us human.  They make me question what - when I am truly alone and honest, away from external influences - I truly want, and when I realise I do not know the answer, I look to them to figure it out.</p>
+               <p>There is no rhyme or reason to where my mind will take me on the rare occasions I allow it to wander. Often, lately, I am the protagonist in a slasher. I can't sleep, so I decide to get some fresh air in the forest behind my house. I'm in nothing but my white nightdress and the cold breeze gives me goosebumps. My phone rings. The killer warns me about the dangers of being out alone at night. My heart skips a beat and I demand to know who it is and how they know what I'm doing. Surely it's just a prank by one of my friends. I hear a twig crack. Not on the phone, but right behind me, and I run. I barely manage to stay alive. For now.</p>
+               <p>Other times, I wonder how my life would turn out, the choices I would make, if only I could wake up back at 5 years old with my current memories. It's a fun game to play, wondering how you would convince your parents to buy Bitcoin without revealing yourself when they don't even have smartphones yet.</p>
+               <p>Sometimes it's incredibly mundane, like someone asking me to borrow a book I own, or running into someone from university at a cafe before work at my swanky corporate job in Central London. Maybe we just catch up. Maybe we find out we work in the same building.</p>
+               <p>Usually, I only have these daydreams at night, ironically, right before I fall asleep, because it is the only time my brain is free. It's a shame though, and I want to let myself have them more frequently.Because though they don't have any objective value, they make my inner world far richer. After all, isn't this what made life feel so bright as children? The ability to pluck stories from the air and seem as though you were truly living them?</p>
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[Daydreams]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

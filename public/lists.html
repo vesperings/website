@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>&#10032; LISTFAUGRAPHY &#10032;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="style.css" rel="stylesheet" type="text/css" />
+      <link href="dragula.css" rel="stylesheet" type="text/css" />
+      <script src="dragula.js"></script>
+      <script src="drag.js"></script>
+      <style>
+         @font-face {
+         font-family: Vesperings;
+         src: url(/WEBSITE/vesperings.ttf);
+         }
+         * {
+         font-family: Vesperings;
+         }
+         :root {
+         /* Page background */
+         --background: black;
+         /* Universal text and link colors */
+         --color: white;
+         --link: #562607;
+         /* Font family (can include fallbacks) */
+         --bodyfont: sans-serif;
+         /* List background colors */
+         --color1: #580c1f;
+         --color5: #74121d;
+         --color2: #a7333f;
+         --color4: #a51c30;
+         --color3: #c52233;
+         /* Borders for each background color */
+         --color1border: white;
+         --color2border: white;
+         --color3border: white;
+         --color4border: white;
+         --color5border: white;
+         /* Header background and border */
+         --header: #580c1f;
+         --headerborder: white;
+         /* Scrollbars */
+         --scrollbg: #c52233;
+         --scrollcolor: #580c1f;
+         }
+         * {
+         margin: 0;
+         padding: 0;
+         scrollbar-color: var(--scrollcolor) var(--scrollbg);
+         }
+         body {
+         background-image: url(/WEBSITE/LISTS/BG4.png);
+         color: white;
+         font: 1.15rem var(--bodyfont);
+         line-height: 1.5;
+         }
+         /* Body text styles */
+         main ul {
+         list-style-position: outside;
+         margin-left: 20px;
+         line-height: 1.5;
+         }
+         p {
+         line-height: 1.5;
+         margin: 10px 0 10px 0;
+         }
+         a {
+         color: lightgrey;
+         }
+         /* Main header */
+         header#top {
+         width: 80%;
+         max-width: 1000px;
+         box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 3px;
+         background: var(--header);
+         border: 1px solid var(--headerborder);
+         margin: 25px auto;
+         border-radius: 5px;
+         }
+         header#top h1 {
+         font-size: 1.5em;
+         margin-bottom: 10px;
+         }
+         /* Header text */
+         #infocontainer {
+         padding: 20px;
+         min-height: 5.5em;
+         }
+         /* Header icon */
+         .header-icon {
+         margin-right: 20px;
+         border-radius: 5px;
+         height: 65px;
+         width: 65px;
+         float: left;
+         }
+         /* Menu */
+         nav {
+         margin-top: 10px;
+         border-top: 1px solid var(--headerborder);
+         font-size: 1rem;
+         }
+         nav ul {
+         list-style: none;
+         display: inline;
+         }
+         nav ul li {
+         display: inline-block;
+         width: 100px;
+         text-align: center;
+         padding: 6px 0;
+         border-left: 1px solid var(--headerborder);
+         }
+         nav ul li:first-child {
+         border: 0px;
+         }
+         nav a {
+         text-decoration: none;
+         }
+         nav a:hover {
+         text-decoration: underline;
+         }
+         /* Main content */
+         main {
+         margin: 40px 70px 0 70px;
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         }
+         /* Lists */
+         section {
+         margin: 20px;
+         box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 3px;
+         border: 1px solid;
+         border-radius: 5px;
+         padding: 15px;
+         }
+         /* List colors */
+         .color1 {
+         background: var(--color1);
+         border-color: var(--color1border);
+         & .listheader {
+         border-color: var(--color1border);
+         }
+         & .handle {
+         color: var(--color1border);
+         }
+         }
+         .color2 {
+         background: var(--color2);
+         border-color: var(--color2border);
+         & .listheader {
+         border-color: var(--color2border);
+         }
+         & .handle {
+         color: var(--color2border);
+         }
+         }
+         .color3 {
+         background: var(--color3);
+         border-color: var(--color3border);
+         & .listheader {
+         border-color: var(--color3border);
+         }
+         & .handle {
+         color: var(--color3border);
+         }
+         }
+         .color4 {
+         background: var(--color4);
+         border-color: var(--color4border);
+         & .listheader {
+         border-color: var(--color4border);
+         }
+         & .handle {
+         color: var(--color4border);
+         }
+         }
+         .color5 {
+         background: var(--color5);
+         border-color: var(--color5border);
+         & .listheader {
+         border-color: var(--color5border);
+         }
+         & .handle {
+         color: var(--color5border);
+         }
+         }
+         /* List titles */
+         header.listheader {
+         display: flex;
+         justify-content: space-between;
+         border-bottom: 0.5px solid;
+         padding-bottom: 5px;
+         margin-bottom: 10px;
+         }
+         h2 {
+         font-size: 1.1em;
+         }
+         h2 .subtitle {
+         font-weight: normal;
+         }
+         h2 a {
+         text-decoration: none;
+         color: var(--color);
+         }
+         h2 a:hover {
+         text-decoration: underline;
+         }
+         /* Drag handle */
+         .handle {
+         font-size: 1rem;
+         cursor: grab;
+         font-weight: bold;
+         }
+         /* List icons */
+         .listicon {
+         float: right;
+         margin: 0 0 5px 10px;
+         width: 80px;
+         height: 80px;
+         border-radius: 5px;
+         }
+         /* List content */
+         .listtext {
+         overflow: auto;
+         max-height: 300px;
+         padding: 10px;
+         }
+         /* List footers */
+         .foot {
+         font-size: 0.9em;
+         padding: 10px;
+         text-align: right;
+         }
+         .foot p {
+         margin: 0;
+         }
+         /* Main footer */
+         footer#bottom {
+         background: var(--header);
+         border: 1px solid var(--headerborder);
+         padding: 5px;
+         font-size: 1rem;
+         margin: 25px auto;
+         max-width: 700px;
+         width: 70%;
+         box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 3px;
+         text-align: center;
+         border-radius: 5px;
+         }
+         /* Phone stuff */
+         @media screen and (max-width: 899px) {
+         header#top {
+         width: calc(100% - 40px);
+         margin-top: 20px;
+         }
+         header#top h1 {
+         font-size: 1.4em;
+         }
+         main {
+         display: inline;
+         margin: auto;
+         width: calc(100% - 40px);
+         }
+         .listtext {
+         height: auto;
+         max-height: 250px;
+         }
+         .handle {
+         display: none;
+         }
+         .foot {
+         font-size: 0.85em;
+         }
+         h2 {
+         font-size: 1.2em;
+         }
+         footer#bottom {
+         width: 75%;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;
+         top: 10px;
+         left: 10px;
+         z-index: 9999;
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: 1px solid red;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+
+
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+
+
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+
+
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+
+
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+
+
+                 fontChanged = false;
+             }
+         }
+      </script>
+      <div id="start"></div>
+      <header id="top">
+         <div id="infocontainer">
+            <h1>VESPERINGS' listfauxgraphy</h1>
+            <img src="" alt="" class="header-icon" /> <!-- Optional, feel free to delete -->
+            <p>A collection of lists until I make specifically dedicated pages for them, if ever.</p>
+         </div>
+         <nav>
+            <ul>
+               <li><a href="">main</a></li>
+               <li><a href="">ongoing</a></li>
+               <li><a href="">archive</a></li>
+            </ul>
+         </nav>
+         </div>
+      </header>
+      <main>
+         <!-- FIRST COLUMN -->
+         <div class="column">
+            <section id="cds" class="color1">
+               <header class="listheader">
+                  <h2><a href="#cds">cds <span class="subtitle">(wishlist)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+                  <ul>
+                     <li>Dirt (Alice in Chains)</li>
+                     <li>The Downward Spiral (Nine Inch Nails)</li>
+                     <li>The Perfect Red Velvet (Red Velvet)</li>
+                     <li>Cinematics [Expanded Edition] (Set It Off)</li>
+                  </ul>
+               </div>
+               <footer class="foot">
+                  <p>april 02 2026 &infin;</p>
+                  <p>april 02 2026 +</p>
+               </footer>
+            </section>
+            <section id="stuckinmyhead" class="color4">
+               <header class="listheader">
+                  <h2><a href="#stuckinmyhead">songs stuck in my head in 2026 <span class="subtitle">(playlist)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+                  <ul>
+                     <li>Dally (HYOLYN)</li>
+                     <li>What's Your Problem? (IRENE & SEULGI))</li>
+                     <li>All Bad (Justin Bieber)</li>
+                     <li>Hold on Tight (Justin Bieber)</li>
+                  </ul>
+               </div>
+               <footer class="foot">
+                  <p>april 02 2026 &infin;</p>
+                  <p>april 04 2026 +</p>
+               </footer>
+            </section>
+            <section id="concerts" class="color2">
+               <header class="listheader">
+                  <h2><a href="#concerts">concerts <span class="subtitle">(log)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+                  <ul>
+                     <li>Nine Inch Nails: Peel It Back Tour (LONDON)</li>
+                     <li>SM Town Live 2025: The Culture, the Future (LOND0N)</li>
+                  </ul>
+               </div>
+               <footer class="foot">
+                  <p>april 02 2026 &infin;</p>
+                  <p>april 02 2026 +</p>
+               </footer>
+            </section>
+            <section id="sak" class="color5">
+               <header class="listheader">
+                  <h2><a href="#sak">things i've used my swiss army knife for <span class="subtitle">(poem)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+                  <ul>
+                     <li>Opening parcels.</li>
+                     <li>Scrapbooking in my diary.</li>
+                     <li>Unscrewing the grill of a desk fan to clean it.</li>
+                  </ul>
+               </div>
+               <footer class="foot">
+                  <p>april 08 2026 &infin;</p>
+                  <p>april 08 2026 +</p>
+               </footer>
+            </section>
+         </div>
+         <!-- END FIRST COLUMN -->
+         <!-- SECOND COLUMN -->
+         <div class="column">
+            <section id="films" class="color2">
+               <header class="listheader">
+                  <h2><a href="#films">films <span class="subtitle">(watchlist)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+                  <ul>
+                     <li>Invitation to a Suicide (2004)</li>
+                     <li>www.RachelOrmont.com (2024)</li>
+                     <li>Martin (1977)</li>
+                     <li>Near Dark (1987)</li>
+                     <li>The Addiction (1995)</li>
+                     <li>Respire (2014)</li>
+                  </ul>
+               </div>
+               <footer class="foot">
+                  <p>april 02 2026 &infin;</p>
+                  <p>april 04 2026 +</p>
+               </footer>
+            </section>
+            <section id="comics" class="color5">
+               <header class="listheader">
+                  <h2><a href="#comics">comics <span class="subtitle">(reading list)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+                  <ul>
+                     <li>Batman: The Golden Age Omnibus Vol. 1</li>
+                  </ul>
+               </div>
+               <footer class="foot">
+                  <p>april 02 2026 &infin;</p>
+                  <p>april 02 2026 +</p>
+               </footer>
+            </section>
+            <section id="neocitiesplaylist" class="color3">
+               <header class="listheader">
+                  <h2><a href="#neocitiesplaylist">songs featured on my website <span class="subtitle">(playlist)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+<ul>
+<li>Discipline - Nine Inch Nails [HOME]</li>
+<li>Gee - SNSD [HOME, APRIL FOOLS EDITION]</li>
+<li>Born For This - Paramore [CHANGELOG]</li>
+<li>Overdose - EXO [ROOM]</li>
+<li>Burn - The Cure [BLOG]</li>
+<li>Tefutefu - Plastic Tree [DREAM DIARY]</li>
+<li>Something in the Way - Nirvana [DIGICAM]</li>
+<li>Dally - Hyolyn [FAUXTAGRAM]</li>
+<li>You Showed Me - The Turtles [FILM LOG]</li>
+<li>I Don't Care If You're Contagious - Pierce the Veil [ASKS]</li>
+<li>(Don't) Fear the Reaper - Pierce the Veil [LETTERS TO THE ABYSS]</li>
+<li>Kyrie - Yoshihisa Hirano [LEGEND OF KIRA THE SAVIOUR]</li>
+<li>Halloween Theme - John Carpenter [CRAPPYPASTA]</li>
+<li>XOXO Kisses Hugs - 6arelyhuman [STAMPS]</li>
+<li>You Can Tell She's a Princess - Mattel [DRESS UP]</li>
+<li>Sleepflower - Manic Street Preachers [OOTD]</li>
+<li>The World - Nightmare [DEATH NOTE SHRINE]</li>
+<li>Given Up - Linkin Park [TELEVISION]</li>
+<li>Black Fairy Edit - Akira Yamaoka [OUIJA BOARD]</li>
+<li>Climbing Up the Walls - Radiohead [CD COLLECTION]</li>
+<li>Dress Bloody Trinity Remix - BUCK-TICK [BOOKSHELF]</li>
+<li>H8M4CH1N3 - The Neighbourhood [MICROBLOG]</li>
+<li>Afraid - The Neighbourhood [FOOD]</li>
+<li>Popularity Ranking - Tomodachi Life OST [TOMODACHI]</li>
+<li>Cannibal - Kesha [CYBER PETS]</li>
+<li>Cry Little Sister - Gerard McMahon [DVD COLLECTION]</li>
+<li>Poptropica Overture - Jeff Heim [POPTROPICA SHRINE]</li>
+<li>S&amp;M - Rihanna&nbsp;[WEEBLY SHRINE]</li>
+<li>Firework - Katy Perry&nbsp;[WEEBLY SHRINE]</li>
+<li>I Wanna Go - Britney Spears&nbsp;[WEEBLY SHRINE]</li>
+<li>Gangnam Style - PSY&nbsp;[WEEBLY SHRINE]</li>
+<li>Milky Way - Cherry Coke [WEEBLY SHRINE]</li>
+<li>The Background World - Nine Inch Nails [LISTFAUGRAPHY]</li>
+<li>Superstar - Toybox [SHRINE HOMEPAGE]</li>
+</ul>               </div>
+               <footer class="foot">
+                  <p>april 02 2026 &infin;</p>
+                  <p>april 02 2026 +</p>
+               </footer>
+            </section>
+         </div>
+         <!-- END SECOND COLUMN -->
+         <!-- THIRD COLUMN -->
+         <div class="column">
+            <section id="dvds" class="color3">
+               <header class="listheader">
+                  <h2><a href="#dvds">dvds <span class="subtitle">(wishlist)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+                  <ul>
+                     <li>Nana: The Complete Collection (2006-2007)</li>
+                     <li>I Love You To Death (1990)</li>
+                     <li>Lisa Frankenstein (2024)</li>
+                     <li>Kamikaze Girls (2004)</li>
+                     <li>Interview with the Vampire (1994)</li>
+                     <li>Interview with the Vampire (2022-)</li>
+                     <li>Young Dracula: The Complete Series (2006-2014)</li>
+                     <li>Strangers from Hell (2019)</li>
+                     <li>Black Butler: The Complete Series (2008-2014)</li>
+                  </ul>
+               </div>
+               <footer class="foot">
+                  <p>april 02 2026 &infin;</p>
+                  <p>april 08 2026 +</p>
+               </footer>
+            </section>
+            <section id="books" class="color1">
+               <header class="listheader">
+                  <h2><a href="#books">books <span class="subtitle">(reading list)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+                  <ul>
+                     <li>Munkey Diaries (Bridget Bardot) </li>
+                  </ul>
+               </div>
+               <footer class="foot">
+                  <p>april 02 2026 &infin;</p>
+                  <p>april 02 2026 +</p>
+               </footer>
+            </section>
+            <section id="neocities" class="color4">
+               <header class="listheader">
+                  <h2><a href="#neocities">neocities <span class="subtitle">(to do list)</span></a></h2>
+                  <span class="handle">&#172;</span>
+               </header>
+               <div class="listtext">
+                  <ul>
+                     <li>Add cyber pets to Weebly shrine</li>
+                     <li>Add games to Weebly shrine</li>
+                     <li>Make the links on Listfauxgraphy page functional</li>
+                     <li>Black forest cheesecake recipe</li>
+                  </ul>
+               </div>
+               <footer class="foot">
+                  <p>april 05 2026 &infin;</p>
+                  <p>april 05 2026 +</p>
+               </footer>
+            </section>
+
+         </div>
+         <!-- END THIRD COLUMN -->
+      </main>
+      <!-- It would be nice if you didn't remove the links here, but I'm not your mom -->
+      <footer id="bottom">
+         <p>Original Listfauxgraphy concept by <a href="https://desertjaguar.casa" target="_blank">Desert Jaguar</a>, code by <a href="http://kalechips.net" target="_blank">Kalechips</a></p>
+         <p><a href="#start">Back to top</a></p>
+      </footer>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/LISTS/tbgwnin.mp3>
+      </audio>
+      <script>
+         document.addEventListener("visibilitychange", function() {
+           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+         })
+      </script>
+   </body>
+</html>

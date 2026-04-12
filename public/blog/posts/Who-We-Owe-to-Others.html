@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;     
+         top: 10px;          
+         left: 10px;            
+         z-index: 9999;         
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+         
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+         
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+         
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+         
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+         
+                 fontChanged = false;
+             }
+         }
+      </script>    
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don’t know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+               <img src="/WEBSITE/BLOG/section.png" align="left"> The truth? You don&rsquo;t want to know the truth, you refuse to see it. You don&rsquo;t notice that a corpse walks among you. You&rsquo;re too busy living your life to the fullest, having some purpose, some meaning. Sometimes, your instincts let you come close to knowing. You can almost see under my clothes, see the rotting flesh painstakingly sewn back together with black embroidery thread. But the only way you could really be sure was by my marble-cold skin. You never get close enough to touch it. If you really cared, I&rsquo;d tell you it was your fault. That you drove the blunt knife into my heart and damned me to purgatory. You took all I was and all I could have been and shattered it because broken glass glints like diamonds in the moonlight. I could tell you the truth, that I am hollow because you took everything from me, that the cycle of love and hate and hope and anger exhausted me. That I don&rsquo;t have it in me to care anymore because you killed my empathy with your pathetic excuses. But the truth is ugly, and you don&rsquo;t want to hear it. You won&rsquo;t believe it.<br><br>
+               If lying by omission is a sin, we may as well all be murderers. Blanche tells Mitch she doesn&rsquo;t want realism, she wants magic. Sometimes, the only difference is not letting anyone see behind the curtain. You want access to all of me, always. It scares you otherwise, but let me be the cryptid only found at jazz bars, libraries and the necropolis. Mythos is formed by the desire to understand and the inability to do so. Since I was a little girl, you've called me a witch. I didn't start the rumour, but I have no qualms about allowing it to propagate. Maybe it's true, maybe it's only half-conjecture. It's been so long I can't remember anymore. I used to use magic to cheat at paper-pane races and convene with spirits. Did I really hex that boy or was it a coincidence he broke his arm? You don't seem to be sure. You&rsquo;re old enough to know better, but I still see the hint of fear in your eyes. It always was that way,the powerful ascribing invisible strength to the powerless.&nbsp;<br><br>
+               Are we the artists of our lives or the muses of others' memories? Deceptions are truth to the eyes of the naive. Don&rsquo;t glare at me like that. I&rsquo;ve never lied to you. You created me in your image from vignettes and assumptions. You think you understand me by the colour of my nails, the clothes I wear, the way my handwriting slants to the right as though falling off the page. You hear the hiss leaking from my headphones and assume you've discovered some secret, guarded, facet of my identity. Feel a thrill at the possibility the purple hue of my mood ring has anything to do with you. I post song lyrics on my blog and you drive yourself insane trying to apply them to my real life. You give meaning to the shallow nothings you are privy to and are disappointed when you are wrong. You hate my refusal to lay myself bare like a corpse, but only care about my mascara streams and smudged eye-glitter when the source is a mystery. The guessing games and promise of trauma-porn draws you in like a moth to candlelight. My normalcy isn&rsquo;t satisfying enough for you. Once you&rsquo;ve figured out how it works, you&rsquo;d rather the illusionist actually saw the woman in half.&nbsp;<br><br>
+               You only want to know me because you don&rsquo;t. I play coy about my scars, even though the truth is simple, so you find meaning in them. Maybe even imagine inflicting them yourself. You never ask because you think you know. You&rsquo;ve already invented my aspirations, hobbies, lovers and habits. Speculation turns to memory turns to fact. Once I stole a book about card tricks from a General&rsquo;s house. It taught me that the best acts rely on the audience's inattentiveness, even as they think they see everything. It&rsquo;s your own fault. I will only ever give myself to you through a mirrored kaleidoscope.<br>
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[Who-We-Owe-to-Others]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

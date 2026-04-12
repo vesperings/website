@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;     
+         top: 10px;          
+         left: 10px;            
+         z-index: 9999;         
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+         
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+         
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+         
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+         
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+         
+                 fontChanged = false;
+             }
+         }
+      </script>    
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don’t know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>           
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+               <br>
+               <img src="/WEBSITE/BLOG/section.png" align="left"> What's up dudes and dudettes, welcome to another day of procrastinating on my dissertation! Here's a list of fun ideas I've compiled about things you can add to your site when you're bored, which also doubles as a personal to-do list. This is a non-exhaustive list that will probably be added to over time, so be sure to check back. <BR>
+               <BR>
+               <br>
+               <br>
+               <br>
+               <ol>
+                  <li>Add a custom cursor</li>
+                  <li>Create a button</li>
+                  <li>Create a sitemap</li>
+                  <li>Make a web-questionnaire or quiz</li>
+                  <li>Take a web-questionnaire or quiz with a result people can post on their websites (check back soon to see mine)</li>
+                  <li>Add a custom favicon</li>
+                  <li>Make a photo gallery</li>
+                  <li>Make a music page</li>
+                  <li>Make a books page</li>
+                  <li>Make a film/TV page</li>
+                  <li>Create a custom 404 page</li>
+                  <li>Add an&nbsp; <em>About Me</em> section </li>
+                  <li>Put easter eggs all around your website</li>
+                  <li>Write a web manifesto</li>
+                  <li>Join a webring</li>
+                  <li>Make a guestbook</li>
+                  <li>Play around with custom fonts</li>
+                  <li>Add other sites' buttons to your page</li>
+                  <li>Make a list of sites that you like/inspire you</li>
+                  <li>Let a friend make a guestpage</li>
+                  <li>Create a diary/blog page</li>
+                  <li>Create a microblog for various musings</li>
+                  <li>Make an&nbsp; <em>Under Construction</em> page </li>
+                  <li>Create a mascot or logo for your website</li>
+                  <li>Make a shrine page for something you love</li>
+                  <li>Make a recipe page</li>
+                  <li>Edit your theme for celebrations or special occasions such as Halloween</li>
+                  <li>Offer a webpage template</li>
+                  <li>Add music to your pages</li>
+                  <li>Create a /now page</li>
+                  <li>Make a page crediting all the resources you've used</li>
+                  <li>Create a secret page</li>
+                  <li>Add a changelog&nbsp;</li>
+                  <li>Make a dream journal</li>
+                  <li>Create a food diary</li>
+                  <li>Create a page about your personal style and fashion</li>
+                  <li>Make a page showcasing any real-life collections you have</li>
+                  <li>Make a page of internet stamps, blinkees and buttons</li>
+                  <li>Create pages for your personal projects and OCs</li>
+                  <li>Write a tutorial</li>
+                  <li>Make a custom tiled background</li>
+                  <li>Create a page that parodies/clones another social media site</li>
+                  <li>Create a cyber pets page</li>
+                  <li>Create your own cyber pets for others to adopt</li>
+                  <li>Make a choose your own adventure game</li>
+                  <li>Make a dollmaker</li>
+                  <li>Create a page dedicated to your playlists</li>
+                  <li>Create page for your writing/art</li>
+                  <li>Make a FAQ/Ask Box page</li>
+                  <li>Add a poll</li>
+                  <li>Create a 'What's in My Bag' page</li>
+                  <li>Add a whiteboard to your page for viewers to doodle on</li>
+               </ol>
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[Webpage-Ideas]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

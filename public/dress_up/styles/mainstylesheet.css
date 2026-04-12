@@ -1,0 +1,135 @@
+@import url("reset.css"); /* This is to reset all default browser CSS to none.*/
+
+/*----------------------------------------------*/
+/*These are needed for the tab functionality and drag/drop functionality to work*/
+.ui-tabs-hide 			{ visibility:hidden;}
+.ui-tabs-panel { position:absolute; width:100%;}
+
+.draggedout { visibility:visible; position:absolute;}
+
+/*------------------------------------------------*/
+
+/*General body styles. Change to your own colors! */
+body {
+font-family: verdana, arial, sans-serif;
+font-size: 12px;
+background: black;
+color: darkred;
+}
+
+/* This specifies styles that will affect all the boxes. Change to your own colors!*/
+#bodyArea, #swatchesArea, .ui-tabs-panel{
+border: 1px solid #4b0101;
+background: #000;
+background-image: url("/dress_up/back01.gif");
+}
+
+/* NOTE: You can change the colors for the tabs further below . . . .*/
+
+/*this puts rounded corners around the boxes*/
+.ui-corner-all, .ui-tabs-panel{
+-moz-border-radius: 5px; 
+-webkit-border-radius: 5px;
+}
+
+/* this puts rounded corners around the tabs*/
+.ui-corner-top a{
+-moz-border-radius-topleft:5px;
+-webkit-border-top-left-radius:5px;
+-moz-border-radius-topright:5px;
+-webkit-border-top-right-radius:5px;
+}
+
+/*This div contains the whole dollmaker. It can be placed anywhere on the page and everything will follow
+  Keep the height unspecified so that it can stretch to accomodate varied number of pieces */
+#dollmaker_container {
+position: absolute;
+top: 30px; /*Change these values to whatever you want*/
+left: 30px;
+background-color: black;
+}
+
+/*-------------------------------------------------------------------*/
+/* The box that contains the basebody */
+#bodyArea
+{
+position: absolute;
+top: 50px;
+width: 500px;
+height: 500px;
+text-align: center;
+
+}
+
+
+/*-------------------------------------------------------------------*/
+/*The tabbed area at the right that contains all the draggable pieces*/
+#piecesArea {
+position: absolute; 
+left: 900px;
+width: 600px;
+}
+
+/*Positioning for tabs area*/
+#tabsbar {
+text-align: left; 
+padding: 5px 10px 5px 10px; /* This extra space is required for browser compatibility */
+}
+
+
+/*Allows the tabs to be next to eachother*/
+#tabsbar li{
+display: inline;
+}
+
+/*Individual tabs. Change to your own colors!*/
+#tabsbar li a {
+/* !!!!!IE7 */ padding: 3px 10px 4px; 
+border: 1px solid #888; 
+background-color: #ddd; 
+color: #666; 
+text-decoration: none;
+font-weight:bold;
+}
+
+/*Selected tab. Change to your own colors!*/
+#tabsbar .ui-state-active a {
+border-bottom: 1px solid #fff;
+background-color: #fff; /* This needs to be the the same as the background color of the panel.*/
+position:relative;
+z-index:2;
+}
+
+/*-------------------------------------------------------------------*/
+/* The panel under the tabs that contain the props*/
+.ui-tabs-panel{ 
+overflow:visible; /* so that the panel extends as you add pieces to it*/
+clear:both;
+padding:5px;
+}
+
+#piecesArea div {
+padding: 10px 10px 0;
+}
+
+
+#piecesArea img{
+margin: 0 10px 10px 0;
+cursor: move;
+}
+
+/*-------------------------------------------------------------------*/
+/* Anti Right-click */
+#anti-rightclick {
+display:none;
+width: 170px;
+height:  30px;
+line-height: 1.2;
+background: #fff;
+border: 1px solid #ccc;
+padding: 3px 3px 3px 15px;
+
+position: absolute;
+z-index: 9999;
+}
+

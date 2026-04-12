@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>&#x2730; ALBUM REVIEWS &#x2730;</title>
+  <style>
+    #disc-collection * {
+      all: unset;
+    }
+
+    body {
+      background-image: url('/WEBSITE/ALBUMS/background.gif');
+    }
+
+    * {
+      cursor: url(/WEBSITE/cursor.png), auto !important;
+    }
+
+    #disc-collection {
+      all: initial !important;
+      width: 100% !important;
+      height: 240px !important;
+      margin: 30px 0 !important;
+      display: flex !important;
+      flex-direction: row !important;
+      position: relative !important;
+      margin-left: 2px !important;
+    }
+
+    #disc-collection .disc {
+      all: unset !important;
+      perspective: 500px !important;
+      width: 20px !important;
+      transition: width 0.5s !important;
+      position: relative;
+    }
+
+    #disc-collection .disc:hover {
+      width: 180px !important;
+    }
+
+    #disc-collection a {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    #disc-collection img {
+      all: unset !important;
+      transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s !important;
+      width: 183px !important;
+      height: 180px !important;
+      transform: rotateX(0deg) rotateY(5deg) !important;
+      transform-style: preserve-3d !important;
+      border-radius: 4px !important;
+      border: 2px solid rgba(0, 0, 0, 0.1) !important;
+      margin-left: 20px !important;
+      object-fit: cover !important;
+    }
+
+    #disc-collection .disc:after {
+      content: "";
+      background: url('/WEBSITE/ALBUMS/cdcase.png'),
+        linear-gradient(150deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2), 40%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.6));
+      background-size: contain, cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s !important;
+      width: 210px !important;
+      height: 183px !important;
+      transform: rotateX(0deg) rotateY(5deg) !important;
+      transform-style: preserve-3d !important;
+      border: 0px solid rgba(0, 0, 0, 0) !important;
+      object-fit: cover !important;
+    }
+
+    #disc-collection .disc:hover img {
+      transform: rotateX(0deg) rotateY(1deg) !important;
+      width: 183px !important;
+      height: 180px !important;
+      margin-top: -25px !important;
+      margin-left: 20px !important;
+    }
+
+    #disc-collection .disc:hover:after {
+      transform: rotateX(0deg) rotateY(1deg) !important;
+      width: 210px !important;
+      height: 183px !important;
+      margin-top: -25px !important;
+    }
+
+    #disc-collection .title {
+      color: #FFF;
+      display: block;
+      visibility: hidden;
+      position: absolute;
+      bottom: 0px;
+      text-align: center;
+      width: 100%;
+      padding-left: 6px;
+    }
+
+    #disc-collection .disc:hover + .title {
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+
+  <center>
+    <img src="/WEBSITE/ALBUMS/title.gif">
+  </center>
+  <br>
+
+  <div id="disc-collection">
+
+    <!-- ALBUM START -->
+    <div class="disc">
+      <audio class="hoverSound" src="/WEBSITE/ALBUMS/irdtbf_ptv_mp3.mp3" preload="auto"></audio>
+      <a href="/albums/aflairforthedramatic_ptv" target="_blank">
+        <img class="hoverImage" src="/WEBSITE/ALBUMS/afftd_ptv_cover.png">
+      </a>
+    </div>
+    <div class="title">Pierce the Veil - A Flair for the Dramatic</div>
+    <!-- ALBUM END -->
+
+
+    <!-- ALBUM START -->
+    <div class="disc">
+      <audio class="hoverSound" src="/WEBSITE/ALBUMS/lessthan_nin_mp3" preload="auto"></audio>
+      <a href="/albums/addviolence_nin" target="_blank">
+        <img class="hoverImage" src="/WEBSITE/ALBUMS/addviolence_nin_cover.png">
+      </a>
+    </div>
+    <div class="title">Nine Inch Nails - Add Violence</div>
+    <!-- ALBUM END -->
+
+  </div>
+
+  <!-- Universal hover-play script -->
+  <script>
+    document.querySelectorAll('.disc').forEach(disc => {
+      const image = disc.querySelector('.hoverImage');
+      const sound = disc.querySelector('.hoverSound');
+
+      if (image && sound) {
+        image.addEventListener('mouseenter', () => {
+          sound.currentTime = 0;
+          sound.play();
+        });
+
+        image.addEventListener('mouseleave', () => {
+          sound.pause();
+          sound.currentTime = 0;
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

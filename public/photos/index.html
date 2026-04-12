@@ -1,0 +1,121 @@
+<!doctypehtml>
+<html lang=en>
+   <title>&#x2730; PHOTO LOG &#x2730;</title>
+   <link href=style.css media=all rel=stylesheet>
+   <style>
+      * {
+      box-sizing: border-box
+      }
+      body {
+      background-image: url(/WEBSITE/PHOTOS/DIGICAM/bg.jpg);
+      text-align: center
+      }
+      * {
+      cursor: url(/WEBSITE/cursor.png),
+      auto !important;
+      }
+      @font-face {
+      font-family: Vesperings;
+      src: url(/WEBSITE/vesperings.ttf);
+      }
+      * {
+      font-family: Vesperings;
+      }
+      * {
+      margin: 0;
+      padding: 0
+      }
+      header {
+      background-color: transparent;
+      background-image: url(/WEBSITE/PHOTOS/DIGICAM/header.gif);
+      padding: 40px;
+      text-align: center;
+      font-size: 15px;
+      color: red
+      }
+      footer {
+      background-color: transparent;
+      background-image: url(/WEBSITE/PHOTOS/DIGICAM/footer.gif);
+      padding: 40px;
+      text-align: center;
+      color: red
+      }
+      body {
+      color: red;
+      text-align: center
+      }
+      a {
+      color: red;
+      }
+   </style>
+   <header>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;
+         top: 10px;
+         left: 10px;
+         z-index: 9999;
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+
+                 fontChanged = false;
+             }
+         }
+      </script>
+      <img src=/WEBSITE/PHOTOS/DIGICAM/title.png>
+   </header>
+   <article>
+      <h1><img src=/WEBSITE/PHOTOS/DIGICAM/cat.gif width=50 alt="" height=50> My Digital Camera Photos <img src=/WEBSITE/PHOTOS/DIGICAM/cat.gif width=50 alt="" height=50></h1>
+      <p>These photographs were taken on my beloved Sony Cybershot DSC-HX9V, which
+      <p>has documented fragments of my life since 2011.
+      <p>They are displayed in chronological order, and you can use the heart buttons to navigate.
+      <p>If you want to see my latest additions to the page, simply navigate backwards to view
+      <p>the photographs from newest to oldest.
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 800px; margin: 0 auto;">
+         <button onclick="myFunction2()"><img src="/WEBSITE/PHOTOS/DIGICAM/button.gif" width="150" border="0"></button>
+         <div style="position: relative; display: inline-block; width: 500px; height: auto;"><img src="/WEBSITE/PHOTOS//DIGICAM/PHOTOS/1.JPG" style="width: 65%; height: auto; z-index: 1; position: relative; top: 120px; left: -49px; z-index: 0;" id="myImg"><img src="/WEBSITE/PHOTOS/DIGICAM/frame.png" alt="Frame" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; z-index: 1;"></div>
+         <button onclick="myFunction()"><img src="/WEBSITE/PHOTOS/DIGICAM/button.gif" width="150" border="0"></button>
+      </div>
+   </article>
+   <br><br><br><br><br><br><br><br><br><br><br><br>
+   <h1><img src=/WEBSITE/PHOTOS/DIGICAM/cat.gif width=50 alt="" height=50> <a href=/immediateounce>CLICK HERE</a> TO SEE MY OTHER PHOTOS <img src=/WEBSITE/PHOTOS/DIGICAM/cat.gif width=50 alt="" height=50></h1>
+   <br><br><br><br><br><br><br><br><br><br><br><br>
+   <article>
+      <audio id=myAudio autoplay controls loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/PHOTOS/DIGICAM/something_in_the_way_nirvana.mp3>
+      </audio>
+      <script>
+         document.addEventListener("visibilitychange", (function() {
+           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+         }))
+      </script>
+   </article>
+   <script src=digicam.js></script>

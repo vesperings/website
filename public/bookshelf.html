@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>✰ BOOKSHELF ✰</title>
+   </head>
+   <style>
+      :root {
+      --height: 200px;
+      --width: 100%;
+      --depth: 200px;
+      --color-shelf-back-panel: #562C11;
+      --color-shelf-bottom-panel: #4B260E;
+      --color-shelf-bottom-panel-front: #563016;
+      --color-shelf-side-panel: #532A10;
+      --color-shelf-shadow: #3B1806;
+      }
+      body {
+      padding: 0;
+      margin: 0;
+      background-color: #AB8786;
+      color: #5b0101;
+      }
+      .container {
+      width: var(--width);
+      height: var(--height);
+      perspective: 500px;
+      overflow: hidden;
+      background-color: var(--color-shelf-side-panel);
+      position: absolute;
+      }
+      .cuboid {
+      position: relative;
+      width: var(--width);
+      height: var(--height);
+      transform-style: preserve-3d;
+      }
+      .cuboid__face {
+      width: var(--width);
+      height: var(--height);
+      position: absolute;
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      box-shadow: 0 1px 3px 0 black, 0 1px 2px -1px black;
+      }
+      .cuboid__face--front {
+      background: transparent;
+      }
+      .cuboid__face--back {
+      --extra-height: 3rem;
+      transform: translateY(calc(var(--extra-height) * -1)) translateZ(calc(var(--depth) * -1)) rotateY(180deg);
+      height: calc(var(--height) + var(--extra-height));
+      background: var(--color-shelf-back-panel);
+      }
+      .cuboid__face--top {
+      transform: translateZ(calc(var(--depth) * -0.5)) translateY(calc(var(--height) * -0.5)) rotateX(90deg);
+      height: var(--depth);
+      }
+      .cuboid__face--bottom {
+      transform: translateZ(calc(var(--depth) * -0.5)) translateY(calc(var(--height) * 0.5)) rotateX(-90deg);
+      height: var(--depth);
+      background: var(--color-shelf-bottom-panel);
+      }
+      .books-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 3rem;
+      position: relative;
+      height: var(--height);
+      padding-bottom: 0.8rem;
+      box-sizing: border-box;
+      box-shadow: inset 0 10px 10px 0 var(--shadow-color, var(--color-shelf-shadow));
+      }
+      .book {
+      height: calc(var(--height) - 3rem);
+      width: 7rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      }
+      .floor-thickness {
+      height: 1rem;
+      width: 100%;
+      background: var(--color-shelf-bottom-panel-front);
+      }
+      .book {
+      position: relative;
+      }
+      .book img {
+      display: block;
+      }
+      .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: 0.4s ease;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }
+      .book:hover .overlay {
+      opacity: 1;
+      }
+      .text {
+      color: red;
+      font-size: 20px;
+      text-align: center;
+      }
+      * {
+      cursor: url(/WEBSITE/cursor.png),
+      auto !important;
+      }
+   </style>
+   <body>
+      <center>
+         <h1>✰ MY BOOKSHELF ✰</h1>
+      </center>
+      <section>
+         <div class="container">
+            <div class="cuboid">
+               <div class="cuboid__face cuboid__face--bottom"></div>
+               <div class="cuboid__face cuboid__face--front"></div>
+               <div class="cuboid__face cuboid__face--back"></div>
+            </div>
+         </div>
+         <div class="books-container">
+            <div class="book">
+               <a href="/blog" >
+                  <img src="/WEBSITE/BOOKSHELF/s2482j8p6ly21.jpg"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Blog</div>
+                  </div>
+               </a>
+            </div>
+            <div class="book">
+               <a href="/death_note" >
+                  <img src="/WEBSITE/BOOKSHELF/Death-Note-6x9-120-Page-Wide-Ruled-Notebook-Paperback-9781692124045_c4ab538e-1d77-4ada-93e9-cd2952247356.abb9cb843f3fc32ab36f61a98c5ff1af.avif"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Death Note</div>
+                  </div>
+               </a>
+            </div>
+            <div class="book">
+               <a href="/microblog" >
+                  <img src="/WEBSITE/BOOKSHELF/field_notes.png"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Microblog</div>
+                  </div>
+               </a>
+            </div>
+            <div class="book">
+               <a href="/dreams" >
+                  <img src="/WEBSITE/BOOKSHELF/A15c+pr-6sL.jpg"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Dream Journal</div>
+                  </div>
+               </a>
+            </div>
+         </div>
+         <div class="floor-thickness"></div>
+      </section>
+      <section>
+      <section>
+         <div class="container">
+            <div class="cuboid">
+               <div class="cuboid__face cuboid__face--bottom"></div>
+               <div class="cuboid__face cuboid__face--front"></div>
+               <div class="cuboid__face cuboid__face--back"></div>
+            </div>
+         </div>
+         <div class="books-container">
+            <div class="book">
+               <a href="/crappypasta" >
+                  <img src="/WEBSITE/BOOKSHELF/crappypastas.jpeg"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Crappypastas</div>
+                  </div>
+               </a>
+            </div>
+            <div class="book">
+               <a href="/zz/changelog" >
+                  <img src="/WEBSITE/BOOKSHELF/71kxPPQ5SCL._AC_UF894,1000_QL80_.jpg"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Changelog</div>
+                  </div>
+               </a>
+            </div>
+            <div class="book">
+               <a href="https://users4.smartgb.com/g/g.php?a=s&i=g44-82590-cc" >
+                  <img src="/WEBSITE/BOOKSHELF/get_file.jpg"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Guestbook</div>
+                  </div>
+               </a>
+            </div>
+            <div class="book">
+               <a href="/sitemap">
+                  <img src="/WEBSITE/BOOKSHELF/hbg-title-9781849075176-62.webp"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Sitemap</div>
+                  </div>
+               </a>
+            </div>
+         </div>
+         <div class="floor-thickness"></div>
+      </section>
+      <section>
+         <div class="container">
+            <div class="cuboid">
+               <div class="cuboid__face cuboid__face--bottom"></div>
+               <div class="cuboid__face cuboid__face--front"></div>
+               <div class="cuboid__face cuboid__face--back"></div>
+            </div>
+         </div>
+         <div class="books-container">
+                        <div class="book">
+               <a href="/books" >
+                  <img src="/WEBSITE/BOOKSHELF/readingrecord.jpg"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Book Log</div>
+                  </div>
+               </a>
+            </div>
+<div class="book">
+               <a href="/books#thecolourpurple080426" >
+                  <img src="/WEBSITE/BOOKS/thecolourpurplealicewalker.jpg"
+                     style="height: calc(var(--height) - 3rem); width: 7em; object-fit: contain;">
+                  <div class="overlay">
+                     <div class="text">Book Review: The Color Purple (Alice Walker)</div>
+                  </div>
+               </a>
+            </div>
+         </div>
+         <div class="floor-thickness"></div>
+      </section>
+   </body>
+   <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+      <source src=/WEBSITE/BOOKSHELF/dress_buck_tick.mp3>
+   </audio>
+   <script>
+      document.addEventListener("visibilitychange", function() {
+        document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+      })
+   </script>
+</html>

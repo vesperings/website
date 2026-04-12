@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;     
+         top: 10px;          
+         left: 10px;            
+         z-index: 9999;         
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+         
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+         
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+         
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+         
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+         
+                 fontChanged = false;
+             }
+         }
+      </script>    
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don’t know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>           
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+               <img src="/WEBSITE/BLOG/section.png" align="left">
+               <p>When did I last do something for the first time? I cannot remember. Too long have I closed myself off to experience, to life. Tonight broke that pattern and I can only hope it inspires a new one. I hardly slept at night (2 hours from 5-7AM) as I had drank a can of Monster in the afternoon. I wore a red and black visual kei t-shirt, baggy jeans, a flannel tied around my waist and torturous Demonia boots. Of course I looked ridiculous but I did not care. Not wanting to walk any more than absolutely necessary, I decided to take the bus to the mall. Surprisingly, it only took around an hour and was marginally less furnacious (not a real word) than I expect the Central Line to be, stuffed wall to wall in 30 degree weather. The bus passed by a mosque directly next to a McDonalds. Multiculturalism at its finest.</p>
+               <p>I had already began to feel sunweakened by the time I got to the mall, so I bought a peach iced tea from Costa. I wandered the ground floor for a while waiting for Genesis to arrive, wanting&nbsp;a new notebook, something gilded and ornate, but I was unable to find anything I liked, Once Genesis arrived, we went to Pret. It delighted me to tower over her in my boots. Of course I didn&rsquo;t get another drink, though Genesis got an iced matcha and we spoke of everything and nothing at the same time. I really must get better at recording conversations. We also went to Claires, where Genesis bought herself a pair of fishnet fingerless gloves, joking the whole time about how much we looked like posers.</p>
+               <p>&nbsp;</p>
+               <p>Though it was past 7 by the time we left the mall, it was still very bright and hot.&nbsp;The tube was full of others also going to the same concert. We went to the stadium's Five Guys because Genesis was hungry and I got another drink because I knew dehydration would be my worst enemy. We checked out the merch store too, but there was nothing there worth purchasing, which is a shamea as I&rsquo;d wanted something to commemorate my first concert. Even a sticker or leaflet would have sufficed, but nothing. I despise standing and waiting in queues so we went to the Priority lounge, which was all blue light with a bar, and more importantly, AC. No DC though, I&rsquo;m afraid. We sat on plush leather seats in a little alcoved booth with a circular table. I took the opportunity to charge my phone, though it would be practically untouched, and reapplied Genesis&rsquo;s eyeliner for her.</p>
+               <p>&nbsp;</p>
+               <p>The moment we stepped through the door into the arena, there was a palpable shift in the air. Surreal. I&rsquo;ve never seen so many people together in one place. Well, except maybe in Makkah, but I have no memory of that. And here too, everyone united under a single purpose, devotion. No wonder music is so terrifying to some. Surrounded with thousands and touched by vibrations one experiences the closest thing to religious ecstasy. I choose to see God in it. The ecclesiastical comparisons don&rsquo;t quite end there. A large black box was present in the centre of the stadium, which with thousands of people surrounding it, desperate to touch the fabric walls, was difficult not to call to mind the Ka&rsquo;aba. It made the later performance of <em>Heresy</em> a little ironic.</p>
+               <p>&nbsp;</p>
+               <p>I suppose I&rsquo;m just the type of person to take things in my stride, because I felt none of the overwhelming rush of emotions I was promised. I saw Nine Inch Nails live and the world kept spinning. Don&rsquo;t misunderstand, I thoroughly enjoyed it and gained a much deeper appreciation for the music after seeing it performed live, though I wasn&rsquo;t able to lose myself in it fully constrained to my seat. Our view was pretty decent all things considered, and I found myself awed with the stage effects and visuals as much as the songs. They stood out to me particularly during <em>Copy of A, </em>image and sound blending into a transcendent synaesthetic experience. I can only imagine the work that went into it, and it truly made the show. There is, of course, a discussion to be had around whether musicians should have to rely on these things, but for me at least, it enhanced the experience beyond measure.</p>
+               <p>&nbsp;</p>
+               <p>The audience was a mixture, but comprised largely of middle aged white men which makes sense. I tend to forget my interest in something does not automatically mean I am the target demographic. My sole frame of reference being internet clips of K-pop concerts, they were much better behaved than I expected. No obstructing views, obnoxious filming and screaming, or stench of body odour. The beer on the other hand&hellip;</p>
+               <p>&nbsp;</p>
+               <p>We had missed most of the opener, Boyznoize, in the lounge, but caught the tail end, which was pretty decent.</p>
+               <p>&nbsp;</p>
+               <p>I was engaged with the show completely, not one moment of boredom or distraction. They played almost every song I really wanted to see, except <em>Discipline </em>and <em>Hand That Feeds</em>. I kept telling Genesis I hoped they&rsquo;d play <em>Head Like a Hole</em>, my first Nine Inch Nails song, and when the first few notes sounded, I felt I had manifested it. For this I sang along shamelessly. Trent Reznor smashed his guitar at the end. This was followed by <em>Hurt</em>, the final song of the show, and I felt a twisted humour about it due to the accessory of sorts I was sporting. As we left, Laura Palmer&rsquo;s theme played. Such a beautiful ending.</p>
+               <p><a href="https://www.youtube.com/watch?v=F_evLxBuD8o">(Watch the vlog here)</a></p>
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[Losing_My_Concert_Virginity]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

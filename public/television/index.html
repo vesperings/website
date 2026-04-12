@@ -1,0 +1,19 @@
+<!doctype html>
+<title>TELEVISION</title>
+<link href="style.css" media="all" rel="stylesheet">
+<a href="/room" id="gifLink">
+  <img src="/WEBSITE/TELEVISION/glitch.gif" style="z-index:0; position:relative; top:50px; left:12px; width:80%; height:auto; z-index:1; border-radius:20px" id="myImg">
+</a>
+<button onclick="myFunction()">
+  <br>
+  <img src="/WEBSITE/TELEVISION/remote.png" style="position:absolute; top:250px; left:70px; width:250px; height:auto; z-index:1">
+</button>
+<script src="tv.js"></script>
+<audio id="myAudio" autoplay controls loop style="width:.1%; height:.1%; volume:0.3;">
+  <source src="/WEBSITE/TELEVISION/given_up_linkin_park.mp3">
+</audio>
+<script>
+  document.addEventListener("visibilitychange", function() {
+    document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play();
+  });
+</script>

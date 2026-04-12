@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>✰ VESPERINGS ✰</title>
+      <style>
+         @font-face {
+         font-family: Vesperings;
+         src: url(/WEBSITE/vesperings.ttf);
+         }
+         * {
+         font-family: Vesperings;
+         }
+         h1,
+         h2,
+         h3,
+         h4 {
+         font-family: garamond;
+         }
+         * {
+         box-sizing: border-box;
+         }
+         body {
+         background: url(/WEBSITE/HOMEPAGE/background.jpg) no-repeat center fixed;
+         -webkit-background-size: cover
+         }
+         html {
+         line-height: 1.225;
+         }
+         html,
+         body {
+         margin: 0;
+         padding: 0;
+         scrollbar-color: black red;
+         }
+         .container {
+         width: 810px;
+         max-width: 100%;
+         margin: 0 auto 10px;
+         }
+         .container.full-width {
+         width: auto;
+         }
+         a:hover {
+         color: indianred !important;
+         }
+         ol li ol li {
+         font-size: 100%;
+         }
+         ul {
+         padding-left: 20px;
+         }
+         main {
+         padding: 6px 0px;
+         font-size: 80%;
+         }
+         main .left,
+         main .right {
+         padding: 10px;
+         }
+         footer {
+         text-align: center;
+         font-size: 70%;
+         margin: 10px 0 10px;
+         padding: 10px 5px;
+         }
+         footer img {
+         display: inline-block;
+         vertical-align: middle;
+         }
+         footer p {
+         vertical-align: middle;
+         margin: 10px 0 5px 0;
+         font-size: 90%;
+         }
+         footer .copyright {
+         font-size: 80%;
+         text-decoration: underline;
+         text-decoration-thickness: 0.5px;
+         }
+         .general-about .profile-pic {
+         display: block;
+         float: left;
+         margin: 0 15px 8px 0;
+         height: 160px;
+         }
+         .general-about .profile-pic img {
+         max-width: 160px;
+         max-height: 160px;
+         }
+         .profile .mood {
+         width: 100%;
+         display: inline-block;
+         }
+         .profile .contact,
+         .profile .url-info,
+         .profile .table-section,
+         .home-actions {
+         width: 100%;
+         border: 2px solid;
+         margin: 10px 0;
+         }
+         .profile .contact .heading,
+         .profile .table-section .heading,
+         .home-actions .heading {
+         padding: 2px 7px;
+         }
+         .profile .contact .heading h4,
+         .profile .table-section .heading h4,
+         .profile .friends .heading h4,
+         .home-actions .heading h1,
+         .statistics .heading h4 {
+         margin: 0;
+         display: inline-block;
+         }
+         .profile .contact .f-row {
+         margin: 7px;
+         font-weight: bold;
+         font-size: 0.875em;
+         }
+         .profile .url-info {
+         padding: 4px 7px;
+         }
+         .profile .url-info p {
+         font-size: 100%;
+         margin: 0;
+         word-break: break-all;
+         }
+         table.details-table {
+         width: 100%;
+         }
+         .profile .friends .inner {
+         padding: 7px;
+         }
+         .profile .friends p,
+         {
+         margin: 0 0 8px 0;
+         }
+         .profile .friends .person {
+         width: 105px;
+         display: inline-block;
+         padding: 0 10px 15px 0;
+         }
+         .profile .friends .person p {
+         font-weight: bold;
+         width: 100%;
+         overflow-wrap: break-word;
+         word-break: break-word;
+         font-size: 100%;
+         text-align: center;
+         }
+         .profile .friends .person img:not(.icon) {
+         max-width: 95px;
+         max-height: 95px;
+         display: block;
+         margin: 0 auto;
+         }
+         table.comments-table,
+         {
+         width: 100%;
+         overflow-wrap: break-word;
+         word-break: break-word;
+         }
+         .comments-table p,
+         {
+         font-size: 100%;
+         }
+         .comments-table td:first-child,
+         {
+         text-align: center;
+         font-weight: bold;
+         width: 38%;
+         }
+         .comments-table td,
+         {
+         background: #fcdbb8;
+         vertical-align: top;
+         }
+         .comments-table td:first-child img:not(.icon) {
+         width: 90px;
+         max-width: 100%;
+         max-height: 200px;
+         }
+         .comments-table td *,
+         {
+         max-width: 100%;
+         }
+         .comments-table .report {
+         font-size: 0.7em;
+         float: right;
+         margin: 8px 5px !important;
+         }
+         .center-container {
+         text-align: center;
+         padding: 20px 10px 40px 10px;
+         margin: 0 auto;
+         }
+         @keyframes bgscroll {
+         0% {
+         background-position: 0 center;
+         }
+         50% {
+         background-position: -999px center;
+         }
+         100% {
+         background-position: -0 center;
+         }
+         }
+         .f-row {
+         width: 100%;
+         display: table;
+         table-layout: fixed;
+         }
+         .f-col {
+         display: table-cell;
+         vertical-align: top;
+         }
+         blink {
+         animation-name: blink;
+         animation-iteration-count: infinite;
+         animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+         animation-duration: 2s;
+         }
+         .online {
+         color: #0C8C00;
+         font-weight: bold;
+         font-size: 95%;
+         }
+         .online img {
+         height: 1.5em;
+         margin-right: 5px;
+         animation-name: blink;
+         animation-iteration-count: infinite;
+         animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+         animation-duration: 2s;
+         }
+         .icon,
+         .award img {
+         display: inline-block;
+         height: 1.4em;
+         width: 1.4em;
+         aspect-ratio: 1/1;
+         margin: 0 .05em 0 .1em;
+         vertical-align: -0.3em;
+         color: rgba(0, 0, 0, 0);
+         }
+         @media(min-width: 30em) {
+         .row {
+         width: 100%;
+         display: table;
+         table-layout: fixed;
+         }
+         .col {
+         display: table-cell;
+         vertical-align: top;
+         }
+         .col.w-10 {
+         width: 10%;
+         }
+         .col.w-15 {
+         width: 15%;
+         }
+         .col.w-20 {
+         width: 20%;
+         }
+         .col.w-25 {
+         width: 25%;
+         }
+         .col.w-30 {
+         width: 30%;
+         }
+         .col.w-40 {
+         width: 40%;
+         }
+         .col.w-50 {
+         width: 50%;
+         }
+         .col.w-60 {
+         width: 60%;
+         }
+         .col.w-70 {
+         width: 70%;
+         }
+         .col.w-75 {
+         width: 75%;
+         }
+         .col.w-80 {
+         width: 80%;
+         }
+         .col.w-90 {
+         width: 90%;
+         }
+         .d-hide {
+         display: none !important;
+         }
+         .home .col.left {
+         background-image: url('/WEBSITE/HOMEPAGE/divider_o.png');
+         background-position: right -15px;
+         background-repeat: repeat-y;
+         }
+         .row.middle-space .col:first-child {
+         padding-right: 10px;
+         }
+         .row.middle-space .col:last-child {
+         padding-left: 10px;
+         }
+         }
+         main {
+         font-family: uset;
+         color: red;
+         background-color: black;
+         border-color: red;
+         border-style: dashed;
+         }
+         .general-about img {
+         -webkit-mask-image: url(/WEBSITE/HOMEPAGE/mask.png);
+         -webkit-mask-size: 100%;
+         -webkit-mask-repeat: no-repeat;
+         -webkit-mask-position: center;
+         }
+         main:before {
+         width: auto;
+         margin-bottom: 25px;
+         border: 1px solid #000;
+         height: 150px;
+         display: block;
+         content: "";
+         background-image: url(/WEBSITE/HOMEPAGE/header.gif);
+         background-position: center center;
+         background-size: cover;
+         }
+         * {
+         color: red !important;
+         background-color: ;
+         }
+         a,
+         text-decoration: underline !important;
+         }
+         .container {
+         margin: 0 auto 0;
+         }
+         main {
+         background: black;
+         }
+         .heading,
+         .url-info {
+         border: 2px solid !important;
+         }
+         .inner {
+         color: red !important;
+         border: 2px solid red;
+         border-top: none;
+         }
+         .profile-info {
+         background-image: url(/WEBSITE/HOMEPAGE/kittie.gif);
+         background-position: center;
+         background-size: cover;
+         padding: 5px;
+         border-radius: 8px;
+         border: 2px solid red;
+         border: 2px solid red;
+         }
+         .profile-info .inner {
+         border: none;
+         }
+         .friends .inner {
+         border-bottom: none;
+         }
+         #comments {
+         border-bottom: 2px solid red;
+         }
+         .profile .contact,
+         .profile .table-section,
+         .home-actions {
+         border: none !important;
+         }
+         .profile .contact.f-row:first-of-type {
+         margin-top: 0px;
+         padding-top: 7px;
+         }
+         .contact {
+         background-image: url(/WEBSITE/HOMEPAGE/gothzombie.jpg);
+         background-repeat: no-repeat;
+         background-attachment: scroll;
+         Width: 300px;
+         Height: 120px;
+         }
+         .details-table {
+         margin: 2px;
+         }
+         .details-table,
+         td {
+         border: 2px solid red;
+         border-collapse: collapse;
+         color: red !important;
+         background: none;
+         background-color: black !important;
+         }
+         table.details-table {
+         max-width: 98%;
+         }
+         .profile h1 {
+         font-size: 20px;
+         }
+         footer p {
+         color red !important;
+         }
+         .comments-table {
+         color: red;
+         border: none;
+         border-radius: 8px;
+         }
+         footer {
+         background-image: url(/WEBSITE/HOMEPAGE/gothvampire.jpg);
+         background-position: center;
+         background-size: cover;
+         border-radius: 8px;
+         border: 2px solid red;
+         }
+         .general-about {
+         border-radius: 8px;
+         background: url(/WEBSITE/HOMEPAGE/gothfairy.jpg);
+         background-position: center;
+         background-size: cover;
+         padding: 5px;
+         }
+         * {
+         cursor: url(/WEBSITE/cursor.png), auto !important;
+         }
+         #bloodydrip {
+         background: url("/WEBSITE/HOMEPAGE/blooddrip.gif");
+         background-position: left center;
+         background-repeat: repeat-x;
+         width: 100%;
+         height: 70px;
+         position: fixed;
+         top: -22px;
+         left: 0px;
+         z-index: 100;
+         pointer-events: none;
+         opacity: 1;
+         }
+         body:before {
+         content: " ";
+         height: 100vh;
+         width: 100vw;
+         display: block;
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 100;
+         background-image: url(/WEBSITE/HOMEPAGE/iwtvopening.gif);
+         background-size: cover;
+         background-repeat: no-repeat;
+         animation: yourAnimation 4s ease 0s 1 normal forwards;
+         pointer-events: none;
+         }
+         @keyframes yourAnimation {
+         0.0% {
+         opacity: 1;
+         }
+         75% {
+         opacity: 1;
+         }
+         100% {
+         opacity: 0;
+         }
+         }
+         @-webkit-keyframes snowflakes-fall {
+         0% {
+         top: -10%
+         }
+         100% {
+         top: 100%
+         }
+         }
+         @-webkit-keyframes snowflakes-shake {
+         0%,
+         100% {
+         -webkit-transform: translateX(0);
+         transform: translateX(0)
+         }
+         50% {
+         -webkit-transform: translateX(80px);
+         transform: translateX(80px)
+         }
+         }
+         @keyframes snowflakes-fall {
+         0% {
+         top: -10%
+         }
+         100% {
+         top: 100%
+         }
+         }
+         @keyframes snowflakes-shake {
+         0%,
+         100% {
+         transform: translateX(0)
+         }
+         50% {
+         transform: translateX(80px)
+         }
+         }
+         .snowflake {
+         position: fixed;
+         top: -10%;
+         z-index: 9999;
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         -ms-user-select: none;
+         user-select: none;
+         cursor: default;
+         -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+         -webkit-animation-duration: 10s, 3s;
+         -webkit-animation-timing-function: linear, ease-in-out;
+         -webkit-animation-iteration-count: infinite, infinite;
+         -webkit-animation-play-state: running, running;
+         animation-name: snowflakes-fall, snowflakes-shake;
+         animation-duration: 10s, 3s;
+         animation-timing-function: linear, ease-in-out;
+         animation-iteration-count: infinite, infinite;
+         animation-play-state: running, running
+         }
+         .snowflake:nth-of-type(0) {
+         left: 1%;
+         -webkit-animation-delay: 0s, 0s;
+         animation-delay: 0s, 0s
+         }
+         .snowflake:nth-of-type(1) {
+         left: 10%;
+         -webkit-animation-delay: 1s, 1s;
+         animation-delay: 1s, 1s
+         }
+         .snowflake:nth-of-type(2) {
+         left: 20%;
+         -webkit-animation-delay: 6s, .5s;
+         animation-delay: 6s, .5s
+         }
+         .snowflake:nth-of-type(3) {
+         left: 30%;
+         -webkit-animation-delay: 4s, 2s;
+         animation-delay: 4s, 2s
+         }
+         .snowflake:nth-of-type(4) {
+         left: 40%;
+         -webkit-animation-delay: 2s, 2s;
+         animation-delay: 2s, 2s
+         }
+         .snowflake:nth-of-type(5) {
+         left: 50%;
+         -webkit-animation-delay: 8s, 3s;
+         animation-delay: 8s, 3s
+         }
+         .snowflake:nth-of-type(6) {
+         left: 60%;
+         -webkit-animation-delay: 6s, 2s;
+         animation-delay: 6s, 2s
+         }
+         .snowflake:nth-of-type(7) {
+         left: 70%;
+         -webkit-animation-delay: 2.5s, 1s;
+         animation-delay: 2.5s, 1s
+         }
+         .snowflake:nth-of-type(8) {
+         left: 80%;
+         -webkit-animation-delay: 1s, 0s;
+         animation-delay: 1s, 0s
+         }
+         .snowflake:nth-of-type(9) {
+         left: 90%;
+         -webkit-animation-delay: 3s, 1.5s;
+         animation-delay: 3s, 1.5s
+         }
+         .snowflake:nth-of-type(10) {
+         left: 25%;
+         -webkit-animation-delay: 2s, 0s;
+         animation-delay: 2s, 0s
+         }
+         .snowflake:nth-of-type(11) {
+         left: 65%;
+         -webkit-animation-delay: 4s, 2.5s;
+         animation-delay: 4s, 2.5s
+         }
+      </style>
+      <div class="container">
+      <!-- BLOODY DRIP-->
+      <div id="bloodydrip">
+      </div>
+      <!-- JEFF THE KILLER -->
+      <div style="float:  ; max-height: 300px; position: fixed; left: 1px; bottom: 9px; z-index: 200;">
+         <img src="/WEBSITE/HOMEPAGE/jeff.gif" width="300" height="300"/>
+      </div>
+      <!-- HANGING SKELETON -->
+      <div style="float:  ; max-height: 200px; position: fixed; right: 25px; top: 6px; z-index: 300;">
+         <img src="/WEBSITE/HOMEPAGE/skeleton.gif" height="360" />
+      </div>
+      <!-- BATS -->
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/HOMEPAGE/bat.gif" />
+      </div>
+      <!-- FONT CHANGE BUTTON -->
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;
+         top: 10px;
+         left: 10px;
+         z-index: 9999;
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: 1px solid red;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+
+                 fontChanged = false;
+             }
+         }
+      </script>
+      <!-- FONT CHANGE BUTTON -->
+      </h1>
+      <!-- PROFILE SECTION -->
+      <main>
+         <div class="row profile">
+            <meta itemprop="identifier" content="3514423">
+            <div class="col w-40 left">
+               <span itemprop="name">
+                  <h1>vesperings</h1>
+               </span>
+               <div class="general-about">
+                  <div class="profile-pic">
+                     <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/nanapfp.jpg">
+                  </div>
+                  <div class="details">
+                     <p class="online">
+                        <img src="/WEBSITE/HOMEPAGE/green_person.svg" aria-hidden="true" loading="lazy"> ONLINE!
+                     </p>
+                  </div>
+               </div>
+               <div class="mood">
+                  <p>
+                     <b>Mood:</b> Cryptic and Machiavellian
+                     <br>
+                     (Not a Swiftie, I just find this line hilarious)
+                  </p>
+               </div>
+               <!-- CONTACT BOX -->
+               <div class="contact">
+                  <div class="heading">
+                     <h4 style="font-family:garamond;><a href="mailto:contact@vesperings.com">Contacting vesperings</a></h4>
+                  </div>
+                  <div class="inner">
+                     <div class="f-row">
+                        <div class="f-col">
+                           <img src="/WEBSITE/HOMEPAGE/add.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <a href="mailto:contact@vesperings.com">Add to Friends</a>
+                        </div>
+                        <div class="f-col">
+                           <img src="/WEBSITE/HOMEPAGE/award_star_add.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <a href="mailto:contact@vesperings.com">Add to Favorites</a>
+                        </div>
+                     </div>
+                     <div class="f-row">
+                        <div class="f-col">
+                           <img src="/WEBSITE/HOMEPAGE/comment.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <a href="mailto:contact@vesperings.com">Send Message</a>
+                        </div>
+                        <div class="f-col">
+                           <img src="/WEBSITE/HOMEPAGE/arrow_right.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <a href="mailto:contact@vesperings.com">Forward to Friend</a>
+                        </div>
+                     </div>
+                     <div class="f-row">
+                        <div class="f-col">
+                           <img src="/WEBSITE/HOMEPAGE/email.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <a href="mailto:contact@vesperings.com">Instant Message</a>
+                        </div>
+                        <div class="f-col">
+                           <img src="https://static.spacehey.net/icons/exclamation.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <a href="mailto:contact@vesperings.com">Block User</a>
+                        </div>
+                     </div>
+                     <div class="f-row">
+                        <div class="f-col">
+                           <img src="/WEBSITE/HOMEPAGE/group_add.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <a href="mailto:contact@vesperings.com">Add to Group</a>
+                        </div>
+                        <div class="f-col">
+                           <img src="/WEBSITE/HOMEPAGE/flag_red.png" class="icon" aria-hidden="true" loading="lazy" alt=""> <a href="mailto:contact@vesperings.com">Report User</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- CONTACT BOX -->
+               <!-- SLENDY  BOX -->
+               <div class="table-section">
+                  <div class="url-info">
+                     <h4>My Whole Layout Will Break if I Remove This Box So I Am Using It to Imprison Slenderman</h4>
+                     <center>
+                        <img src="/WEBSITE/HOMEPAGE/slendy.gif">
+                     </center>
+                  </div>
+                  <!-- SLENDY BOX -->
+                  <!-- INTERESTS BOX -->
+                  <div class="table-section">
+                     <div class="heading">
+                        <h4>vesperings' Interests</h4>
+                     </div>
+                     <div class="inner">
+                        <table class="details-table" cellspacing="3" cellpadding="3">
+                           <tbody>
+                              <tr>
+                                 <td>
+                                    <p style="font-family:garamond;">General</p>
+                                 </td>
+                                 <td>
+                                    <p> IDK man, I never developed a sense of self. I am here because I HATEEEEE modern social media and how.... not social it truly is. I HATE influencers and ads and AMAZON STOREFRONTS!!! Democratise the web!! There is ZERO need for there to only be 6 websites on people's rotation. And all of those 6 being awful and soul-sucking and EVIL. The internet is all about the human desire to connect and learn, not be sold and sold to!! Anyway that's why I'm here. You don't actually need to know anything about me. I will not reduce my existence into a tiny little text box. If you're curious, get to know me and find out!!!!!!! </p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <p style="font-family:garamond;">Music</p>
+                                 </td>
+                                 <td>
+                                    <p> Cool, underground, niche artists you've never heard of. </p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <p style="font-family:garamond;">Movies</p>
+                                 </td>
+                                 <td>
+                                    <p> Horror films. </p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <p style="font-family:garamond;">Television</p>
+                                 </td>
+                                 <td>
+                                    <p> Too much... TBC. </p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <p style="font-family:garamond;">Books</p>
+                                 </td>
+                                 <td>
+                                    <p> Gothic lit, unpalatable feminism, and my diary which is a mix of both. </p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <p style="font-family:garamond;">Heroes</p>
+                                 </td>
+                                 <td>
+                                    <p> Batman. </p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+                  <!-- INTERESTS BOX -->
+                  <center>
+                     <br>
+                     <!-- POLL -->
+                     <div class="strawpoll-embed" id="strawpoll_ajnE1W3E0nW" style="height: 480px; max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column;">
+                        <iframe title="StrawPoll Embed" id="strawpoll_iframe_ajnE1W3E0nW" src="https://strawpoll.com/embed/ajnE1W3E0nW" style="position: static; visibility: visible; display: block; width: 97%; flex-grow: 1;" frameborder="0" allowfullscreen allowtransparency scrolling="no">Loading...</iframe>
+                        <script async src="https://cdn.strawpoll.com/dist/widgets.js" charset="utf-8"></script>
+                     </div>
+                     <!-- POLL -->
+                     <!-- ENTER ROOM BUTTON -->
+                     <a href="/room" target="_blank">
+                     <img src="/WEBSITE/HOMEPAGE/enterroom.gif">
+                     </a>
+                  </center>
+                  <!-- CHANGELOG -->
+                  <center>
+                     <div id="maintext-container" style="width: 95%; height: 900px; overflow: auto; border-top: 1px solid red; border-left: 1px solid red; padding: 10px;"></div>
+                     <script>
+                        async function loadMainText() {
+                            try {
+                                const response = await fetch('/zz/changelog');
+                                const html = await response.text();
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(html, 'text/html');
+                                const mainText = doc.getElementById('maintext');
+                                if (mainText) {
+                                    document.getElementById('maintext-container').appendChild(mainText);
+                                }
+                            } catch (error) {
+                                console.error('Error loading content:', error);
+                            }
+                        }
+                        loadMainText();
+                     </script>
+                  </center>
+                  <!-- CHANGELOG -->
+                  <!-- ENTER ROOM BUTTON -->
+               </div>
+            </div>
+            <!-- RIGHT MAIN SECTION -->
+            <div class="col right">
+               <!-- LINKS -->
+               <div class="heading">
+                  <h2>
+                     <a href="/sitemap">Click here to navigate via sitemap if you're too lazy to explore.</a>
+                  </h2>
+               </div>
+               <!-- LINKS -->
+               <div class="inner">
+                  <div class="section">
+                     <!-- MAIN -->
+                     <center>
+                        <br>
+                        <img src="/WEBSITE/logo.png" width="350">
+                        <br>
+                        <img src="/WEBSITE/HOMEPAGE/mobile.gif" width="350">
+                        <h2>This website requires JavaScript!</h2>
+                        <h3>Warning for flashing images, awful colour contrast and loud music.</h3>
+                     </center>
+                     <br>
+                     <p>Hello, and welcome to my little website! I'm not sure how you've managed to stumble upon it, but I hope you'll stay a while. Nearly a decade after I abandoned my last, I have decided to return to blogging. It is appealing, having a few pixels on the internet all to myself, my very own blog, rather than being constricted to a social media profile on which I feel simultaneously surveilled and ignored - a nobody in a sea of popularity contestants. Here, there exist no such constraints imposed by such an existence. I fancy that nobody will ever come across this insignificant website, and I will be at peace in my isolation. Or, perhaps it will be found, some years later, by a singular person who was looking for something else entirely, and they will find solace in relating to the words of a girl who no longer exists. Either way, I look forward to writing here, and building this blog up as some sort of forgotten time capsule. What I will fill it with, I have no clue.</p>
+                     <br>
+                     <center>
+                        <img src="/WEBSITE/HOMEPAGE/gothicangelblingee.gif"></img>
+                        <!-- MAIN -->
+                        <br>
+                        <!-- BLACKBOARD -->
+                        <h2>Draw on My Blackboard!</h2>
+                        <iframe src="https://onlnbrd.com/b/DS3vsunE" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="400px" allowfullscreen></iframe>
+                     </center>
+                  </div>
+                  <!-- FRIENDS -->
+                  <div class="friends">
+                     <div class="heading">
+                        <h4>vesperings' Friend Space</h4>
+                     </div>
+                     <div class="inner">
+                        <p>
+                           <b>vesperings has 6 friends. </b>
+                        <p>
+                           <strong> Displaying 6 of 6 friends (View all) </strong>
+                        </p>
+                        </p>
+                        <div class="friends-grid">
+                           <div class="person">
+                              <p>Kellin <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/kellin.png">
+                           </div>
+                           <div class="person">
+                              <p>Sanya <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/sanya.webp">
+                           </div>
+                           <div class="person">
+                              <p>Leni <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/leni.webp">
+                           </div>
+                           <div class="person">
+                              <p>Kato <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/kato.png">
+                           </div>
+                           <div class="person">
+                              <p>Genesis <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/genesis.png">
+                           </div>
+                           <div class="person">
+                              <p>Harris_blood_suckr <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/harris.png">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="friends" id="comments">
+                     <div class="heading">
+                        <h4>vesperings' Friends Comments</h4>
+                     </div>
+                     <div class="inner">
+                        <p>
+                           <strong> Displaying 4 of 4 comments (View all) </strong>
+                        </p>
+                        <table class="comments-table" cellspacing="0" cellpadding="3" bordercolor="ffffff" border="1">
+                           <tbody>
+                              <tr>
+                                 <td>
+                                    <p>Genesis</p>
+                                    <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/genesis.png">
+                                 </td>
+                                 <td>
+                                    <p>
+                                       <b>8th April 2025</b>
+                                    </p>
+                                    <p>If Light Yagami has a million haters, then I am one of them. If Light Yagami has ten haters, then I am one of them. If Light Yagami has only one hater then that is me. If Light Yagami has no haters, then that means I am no longer on earth. If the world is accepting Light Yagami, then I am against the world.</p>
+                                    <p class="report">
+                                       <img src="/WEBSITE/HOMEPAGE/flag_red.png" class="icon" aria-hidden="true" loading="lazy"> Report
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <p>Harris_blood_suckr</p>
+                                    <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/harris.png">
+                                 </td>
+                                 <td>
+                                    <p>
+                                       <b>8th April 2025</b>
+                                    </p>
+                                    <p>I think we as a society should be more biphobic</p>
+                                    <p class="report">
+                                       <img src="/WEBSITE/HOMEPAGE/flag_red.png" class="icon" aria-hidden="true" loading="lazy"> Report
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <p>Kato</p>
+                                    <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/kato.png">
+                                 </td>
+                                 <td>
+                                    <p>
+                                       <b>8th April 2025</b>
+                                    </p>
+                                    <p> "Racism is bad!" </p>
+                                    <p class="report">
+                                       <img src="/WEBSITE/HOMEPAGE/flag_red.png" class="icon" aria-hidden="true" loading="lazy"> Report
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <p>Kellin</p>
+                                    <img class="pfp-fallback" src="/WEBSITE/HOMEPAGE/kellin.png">
+                                 </td>
+                                 <td>
+                                    <p>
+                                       <b>28th February 2025</b>
+                                    </p>
+                                    <p> i am experiencing misery previously only known by will graham </p>
+                                    <p class="report">
+                                       <img src="/WEBSITE/HOMEPAGE/flag_red.png" class="icon" aria-hidden="true" loading="lazy"> Report
+                                    </p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <!-- FRIENDS -->
+                     </div>
+                  </div>
+                  <center>
+                  <!-- WEB NEIGHBOURHOOD -->
+                  <h2>My Web Neighbourhood!</h2>
+                  <div style="height:300px;width:400px;border:2px solid red; overflow:auto;">
+                     <h3>My Button!</h3>
+                     <p> Thank you so much to Sanya for making this! It is my favourite thing in the whole wide world!</p>
+                     <img src="/WEBSITE/HOMEPAGE/vesperings.gif">
+                     <h3>My Web Neighbours and Other Sites I Like!</h3>
+                     <a href="https://badgraph1csghost.neocities.org/" target="_blank">
+                     <img src="/WEBSITE/HOMEPAGE/badgraph1csghost.png">
+                     </a>
+                     <a href="https://sanyation.neocities.org/" target="_blank">
+                     <img src="/WEBSITE/HOMEPAGE/sanyation.gif">
+                     </a>
+                     <a href="https://mazapandust.com/" target="_blank">
+                     <img src="/WEBSITE/HOMEPAGE/mazcomic.gif">
+                     </a>
+                     <a href="https://natsverycoolstuff.neocities.org/" target="_blank">
+                     <img src="/WEBSITE/HOMEPAGE/natsverycoolstuff.png" height="31px" width="88px">         </a>
+                     <a href="https://velvet-blue.neocities.org/" target="_blank">
+                     <img src="/WEBSITE/HOMEPAGE/newbutton.gif" height="31px" width="88px">         </a>
+                     <a href="https://divorcedmen.neocities.org/" target="_blank">
+                     <img src="/WEBSITE/HOMEPAGE/button_dm.gif">
+                     </a>
+                     <a href="https://pretrapixe.neocities.org/" target="_blank">
+                     <img src="/WEBSITE/HOMEPAGE/linkback.gif">
+                     </a>
+                     <h3>My Webrings!</h3>
+                     <center>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+               </div>
+            </div>
+            <!-- RIGHT MAIN SECTION -->
+      </main>
+      <footer>
+      <p> Footer </p>
+      </footer>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+      <source src=/WEBSITE/HOMEPAGE/nin_discipline.mp3>
+      </audio>
+      <script>
+         document.addEventListener("visibilitychange", function() {
+          document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+         })
+      </script>
+      </div>
+      </body>
+</html>

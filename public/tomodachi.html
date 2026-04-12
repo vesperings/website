@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>&#10032; TOMODACHI &#10032;</title>
+      <STYLE>
+         /* CODE BY OOPS.LOL */
+         *,
+         *::before,
+         *::after {
+         box-sizing: border-box;
+         }
+         * {
+         margin: 0;
+         scrollbar-color: dimgrey #d6dadb14;
+         }
+         img,
+         picture,
+         video,
+         canvas,
+         svg {
+         display: block;
+         max-width: 100%;
+         }
+         @font-face {
+         font-family: Vesperings;
+         src: url(/WEBSITE/vesperings.ttf);
+         }
+         h1, h2, h3, h4 {
+         font-family: garamond;
+         }
+         body {
+         background: black;
+         background-image: url(/WEBSITE/TOMODACHI/tumblr_n5b5qqZ6aO1tb0v16o1_r1_400.jpg);
+         background-size: cover;
+         font-size: 14pt;
+         text-align: center;
+         height: -webkit-fit-content;
+         height: -moz-fit-content;
+         height: fit-content;
+         min-height: 100dvh;
+         width: 100vw;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         line-height: 1.5;
+         -webkit-font-smoothing: antialiased;
+         overflow: hidden;
+         }
+         /* text details */
+         p {
+         max-width: 95%;
+         margin: 0.4rem auto;
+         }
+         #grd {
+         height: 80vh;
+         width: 80vh;
+         display: grid;
+         grid-template-areas: "main log" "nav misc";
+         position: relative;
+         gap: 0.4rem;
+         padding: 0.4rem;
+         background-color: rgba(0, 0, 0, 0.5);
+         -webkit-backdrop-filter: blur(1px);
+         backdrop-filter: blur(1px);
+         grid-template-columns: calc(40vh - 0.6rem) calc(40vh - 0.6rem);
+         grid-template-rows: calc(40vh - 0.6rem) calc(40vh - 0.6rem);
+         font-family: garamond;
+         }
+         main {
+         grid-area: main;
+         height: 100%;
+         width: 100%;
+         justify-self: right;
+         align-self: end;
+         background-color: black;
+         z-index: 2;
+         text-align: left;
+         color: black;
+         }
+         #log {
+         grid-area: log;
+         height: 100%;
+         width: 100%;
+         justify-self: left;
+         align-self: end;
+         background-color: black;
+         z-index: 2;
+         color: #4b0101;
+         font-family: Vesperings;
+         font-size: 120%;
+         }
+         nav {
+         grid-area: nav;
+         height: 100%;
+         width: 90%;
+         justify-self: left;
+         align-self: start;
+         background-color: black;
+         z-index: 2;
+         font-family: garamond;
+         }
+         #misc {
+         grid-area: misc;
+         height: 90%;
+         width: 90%;
+         justify-self: left;
+         align-self: start;
+         background-color: black;
+         z-index: 2;
+         text-align: right;
+         font-family: garamond;
+         }
+         a {
+         color: #4b0101;
+         }
+         /* classes */
+         .scroll {
+         height: calc(100% - 2.7rem);
+         overflow: auto;
+         margin: 0.3rem;
+         background: #ffffff36;
+         width: calc(100% - 0.6rem);
+         }
+         .bareBorder {
+         border: 2px solid rgba(0, 0, 0, 0.1);
+         }
+         .flexCol {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 0.3rem;
+         justify-content: space-evenly;
+         }
+         /* sticker */
+         #sticker {
+         position: absolute;
+         left: -20%;
+         bottom: 5%;
+         width: 40%;
+         z-index: 1;
+         transform: rotate(36deg);
+         opacity: 0.5;
+         }
+         /* alternating nav links + log entries, misc log/nav styling */
+         #log span:nth-of-type(2n) {
+         background-color: dimgrey;
+         }
+         #log span:nth-of-type(2n + 1) {
+         background-color: dimgrey;
+         }
+         #log span {
+         width: 100%;
+         }
+         #log em {
+         font-weight: bold;
+         }
+         #log > .scroll {
+         font-size: 0.9rem;
+         }
+         nav a:nth-of-type(2n) {
+         background-color: dimgrey;
+         }
+         nav a:nth-of-type(2n + 1) {
+         background-color: darkgrey;
+         }
+         nav a, nav a:visited {
+         width: 100%;
+         }
+         /* alternating side subheaders */
+         main h3 {
+         text-align: right;
+         }
+         #misc h3 {
+         text-align: left;
+         color: black;
+         font-family: garamond;
+         }
+         #grd h3 {
+         font-family: vesperings;
+         font-size: 150%;
+         color: darkred;
+         }
+         /* font size changes for specified boxes */
+         main > .scroll {
+         font-size: 0.85rem;
+         }
+         #misc > .scroll {
+         font-size: 0.8rem;
+         }
+         h2 {
+         font-size: 1.3rem;
+         letter-spacing: 0.2rem;
+         border-bottom: 0.15rem solid #00000042;
+         padding: 0 0.3rem;
+         color: darkred;    
+         }
+         h3 {
+         font-size: 1rem;
+         border-bottom: 0.1rem dotted #00000042;
+         padding-left: 0.2rem;
+         color: darkred;    
+         }
+         /* mobile code */
+         @media only screen and (max-width: 768px) {
+         /* change grid size + reorder */
+         #grd {
+         height: 50vh;
+         width: 100vw;
+         display: grid;
+         grid-template-areas: 
+         "nav" 
+         "main" 
+         "log" 
+         "misc";
+         grid-template-columns: auto;
+         grid-template-rows: -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content;
+         grid-template-rows: min-content min-content min-content min-content;
+         align-content: space-between;
+         margin-top: 5rem;
+         }
+         /* set boxes to be centered + fixed heights to just show headers */
+         main,
+         nav,
+         #log,
+         #misc {
+         height: 2.7em;
+         overflow: hidden;
+         justify-self: center;
+         align-self: center;
+         width: 96%;
+         }
+         /* use :hover + :active to make boxes open on click */
+         main:hover, main:active, 
+         nav:hover, nav:active, 
+         #log:hover, #log:active,
+         #misc:hover, #misc:active {
+         height: calc(50vh - 0.7rem); /* grd height minus padding */
+         overflow: auto;
+         position: absolute; /* below 4 lines move current box to top of the grid (nav), above everything else */
+         grid-area: nav;
+         z-index: 5;
+         top: 0;
+         }
+         /* since h1 + sticker are positioned absolute in grd, we can just shuffle them around a bit */
+         #sticker {
+         left: 0;
+         bottom: -50%;
+         width: 70%;
+         transform: rotate(100deg);
+         right: 0;
+         margin: auto;
+         }
+         }
+         * {
+         cursor: url(/WEBSITE/cursor.png), auto !important;
+         }
+      </STYLE>
+   </head>
+   <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+   <style>
+      .font-toggle {
+      position: fixed;     
+      top: 10px;          
+      left: 10px;            
+      z-index: 9999;         
+      background-color: black;
+      color: red;
+      font-family: Garamond, serif;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      }
+   </style>
+   <script>
+      let fontChanged = false;
+      let styleEl;
+      
+      function toggleFont() {
+          if (!fontChanged) {
+              styleEl = document.createElement('style');
+              styleEl.id = "fontOverride";
+      
+              styleEl.innerHTML = `
+                  * {
+                      font-family: Garamond, serif !important;
+                  }
+              `;
+      
+              document.head.appendChild(styleEl);
+              fontChanged = true;
+      
+          } else {
+              const existing = document.getElementById("fontOverride");
+              if (existing) existing.remove();
+      
+              fontChanged = false;
+          }
+      }
+   </script>    
+   <body>
+      <div id="grd">
+         <main class="bareBorder">
+            <h2>ISLANDERS</h2>
+            <div class="scroll">
+               <h3>Me</h3>
+               <img src="/WEBSITE/TOMODACHI/NWvnuW.JPG" width="100px">
+               <p><b>Birthday: </b>31 October</p>
+               <p><b>Personality:</b> Thinker</p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> Bing Bong</p>
+               <h3>Bing Bong</h3>
+               <img src="/WEBSITE/TOMODACHI/aaPKje.JPG" width="100px">
+               <p><b>Birthday: </b>8 July</p>
+               <p><b>Personality:</b> Buddy</p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> Me</p>
+               <h3>Justin Bieber</h3>
+               <img src="/WEBSITE/TOMODACHI/KieXUi.JPG" width="100px">
+               <p><b>Birthday: </b>1 March 1994</p>
+               <p><b>Personality:</b> Entertainer</p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Light Yagami</h3>
+               <img src="/WEBSITE/TOMODACHI/PpwIwt.JPG" width="100px">
+               <p><b>Birthday: </b>28 February</p>
+               <p><b>Personality:</b> Thinker</p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Genesis</h3>
+               <img src="/WEBSITE/TOMODACHI/KGgYZY.JPG" width="100px">
+               <p><b>Birthday: </b>8 June</p>
+               <p><b>Personality:</b> Dreamer</p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Count Dracula</h3>
+               <img src="/WEBSITE/TOMODACHI/YTEVnP.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> Lone Wolf</p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Ghostface</h3>
+               <img src="/WEBSITE/TOMODACHI/kuIreL.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> Lone Wolf</p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Jeff Winger</h3>
+               <img src="/WEBSITE/TOMODACHI/rcLVnp.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Abed Nadir</h3>
+               <img src="/WEBSITE/TOMODACHI/spLGif.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Annie Eddison</h3>
+               <img src="/WEBSITE/TOMODACHI/FWJqYd.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Britta Perry</i></h3>
+               <img src="/WEBSITE/TOMODACHI/NwuuNe.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Dean Pelton</h3>
+               <img src="/WEBSITE/TOMODACHI/IFsdnr.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>L Death Note</h3>
+               <img src="/WEBSITE/TOMODACHI/PbBWMY.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Pierce Hawthorne</h3>
+               <img src="/WEBSITE/TOMODACHI/spLGif.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Shirley Bennett</h3>
+               <img src="/WEBSITE/TOMODACHI/brsGDZ.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Troy Barnes</h3>
+               <img src="/WEBSITE/TOMODACHI/goKwJY.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Hachi</h3>
+               <img src="/WEBSITE/TOMODACHI/ETRRfD.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Nana Osaki</h3>
+               <img src="/WEBSITE/TOMODACHI/LXEOIc.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Jeff the Killer</h3>
+               <img src="/WEBSITE/TOMODACHI/Dlylvu.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Lestat de Lioncourt</h3>
+               <img src="/WEBSITE/TOMODACHI/pHqZIZ.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Louis du Pointe du Lac</h3>
+               <img src="/WEBSITE/TOMODACHI/ASINVt.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Patrick Bateman</h3>
+               <img src="/WEBSITE/TOMODACHI/FWjiwG.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Mark Lee</h3>
+               <img src="/WEBSITE/TOMODACHI/QYKtEY.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+               <h3>Kellin</h3>
+               <img src="/WEBSITE/TOMODACHI/aQMHde.JPG" width="100px">
+               <p><b>Birthday: </b></p>
+               <p><b>Personality:</b> </p>
+               <p><b>Sweethheart:</b></p>
+               <p><b>Best Friend:</b> </p>
+            </div>
+         </main>
+         <div id="log" class="bareBorder">
+            <h2>UPDATES</h2>
+            <div class="scroll flexCol">
+               <span><em>04.03.2026</em> - This game is so silly. Jeff the Killer set up Patrick Bateman and Justin Bieber, who are dating now. That can only end well... Mark Lee and I got into a massive fight, but I apologised after cooling down and it's all in the past now.</span>
+               <span><em>04.03.2026</em> - Not the most eventful day, but several friendships have been formed. Ghostface befriended Genesis, Dracula befriended Kellin, and Nana befriended Justin Bieber somehow. I am just now realising how many musicians I have on Poptropica Island.</span>
+               <span><em>03.03.2026</em> - Ghostface and I were still pretty depressed today, but things seem to be looking up for Ghostie at least, as Kellin befriended him today. I'm still a bit blue, but feeling a lot better after a good meal and hot bath. At least things are going better on the friendship front, and I'm becoming great friends with Genesis. Speaking of, she is moving really fast with L, and wanted to propose to him at the amusement park. Unfortunately, she couldn't get the words out and he is none the wiser. Even Hachi and Lestat are fighting (how they became friends in the first place, I will never know), so the mood on Poptropica island is incredibly tense.</span>
+               <span><em>02.03.2026</em> - Ghostface tried to patch things up, but things didn't work out. We're broken up for good now. I'm pretty torn up about it, even though I was the one who broke up with him first. On the plus side, Nana and Lestat are friends now. Maybe they'll go on tour together? L Death Note also tried to befriend LDPDL, but they didn't click. Genesis has feelings for L, which is hilarious because just a few days ago she had feelings for Light, but the real Genesis forbade me from letting them get together because she despises him LMAO. Anyway, she offered L a pack of tissues to go out with her and he accepted.</span>
+               <span><em>01.03.2026</em> - Poor Ghostie :(( My feelings have changed and I want to go back to being friends. I guess the constant threat of being murdered was more trouble than it's worth. I'm a little upset about it, but at the same time I'm glad to be free.</span>
+            </div>
+         </div>
+         <nav class="bareBorder">
+            <h2>STATISTICS</h2>
+            <div class="scroll flexCol">
+               <a><b>General Community Vibe:</b> Chill</a>
+               <a><b>Islanders:</b> 24</a>
+               <a><b>Male to Female Ratio:</b> 16:8 (This is so embarassing, I need more women)</a>
+               <a><b>Problems Solved:</b> 61</a>                
+            </div>
+         </nav>
+         <div id="misc" class="bareBorder">
+            <h2>SCREENSHOTS</h2>
+            <div class="scroll">
+               <h3>Mind you, this is the day after she was head over heels with Light...</h3>
+               <img src="/WEBSITE/TOMODACHI/jlBvbn.JPG">
+               <br><br>
+               <h3>Ha ha.</h3>
+               <img src="/WEBSITE/TOMODACHI/LKJGTi.JPG">
+               <br><br>
+               <h3>5 words to win a girl's heart.</h3>
+               <img src="/WEBSITE/TOMODACHI/pheOuj.JPG">
+               <br><br>
+               <h3>LMAOOOOO world's biggest Light hater falls for him. I wasn't allowed to let them get together hahahaha.</h3>
+               <img src="/WEBSITE/TOMODACHI/WPJRNW.JPG">
+               <br><br>
+               <h3>Adorable that all the serial killers want to be friends.</h3>
+               <img src="/WEBSITE/TOMODACHI/OOMHWZ.JPG">
+               <br><br>
+               <h3>Biblically accurate <i>Community</i> study room..</h3>
+               <img src="/WEBSITE/TOMODACHI/SBNStj.JPG">
+               <br><br>
+               <h3>Oh I love it when this game follows canon.</h3>
+               <img src="/WEBSITE/TOMODACHI/nGlRxy.JPG">
+               <br><br>
+               <h3>The people have spoken.</h3>
+               <img src="/WEBSITE/TOMODACHI/rwYDNB.JPG">
+               <br><br>
+               <h3>I guess Ghostface doesn't like <i>Scream</i>. No wonder we broke up.</h3>
+               <img src="/WEBSITE/TOMODACHI/lIXGOh.JPG">
+               <br><br>
+               <h3>Even on Tomodachi Life the Dean stays crossdressing.</h3>
+               <img src="/WEBSITE/TOMODACHI/puPnnq.JPG">
+               <br><br>
+               <h3>More very in character Jeff Winger. He loves that mirror.</h3>
+               <img src="/WEBSITE/TOMODACHI/lgGQMK.JPG">
+               <br><br>
+               <h3>I couldn't resist...</h3>
+               <img src="/WEBSITE/TOMODACHI/BVEhrT.JPG">
+               <br><br>
+               <h3>My sister set me and Justin Bieber up on a date, but nothing ever came of it. We're still friends though.</h3>
+               <img src="/WEBSITE/TOMODACHI/kukRrm.JPG">
+               <br><br>
+               <h3>The irony of this made me chuckle... Jeff the call is coming from the inside of the house.</h3>
+               <img src="/WEBSITE/TOMODACHI/uVIpWT.JPG">
+               <br><br>
+               <h3>Literal catboy L Death Note</h3>
+               <img src="/WEBSITE/TOMODACHI/yKrnFO.JPG">
+               <br><br>
+               <h3>A very in character Pierce Hawthorne</h3>
+               <img src="/WEBSITE/TOMODACHI/ulanwn.JPG">
+               <br><br>
+               <h3>A very in character Annie Eddison</h3>
+               <img src="/WEBSITE/TOMODACHI/eQnjYy.JPG">
+               <br><br>
+               <h3>A very in character Jeff Winger</h3>
+               <img src="/WEBSITE/TOMODACHI/xsbcrn.JPG">
+            </div>
+         </div>
+      </div>
+      <audio id=myAudio autoplay controls loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/TOMODACHI/Rankings%20Board_%20Popularity%20Ranking%20-%20Tomodachi%20Life%20OST.mp3>
+      </audio>
+      <script>
+         document.addEventListener("visibilitychange", (function() {
+           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+         }))
+      </script>
+   </body>
+</html>

@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>&#10032; MICROBLOG &#10032;</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <style>
+         * {
+         cursor: url(/WEBSITE/cursor.png),
+         auto !important;
+         }
+         @font-face {
+         font-family: Vesperings;
+         src: url(/WEBSITE/vesperings.ttf);
+         }
+         * {
+         font-family: Vesperings;
+         }
+         :root {
+         --background: #000;
+         --borders: #4b0101;
+         --text: red;
+         --alt-text: red;
+         --accent: #4b0101;
+         --verified: none;
+         /* CHANGE TO block IF VERIFIED USER */
+         --profile-pic: url(/WEBSITE/MICROBLOG/pfp.jpg)center;
+         /* MUST BE AT LEAST 134px by 134px; any size/dimension at or above that will work */
+         --header-bg: url(/WEBSITE/MICROBLOG/header.jpg)center;
+         /* MUST BE AT LEAST 600px by 200px; any size/dimension at or above that will work */
+         }
+         /* GENERAL */
+         ::selection {
+         background: var(--accent);
+         color: var(--lightest);
+         }
+         ::-moz-selection {
+         background: var(--accent);
+         color: var(--lightest);
+         }
+         * {
+         box-sizing: border-box;
+         }
+         html {
+         background: var(--accent);
+         }
+         body {
+         margin: 0;
+         background: url(/WEBSITE/MICROBLOG/glitterbats.gif)center fixed;
+         background-size: 200px;
+         color: var(--text);
+         font-size: 14px;
+         min-height: 100vh;
+         line-height: 2;
+         }
+         img {
+         max-width: 100%;
+         }
+         h1,
+         h2,
+         h3,
+         h4,
+         h5,
+         h6 {
+         margin: 0;
+         }
+         a {
+         text-decoration: none;
+         color: var(--accent);
+         -webkit-transition: all 0.5s ease-in-out;
+         -moz-transition: all 0.5s ease-in-out;
+         -ms-transition: all 0.5s ease-in-out;
+         -o-transition: all 0.5s ease-in-out;
+         transition: all 0.5s ease-in-out;
+         }
+         a:hover {
+         color: var(--accent);
+         }
+         .alt {
+         color: var(--alt-text);
+         }
+         #credit {
+         position: fixed;
+         left: 10px;
+         bottom: 10px;
+         display: block;
+         font-weight: bold;
+         font-size: 8px;
+         text-transform: uppercase;
+         letter-spacing: 3px;
+         writing-mode: vertical-rl;
+         transform: rotate(180deg);
+         white-space: nowrap;
+         color: #fff;
+         }
+         /* CONTAINER */
+         #twitter {
+         width: 600px;
+         margin: 0 auto;
+         background: var(--background);
+         border: 1px solid var(--borders);
+         border-bottom: none;
+         color: var(--text);
+         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+         }
+         .verified {
+         margin: 0 0 0 3px;
+         display: var(--verified);
+         }
+         /* HEADER */
+         #profile-header {
+         height: 200px;
+         background: var(--borders) var(--header-bg);
+         background-size: cover;
+         display: flex;
+         align-items: flex-end;
+         }
+         #profile-pic {
+         width: 134px;
+         height: 134px;
+         margin: 0 0 calc((134px / 2) * -1) 15px;
+         background: var(--accent) var(--profile-pic);
+         background-size: cover;
+         border-radius: 100%;
+         border: 2px solid var(--background);
+         }
+         #follow {
+         background: var(--accent);
+         color: #fff;
+         margin: 0 15px -54px auto;
+         padding: 0 25px;
+         height: 39px;
+         line-height: 39px;
+         border-radius: 30px;
+         }
+         /* PROFILE */
+         #profile {
+         padding: calc((134px / 2) + 10px) 15px 15px 15px;
+         line-height: 1.2;
+         }
+         #display-name {
+         font-size: 18px;
+         display: flex;
+         align-items: center;
+         }
+         #bio {
+         margin: 10px 0;
+         }
+         #account-details {
+         margin: 10px 0;
+         display: flex;
+         align-items: center;
+         flex-wrap: wrap;
+         }
+         #account-details img {
+         margin: 0 5px;
+         }
+         #account-details img:first-of-type,
+         #account-details img:last-of-type {
+         margin: 0 5px 0 0;
+         }
+         #divide {
+         width: 100%;
+         height: 5px;
+         }
+         /* VIEWBAR */
+         #viewbar {
+         display: flex;
+         align-items: center;
+         text-align: center;
+         height: 52px;
+         border-bottom: 1px solid var(--borders);
+         }
+         .selected {
+         border-bottom: 3px solid var(--accent);
+         color: var(--accent);
+         }
+         .option {
+         height: 49px;
+         line-height: 52px;
+         width: 100%;
+         margin: 0 0 -1px 0;
+         }
+         /* TWEETS */
+         .tweet {
+         padding: 15px;
+         border-bottom: 1px solid var(--borders);
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         }
+         .pfp {
+         width: 49px;
+         height: 49px;
+         margin: 0;
+         background: var(--accent) var(--profile-pic);
+         background-size: cover;
+         border-radius: 100%;
+         }
+         .t-body {
+         width: calc(100% - 49px - 10px);
+         }
+         .t-head {
+         display: flex;
+         align-items: center;
+         }
+         .user-time {
+         color: var(--alt-text);
+         margin: 0 0 0 5px;
+         }
+         .options {
+         margin: 0 0 0 auto;
+         }
+         .t-footer {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         color: var(--alt-text);
+         font-size: 12px;
+         margin: 10px 0 0 0;
+         }
+         .stat {
+         margin: 0 auto 0 5px;
+         }
+         .share {
+         margin: 0 auto 0 0;
+         }
+         .sm-head {
+         width: 100%;
+         margin: 0 0 5px 40px;
+         font-size: 11px;
+         color: var(--alt-text);
+         display: flex;
+         align-items: center;
+         }
+         .sm-head img {
+         margin: 0 5px 0 0;
+         }
+         /* PINNED TWEET */
+         .pinned {
+         margin: 0 0 10px 0;
+         box-shadow: 0 10px 0 0 var(--borders);
+         }
+      </style>
+   </head>
+   <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+   <style>
+      .font-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      background-color: black;
+      color: red;
+      font-family: Garamond, serif;
+      padding: 10px 15px;
+      border: 1px solid red;
+      cursor: pointer;
+      }
+   </style>
+   <script>
+      let fontChanged = false;
+      let styleEl;
+
+      function toggleFont() {
+          if (!fontChanged) {
+              styleEl = document.createElement('style');
+              styleEl.id = "fontOverride";
+
+              styleEl.innerHTML = `
+                  * {
+                      font-family: Garamond, serif !important;
+                  }
+              `;
+
+              document.head.appendChild(styleEl);
+              fontChanged = true;
+
+          } else {
+              const existing = document.getElementById("fontOverride");
+              if (existing) existing.remove();
+
+              fontChanged = false;
+          }
+      }
+   </script>
+   <body>
+      <article id="twitter">
+         <header id="profile-header">
+            <div id="profile-pic"></div>
+            <b id="follow">Follow</b>
+         </header>
+         <main id="profile">
+            <h1 id="display-name">🥀🕯️🦇🦢</h1>
+            <div class="alt">@vesperings</div>
+            <div id="bio">voidposting. <br>excerpts from my diary and other musings. </div>
+            <div id="account-details">
+               <img src="/WEBSITE/MICROBLOG/location.png"> Aleka's Attic <img src="/WEBSITE/MICROBLOG/link.png">
+               <a href="/index">vesperings.com</a>
+               <img src="/WEBSITE/MICROBLOG/birth.png"> Born October 31 <span id="divide"></span>
+               <img src="/WEBSITE/MICROBLOG/joined.png"> Joined October 2024
+            </div>
+            <b>69</b>
+            <span class="alt">Following</span>
+            <b>127</b>
+            <span class="alt">Followers</span>
+         </main>
+         <nav id="viewbar">
+            <b class="selected option">Tweets</b>
+            <b class="option">Tweets & Replies</b>
+            <b class="option">Media</b>
+            <b class="option">Likes</b>
+         </nav>
+         <section class="pinned tweet">
+            <div class="sm-head">
+               <img src="/WEBSITE/MICROBLOG/pinned.png"> Pinned Tweet
+            </div>
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <div class="user-time">@vesperings · Mar 16 2025</div>
+               </header>
+               <img src="/WEBSITE/MICROBLOG/pinned.gif">
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+            </main>
+         </section>
+        <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · April 7 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            Really enjoying SH2R so far, but something about it makes me feel nauseous. Granted I don't play many games, but this has never happened to me before. I thought I was coming down with something for a moment.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+        <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · April 5 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            I wish you could look past the fact I was born a girl, see me for who I am.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+        <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · April 5 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            I am such an angry person, but I am also so so tired.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+        <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · April 5 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            Saw a house for sale, no more than a minute's walk away. Thought to myself, that's as far as I will ever be able to get away from here, if that. And maybe, just maybe, it would be enough.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+        <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · April 5 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            I fight so hard against control, clinging to what little markers of personhood I have left. I will not let you take even those from me. But fighting every single moment is exhausting and I often find myself wondering how much simpler life would be if I gave in and submitted.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+        <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · April 4 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            You know it's a juicy one when you get too shy to tell your diary about it.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+        <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · April 4 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            What I want and what I want to be are completely different things, and often at odds with one another. Who I am struggles to find its footing between the two.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · April 3 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            We got Mark Lee leaving NCT before GTA 6 💀💀💀
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · April 1 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            I was right about this font being useful in weeding out the type of person I want to keep away from my page. The modern internet has made people so lazy and entitled that they do not appreciate the actual ~experience~ of a website at all. All anyone wants is to consume consume consume without any resistance.How are you going to complain about not being able to read my handwriting when the "change font" button is RIGHT THERE!!!!
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · March 31 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            I try to keep it up because I'm too old to be sad tragic beautiful, it is just pathetic. But I am so tired of it. No more sugar to mask the rot.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · March 31 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            I feel sick. My life is not my own and never will be. What point is there in living this way? No wonder I destroy myself. If only there was some escape within reach.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · March 31 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            Needing a VPN to download a VPN has me feeling like 2014? Taylor Swift.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+
+           <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · March 31 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            Words cannot describe how pissed off I am right now. You have no respect for my boundaries or privacy. You barely see me as a person and have violated me without even considering your wrongdoing. You are dead to me.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+
+
+
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · March 31 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            For a feminist, I sure do love pretty boy brunette characters who are secretly violent misogynists.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+
+
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · March 31 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            Internet used to be a space, yes, but more importantly internet used to be a thing you huddled over with your friends and cousins discovering new, possibly traumatising, things.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+            <header class="t-head">
+               <b>🥀🕯️🦇🦢🍒</b>
+               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+               <div class="user-time">@vesperings · March 30 2026</div>
+               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+            </header>
+            There is this one part in Justin Bieber's <i>Flatline</i> that I swear could be a NBHD song.
+            <footer class="t-footer">
+               <img src="/WEBSITE/MICROBLOG/comment.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/retweet.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/like.png">
+               <div class="stat"></div>
+               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+            </footer>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 30 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               With my destructive tendencies and constant desire for a fresh start, I am honestly quite surprised I have never nuked this website. The homepage is near identical to when I first made it. Back in my Weebly days, I was never able to commit to one for more than a few months at a time.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 30 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Addicted to cyberstalking anyone who interacts with this website. You are all such fascinating individuals. &lt;3333
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 27 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               The joke of it all is that the reason I crave it so badly is exactly because I am so vehemently against it!
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 27 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I am feeling a little sad about all the journals I have either lost or destroyed over the course of my life, how much of my existence has been erased forever. I have to remind myself though, that while I did keep these for many years, I was never that regular, having the tendency to only pick up my pen in anger or distress. I was far too in my own head to document any real memories. If it bothers me so much, I can try recording them now for the sake of posterity but what is far more important is to learn from my mistakes and honour my writing practise in the present. I have been slipping lately, spending too much time on my screen, but I need to write like I need water, and can feel the miasma forming whenever I abandon it for too long.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 26 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Just made an iced mango matcha and I <i>will</i> be drinking this daily for the forseeable future.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 23 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               My blood might really be Neo Pearl Champagne with how much matcha I've been drinking lately.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 12 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I never got why Robin (Batman) was called Robin until I looked up a picture of an American robin (bird.)
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 6 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Am I insane or does <i>On the Wire</i> by Sisters of Mercy sound identical to the track that plays when Phoenix Wright points out an objection in <i>Ace Attorney</i>?
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 5 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               The term webmistress conjours up for me an image of an Elvira-eque gothic goddess in a skin-tight midnight black velvet gown and a cape made of spider silk.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 4 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Peer pressure doesn't work on me, I still love skinny jeans.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 4 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Truly, I cannot understand myself. I embody that which I desire in others as my own, yet by its nature it is antithetical to my heart.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 4 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I've replaced almost every social media service I have used with Neocities, except ironically the actual social aspect of them because none of my circle wants to make a website.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 3 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Who was going to tell me my silly little website made it onto page 3 of Special Sauce??? I was wondering where all these views came from all of a sudden.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 2 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Love is merely fodder for grief.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 1 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I concede it all to you; my ideals, my superiority. Teach me what I have never known and remake me in your image.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 1 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               The only issue with having a "vintage" signature scent is the constant possibility of smelling like his mother.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · February 24 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               You are now looking at the proud owner of a custom web domain!!
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · January 17 2026</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Some of my favourite non-perfume scents: freshly spun sugar, the caramelised nuts outside the British Museum (disappointingly, they do not taste anywhere near as delicious), the smoke from burning wood, summer wisteria, the night air — particulary in a forest, Dettol, occasionally the air from my university town when it would musteriously smell like chocolate cake no matter where you were
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 31 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Saw, for the first time, Orion in his entirety, seemingly taking revenge on Artemis.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 17 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I need to switch to archival ink once these bottles run out. I love the colour but they smudge do badly even with clammy hands. Damn Parker discontinuing the red Quink.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 17 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               The state of the job market is so bleakly fascinating. Postings written by AI, applied to by people using AI, assessed by people using AI. No wonder Linkedin warriors are the way that they are.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 17 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I try to swallow my fear back down with eyestrain and pixels. Death, so much death, and creeping closer in proximity. Always in the periphery of my mind, the very thought inviting it closer, like that woman from my dreams all those years ago. Ignoring it is the only way to keep it at bay and I am failing.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 9 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I am like 65% sure the guy sitting in front of me is that one brown comedian, Romesh or Romil or something.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 5 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               What I consider to be the real me I rarely embody, meaning that is not really who I am. Instead I am this…
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 5 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I am a coward, too scared to face the discomfort of existing in the mind and body I have ruined, so I just numb myself with distractions that only make me worse.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 5 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Sisyphus' cereal bowl.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 4 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I think my brain is too fried to fully appreciate the sublime. I hope that is not permanent and killing my screen-time will fix my relationship with nature. I wish I could be a poet.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · December 4 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Yesterday we went on a drive to the top of some hill at night to see the city lights, ankles deep in the snow. They seemed to flicker like a mirage and I traced planes from dots in the sky all the way to landing on the runway.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · September 22 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Oh, yes. I act like I'm so above it, so much better than you. I mock and sneer to hide that really, I'm the worst of all.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · September 20 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Rewatching <i>Scream</i> was a bad idea.. I am going insane.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · September 18 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Gained self-knowledge only accessible when trying to decide what film to watch before bed.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · September 15 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I am taking steps to combat my hitherto non-existence by inviting beauty into my life. Today was a languid day, spent in a sheer nighdress and lace robe. Picked two roses from the garden - one pale pink perfumed like Turkish delight, and the other traditional crimson - and put them in a small glass lechythus atop my writing desk. Purified my fountain pen, treasure of stolen sentimentality, purging blood and rose syrup into porcelain waters. Finally let myself remember the nightmare that has haunted me for 18 years. I am still unsure what it means, and it still makes me uneasy. I know that woman is still out there, and she will come for me sooner or later. I have evaded her long enough.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · June 04 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Salvation! Losing myself so completely to a new obsession. I can never give myself partially, my love is fanaticism.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · June 20 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I understand Blanche DuBois so completely.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · June 09 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I don't think you'll see this, but it is the only time I'll address you. For once, and only once, you'll be correct in assuming something is about you. Don't flatter yourself by taking credit for anything else. I do not want you in my life. I don't care what your intentions are, stay away.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · June 08 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Jaejoong!Light and Kento!L <i>Death Note</i>
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · June 07 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Saw a bat flittering around in my gaden yester evening. Plato's <i>Syposium</i> has somehow become my all-time comfort read, and I'm not sure what that says about me.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · May 24 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               You wear that human skin so well you'd fool even me if I didn't know better.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · May 07 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Among other things, my name means "to fight" in Swahili. Caught myself browsing pictures of flowers on Pinterest during the nexus of spring. There is probably something to be said about this, but the analysis is too obvious.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · May 06 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Hot sticky sweat like the peel of a slightly overripe mango.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · May 02 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Make a commitment to start noticing the small, insignificant moments in life and am immediately rewarded by a large, very significant horse on my way to class. I take the shortcut across the field thinking about Pythagoras the whole time. A missing person’s poster is pinned to a tree. A goose perched atop a particularly large bush amuses me. The cloying scent of salted chemical caramel is inescapable everywhere I go. I'd wager Lush or Sol de Janeiro. Suddenly I don't mind how faint my own perfume is.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · May 01 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I keep thinking of a comment I saw that said the golden rule of existing on the internet is to create more than one consumes. Unrealistic, perhaps, but gives me much to think about.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 30 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Crow feasts on the guts of a rabbit on the green in front of the church. Sees me watch and hops away in what human eyes might misconstrue as embarassment.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 28 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I'll give myself fully to you again soon, I promise. I just need some sleep.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 28 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               A fly has been assailing me all day, buzzing in my ear, following me from room to room. Even the shower. I don't want to kill it, being annoying doesn't warrant death, but it reminds me of you, devil, and I need it GONE GONE GONE. Did you finally do it? Am I being haunted?
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 27 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Alexander Skarsgard as Edward Snowden. Send Tweet.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 26 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Mmmm Benadryl. zzzzzz
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 26 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               My instincts are never wrong and I've grown wise enough to listen at the first twig crack. I ache to my marrow and will never be free because it's who I am. I think I'm incapable of feeling but bloom with sentimentality. I crave what can only be possessed in dreams and alas I am insomniac. I hope someday I can purge this hatred from my heart. I miss when God was mine.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 24 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Let's see Paul Allen's carrd.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 23 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Corvids caw and sweet petrol and asphalt sting my nose. It’s almost 6PM, but the sun shines tepidly onto my still damp hair. Slight breeze on my ankles. My mask (the disposable kind — black) doesn’t fit me right no matter how hard I pinch the bridge of my nose. That act makes me sneeze. Low hanging branchlets stroke my head as I pass.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 14 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               A spray of wisteria has bloomed overnight. Clouds part to let stream a weak patch of sunlight and a pigeon perches atop the water fountain. A squirrel clambers down the fence and across freshly mown grass, bushy tail twitching. I watch these things from my bedroom window, glued to a machine.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 11 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Old enough that when I was in high school and you needed to find a "nice" picture on Google Images or Pinterest, you'd add "tumblr" to the end of your search query instead of "aesthetic" or "--core" like kids do now. Of course, the firewall would block any mention of a social networking site, so you'd have to misspell "tumblr" as "tumbler".
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Apr 11 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Altruism is the perfect cover for a voyeur.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Mar 27 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I am watching Carmilla (2019) right now to compare to the novel and I am not loving how much it deviates from the plot at the moment but there is a scene where Carmilla teaches Laura to control her breath until she faints and I just remember [REDACTED] and I used to do that when we were younger. Even though she seems insufferable now, I miss the time we spent together.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Mar 27 2025</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I think a lot of my flaws stem from the deeply rooted belief I have that if I cannot do something perfectly, I may as well not do it at all. I am well are this thinking is flawed, but I just cannot help myself. My perfectionism ironically leads to me doing nothing at all and having to rush in the end. I am trying to combat this but I fall back into old habits almost immediately. Still I will try not to waste the rest of the day and make use of my time. Before I go, I should catch you up a bit since I did not write much yesterday or this morning. I have been talking to Sanya a lot recently and he added me to that friend group’s group chat. Yay! Friends!
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · July 8 2024</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Psychological grievances aside, I will forever be grateful I was born into a matriarchical househhold.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · July 6 2024</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               It was a rescued stray cat moment, but I'm never going to tell you that.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · May 5 2024</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               If you were any less pure, I'd feel falling into idolatory. But nothing about you could possible be sinful. God makes Himself known to me through you - one of His greatest creations.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings </div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               There's a certain hazy, imperfect quality to memories which can only really be captured well using analog. Not everything is in perfect HD focus, nor can every single second be captured, making the moments one does decide to preserve countlessly more meaningful.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · January 1 2024</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               They say nostalgia is about chasing the effortless joy of childhood. So what is the name for my burden - longing for a past that was never mine, that never existed?
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · January 1 2024</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               I need you to be mine because you have become my vessel for comprehending God's divinity.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings </div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               My flesh is rotten and my blood impure, but dep within my bones (<i>deep</i>) is thesoft ache of perfection.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · 4th December 2023</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               You are my muse, and my body is my canvas. For your eyes alone I endure.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Oh, I exist in a perpectual state of self-imposed martyrdom.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings </div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Sprinkled stardust on my eyes, lips of black cherry wine.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings </div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Suddenly the reflection shifts, from a pathetic yet harmless girl to something monstrous. Doe eyes turn dead and predatory, mask slips to reveal a crooked witch nose. But she is committing no egregious sin. It is chance (or fate!) that has intertwined their lives. She is merely observing.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · Nov 29 2023</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               Like a cat I cling to the faintest sliver of companionship, wide eyed and sesperate, claws drawn at any slight.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+         <section class="tweet">
+            <div class="pfp"></div>
+            <main class="t-body">
+               <header class="t-head">
+                  <b>🥀🕯️🦇🦢🍒</b>
+                  <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
+                  <div class="user-time">@vesperings · March 1 2023</div>
+                  <img src="/WEBSITE/MICROBLOG/options.png" class="options">
+               </header>
+               He was beautiful. A young Adonis who would have inspired those ancient greats to dedicate the remainder of their lives, meaningless before having gazed upon him, in recreating his form in dull marble, praying in vain for the bestowal of Pygmalion's gift. But the work of God cannot be so easily recreated.
+               <footer class="t-footer">
+                  <img src="/WEBSITE/MICROBLOG/comment.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/retweet.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/like.png">
+                  <div class="stat"></div>
+                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
+               </footer>
+            </main>
+         </section>
+      </article>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/MICROBLOG/nbhd_hatemachine.mp3>
+      </audio>
+      <script>
+         document.addEventListener("visibilitychange", function() {
+           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+         })
+      </script>
+      <!-- CREDIT - DO NOT REMOVE -->
+      <a href="http://tessisamess.insanejournal.com/" id="credit">TESSISAMESS</a>
+   </body>
+</html>

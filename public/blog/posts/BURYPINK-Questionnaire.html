@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;     
+         top: 10px;          
+         left: 10px;            
+         z-index: 9999;         
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+         
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+         
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+         
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+         
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+         
+                 fontChanged = false;
+             }
+         }
+      </script>    
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+      <header>
+         <div class="header-image">
+            <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+         </div>
+         <div class="header-content">
+         </div>
+      </header>
+      <aside class="left-sidebar">
+         <div class="sidebar-section">
+            <div class="sidebar-title">
+               <h5>PROFILE</h5>
+            </div>
+            <blockquote>
+               <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don’t know who he is get da hell out of here!)</p>
+            </blockquote>
+         </div>
+         <div class="sidebar-section">
+            <div class="sidebar-title">
+               <h5>RECENT POSTS</h5>
+            </div>
+            <div id="recentpostlistdiv"></div>
+         </div>
+         <div class="sidebar-section">
+            <div class="sidebar-title">
+               <a href="/blog/archive">
+                  <h5>ARCHIVE</h5>
+               </a>
+            </div>
+         </div>
+         <div class="sidebar-section">
+            <div class="sidebar-title">
+               <a href="/microblog">
+                  <h5>MICROBLOG</h5>
+               </a>
+            </div>
+         </div>
+      </aside>
+      <main id="content">
+      <section>
+      <h1 id="postTitleH1"></h1>
+      <h4 id="postDate"></h4>
+      <p><img src="/WEBSITE/BLOG/section.png" align="left">
+      <p>Doing this because I'm bored LOL. Original is <a href="https://burypink.neocities.org/gifts">here</a>.</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p><strong>1) time and date u started this?&nbsp;</strong>25th February 2026 16:47.</p>
+      <p>&nbsp;</p>
+      <p><strong>2) asl?&nbsp;</strong>Man, I haven't heard that in years. 22 F LDN.</p>
+      <p>&nbsp;</p>
+      <p><strong>3) opinions on musicals?&nbsp;</strong>Not for me.</p>
+      <p>&nbsp;</p>
+      <p><strong>4) favorite snack?&nbsp;</strong>Nuts with dried cranberries and dark chocolate.</p>
+      <p>&nbsp;</p>
+      <p><strong>5) have u ever been in love?&nbsp;</strong>No.</p>
+      <p>&nbsp;</p>
+      <p><strong>6) favorite pokemon?&nbsp;</strong>If we are not going based on appearance, I would say Lugia for sentimental reasons, but my answer will probably change once I finally do my DS Pokemon games playthrough.</p>
+      <p>&nbsp;</p>
+      <p><strong>7) mario kart main?&nbsp;</strong>Rosalina.</p>
+      <p>&nbsp;</p>
+      <p><strong>8) tf2 main?&nbsp;</strong>I have no idea what that is.</p>
+      <p>&nbsp;</p>
+      <p><strong>9) do you laugh at youtube poops?&nbsp;</strong>Another thing I haven't heard in years.... Also, no.</p>
+      <p>&nbsp;</p>
+      <p><strong>10) are you listening to music right now?&nbsp;</strong>No, because I have a headache. (Yet I'm still on my screen doing this...)</p>
+      <p>&nbsp;</p>
+      <p><strong>11) favorite shape?&nbsp;</strong>Heart.</p>
+      <p>&nbsp;</p>
+      <p><strong>12) do you believe in astrology?&nbsp;</strong>No, but I think it is fun.</p>
+      <p>&nbsp;</p>
+      <p><strong>13) do you believe in the occult?&nbsp;</strong>Yes. I am the occult.</p>
+      <p>&nbsp;</p>
+      <p><strong>14) opinions on vocaloid?&nbsp;</strong>I never really got into it, but always find the fact GAKT voices one</p>
+      <p>of the characters hilarious.</p>
+      <p>&nbsp;</p>
+      <p><strong>15) would you ever want to be a rockstar?&nbsp;</strong>Yes, but a guy rockstar because I've seen how you all treat women in the music scene.</p>
+      <p>&nbsp;</p>
+      <p><strong>16) do you easily get stressed?&nbsp;</strong>No.</p>
+      <p>&nbsp;</p>
+      <p><strong>17) what is/was your favorite class in high school?&nbsp;</strong>English and Classics.</p>
+      <p>&nbsp;</p>
+      <p><strong>18) what pokemon type would you be? dual types are allowed lol&nbsp;</strong>Dark psychic.</p>
+      <p>&nbsp;</p>
+      <p><strong>19) rei or asuka?&nbsp;</strong>Hmmm, Rei maybe?</p>
+      <p>&nbsp;</p>
+      <p><strong>20) favorite html tag?&nbsp;</strong>&lt;a href=&gt; as of late.</p>
+      <p>&nbsp;</p>
+      <p><strong>21) are you religious?&nbsp;</strong>I am not very good at it.</p>
+      <p>&nbsp;</p>
+      <p><strong>22) opinions on nightcore?&nbsp;</strong>You mean <em>Alvin and the Chipmunks</em> versions?</p>
+      <p>&nbsp;</p>
+      <p><strong>23) did you go through any major phase? (emo, goth, weeaboo, etc)&nbsp;</strong>... Take one look at my website and tell me what you think.</p>
+      <p>&nbsp;</p>
+      <p><strong>24) are you good at drawing?&nbsp;</strong>No, but I have always wanted to be.</p>
+      <p>&nbsp;</p>
+      <p><strong>25) do you crack your joints?&nbsp;</strong>My knuckles, yes.</p>
+      <p>&nbsp;</p>
+      <p><strong>26) do you read visual novels?&nbsp;</strong>Only&nbsp;<em>Ace Attorney&nbsp;</em>and&nbsp;<em>Doki Doki Literature Club.</em></p>
+      <p>&nbsp;</p>
+      <p><strong>27) can you sew?<em>&nbsp;</em></strong>A little.</p>
+      <p>&nbsp;</p>
+      <p><strong>28) can you cook?&nbsp;</strong>Yes.&nbsp;</p>
+      <p>&nbsp;</p>
+      <p><strong>29) most expensive thing you've bought?&nbsp;</strong>My Apple Watch. More recently, the&nbsp;<em>Supernatural&nbsp;</em>complete box set, though that is far more embarassing.</p>
+      <p>&nbsp;</p>
+      <p><strong>30) opinions on cosplay?&nbsp;</strong>I don't have any opinions on it. It's cool, I guess.</p>
+      <p>&nbsp;</p>
+      <p><strong>31) what's your most hated band/musician?&nbsp;</strong>I don't know. I&nbsp;<em>do&nbsp;</em>know who my most hated fandoms are, though...</p>
+      <p>&nbsp;</p>
+      <p><strong>32) are you a dramatic person?&nbsp;</strong>Only as a bit.</p>
+      <p>&nbsp;</p>
+      <p><strong>33) what emoticon do you use most?&nbsp;</strong>:3</p>
+      <p>&nbsp;</p>
+      <p><strong>34) can a miracle certainly occur?&nbsp;</strong>If it was certain, it would not be a miracle, would it?</p>
+      <p>&nbsp;</p>
+      <p><strong>35) would you let a vampire suck ur blood?&nbsp;</strong>I am a vampire.</p>
+      <p>&nbsp;</p>
+      <p><strong>36) do you have a celebrity crush?&nbsp;</strong>Yes, but he's dead so....</p>
+      <p>&nbsp;</p>
+      <p><strong>37) do you like snow?&nbsp;</strong>Yes, when it's freshly fallen. Not so much when it turns to sludge.</p>
+      <p>&nbsp;</p>
+      <p><strong>38) were you really into greek mythology as a kid?&nbsp;</strong>I was and I still am. Thanks&nbsp;<em>Poptropica.</em></p>
+      <p>&nbsp;</p>
+      <p><strong>39) what are some things you could competently deliver a speech on?&nbsp;</strong>I'll get doxxed if I say it on here, but all my friends know exactly what it is lmao.</p>
+      <p>&nbsp;</p>
+      <p><strong>40) are you good at spelling?&nbsp;</strong>Mostly.</p>
+      <p>&nbsp;</p>
+      <p><strong>41) which touhou wud u fuk?&nbsp;</strong>Did you just have a stroke?</p>
+      <p>&nbsp;</p>
+      <p><strong>42) do you think there's going to be a robot takeover?&nbsp;</strong>No. Automation stealing jobs is far more likely than sentient AI overlords.</p>
+      <p>&nbsp;</p>
+      <p><strong>43) HAS SCIENCE GONE TOO FAR??!?!??!?!&nbsp;</strong>Sometimes too far, sometimes not far enough.</p>
+      <p>&nbsp;</p>
+      <p><strong>44) would you be an angel or devil?&nbsp;</strong>i can be your angle...or yuor devil</p>
+      <p>&nbsp;</p>
+      <p><strong>45) sine, cosine, or tangent?&nbsp;</strong>I remember liking sine in high school because on a calculator it was "sin".</p>
+      <p>&nbsp;</p>
+      <p><strong>46) do you like licorice?&nbsp;</strong>I don't know, I've only eve tries it as perfume.</p>
+      <p>&nbsp;</p>
+      <p><strong>47) whats one thing you cant stand that everyone else loves?&nbsp;</strong>Almost everything.</p>
+      <p>&nbsp;</p>
+      <p><strong>48) what books did you like as a kid?&nbsp;</strong>I read anything I could get my hands on, including the dictionary and encyclopedia cover to cover. And the normal&nbsp;<em>Percy Jackson, Diary of a Wimpy Kid</em> too I suppose.</p>
+      <p>&nbsp;</p>
+      <p><strong>49) can you play any instruments?&nbsp;</strong>Unfortunately not.</p>
+      <p>&nbsp;</p>
+      <p><strong>50) what song would you want to play at your wedding?&nbsp;</strong>I wouldn't want a wedding.</p>
+      <p>&nbsp;</p>
+      <p><strong>51) do you believe in reincarnation?&nbsp;</strong>No.</p>
+      <p>&nbsp;</p>
+      <p><strong>52) finish the sentence: I'm just a guy who ______&nbsp;</strong>is a girl.</p>
+      <p>&nbsp;</p>
+      <p><strong>53) have you been to another continent?&nbsp;</strong>Yes. North America and Asia.&nbsp;</p>
+      <p>&nbsp;</p>
+      <p><strong>54) whats your worst habit?&nbsp;</strong>Screen.</p>
+      <p>&nbsp;</p>
+      <p><strong>55) favorite vegetable?&nbsp;</strong>Potatoes. I don't care, they are a real vegetable to ME!!!</p>
+      <p>&nbsp;</p>
+      <p><strong>56) whats something stupid that scared the shit outta you as a kid?&nbsp;</strong>The fire demon tied to the girl I sat next to on the bus when I was 4.</p>
+      <p>&nbsp;</p>
+      <p><strong>57) whats one of your guilty pleasures?&nbsp;</strong>Justin Bieber. But I don't feel guilty about it.</p>
+      <p>&nbsp;</p>
+      <p><strong>58) would you rather be a ghost or a vampire?&nbsp;</strong>Vampire.</p>
+      <p>&nbsp;</p>
+      <p><strong>59) what do you fear most?&nbsp;</strong>Evil Afro Guy</p>
+      <p>&nbsp;</p>
+      <p><strong>60) do you sleep with any plushies?&nbsp;</strong>I have a couple on my bed, but I don't sleep with them.</p>
+      <p>&nbsp;</p>
+      <p><strong>61) what hobby do you just not understand?&nbsp;</strong>I don't know, most of them.</p>
+      <p>&nbsp;</p>
+      <p><strong>62) do you like the taste of alcohol?&nbsp;</strong>No.</p>
+      <p>&nbsp;</p>
+      <p><strong>63) are you a hopeless romantic?&nbsp;</strong>Yes, but also deeply cynical which is an interesting mix.</p>
+      <p>&nbsp;</p>
+      <p><strong>64) which deadly sin best fits you?&nbsp;</strong>Sloth, if we are being honest.</p>
+      <p>&nbsp;</p>
+      <p><strong>65) which of your physical features do you like the most?&nbsp;</strong>I don't know. Not because of any self-depracation, but because I barely notice myself.</p>
+      <p>&nbsp;</p>
+      <p><strong>66) are your ears pierced?&nbsp;</strong>Yes. I currently have 9 ear piercings and am looking to get more.&nbsp;</p>
+      <p>&nbsp;</p>
+      <p><strong>67) have you ever been in a physical fight?&nbsp;</strong>Is it a fight if it's one sided?</p>
+      <p>&nbsp;</p>
+      <p><strong>68) where do you buy your clothes?&nbsp;</strong>Thrifted, mostly.</p>
+      <p>&nbsp;</p>
+      <p><strong>69) where would you live if you could live anywhere?&nbsp;</strong>A castle in London. Such a thing likely does not exist, but you said anywhere.</p>
+      <p>&nbsp;</p>
+      <p><strong>70) do believe in magic? or is it all a trick?&nbsp;</strong>I do.</p>
+      <p>&nbsp;</p>
+      <p><strong>71) have you read umineko when they cry? you should!&nbsp;</strong>I have never heard of this until now.</p>
+      <p>&nbsp;</p>
+      <p><strong>72) what is the worst chore to do?&nbsp;</strong>Washing dishes.</p>
+      <p>&nbsp;</p>
+      <p><strong>73) what did your parents almost name you?&nbsp;</strong>I can't tell you, but I can tell you it's a boy's name meaning "hostage". That fits me pretty well, actually.</p>
+      <p>&nbsp;</p>
+      <p><strong>74) what would you want your name to be if you were not your current gender?&nbsp;</strong>See above.</p>
+      <p>&nbsp;</p>
+      <p><strong>75) what were your first words?&nbsp;</strong>I don't know.</p>
+      <p>&nbsp;</p>
+      <p><strong>76) what do you want your last words to be?&nbsp;</strong>I'm going to live forever.</p>
+      <p>&nbsp;</p>
+      <p><strong>77) when did you first regularly start going online?&nbsp;</strong>When I was 6 years old, maybe?</p>
+      <p>&nbsp;</p>
+      <p><strong>78) what year do you miss the most?&nbsp;</strong>2015.</p>
+      <p>&nbsp;</p>
+      <p><strong>79) are you psychic?&nbsp;</strong>Yes.</p>
+      <p>&nbsp;</p>
+      <p><strong>80) would you fuck a clone of yourself? you're not allowed to kill yourself.&nbsp;</strong>No.</p>
+      <p>&nbsp;</p>
+      <p><strong>81) what do you use to listen to music?&nbsp;</strong>Hello Kitty CD Player.</p>
+      <p>&nbsp;</p>
+      <p><strong>82) whats the biggest city you've been to?&nbsp;</strong>New York.</p>
+      <p>&nbsp;</p>
+      <p><strong>83) favorite animal?&nbsp;</strong>Bats and cats.</p>
+      <p>&nbsp;</p>
+      <p><strong>84) what web browser do you use?&nbsp;</strong>Internet Explorer.</p>
+      <p>&nbsp;</p>
+      <p><strong>85) are you allergic to kitty cats???????????&nbsp;</strong>No, thank God.</p>
+      <p>&nbsp;</p>
+      <p><strong>86) do you like energy drinks?&nbsp;</strong>My bloodstream is 69% Monster Ultra.</p>
+      <p>&nbsp;</p>
+      <p><strong>87) would ever spend money on tf2 unusuals/csgo skins/gacha pulls/etc&nbsp;</strong>No.</p>
+      <p>&nbsp;</p>
+      <p><strong>88) when do you usually go to bed?&nbsp;</strong>5-6AM.</p>
+      <p>&nbsp;</p>
+      <p><strong>89) how often do you wash your hair?&nbsp;</strong>Depends.</p>
+      <p>&nbsp;</p>
+      <p><strong>90) would you download a car?&nbsp;</strong>It's "you wouldn't steal a car", actually.</p>
+      <p>&nbsp;</p>
+      <p><strong>91) what was your favorite show as a kid?&nbsp;</strong>Cartoon Network.</p>
+      <p>&nbsp;</p>
+      <p><strong>92) whats the silliest hat you own?&nbsp;</strong>Baseball cap that's so flattened it makes me look like I'm in&nbsp;<em>Peaky Blinders.</em></p>
+      <p>&nbsp;</p>
+      <p><strong>93) what album/song do you're feeling angsty&nbsp;</strong><em>The Neighbourhood</em>'s discography for teenage angst, and occasionally&nbsp;<em>Hurt&nbsp;</em>by Nine Inch Nails</p>
+      <p>&nbsp;</p>
+      <p><strong>94) do you make OCs?&nbsp;</strong>I used to.</p>
+      <p>&nbsp;</p>
+      <p><strong>95) whats the goofiest thing you do when completely alone?&nbsp;</strong>I don't know.</p>
+      <p>&nbsp;</p>
+      <p><strong>96) do you like fireworks?&nbsp;</strong>No! They might be pretty, but they are loud, annoying, and awful for the environment. My heart aches for all of the animals subject to them.</p>
+      <p>&nbsp;</p>
+      <p><strong>97) favorite painter?&nbsp;</strong>Hmm... very many, but lately I have been partial to the Pre-Raphaelites.</p>
+      <p>&nbsp;</p>
+      <p><strong>98) favorite numbers?&nbsp;</strong>13, 9.</p>
+      <p>&nbsp;</p>
+      <p><strong>99) what genre of vidya gaems are you really good at? (fps, fightan, danmaku, racing, whatever)&nbsp;</strong>Poptropica.</p>
+      <p>&nbsp;</p>
+      <p><strong>100) time and date you finished this?&nbsp;</strong>25th February 2026 20:17. (Fell asleep for a bit)</p>
+      </p>
+      <br>
+      <img src="/WEBSITE/BLOG/divider.png">
+      <br>
+      <div id="nextprev"></div>
+      <br>
+      <h1>Add a Comment</h1>
+      <br>
+      <div id="convocomet-widget" data-site="104354991187894" data-page="[BURYPINK_questionnaire]"></div>
+      <script src="https://convocomet.dev/widget.js" async></script>
+      <script>
+         </section>
+         </main>
+         </div>
+         <script src="/blog/script.js">
+      </script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

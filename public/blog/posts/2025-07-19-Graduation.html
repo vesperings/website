@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;     
+         top: 10px;          
+         left: 10px;            
+         z-index: 9999;         
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+         
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+         
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+         
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+         
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+         
+                 fontChanged = false;
+             }
+         }
+      </script>    
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don’t know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>           
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+               <img src="/WEBSITE/BLOG/section.png" align="left">
+               <p>Graduation day was so incredibly hectic and exhausting. I woke up early to ensure I had ample time to do my makeup. My mother told me not to do it "dark and colourful" but it was too late by then. We left at 9:30AM as we needed to purchase some clothes for the ceremony.</p>
+               <br>
+               <p>While walking from the car park to the city centre, my mother decided to browse a charity shop, and for the first time, bought a dress from there. Surprising considering her disdain for my thrifting. Then we went to H&amp;M, where I did find some trousers - flares and cigarettes, the latter of which I changed into. They also had a wine coloured version of the satin shirt I was wearing, which I'll pick up next time. We also picked up an umbrella - thank God.</p>
+               <p>I showed my mother to the Red House antique centre and rushed to Nox of York to get a perfume oil before running the rest of my errands. Unfortunately, they were sold out, but they still had the spray in stock, so I got it because I doubt I'll be in York again any time soon. It's much stronger than I expected and I can catch it wafting around me throughout the day, but I don't enjoy it as much as the oil. It reminds me of the red diamond shamed car freshener I accidentally stole in Saudi Arabia assuming it was a sample. I used to wear it as a hairtie. My sister later said the spray smelled like cleaning products :/ Not very vampiric.</p>
+               <br>
+               <p>I tried some shoe shops nearby, but it was surprisingly impossible to find a basic pair of red heels. I trecked all the way to Primark - in the rain - and still found no heels. My mother then called me *back* to the high street to check out Deichmanns. I still found nothing. We headed back, stopping to get Pret wraps and having drinks at Black Sheep. After we finished, we returned to the car and drove to TKMaxx. It was situated within a large business park which we should have come to in the first place instead of wasting our time at the outlet the day before. Here I finally found a pair of shoes. Still not red but good enough. I believe I'll be able to get use out of them too, they are a black leather pointed shoe with eyelet buckle detailing and a block heel. Ever so slightly edgy but still reading as professional. Changed clothes in the ASDA disabled toilet and then left for university.</p>
+               <br>
+               <p>My makeup had been both sweated and washed off by the rain. I attempted to redo it in the car to some success, but I didn't look how I wanted to. I went with my father to figure out what we were supposed to do, with him holding an umbrella over me the entire time so my suit jacket wouldn't be ruined by the rain. The entire event was so disorganised - there were no signs or stewards explaining anything, and the weather only amplified the chaos. Our first order of business was to collect the gown and hat, after which I sent my father to bring my sister and mother from the car so we could have our photos taken. I ran into my old housemates while searching for the queue. It was SO LONG that I was still near the end by the time my family arrived. They waited inside because it was raining so hard while I got the tickets. I fail to understand why they did not just email or post them. It was a complete waste of time and we had to rush to get our photos taken because the ceremony was starting soon.</p>
+               <br>
+               <p>It wasn't that ineresting. I had been seated between two people I've (seperately) done group projects with. Claire pulled out a Palestine flag on stage and the Chancellor's face turned so incredibly sour. I could have sworn some of the staff rolled their eyes. Margaret Atwood also recieved an honorary doctorate and gave a speech via webcam.</p>
+               <br>
+               <p>We drove back towards the hotel immediately after returning the gown as the weather was so bad, stopping in Leeds for food. Finally, I got my beloved Donner Summer, for perhaps the last time.</p>
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[Graduation]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;     
+         top: 10px;          
+         left: 10px;            
+         z-index: 9999;         
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+         
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+         
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+         
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+         
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+         
+                 fontChanged = false;
+             }
+         }
+      </script>    
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don't know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+                 <img src="/WEBSITE/BLOG/section.png" align="left"> Cottagecore, dark academia, coquette. Are these communities based on shared interests, or are they simply keywords, a marketing tool used to trick you into believing that your next shein haul comes with a prebuilt personality and in-group?<br><br>I think it's in human nature to want to know ourselves. As children, we were fiercely loyal to our self-assigned Hogwarts houses. We used our unrestricted internet access to spend hours on Buzzfeed quizzes, desperate to know what flavour of ice cream best represented our personality. The evolved version of those quiz results, I feel, are things like zodiac signs and M.B.T.I types. Perhaps these are even better, because - while the science is dubious at best, those who offer these pieces of information as though knowing them is second only to knowing one's name must feel so - these tell others everything about us without even having to try. Everyone knows that Scorpios are moody and secretive, and by putting it in my bio, I'm telling you that I am too, and I want you to know this, without ever having to speak to you. But is it really that simple? Can we really sum up our entire personalities and identities into a few paragraphs, a set of astrological signs, or a certain aesthetic? While it may be tempting to try and fit ourselves into a neat little box, the truth is that we are all much more complex and nuanced than that. Our personalities and identities are constantly evolving, influenced by a variety of factors such as our experiences, relationships, and environments. <br><br>In the age of TikTok, arguably the most visual social media to date, subscribing to a specific "aesthetic" is another way to do this. The proliferation of micro labels and aesthetics on social media platforms like TikTok reflects a dichotomy in the desire to both fit into a certain category and also be perceived as unique. While the desire to build a community of like-minded individuals is natural, the focus on aesthetics and labels on social media often overrides any genuine shared interests or values. Instead, it becomes more about looking a certain way and performing a certain identity. The way you dress, and the trinkets you adorn your room with are no longer random or merely a fragment of the mirror we use to see ourselves. They are instead a sacrament, pointing to a creed which must under no circumstances be broken. If you wear a tweed blazer, for example, you are firmly a dark academic. You are thus confined to a life of sweater vests and neutral browns. Don't even think about that Queen T-shirt, it's much too colourful. Not to mention that a certified Dark Academic, you should only be listening to classical music and Hozier. That's what the TikTok guides on achieving the Dark Academia aesthetic with millions of likes and saves say anyway. These TikTok aesthetics would not be so irritating if they were merely a style of dress, as that does not really limit a person. The issue is that alongside dressing a specific way, proponents of a certain aesthetic are expected to act in a specific manner too. However, it is not the actual activity that is sold to the viewer, rather the aesthetic behind it. Reading, for example, to many dark academia content creators is less about engaging critically with literature, and more about the aesthetic. Books are recommended based on their alignment with the aesthetic, and certain tropes they follow, rather than plot or writing style. A favourite among dark academia circles is Donna Tartt's The Secret History. It is, at this point, required reading for the aesthetic, and is often used as a main inspiration for the dark academia, with many people creating lookbooks inspired by the characters. This is ironic, as Tartt wrote the novel satirising these very types of people. As with anything that festers on TikTok, this has had negative consequences on the wider sphere. Books are now being marketed through TikTok aesthetics and even being written solely to appease them. It takes away from many talented writers and discourages finding one's true interests in literature. This, perhaps, best demonstrates the difference between a true subculture and an aesthetic. These aesthetics are used as a substitute for a real personality, instead of helping foster one.Unlike in a subculture,in which the style is secondary to whatever binds like-minded individuals together, in these TikTok aesthetic communities, the process of finding an identity and community is reversed. Rather than allowing people to naturally fall into a group or subculture due to shared interests, TikTok instead dictates what one must like in order to be their idealised selves. This is problematic because it snuffs out any individuality. Rather than genuinely expressing who they are and what they stand for, many people are more concerned with fitting into certain labels and aesthetics. This flattens the complexity of personal style and reduces individuals to one-dimensional archetypes that lack individuality. It becomes a performance, rather than a genuine expression of self.<br><br>On platforms such as TikTok, where consumers of videos scroll past everything so fast that instead of remembering faces, people remember vague concepts, not conforming completely to an aesthetic is likely to make you unpopular with the algorithm. In order to exploit this hollow persona for views, you must embrace it completely. This leads many people to continue to present an inauthentic version of themselves online, in order to reap digital validation, because they are well-liked not for their personality or humour, but merely their style. The more recognisable you are as someone adjacent with that aesthetic, the easier you are to imitate, leading to an influx of followers. Upon realising this, many creators even post video guides on how to be Just Like Them; how to fully embody the all-consuming Aesthetic. Not only do videos like this ordain a stereotypical, predetermined personality onto you, but they also attempt to influence your wallet. Alongside lists of books you must at least pretend to have read to fit into an aesthetic, TikTok offers comprehensive, and long, lists of clothing basics one requires as well. For example, a white milkmaid style dress is a necessity for the cottagecore aesthetic. This has led to many brands, such as Cider, marketing themselves to these aesthetics On one hand, the emergence of these new terms and labels can be useful. It gives words to describe things we find appealing, and find pieces and creators we will genuinely like. I myself am guilty of using these terms despite my distaste of them to help people find my content. For example, I don't consider myself "goth" but I will tag my videos with the hashtag #goth if I use music or fashion that those in the subculture might enjoy. However, the constant pressure to conform to these aesthetics and labels can lead to overproduction and overconsumption, as people feel the need to constantly buy new clothes and accessories in order to fit into a specific aesthetic. This can be clearly seen through videos like the all too common "£500 Fairy Grunge Haul from Shein!!" style videos, which feature comical amounts of cheap, low quality nearly-identical-but-not-quite apparel, which you are quickly convinced through repeated exposure that you need to purchase immediately in order to remain with the in-crowd. Worse yet, once someone finally realises that engaging in this aesthetic is not making them happy, or it is out of trend and they no longer receive the external validation they used to, they will quickly flutter onto the next popular aesthetic, continuing to conform because they never took the time to discover who they are beyond niche micro labels, and what they actually enjoy. Thus the cycle continues, creating more overconsumption, waste and disconnect from one's own identity. This is further exacerbated through the rapidity at which trends are created and disposed of. Aesthetics can quickly fall out of favour, leaving the excessive amount of clothes purchased specifically for a certain one to become useless, often being discarded or sold on Depop for ridiculous prices. <br><br>Alternative aesthetics are also extremely popular on TikTok. Subcultures such as punk, grunge, and goth, are often based on music, politics, and shared values, rather than simply a specific aesthetic. However, on social media platforms like TikTok, these subcultures are often reduced to marketable looks and styles, ignoring their deeper meaning and significance. This commodification not only undermines the authenticity of these subcultures, but it also ignores their political and social roots, turning them into a superficial performance rather than a genuine expression of identity. Despite these subcultures being heavily based in D.I.Y, many brands co-opt their looks, selling faux distressed apparel and jackets with nonsensical patches, which if D.I.Y-ed would likely contain meaningful political messages, as well as a nod to the person's interests. Furthermore, the mass production and commodification of punk, grunge, and goth-inspired clothing by fast fashion retailers like Shein perpetuates harmful practices such as exploitation of labour and environmental degradation. These companies often use cheap, low-quality materials and engage in unethical practices in order to produce mass quantities of clothing at a low cost. The irony of people presenting themselves as rebellious and countercultural on social media while participating in the very system they claim to reject is clear. By choosing to purchase cheap, mass-produced clothing, they are contributing to the capitalist system and the exploitation of labour, rather than genuinely rejecting mainstream culture. The gentrification of alternative subcultures on social media also leads to the dilution of their original meanings and values. People who try to preserve the authenticity and significance of these communities are often accused of gatekeeping, further eroding the integrity of these subcultures. <br><br>Goth, for example, is a music based culture, meaning that the only prerequisite to join the community is to listen to goth music. Many goths who try to preserve the subculture by pointing this fact out get accused of being elitist. You may be wondering, "What does it matter? Why can't people dress goth without listening to the music?". That's because there isn't really such a thing as "dressing goth". While there is a certain look that a lot of goths embody, it is secondary to the music itself. This illuminates a big difference between so-called "aesthetics" and actual subcultures. A subculture, to put it frankly, isn't shallow. There's more to it than just a certain fashion style. Goths primary bond over the music scene and culture, and while those who want to dress like a stereotypical goth are welcome to, in co-opting the label, they are taking away from the actual scene. <br><br>Okay, it's a little annoying and shallow, but does it really matter in the long run? Who cares if a kid calls themselves goth without having heard of Bela Lugosi's Dead? Well, the issues of superficial identity-crafting don't only affect self-organised subcultures, but wider traditional cultures as well. In recent years, this obsession with being "quirky" and "different" has led to an unfortunate rise in cultural appropriation. That topic in of itself is much too broad and nuanced to get into right now, but it is generally described as "the inappropriate or unacknowledged adoption of an element or elements of one culture or identity by members of another culture or identity". Whether or not you believe this to be a pressing issue, it is definitely prevalent, and especially stinging when those who are genuinely part of the culture are mocked for their practices, whereas (mainly white) appropriators are praised and seen as revolutionaries, despite being unaware of the rich history and significance behind said practices. For example, the current boho girl trend (God, I'm cringing even talking about this, it's so absurd) is currently one of the worst offenders, a rebranding of the ‘70s hippie, with just as much performativity and cultural appropriation. These boho girls, normally white, are commonly seen with cornrows, nazar jewellery and skirts with ethnic prints on them. All while disregarding the fact that black women who wear their hair in the same manner are often discriminated against in the workplace and that the hairstyles have historical meaning or that nazar, the symbol that supposedly protects against the evil eye, is an important spiritual belief across many religions and cultures and shouldn't be worn purely for ornamental purposes. They're free to wear watered down ethnic prints when many are mocked and called "fresh off the boat" for wearing what is traditionally theirs. To add salt to the wound, it is not the cultures these girls borrow from who reap any of the benefit. The popularity of this surface level appreciation has led to many cultural and religious symbols becoming mass produced by those who have no understanding about them, harming businesses who actually care about what they are selling. A few years ago, Shein, for example, came under fire for selling an Islamic prayer mat, labelling it as a "Greek frilled carpet." Not only was this incredibly offensive, owing to prayer mats being a sacred item, not made to be used like a normal rug, but it also lacks the complexity a normal prayer mat has. This, I feel, is a perfect microcosm of the whole issue. On the surface, it looks quite similar, but it is ostensible and lacks any true depth. Actual prayer mats, for example, are holy and thus are crafted with immense care. The patterns on the mats have deeper meanings, with shapes representing mosques or the flowers of paradise. Most importantly, all prayer mats are deliberately created with a mistake, often unnoticeable at first glance, to indicate that only God is capable of perfection. None of these nuances could ever be found in a Shein mat, and "pretty" as the white girl playing bohemian princess might find it, she could never fully appreciate the history and culture intrinsically linked to it. <br><br>This is why it is so important to be able to find yourself, rather than trying to conform to a "look". Not only is it unfulfilling, but it is also harmful. Constantly chasing approval in this way not only has detrimental consequences for your own mental health, but it also poses harm to the wider world, negatively affecting already marginalised communities and proving deadly for our already critical environment. So what if you can't be pinned down into a 3 word label? That's the beauty of being human, we cannot be defined by such limited boundaries. Instead of spending your time trying to chase down this impossibly narrow ideal, why not be unapologetically yourself? And you never know, maybe someday you'll be the hot new thing everyone else is trying to emulate.
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[On-the-TikTok-Obsession-with-Aesthetics-and-Curated-Personalities]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

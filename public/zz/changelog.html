@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+   <meta charset="UTF-8">
+   <head>
+      <title>✰ CHANGELOG ✰</title>
+      <style>
+         @font-face {
+         font-family: slendy;
+         src: url('/WEBSITE/ERROR_404/slendy.ttf'),
+         url('slendy.woff');
+         }
+         @font-face {
+         font-family: Vesperings;
+         src: url(/WEBSITE/vesperings.ttf);
+         }
+         * {
+         font-family: Vesperings;
+         }
+         html,
+         body {
+         background-image: url("https://sadhost.neocities.org/images/tiles/redskulls.jpg");
+         background-color: red;
+         margin: 0;
+         padding: 0;
+         cursor: url(/WEBSITE/cursor.png), auto;
+         }
+         div#maintext {
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         width: 469px;
+         height: 700px;
+         background-color: black;
+         border: 3px solid red;
+         text-align: center;
+         font-family: Tahoma, sans-serif;
+         color: red;
+         font-size: 12px;
+         overflow-y: auto;
+         }
+         h1 {
+         font-family: 'slendy';
+         font-size: 40px;
+         color: red;
+         }
+         span#text {
+         padding: 10px;
+         color: red;
+         margin: 10px;
+         }
+         a {
+         color: maroon;
+         }
+         * {
+         cursor: url(/WEBSITE/cursor.png),
+         auto !important;
+         }
+      </style>
+   </head>
+   <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+   <style>
+      .font-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      background-color: black;
+      color: red;
+      font-family: Garamond, serif;
+      padding: 10px 15px;
+      border: 1px solid red;
+      cursor: pointer;
+      }
+   </style>
+   <script>
+      let fontChanged = false;
+      let styleEl;
+
+      function toggleFont() {
+          if (!fontChanged) {
+              styleEl = document.createElement('style');
+              styleEl.id = "fontOverride";
+
+              styleEl.innerHTML = `
+                  * {
+                      font-family: Garamond, serif !important;
+                  }
+              `;
+
+              document.head.appendChild(styleEl);
+              fontChanged = true;
+
+          } else {
+              const existing = document.getElementById("fontOverride");
+              if (existing) existing.remove();
+
+              fontChanged = false;
+          }
+      }
+   </script>
+   <body>
+      <br>
+      <center>
+         <div id="maintext">
+            <img src="/WEBSITE/CHANGELOG/header.png" width="90%">
+            <br>
+            <br>
+            <a href="/zz/changelog"><h1>CHANGELOG</h1></a>
+            <br>
+            <img src="/WEBSITE/CHANGELOG/divider.gif" width="150px">
+            <br>
+            <span id="text">
+            <br>
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(08-04-2026)</b> Microblog post. Updated some lists on listfauxgraphy. New book log page, which reuses my film log v2 code but shhh don't tell anyone. Added a review for <i>The Color Purple</i>, which was exactly what I needed to get me out of this reading slump.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+
+            <span id="text">
+            <br>
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(05-04-2026)</b> Answered some questions on the ask page. New entries into the microblog.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <br>
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(03-04-2026)</b> Microblog post. Bought some new DVDs which I added to my collection page.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(02-04-2026)</b> Back to my normal layout. Added my latest review of The Crow onto my film log. Realised I hadn't put it on my DVD collection page, so fixed that and also updated it with an Audrey Hepburn box set I got a while ago and forgot about. Created a Listography page which I am having so much fun with because I love making lists, plus it gives me a place to put ideas when I am too lazy to make specific pages for them. Added a song to the shrines index because I apparently never put one in and I refuse to give my visitors a single moment of peace. Added a couple of buttons to my web neighbourhood too. Chatbox and guestbook at the same time feel redundant, plus I'm nearing my message limit, so I replaced the former with my changelog. I did want to switch to chattable because it had more customisation options, but RIP.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <br>
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(01-04-2026)</b>  Cobbled together a quick April Fools gag on my homepage, which I personally think is hilarious.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <br>
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(31-03-2026)</b> Learnt that Garamond is in fact Not a websafe font, so manually had to make sure there was a fallback to my "change font" button on every page. Never say I don't do anything for y'all.. Added a short blog post analysing Greg Heffley's art style. Microblog post.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <br>
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(30-03-2026)</b> Answered a question on the asks page. Fully updated my DVD collection, or at least I think so. I will have to check my physical collection at some point to make sure I'm not missing any. I am so proud of my CD and DVD collections, even if they are small, and I love the they are things I actually use. Minor change to the sitemap, where links changes colour when hovered over. New microblog posts. Slowly but surely beginning to fix the formatting of my film reviews. Very narcisisstically started a shrine to my own website LMAO. Well, my first website at least. Perhaps the most aesthetically different thing on this whole site. Poptropica shrine is also technically back up, but a massive WIP.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(29-03-2026)</b> Added new photos to my digicam page. By new I mean old, so they will be at the front of the page. Not sure if they will work properly on screens other than mine, so if it is janky please let me know.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(28-03-2026)</b> So much for taking a break... I was getting sick of the Neocities in-browser editor (plus I think it is just generally unwise to rely on it for storage alone) so I connected my website to Github. I <i>think</i> it is working (thank you petrapixels!!!). Minor changes to CD and DVD log with a colour change of the border. New blog post about daydreaming.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(27-03-2026)</b> Another productive day. Uploaded some diary excepts onto my microblog, finished the what's in my bag blog post, redid my film log (that's a lie, I went back to my old format) and filled it with EVERY review I have ever written and a list of every film I have ever seen. New letter to the abyss too. Also far too much eyestrain lately so I am going to take a break for a couple of days, do NOT let me back on here.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(25-03-2026)</b> Oh, I have been a real busy boy today. I reuploaded all my posts back onto my blog, as well as uploading two new ones. One is still a WIP, and the other is just some thoughts I was having about the whole "webcore" thing. It was supposed to be a tweet but ended up significantly longer. Speaking of blog posts, I have put a link to my "Webpage Ideas" list directly onto my sitemap because I think it could be useful. I also stopped segregating the letters I write vs people submit to the abyss, because I don't think there is any need for that, and it makes for a far more interesting experience. Also created a sister "DVD Collection" page to my CD collection page, which can be accessed via the TV. It is going to take forever to fill in, so there's only two rows for now, but like the CD page, a few a day will get it done eventually.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(24-03-2026)</b> Back to using Zonelets for my blog, though I managed to keep the theme more or less the same as before. No posts yet because I am lazy. Cleaned up the HTML formatting of a couple of my pages too. Wrote TWO letters to the abyss today, because I am feeling raw. Considering password protecting some of them and leaving a hint somewhere on the page so only real freaks can read them.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(23-03-2026)</b> Slept on it and decided a toggle to have the option for a readable font wouldn't hurt too much. Taken blog offline temporarily until I figure out how to optimise it instead of having to edit 50 pages every time I make an update. Letters to the Abyss and Microblog are likely next on the chopping block.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(22-03-2026)</b> As if my website wasn't inaccessible already, I have changed all the fonts to my chickenscrawl handwriting. Also uploaded a blog post explaining some of my reasoning behind it.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(21-03-2026)</b> New OOTD for Eid, with an accompanying selfie on my fake Instagram page. Answered some questions on my asks page. New blog pos about my approach to reading.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(09-03-2026)</b> Updated food log.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(07-03-2026)</b> Changed the music on my Instagram page because <i>Roses</i> was driving me INSANE. Finally updated my CD collection after about a year. Responded to a message on my asks page and uploaded two letters to the abyss.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(06-03-2026)</b> Graduation blog post added to website. Changed blog archive to be in chronological order. Reuploaded food diary. Interactive ouija board page. Tomodachi update. Added the original JTK story to the Crappypasta page.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(05-03-2026)</b> Redid the entire code for my homepage, though it looks identical. I cut it down from 4k+ lines of code to around 500, and made it easier to see what is a link by changing the colour when hovering over one. Also updated my room to look more like my real one, and added a bookshelf subpage containing some of my links. Added my e-mail address to the contact section of my homepage.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(04-03-2026)</b> Uploaded two new blog posts, one piece of free verse from a long time ago, and the diary entry detailing my very first concert. Spammed my microblog a little, including a bunch of diary excerpts from December I hadn't uploaded yet. Edited my dream journal to have titles linking to each dream, rather than a plain wall of text. Minor Tomodachi update too. Not directly a website update, but I have also set up a custom e-mail address (contact@vesperings.com) which I am so excited to use. When I was younger, before I had a phone, I used to chat to my friends by e-mail sometime and it was always far more joyful than texting is now, while still being more convenient and realistic than handwritten letters. I hope to be able to use it to that end once more and connect with others instead of merely signing up to things.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(02-03-2026)</b> New photo log for non digital camera pictures is now up. Mimics old Instagram. Access from the original photo log or sitemap. Updated my film log. Started a new Tomodachi Life page, but I can't really fill it in until I can borrow an SD card reader. Also moved all my files hosted on File Garden (literally everything) natively to Neocities. A lot less time consuming than I expected, delightfully!
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(01-03-2026)</b> Updated OOTD page and microblog.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(25-02-2026)</b> New blog post (burypink questionnairre). New letter to the abyss.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(24-02-2026)</b> Switched to a custom domain! Updated OOTD page.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(20-01-2026)</b> Minor updates to my room. Uploaded many new images to my photo log. Review for <i>Vampire Hunter D: Bloodlust</i> on film review page. Television page is now live.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(17-01-2026)</b> New microblog entry.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(12-01-2026)</b> Reviews for <i>Cruel Intentions</i> and <i>Mysterious Skin</i> now up on my <a href="/films">film log.</a>
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(11-01-2026)</b> Many changes, the most significant being the return of my <a href="/room">room page</a>that I have been procrastinating on updating for far too long. Other returning pages include my stamp wall, dress up game, OOTD log, CD collection, cyber pets page and shrines page along with my Death Note shrine. She's almost back to her former glory.
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(07-01-2026)</b> New blog post (essay, really), entitled <a href=/blog/capitalism_as_contagion>Capitalism as Contagion: Burnout Syndrome in Ling Ma’s Severance and Brett Easton Ellis’ American Psycho</a>. Masochistically, I miss writing essays at the crack of dawn. Perhaps I'll return to it..
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(06-01-2026)</b> Answered a <a href=/asks>question</a>. Updated my <a href=/microblog>microblog.</a>
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(28-12-2025)</b> New blog post titled <a href=/blog/reflecting_on_2025_and_journalling>Reflecting on 2025 and Journalling</a>. <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(19-12-2025)</b> New <a href=/letters>letter to the abyss</a>. <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(17-12-2025)</b> New entry in the <a href=/microblog>microblog</a>. <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(06-12-2025)</b> New entry in the <a href=/dreams>dream journal</a>. <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(05-12-2025)</b> New <a href=/blog>blog post</a>. <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(06-11-2025)</b> Updated my <a href=/letters />letters to the abyss</a> page. <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(19-10-2025)</b> Long time no see. Turns out its my website's one year anniversary today, which is cool. Managed to put up the <a href="/albums">album review</a> page, which I'll probably fill in later. <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(15-09-2025)</b> New post on my <a href="/microblog">Microblog</a>
+            <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+               <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+               <b>(14-09-2025)</b> Made some good progress, though files are still hosted on Filegarden, which is unfortunate. The following pages are now available:
+               <ul>
+                  <li>
+                     <a href="/index">Home</a>
+                  </li>
+                  <li>
+                     <a href="/changelog">Changelog</a>
+                  </li>
+                  <li>
+                     <a href="/blog">Blog</a>
+                  </li>
+                  <li>
+                     <a href="/microblog">Microblog</a>
+                  </li>
+                  <li>
+                     <a href="/dreams">Dream Journal</a>
+                  </li>
+                  <li>
+                     <a href="/photos">Digicam Log</a>
+                  </li>
+                  <li>
+                     <a href="/films">Film Log</a>
+                  </li>
+                  <li>
+                     <a href="/asks">Send an Ask</a>
+                  </li>
+                  <li>
+                     <a href="/letters">Send a Letter to the Abyss <b>✰ Featuring a new submission! ✰</b>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="/death_note">Submit an Entry to the Death Note</a>
+                  </li>
+                  <li>
+                     <a href="/crappypasta">Crappypastas</a>
+                  </li>
+                  <li>
+                     <a href="https://users4.smartgb.com/g/g.php?a=s&amp;i=g44-82590-cc">Guestbook</a>
+                  </li>
+               </ul>
+               <br>
+               <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(12-09-2025)</b> Some pages may be missing (most pages are missing) as I am redoing my website links to make it easier to transfer in case Neocities ever goes under. <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+            <br>
+            <br>
+            <span id="text">
+            <img src="/WEBSITE/CHANGELOG/rose.png" width="20px">
+            <b>(DATE)</b> Update <br>
+            <img src="/WEBSITE/CHANGELOG/actual_divider.gif" width="300px">
+            </span>
+         </div>
+         <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+            <source src=/WEBSITE/CHANGELOG/paramore_born_for_this.mp3>
+         </audio>
+         <script>
+            document.addEventListener("visibilitychange", function() {
+              document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+            })
+         </script>
+      </center>
+   </body>
+</html>

@@ -1,0 +1,528 @@
+<meta charset=UTF-8>
+<meta content="width=device-width,initial-scale=1" name=viewport>
+<title>&#x2730; ASKS &#x2730;</title>
+<link href=/style.css rel=stylesheet media=all>
+<script>
+   var myAudio = document.getElementById("myAudio"),
+    isPlaying = !1;
+
+   function togglePlay() {
+    isPlaying ? myAudio.pause() : myAudio.play()
+   }
+   myAudio.onplaying = function() {
+    isPlaying = !0
+   }, myAudio.onpause = function() {
+    isPlaying = !1
+   }
+</script>
+<style>
+   @font-face {
+   font-family: Vesperings;
+   src: url(/WEBSITE/vesperings.ttf);
+   }
+   * {
+   font-family: vesperings;
+   }
+   .fa {
+   display: inline-block;
+   font: normal normal normal 14px/1 FontAwesome;
+   font-size: inherit;
+   text-rendering: auto;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale
+   }
+   .fa-lg {
+   font-size: 1.33333333em;
+   line-height: .75em;
+   vertical-align: -15%
+   }
+   .fa-2x {
+   font-size: 2em
+   }
+   .fa-3x {
+   font-size: 3em
+   }
+   .fa-4x {
+   font-size: 4em
+   }
+   .fa-5x {
+   font-size: 5em
+   }
+   .fa-fw {
+   width: 1.28571429em;
+   text-align: center
+   }
+   .fa-ul {
+   padding-left: 0;
+   margin-left: 2.14285714em;
+   list-style-type: none
+   }
+   .fa-ul>li {
+   position: relative
+   }
+   .fa-li {
+   position: absolute;
+   left: -2.14285714em;
+   width: 2.14285714em;
+   top: .14285714em;
+   text-align: center
+   }
+   .fa-li.fa-lg {
+   left: -1.85714286em
+   }
+   .fa-border {
+   padding: .2em .25em .15em;
+   border: solid .08em #eee;
+   border-radius: .1em
+   }
+   .fa-pull-left {
+   float: left
+   }
+   .fa-pull-right {
+   float: right
+   }
+   .fa.fa-pull-left {
+   margin-right: .3em
+   }
+   .fa.fa-pull-right {
+   margin-left: .3em
+   }
+   .pull-right {
+   float: right
+   }
+   .pull-left {
+   float: left
+   }
+   .fa.pull-left {
+   margin-right: .3em
+   }
+   .fa.pull-right {
+   margin-left: .3em
+   }
+   .fa-spin {
+   -webkit-animation: fa-spin 2s infinite linear;
+   animation: fa-spin 2s infinite linear
+   }
+   .fa-pulse {
+   -webkit-animation: fa-spin 1s infinite steps(8);
+   animation: fa-spin 1s infinite steps(8)
+   }
+   @-webkit-keyframes fa-spin {
+   0% {
+   -webkit-transform: rotate(0deg);
+   transform: rotate(0deg)
+   }
+   100% {
+   -webkit-transform: rotate(359deg);
+   transform: rotate(359deg)
+   }
+   }
+   @keyframes fa-spin {
+   0% {
+   -webkit-transform: rotate(0deg);
+   transform: rotate(0deg)
+   }
+   100% {
+   -webkit-transform: rotate(359deg);
+   transform: rotate(359deg)
+   }
+   }
+   .fa-rotate-90 {
+   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+   -webkit-transform: rotate(90deg);
+   -ms-transform: rotate(90deg);
+   transform: rotate(90deg)
+   }
+   .fa-rotate-180 {
+   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+   -webkit-transform: rotate(180deg);
+   -ms-transform: rotate(180deg);
+   transform: rotate(180deg)
+   }
+   .fa-rotate-270 {
+   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+   -webkit-transform: rotate(270deg);
+   -ms-transform: rotate(270deg);
+   transform: rotate(270deg)
+   }
+   .fa-flip-horizontal {
+   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+   -webkit-transform: scale(-1, 1);
+   -ms-transform: scale(-1, 1);
+   transform: scale(-1, 1)
+   }
+   .fa-flip-vertical {
+   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+   -webkit-transform: scale(1, -1);
+   -ms-transform: scale(1, -1);
+   transform: scale(1, -1)
+   }
+   :root .fa-rotate-90,
+   :root .fa-rotate-180,
+   :root .fa-rotate-270,
+   :root .fa-flip-horizontal,
+   :root .fa-flip-vertical {
+   filter: none
+   }
+   .fa-stack {
+   position: relative;
+   display: inline-block;
+   width: 2em;
+   height: 2em;
+   line-height: 2em;
+   vertical-align: middle
+   }
+   .fa-stack-1x,
+   .fa-stack-2x {
+   position: absolute;
+   left: 0;
+   width: 100%;
+   text-align: center
+   }
+   .fa-stack-1x {
+   line-height: inherit
+   }
+   .fa-stack-2x {
+   font-size: 2em
+   }
+   .fa-inverse {
+   color: #fff
+   }
+   .sr-only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0, 0, 0, 0);
+   border: 0
+   }
+   .sr-only-focusable:active,
+   .sr-only-focusable:focus {
+   position: static;
+   width: auto;
+   height: auto;
+   margin: 0;
+   overflow: visible;
+   clip: auto
+   }
+   * {
+   cursor: url(/WEBSITE/cursor.png),
+   auto !important;
+   }
+   ::-webkit-scrollbar {
+   width: 0
+   }
+   #credit {
+   position: fixed;
+   left: 12px;
+   bottom: 6px;
+   font-size: 14px
+   }
+   body {
+   background-color: #000;
+   width: 700px;
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   font-family: arial;
+   background-image: url(/WEBSITE/ASKS/emobg2.jpg)
+   }
+   .wrap {
+   width: 605px;
+   height: auto;
+   border: 4px outset red;
+   padding: 4px;
+   overflow: auto;
+   scrollbar-width: none;
+   background-image: url(/WEBSITE/ASKS/emobg.gif)
+   }
+   .box1 {
+   width: 415px;
+   height: 220px;
+   border: 4px inset red;
+   display: inline-block;
+   padding: 10px;
+   overflow: auto;
+   scrollbar-width: none;
+   background-color: #000;
+   background-image: url("INNER BACKGROUND");
+   margin-bottom: 4px;
+   color: red;
+   text-align: justify
+   }
+   .box2 {
+   width: 129px;
+   height: 220px;
+   border: 4px inset red;
+   display: inline-block;
+   padding: 10px;
+   float: right;
+   overflow: auto;
+   scrollbar-width: none;
+   background-color: #000;
+   background-image: url(/WEBSITE/ASKS/emonav.png);
+   color: red;
+   text-align: justify
+   }
+   .box3 {
+   width: 576px;
+   height: 60px;
+   border: 4px inset red;
+   display: inline-block;
+   padding: 10px;
+   margin-top: 1px;
+   overflow: auto;
+   scrollbar-width: none;
+   background-color: #000;
+   background-image: url(/WEBSITE/ASKS/checker.jpg)
+   }
+   img {
+   max-width: 100%;
+   height: auto
+   }
+   ul {
+   margin-left: -15px;
+   margin-top: -1px;
+   list-style-image: url('LIST BUTTONS');
+   line-height: 30px
+   }
+   a {
+   color: white;
+   }
+   #hvr-forward {
+   display: inline-block;
+   -webkit-transform: perspective(1px) translateZ(0);
+   transform: perspective(1px) translateZ(0);
+   box-shadow: 0 0 1px transparent;
+   -webkit-transition-duration: .3s;
+   transition-duration: .3s;
+   -webkit-transition-property: transform;
+   transition-property: transform
+   }
+   #hvr-forward:active,
+   #hvr-forward:focus,
+   #hvr-forward:hover {
+   -webkit-transform: translateX(8px);
+   transform: translateX(8px)
+   }
+</style>
+<button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+<style>
+   .font-toggle {
+   position: fixed;
+   top: 10px;
+   left: 10px;
+   z-index: 9999;
+   background-color: black;
+   color: red;
+   font-family: Garamond, serif;
+   padding: 10px 15px;
+   border: 1px solid red;
+   cursor: pointer;
+   }
+</style>
+<script>
+   let fontChanged = false;
+   let styleEl;
+
+   function toggleFont() {
+       if (!fontChanged) {
+           styleEl = document.createElement('style');
+           styleEl.id = "fontOverride";
+
+           styleEl.innerHTML = `
+               * {
+                   font-family: Garamond, serif !important;
+               }
+           `;
+
+           document.head.appendChild(styleEl);
+           fontChanged = true;
+
+       } else {
+           const existing = document.getElementById("fontOverride");
+           if (existing) existing.remove();
+
+           fontChanged = false;
+       }
+   }
+</script>
+<div class=wrap>
+   <div class=box1>
+      <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/798e4d0590810c8989ec71ea76a5eafa?embedded=1"></div>
+      <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+      <script type="text/javascript" src="https://cdn.formkeep.com/formkeep-embed.js"></script>
+      <!-- Get notified when the form is submitted, add your own code below: -->
+      <script>
+         const formkeepEmbed = document.querySelector('#formkeep-embed')
+
+         formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+           console.log('Submitting form...')
+         })
+
+         formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+           console.log('Submitted form...')
+         })
+      </script>
+   </div>
+   <div class=box2>
+      <center style="margin-top:0;margin-bottom:5px;color:red;text-shadow:-1px -1px 0 #000,0 -1px 0 #000,1px -1px 0 #000,1px 0 0 #917ab8,1px 0 #000,0 1px 0 #000,-1px 1px 0 #000,-1px 0 0 #000">
+         <h>RESPONSES</h>
+      </center>
+      <p>
+         <a href=#2026-04-05-06:31:13 title="Hi, I read you made an April fool's layout, and I'm late, did you archive some pictures of it?" id=hvr-forward>Hi, I read you made an April fool's layout, and I'm late, did you archive some pictures of it?</a>
+      </p>
+      <p>
+         <a href=#2026-04-03-21:31:08 title="if you could tell your past self one thing, what would you tell yourself?" id=hvr-forward>if you could tell your past self one thing, what would you tell yourself?</a>
+      </p>
+      <p>
+         <a href=#2026-03-29-21:03:12 title="Have you been smiling lately?" id=hvr-forward>Have you been smiling lately?</a>
+      </p>
+      <p>
+         <a href=#2026-03-10-11:01:20 title="I LOVE THE MUSIC, THE DESIGNS, THE ENTIRE SITE YOU ARE ACTUALLY THE COOLEST ILYSM" id=hvr-forward>I LOVE THE MUSIC, THE DESIGNS, THE ENTIRE SITE YOU ARE ACTUALLY THE COOLEST ILYSM</a>
+      </p>
+      <p>
+         <a href=#2026-03-10-02:22:29 title="i made my way here, and enjoyed the journey, so it would be rude to not at least say hello - so hello!" id=hvr-forward>i made my way here, and enjoyed the journey, so it would be rude to not at least say hello - so hello!</a>
+      </p>
+      <p>
+         <a href=#2026-03-07-22:23:59 title="I love your style, u r so fuckin cool and i need to know the name of all of this music" id=hvr-forward>I love your style, u r so fuckin cool and i need to know the name of all of this music</a>
+      </p>
+      <p>
+         <a href=#2026-01-04-14:15:07 title="What was the most significant kind of literature you’ve read that contributed to your style of writing now?" id=hvr-forward>What was the most significant kind of literature you’ve read that contributed to your style of writing now?</a>
+      </p>
+   </div>
+   <br>
+   <div class=box2 style=float:left>
+      <img src=/WEBSITE/ASKS/tears.gif style="border:0 solid red;margin-top:-4px;margin-left:-4px">
+      <marquee scrolldelay=120 style=margin-top:17px;margin-left:-9px;margin-right:-9px>
+         <img src=/WEBSITE/ASKS/blink3.gif>
+         <img src=/WEBSITE/ASKS/blink1.gif>
+         <img src=/WEBSITE/ASKS/blink2.gif>
+      </marquee>
+      <div class=player style=margin-top:12px>
+         <marquee scrolldelay=120 style=width:100px;color:#000;margin-top:-4px;margin-left:4px></marquee>
+      </div>
+   </div>
+   <div class=box1 style=margin-left:4px>
+
+
+      <!-- NEW ASK -->
+      <div id="2026-04-05-06:31:13">
+         <p>
+            <strong>rionka asked on 2026-04-05 06:31:13 UTC <br>
+            </strong>
+         </p>
+         <p>Hi, I read you made an April fool's layout, and I'm late, did you archive some pictures of it? Would be fun to see!</p>
+      </div>
+      <p>
+         <strong>vesperings replied:</strong>
+      </p>
+      <p>I can do you one better. You can see the entire layout <a href="/april_fools.html">here</a>.</p>
+      <br>
+      <br>
+
+
+      <!-- NEW ASK -->
+      <div id="2026-04-03-21:31:08">
+         <p>
+            <strong>velvetblue asked on 2026-04-03 21:31:08 UTC <br>
+            </strong>
+         </p>
+         <p>if you could tell your past self one thing, what would you tell yourself? also i love this site so much btw &lt;3</p>
+      </div>
+      <p>
+         <strong>vesperings replied:</strong>
+      </p>
+      <p>I gasped when I saw this ask. Thank you for visiting my website, I am such a big fan of yours. Your writings give me so much comfort. Perhaps comfort is the wrong word to use about someone's suffering, maybe something akin to kinship? I feel less alone reading your words, and by sharing them I hope you do too.</p>
+      <p> As for your question, I would tell her to buy bitcoin. Just kidding. I would like to be kind, she deserves some kindness for once in her life, but that would be a disservice, so I would tell her the truth:</p>
+      <p>Nothing is ever going to change, and you will find yourself in the exact same place 10, 20 years from now, miserable and living half a life. Chase joy wherever you can find it, because you will regret it later, and do not lose yourself for the sake of others' comfort. They will not appreciate it, and you will just erode into a non-entity. Do you know how many years of your life you wasted just because you didn't want to hurt someone's feelings? Fuck that. Passivity has never served you well. And stop waiting for tomorrow because it will never come. If you aren't who you wish you were right now, you never will be.</p>
+      <p>Sorry, that was more than one thing, wasn't it. But this <i>was</i> me tying to be restrained.</p>
+      <br>
+      <br>
+
+      <!-- NEW ASK -->
+      <div id="2026-03-29-21:03:12">
+         <p>
+            <strong>Mr. Smiles at showmeyourteeth.neocities.com asked on 2026-03-29 21:03:12 UTC <br>
+            </strong>
+         </p>
+         <p>Have you been smiling lately?</p>
+      </div>
+      <p>
+         <strong>vesperings replied:</strong>
+      </p>
+      <p>I hadn't been until I recieved your message :&#41; Your website reminds me of a dream I had once. A noble persuit, making others smile.</p>
+      <br>
+      <br>
+
+      <!-- NEW ASK -->
+      <div id="2026-03-10-11:01:20">
+         <p>
+            <strong>Anonymous asked on 2026-03-10 11:01:20 UTC <br>
+            </strong>
+         </p>
+         <p>I LOVE THE MUSIC, THE DESIGNS, THE ENTIRE SITE YOU ARE ACTUALLY THE COOLEST ILYSM</p>
+      </div>
+      <p>
+         <strong>vesperings replied:</strong>
+      </p>
+      <p>That is very sweet of you, thank you so much &lt;3</p>
+      <br>
+      <br>
+      <!-- NEW ASK -->
+      <div id="2026-03-10-02:22:29">
+         <p>
+            <strong>rampkins asked on 2026-03-10 02:22:29 UTC <br>
+            </strong>
+         </p>
+         <p>i made my way here, and enjoyed the journey, so it would be rude to not at least say hello - so hello!</p>
+      </div>
+      <p>
+         <strong>vesperings replied:</strong>
+      </p>
+      <p>Hello :) It is very nice to meet you, and I hope you visit again soon.</p>
+      <br>
+      <br>
+      <!-- NEW ASK -->
+      <div id="2026-03-07-22:23:59">
+         <p>
+            <strong>bloody marie asked on 2026-03-07 22:23:59 UTC <br>
+            </strong>
+         </p>
+         <p>I love your style, u r so fuckin cool and i need to know the name of all of this music</p>
+      </div>
+      <p>
+         <strong>vesperings replied:</strong>
+      </p>
+      <p>Thank you so much! I've been meaning to make a dedicated playlist page, but in the meantime, <a href="/lists#neocitiesplaylist">here's</a> a list of every song on my website and the page it's on.</p>
+      <br>
+      <br>
+      <!-- NEW ASK -->
+      <div id="2026-01-04-14:15:07">
+         <p>
+            <strong>T belle asked on 2026-01-04 14:15:07 UTC: <br>
+            </strong>
+         </p>
+         <p>You make me want to return to the void of the womb just to relearn how to write. What was the most significant kind of literature you’ve read that contributed to your style of writing now?</p>
+      </div>
+      <p>
+         <strong>vesperings replied:</strong>
+      </p>
+      <p>Oh, that's the sweetest thing anyone has ever said to me! Much of my "style" is resultant of a lifelong, very pretentious and dramatic, diary-writing habit. For that, there is no person better to look to than Anaïs Nin. She can be incredibly insufferable at points, especially in her unexpurgated writings, but no doubt she has served as my greatest inspiration to write more consistently and intimately. Only upon reading the first volume of her diaries did I begin to consider the act an art-form rather than merely sporadic venting in eyeliner scribbles. Not that my journals even remotely resemble art, but a lot of what I post online comes from them. </p>
+   </div>
+   <br>
+   <div class=box3></div>
+</div>
+<div id=credit>
+<a href=https://cod.tumblr.com/ title="TEMPLATE BY JOYBOY" target=_blank>🦩</a>
+<audio id=myAudio autoplay controls loop style=width:.1%;height:.1% volume=0.3>
+   <source src=/WEBSITE/ASKS/idc_if_youre_contageous.mp3>
+</audio>
+<script>
+   document.addEventListener("visibilitychange", (function() {
+    document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+   }))
+</script>
+</html>

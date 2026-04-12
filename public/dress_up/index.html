@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<title>&#10032; DRESS UP &#10032;</title>
+	<link rel="stylesheet" type="text/css" href="styles/mainstylesheet.css" charset="utf-8">
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="scripts/drag.js"></script>
+	<!--remove the following line if you do not want anti-rightclick on images-->
+	<script type="text/javascript" src="scripts/anti-rightclick.js"></script>
+	<style>
+	  * {
+cursor: url(/WEBSITE/cursor.png), auto !important;
+}
+	</style>
+</head>
+
+<body>
+<!-- You can put your own content up here. You can move the dollmaker on the page using CSS (see mainstylesheet.css for details) -->
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+        <source src=/WEBSITE/FASHION/DOLLMAKER/barbie_you_can_tell_shes_a_princess_instrumental.mp3>
+      </audio>
+      <script>
+        document.addEventListener("visibilitychange", function() {
+          document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+        })
+      </script>
+
+
+<div id="dollmaker_container">
+	<div id="bodyArea" class="ui-corner-all">
+	<img class="skintone" src="/dress_up/base/Base.png" >
+	<a href="/ootd"><img src="/WEBSITE/FASHION/DOLLMAKER/button.gif"><a href=""></a>
+	</div>
+	
+	<div id="swatchesArea" class="ui-corner-all">
+		<!-- **EDIT HERE** 
+		     On each line, in the <a href=""> tag, put the url of your full base.
+		     In the <img src=""> tag, put the url of the thumbnail. 
+		     You can have as many of these as you have alternate bases.
+		 -->
+
+	</div>
+	<div id="piecesArea">
+		<!-- **EDIT HERE** 
+			    This list corresponds to the tabs. Change the names of the tabs to
+			    whatever you want. You can also add or remove any number of them. 
+			    
+			    Have a look further below. Notice the <div id="tabs-x"> tags. Each
+			    of those correspond to a different tab and has that tab's content in it. 
+			    If you add or remove tabs, update the corresponding div as well. (the
+			    href of the link and the id of the div have to match!)
+		-->
+		<ul id="tabsbar">
+			<li><a href="#tabs-2">Tops</a></li>
+			<li><a href="#tabs-3">Jackets</a></li>
+			<li><a href="#tabs-4">Bottoms</a></li>
+			<li><a href="#tabs-5">Accessories</a></li>
+		</ul>
+		
+		<!-- **EDIT HERE** 
+			    These divs correspond the the content of each tab. Put all the img tags
+			    for your props in them, corresponding to their categories. 
+		-->
+		
+		<div id="tabs-2"><!--Tops-->
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Top%20Justin%20Bieber.png" >
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Top%20Loded%20Diper.png" >
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Top%20Striped%20White%20Black.png" >
+			<img src="/WEBSITE/FASHION/DOLLMAKER/Top%20The%20Cure.png">
+			<img src="/WEBSITE/FASHION/DOLLMAKER/Top%20Normal%20People%20Scare%20Me.png">
+			<img src="/WEBSITE/FASHION/DOLLMAKER/Top%20Leopard.png">
+			<img src="/WEBSITE/FASHION/DOLLMAKER/Top%20Skulls%20Beige.png">
+			<img src="/WEBSITE/FASHION/DOLLMAKER/Top%20Dracula.png">
+			<img src="/WEBSITE/FASHION/DOLLMAKER/Top%20Chip%20Chrome.png">
+			<img src="/WEBSITE/FASHION/DOLLMAKER/Top%20Cats%20Red.png">
+			<img src="/WEBSITE/FASHION/DOLLMAKER/Top%20Hearts%20Cream.png">
+			<img src="/WEBSITE/FASHION/DOLLMAKER/Top%20Halloween.png">
+		</div>
+		<div id="tabs-3"><!--Jackets-->
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Jacket%20Leather%20Black.png">
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Jacket%20Leather%20Brown.png">
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Top%20Overshirt%20Flannel.png">
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Top%20Overshirt%20Cats.png">
+		</div>
+		<div id="tabs-4"><!--Bottoms-->
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Bottoms%20Pants%20Black.png">
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Bottoms%20Pants%20Blue%20Denim.png">
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Bottoms%20Pants%20Plum.png">
+			<img alt="" src="images/3Bottoms/1257449592.png">
+		</div>
+			<div id="tabs-5"><!--Accessories-->
+			<img alt="" src="/WEBSITE/FASHION/DOLLMAKER/Choker%20Spiked.png">
+			<img alt="" src="images/4Shoes/1257348338.png">
+			<img alt="" src="images/4Shoes/1259939446.png">
+		</div>
+		
+		
+	</div><!--PiecesArea-->			
+<!--The message for anti-rightclick-->
+
+</div><!--container-->
+
+</body>
+</html>

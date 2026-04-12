@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;
+         top: 10px;
+         left: 10px;
+         z-index: 9999;
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+
+                 fontChanged = false;
+             }
+         }
+      </script>
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don't know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+               <img src="/WEBSITE/BLOG/section.png" align="left">Disillusionment with social media was one of the key contributors in my return to blogging. On every platform, TikTok especially, one is constantly bombarded with ads and expected to foster an attitude of always searching for the next best thing. Run, Don't Walk! Trending! Viral! TikTok Made Me Buy it! Every time I hear one of these phrases, I want to throw my phone at the wall and bash my head against a metal pole until the greyish pink of sludge of my brain peeks through the bloody, mangled pulp and influencers race to find the perfect lip gloss shade to match its hue.<br><br> Sorry, that's harsh. Trends have and will always exist, it's impossible not to get sucked in sometimes. But they've never felt this soulless. People no longer seem to look for recommendations based on their pre-existing preferences, rather curate what they consume based on what is popular. "What winter coat are we wearing this year?" is a question I see flood my feeds en masse every single year, answered with the same polyester Amazon affiliate crap like clockwork. Nobody considers whether they actually like or need it. Everyone looks the same and nobody is happy with it, but they keep chasing conformity.<br><br>Disdainful as I am towards consumerist culture, sometimes the mere-exposure effect will take hold due to my ungodly screen time. I will find myself tricked into believing I want something, that this one purchase will enrich my life with everything I have been missing hitherto. Or maybe it's a bargain I will supposedly regret for the rest of my life if I do not take advantage now. In those moments, finger hovering over the checkout button, I ask myself whether she would entertain such a thing. She, being of course, an idealised version of myself, the one I aspire to become rather than any external role model. If her belongings were dissected and analysed like Marylin Monroe's, would this be among them? (Sometimes a little self-voyeurism is necessary, sorry Margeret Atwood) Every time, I conclude it would not. She would not touch a knock off perfume or AliExpress necklace regardless of how many compliments they supposedly garner. She knows what she likes and doesn't have to be told. She finds the things that were meant for her by chance and cherishes them more for it.<br><br>That's not to say I'm an elitist or aim to curate my image, far from it. I mean, 80% of my clothes are second hand and I don't subscribe to any specific aesthetic (and I don't think you should either, but that's for another time.) What's important is that everything I own means something to me. I'm loyal to a perfume my father got me as a child, even though there are countless others that smell “better” and I like to paint my nails with a polish in the specific shade of a London bus because I'm in love with the city and want to carry it with me no matter where I am. These “signatures” of sorts might not be the best of the best, but they make me feel like myself. A physical manifestation of what's in my soul rather than mere thoughtless purchases. And I won't lie, I'm not above it; I like the fact my favourite things aren't trends and belong to me alone. In a way, it's not so different from Marie Kondo's “does this spark joy?”<br><br>I think it's worth exercising such principles to not only inhibit overconsumption, but also become more secure in your identity. Of your belongings and prospective purchases, ask yourself:<br><br>
+               <li>Does this feel representative of me? Does it align with my aesthetic preferences, my values and my morals?</li>
+               <li>Do I want this for what it is or for what it's been sold to me as? Did I have any interest in this prior to seeing it online? Do I generally gravitate towards similar items or is this a deviation from my typical preferences?</li>
+               <li>Can I see myself still enjoying this in 5 years? 10? (I would like to note that I'm not suggesting people cannot or should not change, but this question forces you to assess whether the item resonates with you as more than just a trend)</li>
+               <li>Does this hold any special meaning or feelings? This doesn't need to be groundbreaking, it can be as small as reminding you of your favourite character or being something handed down from a loved one.</li>
+               <br><br>Let me walk you through an example.<br><br><img src="/WEBSITE/BLOG/rosedocs.jpg" width="500px"><br><br>These are probably my favourite shoes. My favourite colours are red and black, which is reflected in these shoes. The brand itself has a rich history within goth and punk subcultures which also resonates with me. Furthermore, I purchased these second-hand, which is so much better for the environment. I've always loved black boots, and I've wanted this specific pair from the moment I saw them in store when I was probably 12 years old. I've liked them for that long, so I can see myself enjoying them as much for the rest of my life. I've worn these on a near daily basis from the day I received them, so they mean a lot to me for that reason too. I've been told several times that they suit me as a person. These shoes tick all the boxes. It's hard to find things that do, forcing you to slow down your spending habits, and I've found that I only ever regret purchases when they don't.<br><br>It's not just about feeling more satisfied with your belongings, though. Whether you intend to or not, your consumption or lack of thereof makes a statement. Every time you are mindful of your purchases, you reject the culture of blind overconsumption peddled by brands and influencers which exists only to accumulate profit through exploitation. Do you really want to be someone who signals that they are complicit in the suffering of their fellow human beings and the decimation of the environment by mindlessly buying a plastic T-shirt from Shein because you saw an influencer wearing it? Stop trying to buy your way to validation and salvage your identity
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[Sentimentalism-May-Be-The-Antidote-To-Overconsumption]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;
+         top: 10px;
+         left: 10px;
+         z-index: 9999;
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+
+                 fontChanged = false;
+             }
+         }
+      </script>
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don’t know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+               <p>Despite the animosity between Rodrick and Greg (which I argue is largely indicative of a normal sibling relationship, even when Greg's sociopathic tendencies are taken into account), Greg Heffley secretly idolises and aligns himself with Rodrick. This is demonstrated largely through the drawing style, with Rodrick, Greg, and their father being drawn with identical features.</p>
+               <p> Frank Heffley clearly holds expectations for his sons, usually such that align with the traditional ideals of masculinity. Greg internalises these expectations despite often failing to meet them. Despite this, he depicts himself similarly to his father, indicating admiration. There is nuance to this regarding Frank's abusive nature, but that's for another time.</p>
+               <p>Now, it could be argued that they are drawn alike due to a family resemblance, which is wholly untrue. Extended family aside, Susan and Manny show this quite clearly. Greg neither feels kinship nor respect towards these two characters, thus they are drawn without any similarities to Greg. This is particularly true with Manny, whom Greg often feels vindicated by, and therefore draws in an incredibly unflattering manner. Secondhand accounts prove that Manny isn't actually deformed as fuck, Greg merely perceives him as such.</p>
+               <p> Furthermore, Greg also draws characters he feels positively towards, such as Holly Hills. Holly Hills looks exactly like Greg in a wig, which is also purportedly false, as she is objectively attractive and Greg is not. This solidifies the fact that Greg's illustrations are not objective, rather a manifestation of his own psyche.</p>
+               <p>So where does Rodrick come in? Rodrick is also a disappointment in Frank's eyes, but unlike Greg, he does not attempt to please his father. For this reason, it is extremely unlikely Rodrick's illustration is based solely on Frank. He is sure of himself and content with being a loser. Greg admires this, and wishes to emulate it, therefore portrays them as similar. Rodrick represents to Greg what he could be if he overcame his fear of Frank.</p>
+               <p>I was just messing around writing this, but I do think there is some merit in it so I might expand on this later. PhD thesis, here I come.</p>
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[A_Brief_Analysis_Of_Greg_Heffley_And_His_Art_Style]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!---
+ 
+        THE WEB IS YOURS neocities layout by adilene @ adilene.net
+ 
+        credit is not necessary but it is greatly appreciated!
+ 
+        if you need any help, feel free to shoot me an email at a@adilene.net!!!!
+ 
+        --->
+  <meta charset="UTF-8">
+  <!-- viewport - for mobile screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon & title -->
+  <title>&#10032; LETTERS TO THE ABYSS &#10032;</title>
+  <style>
+   :root {
+    --lace: var(--black);
+    /* change black to the color you want */
+    /* options are: pink, black, blue, yellow, purple */
+    --black: url("/WEBSITE/LETTERS_TO_THE_ABYSS/stv815.png");
+   }
+
+   /****** fonts ******/
+   @font-face {
+    font-family: "Scratch Boys";
+    src: url(/WEBSITE/LETTERS_TO_THE_ABYSS/1sb02z.ttf);
+   }
+
+   @font-face {
+    font-family: "Cerl";
+    src: url(/WEBSITE/LETTERS_TO_THE_ABYSS/CHERL___.TTF);
+   }
+
+   @font-face {
+    font-family: "Adorable Doll";
+    src: url(/WEBSITE/LETTERS_TO_THE_ABYSS/AdorableDoll.ttf);
+   }
+
+   @font-face {
+    font-family: "Vintage";
+    src: url(/WEBSITE/LETTERS_TO_THE_ABYSS/nwq0cf.ttf);
+   }
+   @font-face {
+  font-family: Vesperings;
+  src: url(/WEBSITE/vesperings.ttf);
+}
+
+* {
+   font-family: Vesperings;
+   font-size: 115%;
+
+}
+
+   /****** scrollbar ******/
+   ::-webkit-scrollbar {
+    display: none;
+   }
+
+   /****** select hightlight ******/
+   ::selection {
+    background: #4b0101;
+    color: white;
+   }
+
+   ::-moz-selection {
+    background: #4b0101;
+    color: white;
+   }
+
+   /****** body ******/
+   body {
+    background-color: #4b0101;
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-attachment: fixed;
+    color: #4b0101;
+    /* default font color */
+    font-family: "MS Gothic";
+    /* default font */
+    font-size: 20px;
+    /* default font size */
+    padding: 10px;
+    background-image: url("/WEBSITE/LETTERS_TO_THE_ABYSS/spac003.jpg");
+   }
+
+   * {
+    cursor: url(/WEBSITE/cursor.png),
+     auto !important;
+   }
+
+   /****** links ******/
+   a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+    text-shadow: -1px 0 #4b0101, 0 1px #4b0101, 1px 0 #4b0101, 0 -1px #4b0101;
+   }
+
+   a:hover {
+    cursor: help;
+    transition: 0.3s;
+    color: #4b0101;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+   }
+
+   /****** wrappers ******/
+   #wrapper {
+    animation: fadeEffect 1s;
+    margin: auto;
+    width: fit-content;
+    width: -moz-fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+   }
+
+   @keyframes fadeEffect {
+    from {
+     opacity: 0;
+    }
+
+    to {
+     opacity: 1;
+    }
+   }
+
+   /****** containers ******/
+   .container {
+    display: grid;
+    margin: auto;
+    width: 1000px;
+    grid-template-columns: 250px 1fr 1fr 250px;
+    grid-template-rows: 250px 250px 0.1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+     "icon main main links"
+     "updates main main box"
+     "footer footer footer footer";
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+   }
+
+   .main {
+    grid-area: main;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+    overflow: auto;
+   }
+
+   .icon {
+    grid-area: icon;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+   }
+
+   .icon img {
+    width: 100%;
+    display: block;
+    height: auto;
+   }
+
+   .updates {
+    grid-area: updates;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+    overflow: auto;
+    line-height: 130%;
+   }
+
+   .links {
+    grid-area: links;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+   }
+
+   .box {
+    grid-area: box;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+   }
+
+   .footer {
+    grid-area: footer;
+    text-align: center;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+   }
+
+   header {
+    text-align: center;
+    font-family: "Adorable Doll";
+    font-size: 40px;
+    margin-bottom: 10px;
+   }
+
+   .cornerimg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+   }
+
+   .highlight {
+    background-color: #4b0101;
+    color: white;
+   }
+  </style>
+ </head>
+ <body>
+  <div id="wrapper">
+   <div class="container">
+    <div class="main">
+     <p>Dear Me, Past and Future,</p>
+     <p>&nbsp;Of course my first letter would be to you. I got yours, by the way. It's been 10 years. You wrote that just into highschool, and now I am almost about to graduate. I can't help but smile at your optimism babylove, you have no idea how much you are going to suffer through these years. But don't worry, you're almost happy now, you have friends and things are better at home too. You're also free from the devil you don't even&nbsp;realise plagues you yet. I'm sorry to say, you did lose&nbsp;sight of yourself for a while but I promise you are finally your weird, wonderful self again.</p>
+     <p>In your last letter, you asked if I'm still into Taylor Swift, Justin Bieber, K-Pop and anime. Funny how so much changes yet so much stays the same. I still appreciate all of these, especially older elements of them, but no - I'm not as obsessed with Taylor, Justin and BTS as I was back then. Mostly because they don't make good music anymore. Yeah, that's right, BTS suck now (and are more popular than you could ever have imagined.) I do still listen to their older stuff sometimes, and K-Pop in general. Justin Bieber got married and has a kid now by the way. No, not with Selena. You don't have a crush on him anymore (though I Will say you have a type) but you also don't hide the fact that you're a fan like a mortal secret anymore. I promise it won't get you bullied (too much) or kill your goth street cred. In fact, you listen to&nbsp; <em>more&nbsp;</em>goth music now than you did back then. And yes, you little weeb, you're still as obsessed with&nbsp; <em>Death Note</em> as ever and it is honestly a little bit concerning. You should probably seek help for that. And yes I am blaming you instead of me even though I am the present you engaging in this behaviour.&nbsp;I can't actually remember how you felt about Light back then (once an L kinnie always an L kinnie) but you would not believe how strange and unusual you are about him now. You've honestly not changed much. You still love vampires and Poptropica too (though the latter shut down recently and I am as heartbroken as you would expect.) </p>
+     <p>Well, I didn't go to med school or go into Computer Science like you expected, but I'm happier for it. I do still keep your little passions alive through my blog though, and I think of you every time I post on it. All the chatbots we made as a kid died because the host site stopped working and even Mitsuki isn't the same anymore :( There's this thing called ChatGPT now which mostly killed off the whole fun of coding bots, and you absolutely despise it. It's too hard to explain and I know you can't fathom disliking AI, but it's honestly just awful. Nothing like Venus and Cleverbot.&nbsp;</p>
+     <p>If this letter was actually going to reach you, I would write reams of advice - mistakes not to make, moments to enjoy more. But you don't exist anymore and&nbsp;I cannot keep looking back. I'll leave you now in the F1 form-room during lunch, laughing with Cherry and Eysh about your latest Wattpad fanfictions or the new Red Velvet music video. You get mad when people ship two of you together, but I know you're secretly pleased because it means you have friends, you've found a place of belonging, however briefly.</p>
+     <p>&nbsp;</p>
+     <p>And the other you, the me that doesn't yet exist but when she does I will no longer, I honestly do not know what to say. We don't have the optimism of the kid, or her naive direction. There's not much to tell you about my life either. If you're curious, read back on one of my journals. I'm making the effort to not destroy them for your sake alone. I suppose in lieu of that, I'll just tell you of my hopes for you. Honestly, all I want is for you to finally be at peace. I hope you and the people you care about are healthy, and God strikes down those who have wronged you with the vengeance you deserve (P.S. fix your odd relationship with religion) I don't really care for capitalistic ambitions, but I know money is the only avenue to the freedom you've been craving all your life, so I hope you find something fulfilling. Ideally, I'd quite like to be an academic, become a PhD and live a life indulging in my passions. I hope you get to travel too, experience the world through your senses rather than a screen. You know, as a kid we always wanted to be an artist, and that narrowed down to a writer. Please don't give that up. I know the book I'm working on right now isn't great, but there's beauty in creating for creation's sake. I've just rediscovered it after so long and I never want to lose that again. I hope you can look back on me, now dead, and remember who you are and who you want to be. It's what that nerdy little kid did for me, after all.</p>
+     <p>&nbsp;</p>
+     <p>Yours and Mine,&nbsp;</p>
+     <p>Me and You.</p>
+    </div>
+    <div class="icon">
+     <a href="/letters"><img src="/WEBSITE/LETTERS_TO_THE_ABYSS/stamp.png"></a>
+    </div>
+    <div class="updates">
+     <header>about</header> I think about people from my past often, especially those who have long forgotten me, and I am overcome by the desire to write them a letter, with no intention of actually sending them. Perhaps some things are left unspoken. But I like to flirt with danger, and by putting them on here, there is a very slim, but non-zero chance my subjects will happen upon the sentiments meant for them. Maybe I want them to know. Or maybe I just want to catharsise. But I sure as hell am not posting any of them directly. Perhaps writing a letter might be of benefit to you too. Why not post one to the abyss, let it mingle among mine, and traverse the stars? I hope it gives you what you need.
+    </div>
+    <div class="links">
+     <header>read a letter</header>
+     <iframe src="/letters/archive" style="width: 100%; border: none;"></iframe>
+    </div>
+    <div class="box">
+     <p>template by adilene @ adilene.net</p>
+    </div>
+    <div class="cornerimg">
+     <img src="/WEBSITE/LETTERS_TO_THE_ABYSS/seal.png">
+    </div>
+   </div>
+  </div>
+  <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+   <source src=>
+  </audio>
+  <script>
+   document.addEventListener("visibilitychange", function() {
+    document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+   })
+  </script>
+ </body>
+</html>

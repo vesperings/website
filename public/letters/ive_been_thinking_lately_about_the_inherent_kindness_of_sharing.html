@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!---
+ 
+        THE WEB IS YOURS neocities layout by adilene @ adilene.net
+ 
+        credit is not necessary but it is greatly appreciated!
+ 
+        if you need any help, feel free to shoot me an email at a@adilene.net!!!!
+ 
+        --->
+  <meta charset="UTF-8">
+  <!-- viewport - for mobile screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon & title -->
+  <title>&#10032; LETTERS TO THE ABYSS &#10032;</title>
+  <style>
+   :root {
+    --lace: var(--black);
+    /* change black to the color you want */
+    /* options are: pink, black, blue, yellow, purple */
+    --black: url("/WEBSITE/LETTERS_TO_THE_ABYSS/stv815.png");
+   }
+
+   /****** fonts ******/
+   @font-face {
+    font-family: "Scratch Boys";
+    src: url(/WEBSITE/LETTERS_TO_THE_ABYSS/1sb02z.ttf);
+   }
+
+   @font-face {
+    font-family: "Cerl";
+    src: url(/WEBSITE/LETTERS_TO_THE_ABYSS/CHERL___.TTF);
+   }
+
+   @font-face {
+    font-family: "Adorable Doll";
+    src: url(/WEBSITE/LETTERS_TO_THE_ABYSS/AdorableDoll.ttf);
+   }
+
+   @font-face {
+    font-family: "Vintage";
+    src: url(/WEBSITE/LETTERS_TO_THE_ABYSS/nwq0cf.ttf);
+   }
+   @font-face {
+  font-family: Vesperings;
+  src: url(/WEBSITE/vesperings.ttf);
+}
+
+* {
+   font-family: Vesperings;
+   font-size: 115%;
+
+}
+
+   /****** scrollbar ******/
+   ::-webkit-scrollbar {
+    display: none;
+   }
+
+   /****** select hightlight ******/
+   ::selection {
+    background: #4b0101;
+    color: white;
+   }
+
+   ::-moz-selection {
+    background: #4b0101;
+    color: white;
+   }
+
+   /****** body ******/
+   body {
+    background-color: #4b0101;
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-attachment: fixed;
+    color: #4b0101;
+    /* default font color */
+    font-family: "MS Gothic";
+    /* default font */
+    font-size: 20px;
+    /* default font size */
+    padding: 10px;
+    background-image: url("/WEBSITE/LETTERS_TO_THE_ABYSS/spac003.jpg");
+   }
+
+   * {
+    cursor: url(/WEBSITE/cursor.png),
+     auto !important;
+   }
+
+   /****** links ******/
+   a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+    text-shadow: -1px 0 #4b0101, 0 1px #4b0101, 1px 0 #4b0101, 0 -1px #4b0101;
+   }
+
+   a:hover {
+    cursor: help;
+    transition: 0.3s;
+    color: #4b0101;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+   }
+
+   /****** wrappers ******/
+   #wrapper {
+    animation: fadeEffect 1s;
+    margin: auto;
+    width: fit-content;
+    width: -moz-fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+   }
+
+   @keyframes fadeEffect {
+    from {
+     opacity: 0;
+    }
+
+    to {
+     opacity: 1;
+    }
+   }
+
+   /****** containers ******/
+   .container {
+    display: grid;
+    margin: auto;
+    width: 1000px;
+    grid-template-columns: 250px 1fr 1fr 250px;
+    grid-template-rows: 250px 250px 0.1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+     "icon main main links"
+     "updates main main box"
+     "footer footer footer footer";
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+   }
+
+   .main {
+    grid-area: main;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+    overflow: auto;
+   }
+
+   .icon {
+    grid-area: icon;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+   }
+
+   .icon img {
+    width: 100%;
+    display: block;
+    height: auto;
+   }
+
+   .updates {
+    grid-area: updates;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+    overflow: auto;
+    line-height: 130%;
+   }
+
+   .links {
+    grid-area: links;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+   }
+
+   .box {
+    grid-area: box;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+    padding: 10px;
+   }
+
+   .footer {
+    grid-area: footer;
+    text-align: center;
+    border-width: 10px;
+    border-style: solid;
+    border-image: var(--lace) 8 fill round;
+   }
+
+   header {
+    text-align: center;
+    font-family: "Adorable Doll";
+    font-size: 40px;
+    margin-bottom: 10px;
+   }
+
+   .cornerimg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+   }
+
+   .highlight {
+    background-color: #4b0101;
+    color: white;
+   }
+  </style>
+ </head>
+ <body>
+  <div id="wrapper">
+   <div class="container">
+    <div class="main">
+     <p>I've been thinking lately about the inherent kindness of sharing. To have an interest in a thing, and to share that with someone, with usually not much expectation. "I like this thing, and I think you would like this thing, so I will share it with you" sounds awfully similar to "I am ripping little pieces of my soul out like a piece of A4 paper, and I am handing you one". So here, a little piece of my soul - when I was maybe 6, 7, or 8, after I had moved to England permanently, I used to play Pokemon Platinum on my pink Nintendo DS (original) every night. My grandmother would come in and scold me if she caught me, so I would snap it shut when I heard her footsteps coming along the wooden floorboards down the hall, slip it under my pillow, and pretend to be asleep by the time she opened the door. 12, 11, or 10 years later, my first tattoo was of Turtwig, my first Pokemon, and Bulbasaur, my sister's. My grandmother told me I would perhaps regret it, it's a children's game, I won't enjoy it forever. Perhaps she's right, but I doubt I'll ever regret it. He is just a little green monster, but Turtwig in some ways symbolises the best of my childhood, the little moments of peace and wonder and joy. So, to you, I share this memory, and with it comes that little ripped out chunk from the sheet of A4 paper. I hope you appreciate it.</p>
+     <p>Sanya</p>
+    </div>
+    <div class="icon">
+     <a href="/letters"><img src="/WEBSITE/LETTERS_TO_THE_ABYSS/stamp.png"></a>
+    </div>
+    <div class="updates">
+     <header>about</header> I think about people from my past often, especially those who have long forgotten me, and I am overcome by the desire to write them a letter, with no intention of actually sending them. Perhaps some things are left unspoken. But I like to flirt with danger, and by putting them on here, there is a very slim, but non-zero chance my subjects will happen upon the sentiments meant for them. Maybe I want them to know. Or maybe I just want to catharsise. But I sure as hell am not posting any of them directly. Perhaps writing a letter might be of benefit to you too. Why not post one to the abyss, let it mingle among mine, and traverse the stars? I hope it gives you what you need.
+    </div>
+    <div class="links">
+     <header>read a letter</header>
+     <iframe src="/letters/archive" style="width: 100%; border: none;"></iframe>
+    </div>
+    <div class="box">
+     <p>template by adilene @ adilene.net</p>
+    </div>
+    <div class="cornerimg">
+     <img src="/WEBSITE/LETTERS_TO_THE_ABYSS/seal.png">
+    </div>
+   </div>
+  </div>
+  <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+   <source src=>
+  </audio>
+  <script>
+   document.addEventListener("visibilitychange", function() {
+    document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+   })
+  </script>
+ </body>
+</html>

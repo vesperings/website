@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>&#10032; CRAPPYPASTA &#10032;</title>
+      <style>
+         @import url('https://fonts.cdnfonts.com/css/chiller');
+         @font-face {
+         font-family: 'Chiller';
+         src: url('https://fonts.cdnfonts.com/css/chiller');
+         }
+         @font-face {
+         font-family: Vesperings;
+         src: url(/WEBSITE/vesperings.ttf);
+         }
+         body {
+         font-family: Vesperings;
+         }
+         :root {
+         --main-bg: #0a0505;
+         --text-color: #8a7676;
+         --accent: #610000;
+         --highlight: #2a0505;
+         --neon: #ff0000;
+         }
+         body, html {
+         margin: 0;
+         padding: 0;
+         background-color: var(--main-bg);
+         color: var(--text-color);
+         overflow-x: hidden;
+         cursor: url('/WEBSITE/cursor.png'), auto;
+         }
+         .container {
+         display: grid;
+         grid-template-columns: 200px 1fr 200px;
+         grid-template-areas: 
+         "header header header"
+         "left-sidebar main right-sidebar"
+         "footer footer footer";
+         gap: 10px;
+         padding: 20px;
+         }
+         header {
+         grid-area: header;
+         text-align: center;
+         font-size: 2em;
+         padding: 20px;
+         background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC') repeat;
+         border: 4px solid var(--accent);
+         animation: glitch 5s infinite;
+         font-family: 'Chiller', sans-serif;
+         text-shadow: 2px 2px var(--accent);
+         }
+         .left-sidebar, .right-sidebar {
+         background-color: var(--highlight);
+         padding: 10px;
+         border: 2px solid var(--accent);
+         }
+         .left-sidebar { grid-area: left-sidebar; }
+         .right-sidebar { grid-area: right-sidebar; }
+         main {
+         grid-area: main;
+         background-color: rgba(10, 5, 5, 0.9);
+         padding: 20px;
+         border: 2px solid var(--accent);
+         position: relative;
+         overflow: hidden;
+         }
+         main::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background: repeating-linear-gradient(
+         0deg,
+         rgba(0, 0, 0, 0.15),
+         rgba(0, 0, 0, 0.15) 1px,
+         transparent 1px,
+         transparent 2px
+         );
+         pointer-events: none;
+         }
+         footer {
+         grid-area: footer;
+         text-align: center;
+         padding: 10px;
+         background-color: var(--highlight);
+         border-top: 2px solid var(--accent);
+         }
+         .pixel-spirit {
+         width: 32px;
+         height: 32px;
+         background-image: url('/api/placeholder/32/32');
+         position: fixed;
+         bottom: 10px;
+         right: 10px;
+         animation: float 3s infinite alternate;
+         }
+         @keyframes glitch {
+         0% { transform: translate(0); }
+         20% { transform: translate(-2px, 2px); }
+         40% { transform: translate(-2px, -2px); }
+         60% { transform: translate(2px, 2px); }
+         80% { transform: translate(2px, -2px); }
+         100% { transform: translate(0); }
+         }
+         @keyframes float {
+         from { transform: translateY(0); }
+         to { transform: translateY(-10px); }
+         }
+         .cursed-item {
+         width: 32px;
+         height: 32px;
+         margin: 5px;
+         display: inline-block;
+         background-size: contain;
+         cursor: pointer;
+         background-image: url('/api/placeholder/32/32');
+         }
+         #spirit-meter {
+         width: 100%;
+         height: 20px;
+         background-color: var(--highlight);
+         margin-top: 10px;
+         border: 1px solid var(--neon);
+         box-shadow: 0 0 5px var(--neon);
+         }
+         #spirit-level {
+         height: 100%;
+         background-color: var(--neon);
+         width: 50%;
+         transition: width 0.5s;
+         }
+         .glitch-overlay {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(97, 0, 0, 0.1);
+         pointer-events: none;
+         opacity: 0;
+         z-index: 9999;
+         }
+         @keyframes pulse {
+         0% { transform: scale(1); opacity: 0.7; }
+         50% { transform: scale(1.05); opacity: 1; }
+         100% { transform: scale(1); opacity: 0.7; }
+         }
+         h1, h2, h3 {
+         animation: pulse 4s infinite;
+         color: var(--neon);
+         font-family: 'Chiller', sans-serif;
+         }
+         .blog-post {
+         background: linear-gradient(45deg, var(--highlight), var(--main-bg));
+         padding: 20px;
+         margin: 20px 0;
+         border: 2px dashed var(--accent);
+         position: relative;
+         overflow: hidden;
+         }
+         .blog-post::before {
+         content: "";
+         position: absolute;
+         width: 100px;
+         height: 100px;
+         background-image: url('/api/placeholder/100/100');
+         opacity: 0.1;
+         top: -20px;
+         right: -20px;
+         transform: rotate(45deg);
+         }
+         .spiral-cursor {
+         position: fixed;
+         pointer-events: none;
+         width: 50px;
+         height: 50px;
+         background: url('/api/placeholder/50/50') no-repeat center center;
+         background-size: contain;
+         animation: spiral-rotate 3s linear infinite;
+         opacity: 0.3;
+         z-index: 9999;
+         }
+         @keyframes spiral-rotate {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(360deg); }
+         }
+         .distorted-image {
+         max-width: 100%;
+         height: auto;
+         filter: url('#distortion-filter');
+         }
+         .creepy-message {
+         font-family: 'Chiller', sans-serif;
+         color: var(--neon);
+         text-shadow: 2px 2px var(--accent);
+         position: fixed;
+         bottom: 20px;
+         left: 20px;
+         transform: rotate(-5deg);
+         font-size: 1.2em;
+         opacity: 0;
+         transition: opacity 0.5s;
+         }
+         .old-tv {
+         position: relative;
+         width: 100%;
+         height: 200px;
+         background-color: #000;
+         overflow: hidden;
+         margin: 20px 0;
+         }
+         .old-tv::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+         z-index: 2;
+         background-size: 100% 2px, 3px 100%;
+         pointer-events: none;
+         }
+         #infected-cursor {
+         position: fixed;
+         pointer-events: none;
+         z-index: 9999;
+         opacity: 0.7;
+         }
+         .ascii-art {
+         font-family: monospace;
+         white-space: pre;
+         font-size: 10px;
+         line-height: 10px;
+         color: var(--neon);
+         }
+         .corrupted-text {
+         font-family: 'Chiller', sans-serif;
+         color: var(--neon);
+         text-shadow: 1px 1px var(--accent);
+         }
+         @keyframes flicker {
+         0% { opacity: 1; }
+         50% { opacity: 0.5; }
+         100% { opacity: 1; }
+         }
+         .flickering-text {
+         animation: flicker 0.1s infinite;
+         }
+         .hidden-message {
+         position: absolute;
+         color: var(--accent);
+         opacity: 0.1;
+         font-size: 8px;
+         user-select: none;
+         }
+         a {
+         color: red;
+         }
+         }
+      </style>
+   </head>
+   <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+   <style>
+      .font-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      background-color: black;
+      color: red;
+      font-family: Garamond, serif;
+      padding: 10px 15px;
+      border: 1px solid red; 
+      cursor: pointer;
+      }
+   </style>
+   <script>
+      let fontChanged = false;
+      let styleEl;
+      
+      function toggleFont() {
+          if (!fontChanged) {
+              styleEl = document.createElement('style');
+              styleEl.id = "fontOverride";
+      
+              styleEl.innerHTML = `
+                  * {
+                      font-family: Garamond, serif !important;
+                  }
+              `;
+      
+              document.head.appendChild(styleEl);
+              fontChanged = true;
+      
+          } else {
+              const existing = document.getElementById("fontOverride");
+              if (existing) existing.remove();
+      
+              fontChanged = false;
+          }
+      }
+   </script>
+   <body>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/CRAPPYPASTA/john_carpenter_halloween.mp3>
+      </audio>
+      <script>
+         document.addEventListener("visibilitychange", function() {
+           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+         })
+      </script>
+      <div class="glitch-overlay"></div>
+      <div class="spiral-cursor"></div>
+      <div id="infected-cursor"></div>
+      <div class="container">
+         <header>
+            <h1>Crappy Pasta</h1>
+         </header>
+         <aside class="left-sidebar">
+            <h3>List of Stories</h3>
+            <a href=#evilelmo>Evil Elmo</a> 
+            <br>
+            <br>
+            <a href=#evilafroguy>Evil Afro Guy </a>
+            <br>
+            <br>
+            <a href=#jeffthekiller>Jeff the Killer </a>
+            <br>
+            <br>
+            <a href=#thehatmanhauntsme>The Hat Man Haunts Me.................................................................................. </a>
+            <br>
+            <br>
+            <div id="inventory"></div>
+         </aside>
+         <main>
+            <h2>Welcome to the My Sick and Twisted Mind</h2>
+            <p>These are a bunch of real and true very actually scary stories that have happened to me or people I know trust me nobody on the internet lies ever. Warning these are super terrifying so be careful and don't blame me if you can't sleep at night I did tell you.</p>
+            <div class="blog-post">
+               <div id="evilelmo">
+                  <h3 class="flickering-text">Evil Elmo</h3>
+               </div>
+               <p>you probably think you know elmo right? all sweet and innocent with his dumb little dances, well you're wrong. i saw the real elmo and hes evil on the niside.</p>
+               <p>this happened one stormy night when i was maybe 7 or 8 idk i don't really remember bc trauma lol my mom worked nights some weeks and would drop me off at my grandma's. she had one of those old clunky tvs that always hissed static until you hit it in the right spot. gran would put on sesame street reruns for me while she knit, but she'd always end up falling alseep so i'd be watching tv til like 3 am. this night, the intro started normal just like every other expisode, but when grover hit the sesame street sign, he just screamed "fuckkkk" really loudly and didnt get up, he just laid there twistching until the song ended and it cut to the show.</p>
+               <p>it was zoomed out, but elmo was in the street with this little girl, i think her name was katie or chloe or something idk, and his voice was really glitchy like 2 voices at once, his normal happy voice and this deeper grainy undercurrent.</p>
+               <p>"tickle me one more time and i'll shank you and your hole family"</p>
+               <p>the girl looked like she was about to cry. the camera zoomed in so they were in the center of the frame and he just smiled like nothing happened and said "it's important to be honest, isn't it katie?"</p>
+               <p>she jjust nodded alll shakily.</p>
+               <p>"you should always tell the truth even if you're scared it might get daddy in trouble."</p>
+               <p>katie started sobbing silently, shaking like she was trying to keep it inside her. and i swear, i know it's not possible, but elmo rolled his eyes.</p>
+               <p>the screen glitched froze and started getting all staticky for a few seconds before switching back to the show. elmo was wlaking down sesame street with a knife in his hand, and his fur looked all wet and sticky like it was covered in blood. there was no sound other than the blade dragging against the floor.</p>
+               <p>elmo went to oscar the crouch's trash can and banged on the lid. oscar popped out and started complaining about elmo waking him up.</p>
+               <p>"can i be honest oscar?" elmo asked</p>
+               <p>"yeah of course, even grouches need to know the truth"</p>
+               <p>"i don't like you very much" and then he just sliced off oscar's fucking head and it started spewing stuffing and even as the head it the ground his mouth was still moviing.</p>
+               <p>the camera panned to grover, who was walking down the street humming and he saw oscar's head sticking out of the trash can and went to say hi.</p>
+               <p>"you should have stayed home grover" said elmo in his best imppression of oscar's voice before he jumped out of the trashcan and tackled grover. he started strangling him and the sounds were so real like you could hear him fighting for breath and his bones cracking and the strangled gasping.</p>
+               <p>then the screen cut to big bird's birthday party.</p>
+               <p>everyone was there, all the muppets and the humans too like maria, gordon, alan and the rest. they were standing around this mouldy cake with "happy birthday" written in blood red icing in chiller font. they were singing happy birthday but it was backwards like reversed.</p>
+               <p>elmo walked in holding the knife but nobody moved, they just kept smiling and singing but you could see their eyes all scared starting to water evven the muppetts. and then elmo went up to each of the humans and just stabbed and stabbed and stabbed while they kept singing happy birthday and my older cousins had shown me liveleaks before so i knew this was real the way they screamed and the guts fell out you couldn't fake that all yellow and squelchy and gross covered in blood.</p>
+               <p>after everyone was dead, he turned to the camera and looked right at me.</p>
+               <p>"can i be honest op? i know where you live"</p>
+            </div>
+            <div class="blog-post">
+               <div id="evilafroguy">
+                  <h3 class="flickering-text">Evil Afro Guy</h3>
+               </div>
+               <p>Have you ever heard of the Evil Afro Guy? I&rsquo;m guessing you haven&rsquo;t, and probably think that name is vaguely racist. But if you ever played Poptropica during the heyday of Flash, you might have seen him. Maybe you disregarded him as nothing but a glitch. For those of you who don&rsquo;t know, Poptropica was a children&rsquo;s online adventure game in the 2010s, in which players complete many quests on various &ldquo;islands.&rdquo; I loved getting lost in all those worlds, bouncing around every scene like a maniac. Out of curiosity, I looked it up again a few weeks ago, and it turns out most of the islands have been wiped. There&rsquo;s only a couple on the map now, none of them from when I used to play. They say it&rsquo;s because Flash died and they couldn&rsquo;t port everything over, but I know better. I know it&rsquo;s because of him</p>
+               <p>I was eight the first time I saw him. It was late, I was supposed to be asleep but I&rsquo;d snuck onto the desktop computer in my room anyway once I was sure my parents wouldn&rsquo;t check on me. I was in the Soda Pop Shop on Early Poptropica Island. Usually it was pretty busy, that commonroom with the checkerboard floor and neon signs laggy as hell and filled with dozens of avatars bouncing around playing mini-games. But that night, it was empty. Except for him. He was grinning with pure white skin, wearing a white vest and black pants. And of course, as the name suggests, he had a black afro. As far as the crazy character customisation on the game went, this was incredibly basic. Boring even. But something about it still gave me the creeps.&nbsp;</p>
+               <p>Having nothing better to do, I decided to add him as a friend. It was odd, instead of the silly Poptropica character names like Zany Hamburger or Purple Foot, his showed up as UNDEFINED UNDEFINED. I disregarded it as a glitch. Great as the game was, it was famously riddled with them. I decided to challenge him to a game of Skydiving. I had a 5 star battle ranking and expected some easy wins, but he obliterated me. Every single time. Before I could even click to jump, it was over. My childish ego was bruised, and like any sore loser, after the 7th humiliation, I ended the minigame. Instead, I decided to use the in-game chat system to talk to him.&nbsp;</p>
+               <p>&ldquo;Who&rsquo;s your favourite Poptropica character?&rdquo; I picked from the canned list, expecting Black Widow or Dr. Hare. His answer appeared instantly.</p>
+               <p>&ldquo;You are, [MY NAME].&rdquo;</p>
+               <p>I froze. Not my username, not my character&rsquo;s name. My <em>real </em>name. The one I knew I hadn&rsquo;t entered anywhere. Poptropican eyes follow the player&rsquo;s cursor, but his were staring into me, black pupils boring through the screen. </p>
+               <p>I tried to shut down the browser window, get away from him, but my mouse and keyboard weren&rsquo;t working. I could hear my heart pound over my sister&rsquo;s faint snoring and the whir of my computer fan.</p>
+               <p>My Poptropica character started crying. Her cartoon tears rained as she wailed with a silent mouth and I didn&rsquo;t know what to do. Then he asked me a question. In the same style as the pre-scripted Poptropica bubbles, but I knew this was definitely not part of the game.</p>
+               <p>&ldquo;How do you want to die?&rdquo;</p>
+               <p>Above my character, still crying, were actual clickable answers.</p>
+               <ul>
+                  <li>Drowning</li>
+                  <li>Suicide</li>
+                  <li>Car crash</li>
+               </ul>
+               <p>My hand wasn&rsquo;t on the mouse, I swear to God it wasn&rsquo;t. But the cursor moved, gliding towards the options like some twisted planchette. I didn&rsquo;t want to find out what it would select. Panicking, I yanked out the power cord straight from the back. The screen went black and I gasped out a breath I didn&rsquo;t even know I was holding in relief. With trembling fingers, I slapped a random horse sticker from the drawer in my desk onto my webcam. I didn&rsquo;t sleep that night.&nbsp;</p>
+               <p>You&rsquo;d think I&rsquo;d never touch Poptropica again after that, but I was a dumb kind and it was a fun game. I figured it was just a hacker and I&rsquo;d be fine if I avoided the common rooms. I deleted him from my friends list the next time I logged in, but when the page refreshed, he was still there. Only now his name wasn&rsquo;t UNDEFINED UNDEFINED, it was Gentle Seal. That was my sister&rsquo;s character. Her Poptropican, the one with the Viking helmet and twin braids, was gone. It had been replaced by <em>him.</em> I asked her about it, maybe she had changed her appearance as a sick joke &ndash; though there was no way she could have known &ndash; and she had no idea what I was talking about. She hadn&rsquo;t played the game in months. We tried logging into her account but it just didn&rsquo;t work. User not found.&nbsp; </p>
+               <p>I ended up making a new account. If you&rsquo;ve read my previous blog post, you&rsquo;ll know that I switched my original account after a year. This was why. It was a completely different username, and I made sure my new Poptropican looked nothing alike the first. I didn&rsquo;t go to common rooms anymore. I just stuck to the islands. The islands were safe.</p>
+               <p>Until he came back.</p>
+               <p>I was on Mythology Island, trying to costumise the rose crown from Aphrodite. But when I opened the costumiser, she wasn&rsquo;t there. Evil Afro Guy was. His eyes flickered wildly as he grinned at me, bloody sockets flashing between cartoon frames. Even with my webcam covered, I knew he was watching me. Another time on Spy Island, Director D had been replaced by Evil Afro Guy. When I clicked him, instead of his usual mission, the text bubble overflowed with garbled unicode. I couldn&rsquo;t make out any of it, but it filled me with a pit of dread. I refreshed the page and it returned to normal. Those things I could have dismissed as mere glitches, but I know there&rsquo;s more to it.&nbsp;</p>
+               <p>Do you remember the Goth Guy NPC on Reality TV Island? With the floppy hair and skull t-shirt? He wasn&rsquo;t important to the plot or anything. If you played after 2013, you&rsquo;ve probably never seen him and it&rsquo;s all my fault. I had a bit of a crush on him as a kid even despite the goofy Poptropica art style and I wanted to take a screenshot of my Poptropican next to him. Just something silly. I clicked on him to initiate dialogue. He flickered. I blinked and he wasn&rsquo;t himself anymore. It was Evil Afro Guy. I refreshed the page, and he was just&hellip;. Gone. No matter how many times I restarted the island, he just wasn&rsquo;t there. I tried to ignore it, finish the rest of the island, but once I got to the Reality TV show aspect of the Island, instead of the usual variety of characters, all of the contestants were all identical. They were all him. They taunted me during the challenges. Not in the usual canned phrases. Real things. Awful, personal things. He knew things about me he shouldn&rsquo;t, like what I really kept in the box under the bed, or why I&rsquo;d burnt those journals. When I tried to vote any of them out, they spoke in unison, chat bubbles overlapping.</p>
+               <p>&ldquo;You can&rsquo;t get rid of me.&rdquo;</p>
+               <p>I never finished that island.</p>
+               <p>I stopped playing for good after that. Years slipped by and I grew older, time hazing over any memory of Poptropica. I&rsquo;d convinced myself it was just a bad dream I&rsquo;d had and moved on with my life. Until a few weeks ago. I&rsquo;d seen a post about Poptropica on one of those nostalgia-bait Instagram accounts, and something about it made me want to log in again, prove to myself how silly my childhood nightmare had been. My account was exactly the same 15 years later, but the game itself had been stripped down. The sprawling multi-page map had been gutted to just 3 and all the islands I remembered were gone. Early Poptropica, Spy, Mythology, Reality TV. They may as well have never existed. At first I believed the official story, the death of Flash and budget cuts. But the more I expired the overly simplistic and polished new islands, the more I was convinced otherwise. The removal of the costumiser feature really solidified it for me. They didn&rsquo;t lose the islands, they quarantined them. Removed any feature that could have let him slip through. Sealed away childhood joy to stop him spreading. The new islands were sterile, purposefully dull. No more real interaction. Safe.&nbsp;</p>
+               <p>Or so I thought. I saw a thread on Reddit (sue me, I know), discussing how to play the old islands. Flashpoint was heralded as a popular option. It&rsquo;s a sort of digital archive that lets you play dead Flash games offline. Local copies, stored directly on your computer. No central servers, no web devs to monitor or patch any cracks. All the old islands, all the old code. Everything exactly as it was. Including him.</p>
+               <p>I doubt anyone will listen, but please, DO NOT DOWNLOAD FLASHPOINT. You aren&rsquo;t just resurrecting the old islands, you&rsquo;re resurrecting Evil Afro Guy too. And with every computer he has access to, he only grows stronger. They may have removed the common rooms, but he will find a way. And when he does, it will already be too late.</p>
+               <img src="/WEBSITE/CRAPPYPASTA/eag.png" height="200px" width="100px" alt="Distorted Image" class="distorted-image">
+            </div>
+            <div class="blog-post">
+               <div id="jeffthekiller">
+                  <h3 class="flickering-text">Jeff the Killer</h3>
+                  <p>Excerpt from a local Newspaper:</p>
+                  <p>OMINOUS UNKNOWN<br>
+                     KILLER IS STILL<br>
+                     AT LARGE.
+                  </p>
+                  <p>After weeks of unexplained murders, the ominous unknown killer is still on the rise. After little evidence has been found, a young boy states that he survived one of the killer's attacks and bravely tells his story.</p>
+                  <p>"I had a bad dream and I woke up in the middle of the night," says the boy, "I saw that for some reason the window was open, even though I remember it being closed before I went to bed. I got up and shut it once more. Afterwards, I simply crawled under my covers and tried to get back to sleep. That's when I had a strange feeling, like someone was watching me. I looked up, and nearly jumped out of my bed. There, in the little ray of light, illuminating from between my curtains, were a pair of two eyes. These weren't regular eyes; they were dark, ominous eyes. They were bordered in black and... just plain out terrified me. That's when I saw his mouth. A long, horrendous smile that made every hair on my body stand up. The figure stood there, watching me. Finally, after what seemed like forever, he said it. A simple phrase, but said in a way only a mad man could speak.</p>
+                  <p>"He said, 'Go To Sleep.' I let out a scream, that's what sent him at me. He pulled up a knife; aiming at my heart. He jumped on top of my bed. I fought him back; I kicked, I punched, I rolled around, trying to knock him off me. That's when my dad busted in. The man threw the knife, it went into my dad's shoulder. The man probably would've finished him off, if one of the neighbors hadn't alerted the police.</p>
+                  <p>"They drove into the parking lot, and ran towards the door. The man turned and ran down the hallway. I heard a smash, like glass breaking. As I came out of my room, I saw the window that was pointing towards the back of my house was broken. I looked out it to see him vanish into the distance. I can tell you one thing, I will never forget that face. Those cold, evil eyes, and that psychotic smile. They will never leave my head."</p>
+                  <p>Police are still on the look for this man. If you see anyone that fits the description in this story, please contact your local police department.</p>
+                  <p>Jeff and his family had just moved into a new neighborhood. His dad had gotten a promotion at work, and they thought it would be best to live in one of those "fancy" neighborhoods. Jeff and his brother Liu couldn't complain though. A new, better house. What was not to love? As they were getting unpacked, one of their neighbors came by.</p>
+                  <p>"Hello," she said, "I'm Barbara; I live across the street from you. Well, I just wanted to introduce my self and to introduce my son." She turns around and calls her son over. "Billy, these are our new neighbors." Billy said hi and ran back to play in his yard.</p>
+                  <p>"Well," said Jeff's mom, "I'm Margaret, and this is my husband Peter, and my two sons, Jeff and Liu." They each introduced themselves, and then Barbara invited them to her son's birthday. Jeff and his brother were about to object, when their mother said that they would love to. When Jeff and his family are done packing, Jeff went up to his mom.</p>
+                  <p>"Mom, why would you invite us to some kid's party? If you haven't noticed, I'm not some dumb kid."</p>
+                  <p>"Jeff," said his mother, "We just moved here; we should show that we want to spend time with our neighbors. Now, we're going to that party, and that's final." Jeff started to talk, but stopped himself, knowing that he couldn't do anything. Whenever his mom said something, it was final. He walked up to his room and plopped down on his bed. He sat there looking at his ceiling when suddenly, he got a weird feeling. Not so much a pain, but... a weird feeling. He dismissed it as just some random feeling. He heard his mother call him down to get his stuff, and he walked down to get it.</p>
+                  <p>The next day, Jeff walked down stairs to get breakfast and got ready for school. As he sat there, eating his breakfast, he once again got that feeling. This time it was stronger. It gave him a slight tugging pain, but he once again dismissed it. As he and Liu finished breakfast, they walked down to the bus stop. They sat there waiting for the bus, and then, all of a sudden, some kid on a skateboard jumped over them, only inches above their laps. They both jumped back in surprise. "Hey, what the hell?"</p>
+                  <p>The kid landed and turned back to them. He kicked his skate board up and caught it with his hands. The kid seems to be about twelve; one year younger than Jeff. He wears a Aeropostale shirt and ripped blue jeans.</p>
+                  <p>"Well, well, well. It looks like we got some new meat." Suddenly, two other kids appeared. One was super skinny and the other was huge. "Well, since you're new here, I'd like to introduce ourselves, over there is Keith." Jeff and Liu looked over to the skinny kid. He had a dopey face that you would expect a sidekick to have. "And he's Troy." They looked over at the fat kid. Talk about a tub of lard. This kid looked like he hadn't exercised since he was crawling.</p>
+                  <p>"And I," said the first kid, "am Randy. Now, for all the kids in this neighborhood there is a small price for bus fare, if you catch my drift." Liu stood up, ready to punch the lights out of the kid's eyes when one of his friends pulled a knife on him. "Tsk, tsk, tsk, I had hoped you would be more cooperative, but it seems we must do this the hard way." The kid walked up to Liu and took his wallet out of his pocket. Jeff got that feeling again. Now, it was truly strong; a burning sensation. He stood up, but Liu gestured him to sit down. Jeff ignored him and walked up to the kid.</p>
+                  <p>"Listen here you little punk, give back my bro's wallet or else." Randy put the wallet in his pocket and pulled out his own knife.</p>
+                  <p>"Oh? And what will you do?" Just as he finished the sentence, Jeff popped the kid in the nose. As Randy reached for his face, Jeff grabbed the kid's wrist and broke it. Randy screamed and Jeff grabbed the knife from his hand. Troy and Keith rushed Jeff, but Jeff was too quick. He threw Randy to the ground. Keith lashed out at him, but Jeff ducked and stabbed him in the arm. Keith dropped his knife and fell to the ground screaming. Troy rushed him too, but Jeff didn't even need the knife. He just punched Troy straight in the stomach and Troy went down. As he fell, he puked all over. Liu could do nothing but look in amazement at Jeff.</p>
+                  <p>"Jeff how'd you?" that was all he said. They saw the bus coming and knew they'd be blamed for the whole thing. So they started running as fast as they could. As they ran, they looked back and saw the bus driver rushing over to Randy and the others. As Jeff and Liu made it to school, they didn't dare tell what happened. All they did was sit and listen. Liu just thought of that as his brother beating up a few kids, but Jeff knew it was more. It was something, scary. As he got that feeling he felt how powerful it was, the urge to just, hurt someone. He didn't like how it sounded, but he couldn't help feeling happy. He felt that strange feeling go away, and stay away for the entire day of school. Even as he walked home due to the whole thing near the bus stop, and how now he probably wouldn't be taking the bus anymore, he felt happy. When he got home his parents asked him how his day was, and he said, in a somewhat ominous voice, "It was a wonderful day." Next morning, he heard a knock at his front door. He walked down to find two police officers at the door, his mother looking back at him with an angry look.</p>
+                  <p>"Jeff, these officers tell me that you attacked three kids. That it wasn't regular fighting, and that they were stabbed. Stabbed, son!" Jeff's gaze fell to the floor, showing his mother that it was true.</p>
+                  <p>"Mom, they were the ones who pulled the knives on me and Liu."</p>
+                  <p>"Son," said one of the cops," We found three kids, two stabbed, one having a bruise on his stomach, and we have witnesses proving that you fled the scene. Now, what does that tell us?" Jeff knew it was no use. He could say him and Liu had been attacked, but then there was no proof it was not them who attacked first. They couldn't say that they weren't fleeing, because truth be told they were. So Jeff couldn't defend himself or Liu.</p>
+                  <p>"Son, call down your brother." Jeff couldn't do it, since it was him who beat up all the kids.</p>
+                  <p>"Sir, it...it was me. I was the one who beat up the kids. Liu tried to hold me back, but he couldn't stop me." The cop looked at his partner and they both nod.</p>
+                  <p>"Well kid, looks like a year in Juvy..."</p>
+                  <p>"Wait!" says Liu. They all looked up to see him holding a knife. The officers pulled their guns and locked them on Liu.</p>
+                  <p>"It was me, I beat up those little punks. Have the marks to prove it." He lifted up his sleeves to reveal cuts and bruises, as if he was in a struggle.</p>
+                  <p>"Son, just put the knife down," said the officer. Liu held up the knife and dropped it to the ground. He put his hands up and walked over to the cops.</p>
+                  <p>"No Liu, it was me! I did it!" Jeff had tears running down his face.</p>
+                  <p>"Huh, poor bro. Trying to take the blame for what I did. Well, take me away." The police led Liu out to the patrol car.</p>
+                  <p>"Liu, tell them it was me! Tell them! I was the one who beat up those kids!" Jeff's mother put her hands on his shoulders.</p>
+                  <p>"Jeff please, you don't have to lie. We know it's Liu, you can stop." Jeff watched helplessly as the cop car speeds off with Liu inside. A few minutes later Jeff's dad pulled into the driveway, seeing Jeff's face and knowing something was wrong.</p>
+                  <p>"Son, son what is it?" Jeff couldn't answer. His vocal cords were strained from crying. Instead, Jeff's mother walked his father inside to break the bad news to him as Jeff wept in the driveway. After an hour or so Jeff walked back in to the house, seeing that his parents were both shocked, sad, and disappointed. He couldn't look at them. He couldn't see how they thought of Liu when it was his fault. He just went to sleep, trying to get the whole thing off his mind. Two days went by, with no word from Liu at JDC. No friends to hang out with. Nothing but sadness and guilt. That is until Saturday, when Jeff is woke up by his mother, with a happy, sunshiny face.</p>
+                  <p>"Jeff, it's the day." she said as she opened up the curtains and let light flood into his room.</p>
+                  <p>"What, what's today?" asked Jeff as he stirs awake.</p>
+                  <p>"Why, it's Billy's party." He was now fully awake.</p>
+                  <p>"Mom, you're joking, right? You don't expect me to go to some kid's party after..." There was a long pause.</p>
+                  <p>"Jeff, we both know what happened. I think this party could be the thing that brightens up the past days. Now, get dressed." Jeff's mother walked out of the room and downstairs to get ready herself. He fought himself to get up. He picked out a random shirt and pair of jeans and walked down stairs. He saw his mother and father all dressed up; his mother in a dress and his father in a suit. He thought, why they would ever wear such fancy clothes to a kid's party?</p>
+                  <p>"Son, is that all your going to wear?" said Jeff's mom.</p>
+                  <p>"Better than wearing too much." he said. His mother pushed down the feeling to yell at him and hid it with a smile.</p>
+                  <p>"Now Jeff, we may be over-dressed, but this is how you go if you want to make an impression." said his father. Jeff grunted and went back up to his room.</p>
+                  <p>"I don't have any fancy clothes!" he yelled down stairs.</p>
+                  <p>"Just pick out something." called his mother. He looked around in his closet for what he would call fancy. He found a pair of black dress pants he had for special occasions and an undershirt. He couldn't find a shirt to go with it though. He looked around, and found only striped and patterned shirts. None of which go with dress pants. Finally he found a white hoodie and put it on.</p>
+                  <p>"You're wearing that?" they both said. His mother looked at her watch. "Oh, no time to change. Let's just go." She said as she herded Jeff and his father out the door. They crossed the street over to Barbara and Billy's house. They knocked on the door and at it appeared that Barbara, just like his parents, way over-dressed. As they walked inside all Jeff could see were adults, no kids.</p>
+                  <p>"The kids are out in the yard. Jeff, how about you go and meet some of them?" said Barbara.</p>
+                  <p>Jeff walked outside to a yard full of kids. They were running around in weird cowboy costumes and shooting each other with plastic guns. He might as well be standing in a Toys R Us. Suddenly a kid came up to him and handed him a toy gun and hat.</p>
+                  <p>"Hey. Wanna pway?" he said.</p>
+                  <p>"Ah, no kid. I'm way too old for this stuff." The kid looked at him with that weird puppydog face.</p>
+                  <p>"Pwease?" said the kid. "Fine," said Jeff. He put on the hat and started to pretend shoot at the kids. At first he thought it was totally ridiculous, but then he started to actually have fun. It might not have been super cool, but it was the first time he had done something that took his mind off of Liu. So he played with the kids for a while, until he heard a noise. A weird rolling noise. Then it hit him. Randy, Troy, and Keith all jumped over the fence on their skateboards. Jeff dropped the fake gun and ripped off the hat. Randy looked at Jeff with a burning hatred.</p>
+                  <p>"Hello, Jeff, is it?" he said. "We have some unfinished business." Jeff saw his bruised nose." I think we're even. I beat the crap out of you, and you get my brother sent to JDC."</p>
+                  <p>Randy got an angry look in his eyes. "Oh no, I don't go for even, I go for winning. You may have kicked our asses that one day, but not today." As he said that Randy rushed at Jeff. They both fell to the ground. Randy punched Jeff in the nose, and Jeff grabbed him by the ears and head butted him. Jeff pushed Randy off of him and both rose to their feet. Kids were screaming and parents were running out of the house. Troy and Keith both pulled guns out of their pockets.</p>
+                  <p>"No one interrupts or guts will fly!" they said. Randy pulled a knife on Jeff and stabbed it into his shoulder.</p>
+                  <p>Jeff screamed and fell to his knees. Randy started kicking him in the face. After three kicks Jeff grabs his foot and twists it, causing Randy to fall to the ground. Jeff stood up and walked towards the back door. Troy grabbed him.</p>
+                  <p>"Need some help?" He picks Jeff up by the back of the collar and throws him through the patio door. As Jeff tries to stand he is kicked down to the ground. Randy repeatedly starts kicking Jeff, until he starts to cough up blood.</p>
+                  <p>"Come on Jeff, fight me!" He picks Jeff up and throws him into the kitchen. Randy sees a bottle of vodka on the counter and smashes the glass over Jeff's head.</p>
+                  <p>"Fight!" He throws Jeff back into the living room.</p>
+                  <p>"Come on Jeff, look at me!" Jeff glances up, his face riddled with blood. "I was the one who got your brother sent to JDC! And now you're just gonna sit here and let him rot in there for a whole year! You should be ashamed!" Jeff starts to get up.</p>
+                  <p>"Oh, finally! you stand and fight!" Jeff is now to his feet, blood and vodka on his face. Once again he gets that strange feeling, the one in which he hasn't felt for a while. "Finally. He's up!" says Randy as he runs at Jeff. That's when it happens. Something inside Jeff snaps. His psyche is destroyed, all rational thinking is gone, all he can do, is kill. He grabs Randy and pile drives him to the ground. He gets on top of him and punches him straight in the heart. The punch causes Randy's heart to stop. As Randy gasps for breath. Jeff hammers down on him. Punch after punch, blood gushes from Randy's body, until he takes one final breath, and dies.</p>
+                  <p>Everyone is looking at Jeff now. The parents, the crying kids, even Troy and Keith. Although they easily break from their gaze and point their guns at Jeff. Jeff see's the guns trained on him and runs for the stairs. As he runs Troy and Keith let out fire on him, each shot missing. Jeff runs up the stairs. He hears Troy and Keith follow up behind. As they let out their final rounds of bullets Jeff ducks into the bathroom. He grabs the towel rack and rips it off the wall. Troy and Keith race in, knives ready.</p>
+                  <p>Troy swings his knife at Jeff, who backs away and bangs the towel rack into Troy's face. Troy goes down hard and now all that's left is Keith. He is more agile than Troy though, and ducks when Jeff swings the towel rack. He dropped the knife and grabbed Jeff by the neck. He pushed him into the wall. A thing of bleach fell down on top of him from the top shelf. It burnt both of them and they both started to scream. Jeff wiped his eyes as best as he could. He pulled back the towel rack and swung it straight into Keith's head. As he lay there, bleeding to death, he let out an ominous smile.</p>
+                  <p>"What's so funny?" asked Jeff. Keith pulled out a lighter and switched it on. "What's funny," he said, "Is that you're covered in bleach and alcohol." Jeff's eyes widened as Keith threw the lighter at him. As soon as the flame made contact with him, the flames ignited the alcohol in the vodka. While the alcohol burned him, the bleach bleached his skin. Jeff let out a terrible screech as he caught on fire. He tried to roll out the fire but it was no use, the alcohol had made him a walking inferno. He ran down the hall, and fell down the stairs. Everybody started screaming as they saw Jeff, now a man on fire, drop to the ground, nearly dead. The last thing Jeff saw was his mother and the other parents trying to extinguish the flame. That's when he passed out.</p>
+                  <p>When Jeff woke he had a cast wrapped around his face. He couldn't see anything, but he felt a cast on his shoulder, and stitches all over his body. He tried to stand up, but he realized that there was some tube in his arm, and when he tried to get up it fell out, and a nurse rushed in.</p>
+                  <p>"I don't think you can get out of bed just yet." she said as she put him back in his bed and re-inserted the tube. Jeff sat there, with no vision, no idea of what his surroundings were. Finally, after hours, he heard his mother.</p>
+                  <p>"Honey, are you okay?" she asked. Jeff couldn't answer though, his face was covered, and he was unable to speak. "Oh honey, I have great news. After all the witnesses told the police that Randy confessed of trying to attack you, they decided to let Liu go." This made Jeff almost bolt up, stopping halfway, remembering the tube coming out of his arm. "He'll be out by tomorrow, and then you two will be able to be together again."</p>
+                  <p>Jeff's mother hugs Jeff and says her goodbyes. The next couple of weeks were those where Jeff was visited by his family. Then came the day where his bandages were to be removed. His family were all there to see it, what he would look like. As the doctors unwrapped the bandages from Jeff's face everyone was on the edge of their seats. They waited until the last bandage holding the cover over his face was almost removed.</p>
+                  <p>"Let's hope for the best," said the doctor. He quickly pulls the cloth; letting the rest fall from Jeff's face.</p>
+                  <p>Jeff's mother screams at the sight of his face. Liu and Jeff's dad stare awe-struck at his face.</p>
+                  <p>"What? What happened to my face?" Jeff said. He rushed out of bed and ran to the bathroom. He looked in the mirror and saw the cause of the distress. His face. It... it's horrible. His lips were burnt to a deep shade of red. His face was turned into a pure white color, and his hair singed from brown to black. He slowly put his hand to his face. It had a sort of leathery feel to it now. He looked back at his family then back at the mirror.</p>
+                  <p>"Jeff," said Liu, "It's not that bad..."</p>
+                  <p>"Not that bad?" said Jeff," It's perfect!" His family were equally surprised. Jeff started laughing uncontrollably His parents noticed that his left eye and hand were twitching.</p>
+                  <p>"Uh... Jeff, are you okay?"</p>
+                  <p>"Okay? I've never felt more happy! Ha ha ha ha ha haaaaaa, look at me. This face goes perfectly with me!" He couldn't stop laughing. He stroked his face feeling it. Looking at it in the mirror. What caused this? Well, you may recall that when Jeff was fighting Randy something in his mind, his sanity, snapped. Now he was left as a crazy killing machine, that is, his parents didn't know.</p>
+                  <p>"Doctor," said Jeff's mom, "Is my son... alright, you know. In the head?"</p>
+                  <p>"Oh yes, this behavior is typical for patients that have taken very large amounts of pain killers. If his behavior doesn't change in a few weeks, bring him back here, and we'll give him a psychological test."</p>
+                  <p>"Oh thank you doctor." Jeff's mother went over to Jeff." Jeff, sweety. It's time to go."</p>
+                  <p>Jeff looks away from the mirror, his face still formed into a crazy smile. "Kay mommy, ha ha haaaaaaaaaaaa!" his mother took him by the shoulder and took him to get his clothes.</p>
+                  <p>"This is what came in," said the lady at the desk. Jeff's mom looked down to see the black dress pants and white hoodie her son wore. Now they were clean of blood and now stitched together. Jeff's mother led him to his room and made him put his clothes on. Then they left, not knowing that this was their final day of life.</p>
+                  <p>Later that night, Jeff's mother woke to a sound coming from the bathroom. It sounded as if someone was crying. She slowly walked over to see what it was. When she looked into the bathroom she saw a horrendous sight. Jeff had taken a knife and carved a smile into his cheeks.</p>
+                  <p>"Jeff, what are you doing?" asked his mother.</p>
+                  <p>Jeff looked over to his mother. "I couldn't keep smiling mommy. It hurt after awhile. Now, I can smile forever. Jeff's mother noticed his eyes, ringed in black.</p>
+                  <p>"Jeff, your eyes!" His eyes were seemingly never closing.</p>
+                  <p>"I couldn't see my face. I got tired and my eyes started to close. I burned out the eyelids so I could forever see myself; my new face." Jeff's mother slowly started to back away, seeing that her son was going insane. "What's wrong mommy? Aren't I beautiful?</p>
+                  <p>"Yes son," she said, "Yes you are. L-let me go get daddy, so he can see your face." She ran into the room and shook Jeff's dad from his sleep. "Honey, get the gun we..." She stopped as she saw Jeff in the doorway, holding a knife.</p>
+                  <p>"Mommy, you lied." That's the last thing they hear as Jeff rushes them with the knife, gutting both of them.</p>
+                  <p>His brother Liu woke up, startled by some noise. He didn't hear anything else, so he just shut his eyes and tried to go back to sleep. As he was on the border of slumber, he got the strangest feeling that someone was watching him. He looked up, before Jeff's hand covered his mouth. He slowly raised the knife ready to plunge it into Liu. Liu thrashed here and there trying to escape Jeff's grip.</p>
+                  <p>"Shhhhhhh," Jeff said. "Just go to sleep."</p>
+               </div>
+            </div>
+            <div class="blog-post">
+               <div id="thehatmanhauntsme">
+                  <h3 class="corrupted-text">The Hat Man Haunts Me..................................................................................</h3>
+               </div>
+               <img src="https://media.tenor.com/Wj8onX9NJAAAAAAe/itsonlywanda.png" width="300px" alt="Distorted Image" class="distorted-image" align="left" padding="10px">        
+               For years of my life, Michael Jackson haunted me. Yes, you heard that right. Michael Jackson, pop star extraordinaire. The Smooth Criminal himself. You may not believe me, but I know the truth. Others may have experienced this, I’m not sure. If you have, I’m sorry. I hope you find the freedom that I have. He died on my birthday. June 25, 2009. I didn’t know in the morning. I went into school, so excited, and people were crying. They were all crying. I didn’t understand, I didn’t know why, I didn’t care – it was my birthday! They should be caring about that! In a fit of rage, I cursed MJ. I said I didn’t care, that people shouldn’t be sad over him, they should be celebrating me. And then I moved on with my day. Things changed after that. It was subtle, at first. A general feeling of unease, like I was being watched. I developed a fear of the dark. I felt like I could sense something, standing outside my window. I used to like to listen to music in the shower. I was raised with my grandparents, and liked “older” music as a result. Queen, ACDC, Bowie…and Him. Any other music would be fine. But if I played His music in the shower, intentionally or not? The whole house would have a power cut. Without fail. And then the dreams started. I didn’t make the connection at first, and so I called him “The Drum Man”. They would happen every night. I was scared to go to sleep, because I knew He would be there. Every single night, when I managed to fall asleep, I would dream of the following: I was in bed, in my room. Everything looked exactly like it did in my waking nightmares. My curtains would be closed, but I would bolt up when I heard It. The light of the moon would be just enough to illuminate behind my curtains. It would all be fine, except for a Shadow in the middle of my window. Him. And I would hear that sound I came to dread: Three. Slow. Drumbeats. Then silence. Then Three. Slow. Drumbeats. He would do this, and he wouldn’t stop, and I knew it was Him after a while, and I would work myself up into a frenzy until I woke myself up. My grades suffered. I’d never slept particularly well as a child, but this made my insomnia so much worse. I struggled to stay awake in school, my teachers were worried, my friends and family more so. I couldn’t tell them what was happening. And then I started seeing him outside of my dreams. I would hear “hee hee” faintly, echoing across the park when I was alone. I would see flashes of glitter disappearing around corners. I knew it was Him. I knew He was watching me, always. I could feel it. I knew, somehow, innately, that if I left my bedroom past midnight, He would get in. He would drop that drum and find his way in to get me. I can’t talk about the night in which I decided to confront him. I cannot tell you the horrors that happened. I still have a scar down the back of my leg. It has never faded. It never will. But I’m free. I haven’t seen him or heard him since then. Please, for your sake, never curse MJ. I cannot warn you enough. He will follow you. He will find you. He will not stop unless you find a way to stop him. I cannot tell you how.
+               <br>
+               <br>
+               <h4>Submitted by Sanya</h4>
+            </div>
+            <div class="ascii-art" id="ascii-face"></div>
+         </main>
+         <aside class="right-sidebar"></aside>
+         <footer></footer>
+      </div>
+      <div class="pixel-spirit"></div>
+      <div class="creepy-message" id="creepy-message"></div>
+      <svg width="0" height="0">
+         <filter id="distortion-filter">
+            <feTurbulence type="turbulence" baseFrequency="0.01 0.01" numOctaves="2" seed="2" stitchTiles="stitch" result="turbulence" />
+            <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" />
+         </filter>
+      </svg>
+      <script>
+         // Cursed Inventory
+         const cursedItems = ['skull', 'eye', 'doll', 'mirror', 'book', 'mask'];
+         const inventory = document.getElementById('inventory');
+         cursedItems.forEach(item => {
+         const itemElement = document.createElement('div');
+         itemElement.classList.add('cursed-item');
+         itemElement.title = item;
+         itemElement.addEventListener('click', () => cursedItemClick(item));
+         inventory.appendChild(itemElement);
+         });
+         
+         function cursedItemClick(item) {
+         const messages = [
+           "The " + item + " pulses with an otherworldly energy...",
+           "You hear distant screams as you touch the " + item + "...",
+           "The " + item + " whispers ancient secrets into your mind...",
+           "A chill runs down your spine as you handle the " + item + "...",
+           "The " + item + " seems to be staring back at you..."
+         ];
+         alert(messages[Math.floor(Math.random() * messages.length)]);
+         }
+         
+         // Spirit Meter
+         const spiritLevel = document.getElementById('spirit-level');
+         setInterval(() => {
+         const level = Math.random() * 100;
+         spiritLevel.style.width = `${level}%`;
+         }, 3000);
+         
+         // Moon Phase
+         const moonPhases = ['🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘'];
+         const moonPhaseElement = document.getElementById('moon-phase');
+         setInterval(() => {
+         const randomPhase = moonPhases[Math.floor(Math.random() * moonPhases.length)];
+         moonPhaseElement.textContent = randomPhase;
+         }, 5000);
+         
+         // Glitch Effect
+         const glitchOverlay = document.querySelector('.glitch-overlay');
+         setInterval(() => {
+         glitchOverlay.style.opacity = '0.5';
+         setTimeout(() => {
+           glitchOverlay.style.opacity = '0';
+         }, 100);
+         }, 10000);
+         
+         // Random Haunting
+         const hauntedElements = document.querySelectorAll('h1, h2, h3, p');
+         setInterval(() => {
+         const randomElement = hauntedElements[Math.floor(Math.random() * hauntedElements.length)];
+         const originalText = randomElement.textContent;
+         randomElement.textContent = '01010111 01000001 01010100 01000011 01001000 00100000 01001111 01010101 01010100';
+         setTimeout(() => {
+           randomElement.textContent = originalText;
+         }, 1000);
+         }, 15000);
+         
+         // Creepy Audio
+         function playCreepySound() {
+         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+         const oscillator = audioContext.createOscillator();
+         const gainNode = audioContext.createGain();
+         oscillator.connect(gainNode);
+         gainNode.connect(audioContext.destination);
+         oscillator.type = 'sawtooth';
+         oscillator.frequency.setValueAtTime(Math.random() * 200 + 100, audioContext.currentTime);
+         gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+         gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.1);
+         gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.3);
+         oscillator.start();
+         oscillator.stop(audioContext.currentTime + 0.3);
+         }
+         setInterval(playCreepySound, 30000);
+         
+         // Spiral Cursor
+         const spiralCursor = document.querySelector('.spiral-cursor');
+         document.addEventListener('mousemove', (e) => {
+         spiralCursor.style.left = e.pageX + 'px';
+         spiralCursor.style.top = e.pageY + 'px';
+         });
+         
+         // Infected Cursor
+         const infectedCursor = document.getElementById('infected-cursor');
+         let cursorInfection = 0;
+         document.addEventListener('mousemove', (e) => {
+         infectedCursor.style.left = e.pageX + 'px';
+         infectedCursor.style.top = e.pageY + 'px';
+         cursorInfection++;
+         if (cursorInfection > 100) {
+           infectedCursor.style.boxShadow = `0 0 ${cursorInfection / 10}px ${cursorInfection / 10}px rgba(255, 0, 0, 0.5)`;
+         }
+         });
+         
+         // ASCII Art Face
+         const asciiFace = document.getElementById('ascii-face');
+         const faces = [
+         
+         `
+         .-""""""-.
+         .'          '.
+         /   .      .   \\
+         :   '        '   :
+         |   \   ----  /  |
+         :  .'"____"'.  :
+         '.          .'
+         '-......-'
+         `,
+         
+         `
+         ⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⡄⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⢀⡿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠄⠀⠀⠀
+         ⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀
+         ⠀⠀⠀⢠⣿⣇⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀
+         ⠀⠀⠀⠀⣻⣿⣿⣿⣿⡿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣟⣿⣿⣿⣿⣷⣭⠀⠀⠀
+         ⠀⠀⠀⠀⣻⣿⠟⠛⠉⠁⠈⠉⠻⢿⣿⣿⣿⡟⠛⠂⠉⠁⠈⠉⠁⠻⣿⠀⠀⠀
+         ⠀⠀⠀⠀⢾⠀⠀⣠⠄⠻⣆⠀⠈⠠⣻⣿⣟⠁⠀⠀⠲⠛⢦⡀⠀⠠⠁⠀⠀⠀
+         ⠀⠀⠀⠀⢱⣄⡀⠘⠀⠸⠉⠀⠀⢰⣿⣷⣿⠂⢀⠀⠓⡀⠞⠀⢀⣀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠠⣿⣷⣶⣶⣶⣾⣿⠀⠸⣿⣿⣿⣶⣿⣧⣴⣴⣶⣶⣿⡟⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣏⠇⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣾⠁⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⢺⣿⣿⣿⣿⣟⡿⠂⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠑⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⠀⠀⠈⠿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠄⢻⣿⣿⣿⡗⠀⠀⠀⠀⠈⠀⢨⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠀⡞⠷⠿⠿⠀⠀⠀⠀⢀⣘⣤⣿⣿⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠀⠼⠉⠀⠀⠀⠀⠀⠚⢻⠿⠟⠓⠛⠂⠉⠉⠁⠀⡁⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣼⠀⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⡿⡀⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢾⠻⠌⣄⡁⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣀⣀⣀⡠⡲⠞⡁⠈⡈⣿⠀⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠘⠛⠻⢯⠟⠩⠀⠀⢠⣣⠈⠀⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠄⠂⣰⣧⣾⠶⠀⠀⠀⠀⠀⠀⠀
+         `,
+         
+         
+         ];
+         asciiFace.textContent = faces[Math.floor(Math.random() * faces.length)];
+         
+         // Creepy Messages
+         const creepyMessages = [
+         "Behind you...",
+         "Don't look away...",
+         "It's watching you...",
+         "You can't escape...",
+         "Join us..."
+         ];
+         const creepyMessageElement = document.getElementById('creepy-message');
+         setInterval(() => {
+         creepyMessageElement.textContent = creepyMessages[Math.floor(Math.random() * creepyMessages.length)];
+         creepyMessageElement.style.opacity = '1';
+         setTimeout(() => {
+           creepyMessageElement.style.opacity = '0';
+         }, 3000);
+         }, 20000);
+         
+         // Hidden Messages
+         function addHiddenMessages() {
+         const hiddenMessages = [
+           "Help me",
+           "Save yourself",
+           "They're coming",
+           "Don't trust them",
+           "Run while you can"
+         ];
+         document.body.addEventListener('mousemove', (e) => {
+           if (Math.random() < 0.001) {
+               const hiddenMessage = document.createElement('div');
+               hiddenMessage.classList.add('hidden-message');
+               hiddenMessage.style.left = e.pageX + 'px';
+               hiddenMessage.style.top = e.pageY + 'px';
+               hiddenMessage.textContent = hiddenMessages[Math.floor(Math.random() * hiddenMessages.length)];
+               document.body.appendChild(hiddenMessage);
+               setTimeout(() => {
+                   hiddenMessage.remove();
+               }, 1000);
+           }
+         });
+         }
+         addHiddenMessages();
+         
+         // Start video on page load
+         window.addEventListener('load', () => {
+         const staticVideo = document.getElementById('static-video');
+         staticVideo.play();
+         });
+      </script>
+   </body>
+</html>

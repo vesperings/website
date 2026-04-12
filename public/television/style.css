@@ -1,0 +1,42 @@
+
+ body {
+  background:#000000;
+  background-image: url("/WEBSITE/TELEVISION/bg.gif");
+  font-family: "georgia";
+  font-size:16px;
+  letter-spacing:1.4px;
+  color: #ffcffd;
+  max-width: 1000px;
+  margin: auto;
+    }
+    * { 
+  cursor: url(/WEBSITE/cursor.png),
+  auto !important; 
+  }
+
+  /* unvisited link */
+a:link {
+  color: #820404;
+}
+
+/* visited link */
+a:visited {
+  color: #4b010;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ff0000;
+}
+
+/* selected link */
+a:active {
+  color: #ff0000;
+
+}
+
+button {
+background-color:transparent;
+color:#ff0000;
+border:none;
+}

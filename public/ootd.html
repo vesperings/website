@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>&#9734; OOTDS &#9734;</title>
+      <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+      <style>
+         @font-face {
+         font-family: Vesperings;
+         src: url(/WEBSITE/vesperings.ttf);
+         }
+         * {
+         font-family: Vesperings;
+         }
+         body {
+         background: url("/WEBSITE/FASHION/OOTD/bg.gif") fixed;
+         color: red;
+         }
+         * {
+         cursor: url(/WEBSITE/cursor.png), auto !important;
+         }
+         h1 {
+         }  
+         .main, .main-first {
+         margin-top: 30px;
+         margin-left: 450px;
+         width: 500px;
+         border: 1px solid black;
+         background: black;
+         color: red;
+         padding: 15px 25px 15px 25px;
+         box-shadow: 7px 7px rgb(0, 0, 0, 0.8);
+         }
+         .sidebar {
+         position: fixed;
+         width: 350px;
+         min-height: 75px;
+         border: 1px solid black;
+         background: black;
+         margin-top:0px;
+         margin-left:25px;
+         /*The 7px is vertical and horizontal offset for the shadow, if you want to change it.*/
+         box-shadow: 7px 7px rgb(0, 0, 0, 0.78);
+         }
+         /*Prevent image overflow*/  
+         .main img, .main-first img, .sidebar img {
+         max-width: 100%;
+         height: 400px;
+         }
+         /*Text section in sidebar.*/  
+         .sidebar-description {
+         padding: 15px;
+         }
+         .button {
+         padding: 5px;
+         padding-left: 10px;
+         display: inline-block
+         }
+         .si
+         }
+         /*For narrow screens*/
+         @media (max-width: 1100px) {
+         .sidebar {
+         width: 275px;
+         margin-left: 10px;
+         }
+         .main, .main-first {
+         width: 420px;
+         margin-left: 315px;
+         }
+         }
+         /*Mobile compatibility.*/
+         @media (orientation: portrait) {
+         .sidebar {
+         margin: 0 auto;
+         position: static;
+         margin-top: 60px;
+         margin-bottom: 15px;
+         width: 90%;
+         }
+         .main, .main-first {
+         margin: 0 auto;
+         margin-top: 20px;
+         width: 80%;
+         }
+         .footer {
+         width: 80%;
+         padding: 5%;
+         margin: 0 auto;
+         }
+         .top-bar {
+         font-size: 13.5px;
+         letter-spacing: 4px;
+         font-size: 90%; /*To help reduce height if it overflows the first line.*/
+         }
+         }
+         a {
+         color: indianred;
+         }
+      </style>
+   </head>
+   <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+   <style>
+      .font-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      background-color: black;
+      color: red;
+      font-family: Garamond, serif;
+      padding: 10px 15px;
+      border: 1px solid red; 
+      cursor: pointer;
+      }
+   </style>
+   <script>
+      let fontChanged = false;
+      let styleEl;
+      
+      function toggleFont() {
+          if (!fontChanged) {
+              styleEl = document.createElement('style');
+              styleEl.id = "fontOverride";
+      
+              styleEl.innerHTML = `
+                  * {
+                      font-family: Garamond, serif !important;
+                  }
+              `;
+      
+              document.head.appendChild(styleEl);
+              fontChanged = true;
+      
+          } else {
+              const existing = document.getElementById("fontOverride");
+              if (existing) existing.remove();
+      
+              fontChanged = false;
+          }
+      }
+   </script>
+   <body>
+      <div class=sidebar>
+         <div class=sidebar-description>
+            <h1>VESPERINGS' OOTDS!</h1>
+            <p>This is essentially just an outfit diary. I don't have a "style" or "aesthetic", I just wear what I want when I want so don't expect anything inspirational lmao. Though I do tend to gravitate towards edgy/vintage pieces and a red/black colour scheme. 99% of the time every outfit is paired with a black mask, and I only ever really switch out my first lobe piercings while the rest remain the same, so I also don't include those in the collages.</p>
+         </div>
+      </div>
+      <div class=main>
+         <h2>21st March 2026</h2>
+         <img src="/WEBSITE/FASHION/OOTD/ZcnOquRjPcmu50qOhq5s.png" align="left">
+         <p>Eid Moo Barack. Didn't do anything today (partially my own fault as I was ill) but dressed up for a total of 2 hours to make my mother happy. Though I venture my hair and makeup had the opposite effect LOL. I miss the Eids we had as a kid, especially now that I can present myself how I like. Oh well, onto the future. I tried teasing my hair again today, but as usual it WILL NOT hold for longer than 10 minutes because ironically my hair is too healthy. Nothing more Got2b can't fix I suppose. Doing my makeup and straightening my hair makes me feel like such a traitor to my gender because I think (most of the time) the whole "makeup is self expression!1!1!" thing is bullshit, but I cannot deny styling myself using these things makes me feel more like myself. <img src="/WEBSITE/PHOTOS/IMMEDIATE_OUNCE/POSTS/155.JPG" width="160px" style="max-height:160px;" align="right"> Which is something I ought to unpack, but that's for a different time. It's not like I use them to make myself more conventionally attractive (tried it, felt miserable), but I'm still contributing to the same industry and culture in a way. But that's enough whinging self-flagellation for one night. The outfit and earrings my mother got me from her latest trip to the homeland, and I am so glad to have silver jhumkas because I don't really enjoy gold jewellery. I also love all shades of red (duh), so these clothes are perfect for me. They show up a lot brighter in the collage than in real life for some reason. It's the first Eid in a while I've liked the way I looked, so I'm a little disappointed I didn't get to show anyone, but whatever. At least I have this website, and you, dear reader. </p>
+      </div>
+      <div class=main>
+         <h2>28th February 2026</h2>
+         <p><img src="/WEBSITE/FASHION/OOTD/tlSIjuqWKI13sgcKRCPq.png" align="left">What I wore to hang out with my best friend after a realllyyyyy long time. The image doesn't get it across very well but the dress has these wonderful Morticia Addams sleeves that trail all the way down to the floor. I say dress, but it's actually an abaya I got at an Islamic store lmaooo. I can imagine quite a few people will not be happy with my styling of it. Platform Docs otherwise I WILL trip over the length of the hem, and two edgy belts. The O ring one is only 4 years old, but already the pleather is starting to flake. It's fine though, I will wear it until it's unuseable. I hate buying things, but I had to get a new spiked choker because I'm pretty sure my mother tossed my old one (also four years old and flaking, RIP.) The chunky heart necklace is always fun because it goes with everything while still adding a point of interest. And of course, the Claire's matching BFF necklace. Absolutely massive bag that I've been using as my daily as of late that fits my entire life inside. I mean to do a "What's in my bag" blog post at some point, but in the meantime <a href="https://www.youtube.com/watch?v=rKqsQAYgN04&pp=0gcJCcUKAYcqIYzv">here</a> is an imprompteau YouTube video I filmed showing it. I've stuffed it with so much crap I can't really wear it as intended on my shoulder or crossbody, so I use it as a backpack because it feels a lot lighter that way.</p>
+      </div>
+      <div class=main>
+         <h2>24th February 2026</h2>
+         <p><img src="/WEBSITE/FASHION/OOTD/CZgTxmMAm0jacwbUWcdd.png" align="left">One that I'm not wearing today, but is so commonly in my rotation that I need to document it. I'm realising as I make this post that having an all-black background for this page when that's the only colour of clothing I wear is unwise... Hmmm, maybe open the image into  a new tab for a clearer view? I call this my boy outfit because it makes me look like a boy. I wear it when I'm too lazy to get dressed and want to feel invisible, but if anything it probably just makes me look very suspicious with my mask and hood. I thrifted this hoodie and it was long enough to be a dress until I washed it and it shrank in a way that made the hood sit really oddly. I ripped the neck to try fixing it, and the hood sits better now, but now the hoodie has a V neck I can't tell if I like or not. The back of the hoodie has this yellow graphic of a man's face, but I have no idea where it's from. I do also wear this outfit without the jacket if it's too warm, but normally I love layering. I got the dog tag at Timpsons and had it custom engraved, and stuck it onto an old chain I never wear. What's engraved on it? It's a secret :3 </p>
+      </div>
+      <div class=main>
+         <h2>24th February 2026</h2>
+         <p><img src="/WEBSITE/FASHION/OOTD/cPvRMlMpVIAlKjAJcUpa.png" align="left"> This has been my "having to go run errands with no prior warning" outfit, AKA throwing on my leather jacket and shoes over what I'm already wearing 99.9% of the time. I have worn this sweatshirt to Death. It is not an exaggeration to say I've worn these sweatshirt and leggings almost every day of the year so far. The leather jacket is a little too big on me, but I'm afraid I'll ruin it so I haven't tried to shrink it just yet. Fun fact, this is the exact same jacket early seasons Dean Winchester wears, except in black. I've usually only been wearing one choker, but I tried layering two recently and really liked the way it looked. I "made" the one with the charm, if you can count opening and closing a jumpring from a broken necklace around a piece of plastic "making". Obviously, this is a very basic outfit, glorified loungewear, really, but it makes me feel enough like myself that I wouldn't be tooooooo embarassed running into someone.</p>
+      </div>
+      <div class=main>
+         <h2>18th June 2025</h2>
+         <p><img src="/WEBSITE/FASHION/OOTD/18062025.png" align="left">Outfit for my first ever concert! Not pictured are the peacock feathers I braided into my hair. I think I did pretty well considering I had no reference for what I would need and the weather being So Hot. The Demonias may or may not have been overkill considering we had seated... well seats, but being tall (read: barely grazing average height) is part of the look. Because it was mid summer and boiling, I did keep the flannel tied around my waist. Why didn't I just leave it at home? Because it's my summer alternative to the leather jacket, AKA a comfort blanket. The jeans came in super handy because I could stuff so much into the pockets and the tiny bag limit didn't feel stifling. Actually, these jeans and my Demonias have become concert staples somewhat, though I do need to mend the jeans which I have been putting off for months. Edgy accessories aside, I wore my Claire's pink dolphin necklace, which is actually half of a set I got with my best friend :3 I went to the concert with her so it only seemed natural to bring it along with me. His name is Final Fantasy VII. My bag, another thing that has become a concert staple, did clash with the rest of my outfit, but matched my signature purple eye makeup, so it's not too awful a fashion faux-pas lol. It's a tiny little thing I impulsively bought for £5 at an Urban Outfitters sample sale at my campus (I asked if they had it in black or red, they said no) and I was a little worried I wouldn't get much use out of it because of the colour, but it has proved perfect for concerts. I think it's a crossbody, but I prefer to tighten it around my hips like a waist bag. It fits so much in it, plus with my pockets, I could have carried all my belongings if I wanted. The Demonias are awful, by the way. I have not once worn them without wanting to burn them by the end of the night. I never learn my lesson and will continue to abuse my feet with these torture devices every time I see a show.</p>
+      </div>
+      <div class=main>
+         <h2>2nd May 2025</h2>
+         <p><img src="/WEBSITE/FASHION/OOTD/020525.png" align="left">Is this ironic? Only a little. A graphic T-shirt, flannel and jeans (skinny with a leather jacket in cooler months) has been my uniform for as long as I've been in charge of my own clothes. Justin Bieber T-shirt because its funny  with a red oversized (until it shrunk in the wash) flannel. Sleeves rolled up since I anticipated it being warmer than it is. These baggy jeans have been a lifesaver for me over the past year or so, they're so comfortable even if they are a bit big on me. I cut off several inches from the bottom and they still pool at my feet. Absolute toture in normal UK weather. But there are SO. MANY. POCKETS!! All functional too! I can, no joke, fit all my shopping and a book in them. I never take the skull jean chain off, regardless of whether they "suit" the outfit or not. My hair's a mess today, so I opted for a baseball cap alongside my claw-clip (finally found it!). I also threw on a couple of little bracelets I made, because why not on my left wrist, with my smart watch on my right. My shoes are a pair of beaten up (didn't even think that was possible) pair of Timberlands I bought in America or Canada at an outlet store years ago at the height of my Jungkook obsession lmaoo. I really need to figure out how to clean these. The outfit probably wouldn't look too ridiculous if it wasn't for my gigantic holographic backpack. But I need to carry my laptop somehow and I think it's fun.</p>
+      </div>
+      <div class=main>
+         <h2>30th April 2025</h2>
+         <p><img src="/WEBSITE/FASHION/OOTD/300425.png" align="left">The weather's turned, which means I can no longer hide comfortably in baggy hoodies and jeans. I was running late this morning, so I threw on a rust coloured wrap dress (*gasp!* yes, I am capable of deviating from my red and black palette sometimes), because there is no easier way to look somewhat put together (and it was the first thing I found that wouldn't completely melt me). I pinned an Avon cameo brooch to the top for some extra security too, so it wouldn't flap around everywhere and paired the dress with my trusty rose embroidered Docs because they're comfortable. My hair was also pinned up by a metal claw-clip, because the last thing I need in warm weather is feeling suffocated by loose hair. I couldn't find the spider-web one I usually gravitate towards, so I just used this old thing I've had forever. To be honest, I can't remember the last time I've worn my hair down. It's at that ugly not-long not-short length right now, but I really ought to let it breathe more often. I'm not sure why I threw on the bangle I did - a gift from my aunt when she visited last summer - but I also put on my kitschy skeleton earrings since I felt a little too girly and sweet. My laptop bag wasn't an aesthetic choice, really. I just needed it for class. I believe it belonged to my father. This "outfit" is objectively not "fashionable" and would never hold weight on any social media platform but fuck I am a Real Person with a Real Life which means I have to make Realistic Choices. That's sort of what I want to document on this page. Disprove the notion that everyone has to be a one-dimensional Pinterest model at all times. My outfits are going to be boring and repetitive and that is so fine actually.</p>
+      </div>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/FASHION/OOTD/manic_street_preachers_sleepflower.mp3>
+      </audio>
+      <script>
+         document.addEventListener("visibilitychange", function() {
+           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+         })
+      </script>
+   </body>
+</html>

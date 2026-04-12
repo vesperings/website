@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;     
+         top: 10px;          
+         left: 10px;            
+         z-index: 9999;         
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+         
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+         
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+         
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+         
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+         
+                 fontChanged = false;
+             }
+         }
+      </script>    
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don’t know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate">2nd December 2024</h4>
+               <h2>I</h2>
+               <p>Ember like venus in dusk</p>
+               <p>Shoots from your lips to pavement.</p>
+               <p>I wish in silence</p>
+               <p>Unspoken words which</p>
+               <p>Hang</p>
+               <p>Heavy as the lighter in my pocket.</p>
+               <p>If I ignite this duvet warmth,</p>
+               <p>Will we rise from the ash?</p>
+               <h2>II</h2>
+               <p>Ma told me not to leave my bones out for strays.</p>
+               <p>Said they&rsquo;d keep coming back,</p>
+               <p>Track in their filth.</p>
+               <p>But your hearth is warm and you</p>
+               <p>Tend my wounds</p>
+               <p>So I file my claws</p>
+               <p>Like Galatea</p>
+               <p>And cling.</p>
+               <h2>III</h2>
+               <p>Eclipse and the morningstar.</p>
+               <p>I bask in your glow and blind myself</p>
+               <p>To the tick tick ticking time bomb.</p>
+               <h2>IV</h2>
+               <p>You are my muse,</p>
+               <p>My body the canvas.</p>
+               <p>For your eyes, I endure</p>
+               <p>Destruction and rebirth</p>
+               <p>At your whim</p>
+               <p>Gooseflesh and scars</p>
+               <p>Thaw frosted viscera.</p>
+               <h2>V</h2>
+               <p>Darkness is the absence of light</p>
+               <p>And love is the absence of disappointment.</p>
+               <p>Never let them become the Atlas of your self-centredness.</p>
+               <p>This &ldquo;suffering&rdquo; is nothing against the inevitable.</p>
+               <p>Glacier melts and erodes the coast.</p>
+               <p>Either reinforce or replace.</p>
+               <p>Only a matter of time before your thoughts become their words,</p>
+               <p>Self awareness never saved anyone anyway.</p>
+               <h2>VI</h2>
+               <p>There&rsquo;s a chill in the air,</p>
+               <p>I wrap a blanket around your shoulders.</p>
+               <p>Try not to notice you shrug it off.</p>
+               <p>I ask, not with my ears but with obligation.</p>
+               <p>Your non-answer is already branded into my memory.</p>
+               <h2>VII</h2>
+               <p>The softest wool hides razor sharp fangs.</p>
+               <p>Senseless, desperate worship has deified you.</p>
+               <p>Master of all rules,</p>
+               <p>You make and break as you please.</p>
+               <p>God forbid I do the same.</p>
+               <p>My apologies are your excuses and I follow in your deafness.</p>
+               <p>We&rsquo;re galaxies apart, but I chase you like Icarus.</p>
+               <p>Cigarette burns are the price for tepidity.</p>
+               <h2>VIII</h2>
+               <p>Bile bubbles and boils in my throat</p>
+               <p>Where love once lay, chokingly.</p>
+               <p>Shower steam scrubs you from me,</p>
+               <p>Not quite reaching my mind.</p>
+               <p>I&rsquo;m no longer yours.</p>
+               <p>You were never mine.</p>
+               <p>Even now, your head is held high</p>
+               <p>In ignorance? Defiance? Cruelty?</p>
+               <p>Your gleaming crown&rsquo;s glare</p>
+               <p>Shatters any hope of catharsis.</p>
+               <p>Even now, you don&rsquo;t see me.</p>
+               <h2>IX</h2>
+               <p>Your desire to melt has set me ablaze,</p>
+               <p>Bright enough to finally see,</p>
+               <p>Never an us, just your ego.</p>
+               <p>Frog in simmering water mistakes</p>
+               <p>Scorpion playing with its food for kindness.</p>
+               <p>Stinging venom courses through veins</p>
+               <p>But still I lay paralysed.</p>
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[Stages]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

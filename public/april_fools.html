@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>✰ VESPERINGS ✰</title>
+      <style>
+         @font-face {
+         font-family: Vesperings;
+         src: url(/WEBSITE/vesperings.ttf);
+         }
+         h1, h2, h3, h4 {
+         font-family: garamond;
+         }
+         p, #7FFFD4 {
+         font-family: Vesperings;
+         color: #7FFFD4;
+         }
+         <!--BASE LAYOUT-->
+         body, html {
+         margin: 0;
+         padding: 0;
+         }
+         * {
+         cursor: url(/WEBSITE/APRIL_FOOLS/cursor.gif),
+         auto !important;
+         }
+         a {
+         color: #7FFFD4;
+         }
+         a:hover {
+         color: blueviolet;
+         }
+         body {
+         background: #fde6ff;
+         background-image: url("/WEBSITE/APRIL_FOOLS/background.jpg");
+         color: #7FFFD4;
+         }
+         body, table
+         a {color: #7FFFD4;}
+         h1, h2, h3, th {
+         box-sizing: border-box;
+         color: #7FFFD4;
+         margin: 0;
+         padding: 2px 4px;
+         }
+         h1, h2 {
+         font-size: 16px;
+         width: 100%;
+         }
+         h3 {
+         display: inline-block;
+         font-size: 15px;
+         margin: 2px 3px;
+         padding: 2px 4px;
+         }
+         img, iframe {max-width: 100%;}
+         table {width: 100%;}
+         th,td {
+         color: #7FFFD4;
+         text-align: left;
+         width: auto;
+         border: #7FFFD4 1px solid;
+         }
+         /** class **/
+         .box {
+         border: #7FFFD4 2px solid;
+         margin: 10px 0;
+         padding: 3px;
+         }
+         .center {text-align: center;}
+         .container, .footer, .header {
+         background: #fde6ff;
+         box-sizing: border-box;
+         border-left: #7FFFD4 2px solid;
+         border-right: #7FFFD4 2px solid;
+         box-sizing: border-box;
+         border-style: dashed;
+         margin: 0 auto;
+         width: 850px;
+         border-top: none;
+         padding-top: 50px;
+         }
+         .container {
+         height: 100%;
+         padding: 0 1em 1em;
+         }
+         .columns {
+         display: grid;
+         grid-column-gap: 1em;
+         grid-template-columns: 292px auto;
+         width: 100%;
+         }
+         .curve {border-radius: 7px;}
+         .footer, .header {
+         background: #fde6ff;
+         box-sizing: border-box;
+         }
+         .footer {
+         border-top: #7FFFD4 2px solid;
+         padding: 10px 30px 10px;
+         height: 80px;
+         background-size: contain;
+         background-color: #dabaff;
+         }
+         .header {
+         padding-top:100px;
+         padding-bottom: 100px;
+         background-image: url("/WEBSITE/APRIL_FOOLS/header.gif");
+         background-size: cover;
+         border-bottom: none;
+         }
+         .header span {
+         padding: 0 15px;
+         }
+         .header .title {
+         color: #7FFFD4;
+         font-size: 200% ;
+         text-align: left;
+         text-decoration: none;
+         }
+         .profimg {
+         float: left;
+         padding: 5px 5px 0 0;
+         }
+         /** id **/
+         #contact a {
+         font-weight: bold;
+         text-decoration: none;
+         }
+         #intro {
+         background-image: url("/WEBSITE/APRIL_FOOLS/background.jpg");
+         height: 100px;
+         border: none;
+         }
+         #contact a::before {
+         content: url('https://placehold.co/16');
+         padding: 0 1em 0 0;
+         }
+         #interests td, #details td {width: 70%;}
+         #url span {font: 12px monospace;}
+         /** Small screens **/
+         @media (max-width: 865px) {
+         .container, .navbar, .footer, .header {width: 100%;}
+         .columns {grid-template-columns: 100%;}
+         .box {margin: 1em 0;}
+         .box:last-child {margin: 0;};
+         }
+         .online {
+         height: 1.5em;
+         margin-right: 5px;
+         animation-name: blink;
+         animation-iteration-count: infinite;
+         animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+         animation-duration: 2s;
+         color: #0C8C00;
+         font-weight: bold;
+         font-size: 95%;
+         }
+         @keyframes blink {
+         0% {
+         opacity: 1.0;
+         }
+         50% {
+         opacity: 0.0;
+         }
+         100% {
+         opacity: 1.0;
+         }
+         }
+         blink {
+         animation-name: blink;
+         animation-iteration-count: infinite;
+         animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+         animation-duration: 2s;
+         }
+         #contact-alt {
+         background-color: #dabaff;
+         }
+         #Music {
+         border: none;
+         }
+      <style>
+      #bloodydrip {
+      background: url("/WEBSITE/APRIL_FOOLS/blooddrip");
+      background-position: center;
+      background-repeat: repeat;
+      width: 600%;
+      height: 70px;
+      min-width: 1720px;
+      position: fixed;
+      top: -0.9px;
+      left: 0px;
+      z-index: 100;
+      pointer-events: none;
+      opacity: 1;
+      }
+      </style>
+      </div>
+      <style>
+         body:before {
+         content: " ";
+         height: 100vh;
+         width: 100vw;
+         display: block;
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 100;
+         background-image: url(/WEBSITE/APRIL_FOOLS/659d54b1a982f3b4a75f746f3226432d.gif);
+         background-size: cover;
+         background-repeat: no-repeat;
+         animation: yourAnimation 4s ease 0s 1 normal forwards;
+         pointer-events: none;
+         }
+         @keyframes yourAnimation {
+         0.0% {
+         opacity: 1;
+         }
+         75% {
+         opacity: 1;
+         }
+         100% {
+         opacity: 0;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="header">
+      </div>
+      <div class="container">
+         <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+         <style>
+            .font-toggle {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 9999;
+            background-color: #fde6ff;
+            color: #7FFFD4;
+            font-family: Garamond, serif;
+            padding: 10px 15px;
+            border: 1px solid #7FFFD4;
+            cursor: pointer;
+            }
+         </style>
+         <script>
+            let fontChanged = false;
+            let styleEl;
+
+            function toggleFont() {
+                if (!fontChanged) {
+                    styleEl = document.createElement('style');
+                    styleEl.id = "fontOverride";
+
+                    styleEl.innerHTML = `
+                        * {
+                            font-family: Garamond, serif !important;
+                        }
+                    `;
+
+                    document.head.appendChild(styleEl);
+                    fontChanged = true;
+
+                } else {
+                    const existing = document.getElementById("fontOverride");
+                    if (existing) existing.remove();
+
+                    fontChanged = false;
+                }
+            }
+         </script>
+         <div class="columns">
+            <!-- Left column, will show first on mobile layouts -->
+            <div class="left">
+               <!-- Basic information box -->
+               <div class="box" id="intro">
+                  <h1>vesperings </h1>
+                  <img src="/WEBSITE/APRIL_FOOLS/nanapfp.png" class="profimg" alt="Profile image" width="125">
+                  <img src="/WEBSITE/APRIL_FOOLS/green_person.svg" class="online"> ONLINE!
+               </div>
+               <!-- Alternate contact box-->
+               <!-- If you plan to use this one, please make sure to upload the images to your site! The image links are relative to the directory!! -->
+               <div class="box" id="contact-alt">
+                  <h2>Contacting vesperings</h2>
+                  <table>
+                     <tr>
+                        <td>
+                           <a href="mailto:contact@vesperings.com">
+                           <img src="/WEBSITE/APRIL_FOOLS/email.png" alt=""> Send Message
+                           </a>
+                        </td>
+                        <td>
+                           <img src="/WEBSITE/APRIL_FOOLS/arrow_right.png" alt=""> Forward to Friend
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <img src="/WEBSITE/APRIL_FOOLS/group_add.png" alt=""> Add to Friends
+                        </td>
+                        <td>
+                           <img src="/WEBSITE/APRIL_FOOLS/award_star_add.png" alt=""> Add to Favourites
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <img src="/WEBSITE/APRIL_FOOLS/exclamation.png" alt=""> Block User
+                        </td>
+                        <td>
+                           <img src="/WEBSITE/APRIL_FOOLS/flag_#7FFFD4.png" alt=""> Report User
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <!-- Contact box -->
+               <!-- If you want to change the icon before links in the custom link box, in the CSS stylesheet change the image URL under the "#contact a::before" section! -->
+               <div class="box" id="contact">
+                  <h2>My Whole Layout Will Break if I Remove This Box So I Am Using It to Imprison Slenderman</h2>
+                  <div style="text-align:center;">
+                     <img src="/WEBSITE/APRIL_FOOLS/slendy.gif" alt="Slenderman">
+                  </div>
+               </div>
+               <!-- Interests box, feel free to change the headers and whatnot! -->
+               <div class="box" id="interests">
+                  <h2>vesperings' Interests</h2>
+                  <table>
+                     <tr>
+                        <th>General</th>
+                        <td>IDK man, I never developed a sense of self. I am here because I HATEEEEE modern social media and how.... not social it truly is. I HATE influencers and ads and AMAZON STOREFRONTS!!! Democratise the web!! There is ZERO need for there to only be 6 websites on people's rotation. And all of those 6 being awful and soul-sucking and EVIL. The internet is all about the human desire to connect and learn, not be sold and sold to!! Anyway that's why I'm here. You don't actually need to know anything about me. I will not #7FFFD4uce my existence into a tiny little text box. If you're curious, get to know me and find out!!!!!!!</td>
+                     </tr>
+                     <tr>
+                        <th>Music</th>
+                        <td>Cool, underground, niche artists you've never heard of.</td>
+                     </tr>
+                     <tr>
+                        <th>Movies</th>
+                        <td>Horror.</td>
+                     </tr>
+                     <tr>
+                        <th>Television</th>
+                        <td>Gothic lit, unpalatable feminism, and my diary which is a mix of both.</td>
+                     </tr>
+                     <tr>
+                        <th>Anime/Manga</th>
+                        <td>Death Note, Nana, Tokyo Mew Mew, 90s-2000s Gothic Vampire Slop</td>
+                     </tr>
+                     <tr>
+                        <th>Games</th>
+                        <td>Poptropica</td>
+                     </tr>
+                     <tr>
+                        <th>Heroes</th>
+                        <td>Batman.</td>
+                     </tr>
+                  </table>
+               </div>
+               <!-- Details box, feel free to change the headers and whatnot!-->
+<div class="strawpoll-embed" id="strawpoll_GPgVY0YP8na" style="height: 480px; max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column;"><iframe title="StrawPoll Embed" id="strawpoll_iframe_GPgVY0YP8na" src="https://strawpoll.com/embed/GPgVY0YP8na" style="position: static; visibility: visible; display: block; width: 100%; flex-grow: 1;" frameborder="0" allowfullscreen allowtransparency>Loading...</iframe><script nonce="ZjA0YzVlNjM5YWNmN2RhMzYwNzFjNmYwOTQ2MGNkYjM1ZjI1OGZhZA==" async src="https://cdn.strawpoll.com/dist/widgets.js" charset="utf-8"></script></div>
+               <!-- I usually just put a cool Youtube video here-->
+               <div class="box" id="Music">
+                  <a href="/room" target="_blank">
+                  <img src="/WEBSITE/APRIL_FOOLS/enterroom.gif"></a>
+               </div>
+            </div>
+            <!-- Righj column, will show second on mobile layouts -->
+            <div class="right">
+               <!-- 1st blurb box -->
+               <div class="box" id="blurbs">
+                  <h2><a href="/sitemap">Click here to navigate via sitemap if you're too lazy to explore.</a></h2>
+                  <h4> <a href="/changelog">And click here for the changelog, if you just want to see my latest updates.</a></h4>
+                  <center>
+                     <br>
+                     <br>
+                     <img src="/WEBSITE/APRIL_FOOLS/logo.png" width="350">
+                     <img src="/WEBSITE/APRIL_FOOLS/mobile.gif" width="350">
+                     <h2>This website requires JavaScript!</h2>
+                     <h3>Warning for flashing images, awful colour contrast and loud music.</h3>
+                     <p>Hello, and welcome to my little website! I'm not sure how you've managed to stumble upon it, but I hope you'll stay a while. Nearly a decade after I abandoned my last, I have decided to return to blogging. It is appealing, having a few pixels on the internet all to myself, my very own blog, rather than being constricted to a social media profile on which I feel simultaneously surveilled and igno#7FFFD4 - a nobody in a sea of popularity contestants. Here, there exist no such constraints imposed by such an existence. I fancy that nobody will ever come across this insignificant website, and I will be at peace in my isolation. Or, perhaps it will be found, some years later, by a singular person who was looking for something else entirely, and they will find solace in relating to the words of a girl who no longer exists. Either way, I look forward to writing here, and building this blog up as some sort of forgotten time capsule. What I will fill it with, I have no clue.</p>
+                     <img src="/WEBSITE/APRIL_FOOLS/tumblr_fe64f0142c1ec593165a8e3cfdd29abe_fd8045a2_540.gif">
+                     <h2>Draw on My Board!</h2>
+                     <iframe src="https://onlnbrd.com/b/0hp2ei1k" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="400px" allowfullscreen></iframe>
+                     <h2>My Web Neighbourhood!</h2>
+                     <div style="height:300px;width:500px;border:2px solid #7FFFD4; overflow:auto;">
+                        <h3>My Button!</h3>
+                        <p> Thank you so much to Sanya for making this! It is my favourite thing in the whole wide world!</p>
+                        <img src="/WEBSITE/APRIL_FOOLS/vesperings.gif"><br>
+                        <h3>My Web Neighbours!</h3>
+                        <br>
+                        <a href="https://badgraph1csghost.neocities.org/" target="_blank">
+                        <img src="/WEBSITE/APRIL_FOOLS/badgraph1csghost.png">
+                        </a>
+                        <a href="https://sanyation.neocities.org/" target="_blank">
+                        <img src="/WEBSITE/APRIL_FOOLS/sanyation.gif">
+                        </a>
+                        <a href="https://mazapandust.com/" target="_blank">
+                        <img src="/WEBSITE/APRIL_FOOLS/mazcomic.gif">
+                        </a>
+                        <a href="https://natsverycoolstuff.neocities.org/" target="_blank">
+                        <img src="/WEBSITE/APRIL_FOOLS/natsverycoolstuff.png" height="31px" width="88px">
+                        </a>
+                        <br>
+                        <br>
+                        <h2>My Webrings!</h2>
+                     </div>
+                  </center>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div style="float:  ; max-height: 300px; position: fixed; left: 1px; bottom: 9px; z-index: 200;">
+         <img src="/WEBSITE/APRIL_FOOLS/jeff.gif" width="300" height="300"/>
+      </div>
+      <div id="bloodydrip">
+         <style>
+            #bloodydrip {
+            background: url("/WEBSITE/APRIL_FOOLS/blooddrip");
+            background-position: center;
+            background-repeat: repeat;
+            width: 600%;
+            height: 24px;
+            min-width: 1720px;
+            overflow: hidden;
+            position: fixed;
+            top: -0.9px;
+            left: 0px;
+            z-index: 100;
+            pointer-events: none;
+            opacity: 1;
+            }
+         </style>
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <div class="snowflake">
+         <img src="/WEBSITE/APRIL_FOOLS/pixelheart.png" />
+      </div>
+      <style>
+         @-webkit-keyframes snowflakes-fall {
+         0% {
+         top: -10%
+         }
+         100% {
+         top: 100%
+         }
+         }
+         @-webkit-keyframes snowflakes-shake {
+         0%,
+         100% {
+         -webkit-transform: translateX(0);
+         transform: translateX(0)
+         }
+         50% {
+         -webkit-transform: translateX(80px);
+         transform: translateX(80px)
+         }
+         }
+         @keyframes snowflakes-fall {
+         0% {
+         top: -10%
+         }
+         100% {
+         top: 100%
+         }
+         }
+         @keyframes snowflakes-shake {
+         0%,
+         100% {
+         transform: translateX(0)
+         }
+         50% {
+         transform: translateX(80px)
+         }
+         }
+         .snowflake {
+         position: fixed;
+         top: -10%;
+         z-index: 9999;
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         -ms-user-select: none;
+         user-select: none;
+         cursor: default;
+         -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+         -webkit-animation-duration: 10s, 3s;
+         -webkit-animation-timing-function: linear, ease-in-out;
+         -webkit-animation-iteration-count: infinite, infinite;
+         -webkit-animation-play-state: running, running;
+         animation-name: snowflakes-fall, snowflakes-shake;
+         animation-duration: 10s, 3s;
+         animation-timing-function: linear, ease-in-out;
+         animation-iteration-count: infinite, infinite;
+         animation-play-state: running, running
+         }
+         .snowflake:nth-of-type(0) {
+         left: 1%;
+         -webkit-animation-delay: 0s, 0s;
+         animation-delay: 0s, 0s
+         }
+         .snowflake:nth-of-type(1) {
+         left: 10%;
+         -webkit-animation-delay: 1s, 1s;
+         animation-delay: 1s, 1s
+         }
+         .snowflake:nth-of-type(2) {
+         left: 20%;
+         -webkit-animation-delay: 6s, .5s;
+         animation-delay: 6s, .5s
+         }
+         .snowflake:nth-of-type(3) {
+         left: 30%;
+         -webkit-animation-delay: 4s, 2s;
+         animation-delay: 4s, 2s
+         }
+         .snowflake:nth-of-type(4) {
+         left: 40%;
+         -webkit-animation-delay: 2s, 2s;
+         animation-delay: 2s, 2s
+         }
+         .snowflake:nth-of-type(5) {
+         left: 50%;
+         -webkit-animation-delay: 8s, 3s;
+         animation-delay: 8s, 3s
+         }
+         .snowflake:nth-of-type(6) {
+         left: 60%;
+         -webkit-animation-delay: 6s, 2s;
+         animation-delay: 6s, 2s
+         }
+         .snowflake:nth-of-type(7) {
+         left: 70%;
+         -webkit-animation-delay: 2.5s, 1s;
+         animation-delay: 2.5s, 1s
+         }
+         .snowflake:nth-of-type(8) {
+         left: 80%;
+         -webkit-animation-delay: 1s, 0s;
+         animation-delay: 1s, 0s
+         }
+         .snowflake:nth-of-type(9) {
+         left: 90%;
+         -webkit-animation-delay: 3s, 1.5s;
+         animation-delay: 3s, 1.5s
+         }
+         .snowflake:nth-of-type(10) {
+         left: 25%;
+         -webkit-animation-delay: 2s, 0s;
+         animation-delay: 2s, 0s
+         }
+         .snowflake:nth-of-type(11) {
+         left: 65%;
+         -webkit-animation-delay: 4s, 2.5s;
+         animation-delay: 4s, 2.5s
+         }
+      </style>
+      <div style="float:  ; max-height: 200px; position: fixed; right: 25px; top: 6px; z-index: 300;">
+         <img src="/WEBSITE/APRIL_FOOLS/skeleton.gif" height="250" />
+      </div>
+      <div class="footer center">
+      </div>
+   </body>
+   <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+      <source src=/WEBSITE/APRIL_FOOLS/gee.mp3>
+   </audio>
+   <script>
+      document.addEventListener("visibilitychange", function() {
+       document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+      })
+   </script>
+</html>

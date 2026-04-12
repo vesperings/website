@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>&#10032; WHAT I EAT IN A DAY &#10032;</title>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/FOOD_DIARY/nbhd_afraid_music.mp3>
+      </audio>
+      <script>
+         document.addEventListener("visibilitychange", function() {
+           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+         })
+      </script>
+      <style>
+         @font-face {
+         font-family: Vesperings;
+         src: url(/WEBSITE/vesperings.ttf);
+         }
+         * {
+         font-family: Vesperings;
+         }
+         * {
+         cursor: url(/WEBSITE/cursor.png), auto !important;
+         }
+         body{
+         background-image: url('/WEBSITE/FOOD_DIARY/bg.jpg');
+         margin: 0px;
+         color: #613f3f;
+         overflow-x: hidden;
+         }
+         #topborder{
+         background-image: url('/WEBSITE/FOOD_DIARY/toplace.png');
+         background-repeat: repeat-x;
+         height: 73px;
+         width: 100vw;
+         position: fixed;
+         top: 0px;
+         z-index: 3;
+         }
+         #bottomborder{
+         background-image: url('/WEBSITE/FOOD_DIARY/bottomlace.png');
+         background-repeat: repeat-x;
+         height: 73px;
+         width: 100vw;
+         position: fixed;
+         bottom: 0px;
+         z-index: 3;
+         }
+         #all{
+         background-color: #B5898E;
+         width: 800px;
+         margin: 0 auto;
+         }
+         #side{
+         width: 175px;
+         margin-top: 135px;
+         float: left;
+         position: fixed;
+         }
+         #profile{
+         background-color: #B5898E;
+         border-radius: 10px;
+         width: 145px;
+         margin-bottom: 25px;
+         padding: 15px;
+         }
+         #pfp{
+         width: 145px;
+         height: 145px;
+         border-radius: 10px;
+         opacity: 0.9;
+         }
+         #profiletext{
+         margin: 0px;
+         letter-spacing: 1px;
+         text-align: justify;
+         font-size: 14px;
+         padding: 15px 5px 0px 5px;
+         color: #856d6d;
+         }
+         #nav{
+         background-color: #B5898E;
+         width: 175px;
+         border-radius: 10px;
+         position: relative;
+         }
+         #navheader{
+         border-bottom: 3px solid #B5898E;
+         margin: 0px;
+         line-height: 10px;
+         padding-left: 5px;
+         padding-top: 15px;
+         color: #4b0101;
+         }
+         #navbow{
+         background-image: url('/WEBSITE/FOOD_DIARY/bow.png');
+         background-size: 100%;
+         background-repeat: no-repeat;
+         width: 50px;
+         height: 41px;
+         position: absolute;
+         right: 9px;
+         top: 14px;
+         z-index: 2;
+         }
+         ul{
+         margin: 0px;
+         padding: 13px 10px 10px 16px;
+         }
+         li{
+         list-style-type: none;
+         margin: -10px;
+         letter-spacing: -1px;
+         font-size: 18px;
+         }
+         #main{
+         width: 605px;
+         float: right;
+         position: relative;
+         }
+         #title{
+         border-bottom: 3px solid #cdb5b5;
+         line-height: 15px;
+         width: 600px;
+         margin: 0px;
+         color: #4b0101;
+         background-color: #B5898E;
+         position: absolute;
+         top: 74px;
+         border-radius: 10px 10px 0px 0px;
+         padding-left: 5px;
+         padding-top: 22px;
+         }
+         #bow{
+         background-image: url('/WEBSITE/FOOD_DIARY/bow.png');
+         background-size: 100%;
+         background-repeat: no-repeat;
+         width: 120px;
+         height: 102px;
+         position: absolute;
+         right: 45px;
+         top: 81px;
+         z-index: 2;
+         }
+         #content{
+         background-color: #B5898E;
+         position: absolute;
+         top: 114px;
+         width: 575px;
+         padding: 15px 15px 73px 15px;
+         }
+         .entry{
+         width: 575px;
+         }
+         .entryhead{
+         width: 575px;
+         height: 80px;
+         position: relative;
+         border-bottom: 1px dotted #613f3f;
+         padding-bottom: 5px;
+         }
+         .icon{
+         width: 80px;
+         opacity: 0.9;
+         }
+         .date{
+         position: absolute;
+         bottom: 0;
+         left: 85px;
+         padding-bottom: 5px;
+         }
+         .date p{
+         margin: 0px;
+         letter-spacing: -1px;
+         color: #4b0101;
+         }
+         .datecolor{
+         color: #4b0101;
+         }
+         .header{
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         }
+         .header h2{
+         margin: 0px;
+         line-height: 23px;
+         font-size: 26px;
+         color: #4b0101;
+         }
+         .text{
+         text-align: justify;
+         margin-top: 5px;
+         letter-spacing: 1px;
+         color: #4b0101;
+         }
+         a{
+         text-decoration: none;
+         color: #613f3f;
+         }
+         a:visited{
+         color: #4b0101;
+         }
+         a:hover{
+         font-style: italic;
+         }
+         a:active{
+         font-style: italic;
+         font-weight: bold;
+         }
+         ::-webkit-scrollbar{
+         width: 6px; 
+         }
+         ::-webkit-scrollbar-track{
+         background-color: #4b0101;
+         }
+         ::-webkit-scrollbar-thumb{
+         background-color: #cdb5b5;
+         }
+         #credit{
+         font-size: 12px;
+         position: fixed;
+         bottom: 70px;
+         right: 0;
+         }
+      </style>
+   </head>
+   <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+   <style>
+      .font-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      background-color: black;
+      color: red;
+      font-family: Garamond, serif;
+      padding: 10px 15px;
+      border: 1px solid red; 
+      cursor: pointer;
+      }
+   </style>
+   <script>
+      let fontChanged = false;
+      let styleEl;
+      
+      function toggleFont() {
+          if (!fontChanged) {
+              styleEl = document.createElement('style');
+              styleEl.id = "fontOverride";
+      
+              styleEl.innerHTML = `
+                  * {
+                      font-family: Garamond, serif !important;
+                  }
+              `;
+      
+              document.head.appendChild(styleEl);
+              fontChanged = true;
+      
+          } else {
+              const existing = document.getElementById("fontOverride");
+              if (existing) existing.remove();
+      
+              fontChanged = false;
+          }
+      }
+   </script>
+   <body>
+      <div id="topborder"></div>
+      <div id="bottomborder"></div>
+      <div id="all">
+         <div id="main">
+            <div id="bow"></div>
+            <h1 id="title">Vesperings's Food Diary!</h1>
+            <div id="content">
+               <!-- INTRO -->
+               <div class="entry">
+                  <div class="text">
+                     <p style="margin:0px;">
+                        <br>
+                        <br>
+                        <br>
+                        Sporadic food log, sometimes with photos. Probably super unhealthy and very repetitive.
+                     </p>
+                     <p>If you wanna see my recipes click here! (When I get around to making the page, that is)</p>
+                     <br>
+                  </div>
+               </div>
+               <!-- INTRO END -->
+               <!-- ENTRY START -->
+               <div class="entry">
+                  <div class="entryhead">
+                     <div class="icon">
+                        <img src="/WEBSITE/HOMEPAGE/nanapfp.jpg" width="80px" height="80px">
+                     </div>
+                     <div class="date">
+                        <p><span class="datecolor"><b>vesperings </b></span>posted on:</p>
+                        <p><span class="datecolor"><b>00-00-2026</b></span> </p>
+                     </div>
+                     <div class="header">
+                        <h2>Day</h2>
+                     </div>
+                  </div>
+                  <div class="text">
+                     <br>
+                     <p></p>
+                     <br>
+                  </div>
+               </div>
+               <!-- ENTRY END -->
+            </div>
+         </div>
+      </div>
+      <div id="credit"><a href="https://repth.neocities.org/index.html">©repth</a></div>
+   </body>
+</html>

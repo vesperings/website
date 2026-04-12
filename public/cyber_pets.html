@@ -1,0 +1,162 @@
+<HEAD>
+   <TITLE>&#10032; CYBER PETS &#10032;</TITLE>
+   <style>
+      body {
+      background-image: url('/WEBSITE/CYBER_PETS/background.jpg');
+      color: red;
+      }
+      @font-face {
+      font-family: Vesperings;
+      src: url(/WEBSITE/vesperings.ttf);
+      }
+      * {
+      font-family: Vesperings;
+      }
+      a {
+      color: maroon;
+      }
+      * {
+      cursor: url(/WEBSITE/cursor.png), auto !important;
+      }
+   </style>
+</HEAD>
+<button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+<style>
+   .font-toggle {
+   position: fixed;
+   top: 10px;
+   left: 10px;
+   z-index: 9999;
+   background-color: black;
+   color: red;
+   font-family: Garamond, serif;
+   padding: 10px 15px;
+   border: 1px solid red; 
+   cursor: pointer;
+   }
+</style>
+<script>
+   let fontChanged = false;
+   let styleEl;
+   
+   function toggleFont() {
+       if (!fontChanged) {
+           styleEl = document.createElement('style');
+           styleEl.id = "fontOverride";
+   
+           styleEl.innerHTML = `
+               * {
+                   font-family: Garamond, serif !important;
+               }
+           `;
+   
+           document.head.appendChild(styleEl);
+           fontChanged = true;
+   
+       } else {
+           const existing = document.getElementById("fontOverride");
+           if (existing) existing.remove();
+   
+           fontChanged = false;
+       }
+   }
+</script>
+<body>
+   <center>
+      <h1>
+         <img src="/WEBSITE/CYBER_PETS/lefttorch.gif" width="50px"> ~Cyber Pets~ <img src="/WEBSITE/CYBER_PETS/righttorch.gif" width="50px">
+      </h1>
+      <br>
+      <br>
+      <p>Cyber pets, of all things, are what sparked my long-enduring interest in making websites, and the indie web. I can more or less track a narrative timeline of this, so I figure I'll share it here. The condensed version though, I know you're probably eager to see my critters. It started with a knock-off Tamagotchi. I'd seen it at a store and begged my parents to buy it for me, it was only £5, but they didn't. Okay, listen -- in my defence, I was only 7 or 8. I was a lonely child, and all I wanted was a companion. Maybe to placate me, my parents let me play on the desktop computer for a while, and my one-track mind immediately started searching for the cyber pet. I didn't find it, but I did end up having a whole world opened to me. adoptme.com (now sadly turned into AI slop), Chicken Smoothie, Howrse, bunnyhero labs, and most importantly, the world of personal homepages. Most were long dead by the time I found them, but I was enthralled. They'd show off their "pets" on wonderfully garish sites, disabling the right-click function so your only method of procuring them was by visiting the "adoption agency." It was so charming. I spent hours collecting these pixels -- some of the beauties on this page are from all the way back then! -- and displaying them on my ugly website. Soon, I branched out, creating pages about music and browser games and blog posts too. I loved having a space of my own on the internet, handcrafted by and for myself. Not much has changed since then, 15 years later, though I've switched from my drag-and-drop website builder to pure HTML now. That kid would be so proud of this cringe ass site, I wish I could show her... Anyway, that is quite enough from me, now onto the pets. Check back often, I have a lot of pets and it'll take me a while to get this page up to date!</p>
+      <h2>
+         <a href="https://spiders.neocities.org/z-adopts">NewsMan's Place</a>
+      </h2>
+      <img src="/WEBSITE/CYBER_PETS/NEWSMANS_PLACE/mi4.png"><img src="/WEBSITE/CYBER_PETS/NEWSMANS_PLACE/mi7.png">
+      <br>
+      <img src="/WEBSITE/CYBER_PETS/NEWSMANS_PLACE/n1.png"><img src="/WEBSITE/CYBER_PETS/NEWSMANS_PLACE/r0.png"><img src="/WEBSITE/CYBER_PETS/NEWSMANS_PLACE/n6.png"><img src="/WEBSITE/CYBER_PETS/NEWSMANS_PLACE/r4.png">
+      <br>
+      <br>
+      <br>
+      <img src="/WEBSITE/CYBER_PETS/divider.gif">
+      <img src="/WEBSITE/CYBER_PETS/divider.gif">
+      <h2>
+         <a href="https://tarraxahum.neocities.org/adopt/adopt_center">(In)Animate Empathy Adoption Center!</a>
+      </h2>
+      <img src="/WEBSITE/CYBER_PETS/INANIMATE_EMPATHY_ADOPTION_CENTRE/roomba4.png">
+      <br>
+      <p>This is my Roomba! Her name is Kickpuncher and she's a darling.</p>
+      <br>
+      <img src="/WEBSITE/CYBER_PETS/INANIMATE_EMPATHY_ADOPTION_CENTRE/doll.png">
+      <br>
+      <p>This is Klara! She was very well loved before she was abandoned.</p>
+      <br>
+      <img src="/WEBSITE/CYBER_PETS/INANIMATE_EMPATHY_ADOPTION_CENTRE/fry.png">
+      <br>
+      <p>This is the last fry from the bag. Nobody else wanted it.</p>
+      <br>
+      <br>
+      <br>
+      <img src="/WEBSITE/CYBER_PETS/divider.gif">
+      <h2>
+         <a href="https://tarraxahum.neocities.org/adopt/adopt_center">Connections 2000 Adoptions!</a>
+      </h2>
+      <img src="/WEBSITE/CYBER_PETS/CONNECTIONS_ADOPTIONS/a_ghost.jpg">
+      <br>
+      <p>This is my ghost, Arnold.
+      <p>
+         <br>
+         <img src="/WEBSITE/CYBER_PETS/CONNECTIONS_ADOPTIONS/a_bee.jpg">
+         <br>
+      <p>This is my bee, Barry.
+      <p>
+         <br>
+         <img src="/WEBSITE/CYBER_PETS/CONNECTIONS_ADOPTIONS/a_red_panda.jpg">
+         <br>
+      <p>This is my red panda, KitKat.
+      <p>
+         <br>
+         <br>
+         <br>
+         <img src="/WEBSITE/CYBER_PETS/divider.gif">
+      <h2>
+         <a href="https://linwood.neocities.org/adopts">Linpossums</a>
+      </h2>
+      <img src="/WEBSITE/CYBER_PETS/LINPOSSUMS/black.png"><img src="/WEBSITE/CYBER_PETS/LINPOSSUMS/levya.png"><img src="/WEBSITE/CYBER_PETS/LINPOSSUMS/halloween.png"><img src="/WEBSITE/CYBER_PETS/LINPOSSUMS/persimmon.png">
+      <br>
+      <br>
+      <br>
+      <img src="/WEBSITE/CYBER_PETS/divider.gif">
+      <h2>
+         <a href="https://itsyaboypedro.neocities.org/adoptables">ITSYABOYPEDRO</a>
+      </h2>
+      <img src="/WEBSITE/CYBER_PETS/ITS_YA_BOY_PEDRO_ADOPTS/gameboy%20color%20dude.png"><img src="/WEBSITE/CYBER_PETS/ITS_YA_BOY_PEDRO_ADOPTS/gameboy%20boy%20certificate.png">
+      <br>
+      <p>The gameboy boy is a boy with a game boy. He has a copy of Tetris and that's it. He likes it that way.</p>
+      <br>
+      <img src="/WEBSITE/CYBER_PETS/ITS_YA_BOY_PEDRO_ADOPTS/stallone.png"><img src="/WEBSITE/CYBER_PETS/ITS_YA_BOY_PEDRO_ADOPTS/sylvester%20certificatr.png">
+      <br>
+      <p>This is Sylvester Stallone. He is an actor, director and producer from New York City, i think. There's probably more info on him on wikipedia and other similar sites. Cool!</p>
+      <br>
+      <br>
+      <br>
+      <img src="/WEBSITE/CYBER_PETS/divider.gif">
+      <h2>Chicken Smoothie</h2>
+      <p>
+         <b>These are some of my favourite pets from the game chickensmoothie which is blah blah blah</b>
+      </p>
+      <a href="https://www.chickensmoothie.com/pet/28235926.html"><img src="https://www.chickensmoothie.com/pet/28235926&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/28570450.html"><img src="https://www.chickensmoothie.com/pet/28570450&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/35507111.html"><img src="https://www.chickensmoothie.com/pet/35507111&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/83672877.html"><img src="https://www.chickensmoothie.com/pet/83672877&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/86118454.html"><img src="https://www.chickensmoothie.com/pet/86118454&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/86306966.html"><img src="https://www.chickensmoothie.com/pet/86306966&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/90157952.html"><img src="https://www.chickensmoothie.com/pet/90157952&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Venus<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/90181422.html"><img src="https://www.chickensmoothie.com/pet/90181422&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/90350599.html"><img src="https://www.chickensmoothie.com/pet/90350599&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Aphrodite<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/90804392.html"><img src="https://www.chickensmoothie.com/pet/90804392&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Arizona<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/122475562.html"><img src="https://www.chickensmoothie.com/pet/122475562&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Rosanne<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/122475564.html"><img src="https://www.chickensmoothie.com/pet/122475564&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Rochelle<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/122475565.html"><img src="https://www.chickensmoothie.com/pet/122475565&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Roxanne<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/138650366.html"><img src="https://www.chickensmoothie.com/pet/138650366&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Aster<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/178323051.html"><img src="https://www.chickensmoothie.com/pet/178323051&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Elixir<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/179647294.html"><img src="https://www.chickensmoothie.com/pet/179647294&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Elizabeth<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/179707822.html"><img src="https://www.chickensmoothie.com/pet/179707822&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Night Wing<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/179903505.html"><img src="https://www.chickensmoothie.com/pet/179903505&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>G Dragon<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/182614529.html"><img src="https://www.chickensmoothie.com/pet/182614529&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Venus<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/193323578.html"><img src="https://www.chickensmoothie.com/pet/193323578&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Trade / 3C$<br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/197606362.html"><img src="https://www.chickensmoothie.com/pet/197606362&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Lux <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/167396549.html"><img src="https://www.chickensmoothie.com/pet/167396549&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>APink <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/273125691.html"><img src="https://www.chickensmoothie.com/pet/273125691&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/266157533.html"><img src="https://www.chickensmoothie.com/pet/266157533&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Flat <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/248347156.html"><img src="https://www.chickensmoothie.com/pet/248347156&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/209276456.html"><img src="https://www.chickensmoothie.com/pet/209276456&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/277066777.html"><img src="https://www.chickensmoothie.com/pet/277066777&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Crystal Diamonds <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/280389458.html"><img src="https://www.chickensmoothie.com/pet/280389458&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/290536439.html"><img src="https://www.chickensmoothie.com/pet/290536439&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Baldric <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/301519375.html"><img src="https://www.chickensmoothie.com/pet/301519375&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/305707087.html"><img src="https://www.chickensmoothie.com/pet/305707087&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/302165293.html"><img src="https://www.chickensmoothie.com/pet/302165293&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>double <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/301632738.html"><img src="https://www.chickensmoothie.com/pet/301632738&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Miku <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/421894232.html"><img src="https://www.chickensmoothie.com/pet/421894232&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Ryoji <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/419619150.html"><img src="https://www.chickensmoothie.com/pet/419619150&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/419616034.html"><img src="https://www.chickensmoothie.com/pet/419616034&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/419276018.html"><img src="https://www.chickensmoothie.com/pet/419276018&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>TRADE <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/419116956.html"><img src="https://www.chickensmoothie.com/pet/419116956&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Vampire <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/419153403.html"><img src="https://www.chickensmoothie.com/pet/419153403&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/415357264.html"><img src="https://www.chickensmoothie.com/pet/415357264&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/415036604.html"><img src="https://www.chickensmoothie.com/pet/415036604&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/380018175.html"><img src="https://www.chickensmoothie.com/pet/380018175&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/386467481.html"><img src="https://www.chickensmoothie.com/pet/386467481&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/387120423.html"><img src="https://www.chickensmoothie.com/pet/387120423&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/373880755.html"><img src="https://www.chickensmoothie.com/pet/373880755&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/373336128.html"><img src="https://www.chickensmoothie.com/pet/373336128&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/347092520.html"><img src="https://www.chickensmoothie.com/pet/347092520&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/343412162.html"><img src="https://www.chickensmoothie.com/pet/343412162&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/333293075.html"><img src="https://www.chickensmoothie.com/pet/333293075&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/326360533.html"><img src="https://www.chickensmoothie.com/pet/326360533&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Acacia <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/70898563.html"><img src="https://www.chickensmoothie.com/pet/70898563&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>2 C💲 for 7 ( VC ONLY ) <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a>
+      <p>This one isn't technically one of my favourites, but I'd found it embedded on one of my old blogs, clicked on it and realised another account had ownership of it somehow. Considering it was probably one of the first pets on the site I'd adopted, I asked if she'd mind trading for it and I got him back :3</p>
+      <br><a href="https://www.chickensmoothie.com/pet/1762683.html"><img src="https://www.chickensmoothie.com/pet/1762683&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Breann <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/217104766.html"><img src="https://www.chickensmoothie.com/pet/217104766&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/177399989.html"><img src="https://www.chickensmoothie.com/pet/177399989&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/175337874.html"><img src="https://www.chickensmoothie.com/pet/175337874&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/142579708.html"><img src="https://www.chickensmoothie.com/pet/142579708&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/104760639.html"><img src="https://www.chickensmoothie.com/pet/104760639&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/122475637.html"><img src="https://www.chickensmoothie.com/pet/122475637&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Lucielle <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/97833908.html"><img src="https://www.chickensmoothie.com/pet/97833908&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Krystal <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/94954225.html"><img src="https://www.chickensmoothie.com/pet/94954225&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/33972042.html"><img src="https://www.chickensmoothie.com/pet/33972042&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/32014500.html"><img src="https://www.chickensmoothie.com/pet/32014500&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>OLD RARE (MONTHLY) <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/29613971.html"><img src="https://www.chickensmoothie.com/pet/29613971&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/150507127.html"><img src="https://www.chickensmoothie.com/pet/150507127&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>LuHan <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/453229415.html"><img src="https://www.chickensmoothie.com/pet/453229415&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/450874920.html"><img src="https://www.chickensmoothie.com/pet/450874920&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/450870391.html"><img src="https://www.chickensmoothie.com/pet/450870391&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/151589613.html"><img src="https://www.chickensmoothie.com/pet/151589613&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/70898471.html"><img src="https://www.chickensmoothie.com/pet/70898471&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/95703715.html"><img src="https://www.chickensmoothie.com/pet/95703715&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Dusk <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/109322876.html"><img src="https://www.chickensmoothie.com/pet/109322876&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Hallorse <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/126097761.html"><img src="https://www.chickensmoothie.com/pet/126097761&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/142579698.html"><img src="https://www.chickensmoothie.com/pet/142579698&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/133570404.html"><img src="https://www.chickensmoothie.com/pet/133570404&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>5c$ <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/130830723.html"><img src="https://www.chickensmoothie.com/pet/130830723&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Xavior <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/186961654.html"><img src="https://www.chickensmoothie.com/pet/186961654&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Mr Cuddles <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/188932830.html"><img src="https://www.chickensmoothie.com/pet/188932830&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/206667496.html"><img src="https://www.chickensmoothie.com/pet/206667496&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/142579637.html"><img src="https://www.chickensmoothie.com/pet/142579637&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/157991019.html"><img src="https://www.chickensmoothie.com/pet/157991019&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/214488627.html"><img src="https://www.chickensmoothie.com/pet/214488627&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/388664558.html"><img src="https://www.chickensmoothie.com/pet/388664558&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>Don't Turn Your Back <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/316245830.html"><img src="https://www.chickensmoothie.com/pet/316245830&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/347143930.html"><img src="https://www.chickensmoothie.com/pet/347143930&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/311333128.html"><img src="https://www.chickensmoothie.com/pet/311333128&trans=1.jpg" border="0"></a><br><b>Pet's name:</b>On The Good List Forever! <br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a><br><a href="https://www.chickensmoothie.com/pet/306427366.html"><img src="https://www.chickensmoothie.com/pet/306427366&trans=1.jpg" border="0"></a><br><a href="https://www.chickensmoothie.com/">Adopt virtual pets at Chicken Smoothie!</a>
+   </center>
+   >
+   <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+      <source src=/WEBSITE/CYBER_PETS/kesha_cannibal.mp3>
+   </audio>
+   <script>
+      document.addEventListener("visibilitychange", function() {
+        document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+      })
+   </script>
+</BODY>
+</HTML>

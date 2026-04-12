@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang=en>
+   <meta charset=UTF-8>
+   <title>&#x2730; DVD COLLECTION &#x2730;</title>
+   <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+      <source src="/WEBSITE/DVDS/cry_little_sister.mp3">
+   </audio>
+   <script>
+      document.addEventListener("visibilitychange", function() {
+        document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+      })
+   </script>
+   <style>
+      body {
+      background-image: url(/WEBSITE/DVDS/redweb.gif);
+      font-family: garamond;
+      color: #000;
+      font-size: 14px
+      }
+      * {
+      cursor: url(/WEBSITE/cursor.png),
+      auto !important;
+      }
+      h1 {
+      color: #000;
+      font-family: garamond;
+      text-align: center;
+      font-size: 2em
+      }
+      a:link,
+      a:link:active {
+      color: #fff;
+      text-decoration: underline;
+      font-family: garamond
+      }
+      a:visited,
+      a:visited:active {
+      color: #fff;
+      text-decoration: underline
+      }
+      a:hover {
+      text-decoration: solid
+      }
+      #centerimg {
+      text-align: center
+      }
+      html {
+      min-height: 100%
+      }
+      #hover {
+      color: rgba(188, 175, 204, .9)
+      }
+      .view {
+      margin: 2px;
+      float: left;
+      overflow: hidden;
+      position: relative;
+      text-align: center
+      }
+      .view .content,
+      .view .mask {
+      width: 150px;
+      height: 210px;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0
+      }
+      .view img {
+      display: block
+      }
+      .view h2 {
+      text-transform: uppercase;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      font-size: 12px;
+      font-family: garamond;
+      padding: 4px;
+      margin: 2px 0 0 0
+      }
+      .view p {
+      font-family: garamond;
+      font-size: 12px;
+      position: relative;
+      color: #fff;
+      text-align: center;
+      margin: 3px 0 0 0
+      }
+      .view-first img {
+      width: 150px;
+      height: 210px
+      }
+      .view-first .mask {
+      opacity: 0;
+      background-color: rgba(0, 0, 0, .5)
+      }
+      .view-first h2 {
+      transform: translateY(-100px);
+      opacity: 0;
+      font-family: garamond
+      }
+      .view-first p {
+      transform: translateY(100px);
+      opacity: 0
+      }
+      .view-first a.info {
+      opacity: 0
+      }
+      .view-first:hover .mask {
+      opacity: 1
+      }
+      .view-first:hover a.info,
+      .view-first:hover h2,
+      .view-first:hover p {
+      opacity: 1;
+      transform: translateY(0)
+      }
+      td,
+      tr {
+      border: 1px solid red;
+      background-color: #000
+      }
+      table {
+      border-spacing: 1px;
+      width: 150px;
+      height: 210px;
+      border: 1px solid black;
+      background-color: #000;
+      margin-left: auto;
+      margin-right: auto
+      }
+      td {
+      padding: 0
+      }
+   </style>
+   <div class=topnav>
+      <a href=/films target="_blank" style=color:#fff>Click here to see my film reviews!</a>
+      <div id=centerimg><img src=/WEBSITE/DVDS/lyIk.gif></div>
+      <table>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/8456ae39-998c-411f-929b-58ada6c579af.jpg">
+                     <div class="mask">
+                        <h2>SUPERNATURAL: THE COMPLETE SERIES (2005-2020)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/719v0d0GGjL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>SKINS: COMPLETE FIRST SERIES (2007)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/s-l1200.jpg">
+                     <div class="mask">
+                        <h2>COMMUNITY: THE COMPLETE SERIES (2009-2014)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/718sIDHiYGL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>DEATH NOTE: THE COMPLETE SERIES (2006-2007)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/616a1B2OtmL.jpg">
+                     <div class="mask">
+                        <h2>FINAL DESTINATION (2000)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/images.jpg">
+                     <div class="mask">
+                        <h2>WILD CHILD (2008)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg">
+                     <div class="mask">
+                        <h2>FIGHT CLUB (1999)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/Girl,_Interrupted_(1999).png">
+                     <div class="mask">
+                        <h2>GIRL, INTERRUPTED (1999)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/618ULnir+7L._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>SAW (2004)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/414dYY62z7L._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>ALIEN (1979)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/Thirteen2003Poster.jpg">
+                     <div class="mask">
+                        <h2>THIRTEEN (2003)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/85c7d14d-1297-4d10-8602-0fc22493c587.jpg">
+                     <div class="mask">
+                        <h2>ALIENS (1986)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/91DbjWGZLvL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>STAND BY ME (1987)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/51MealwTENL.jpg">
+                     <div class="mask">
+                        <h2>THE MATRIX (1999)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/71d7l3VJimL.jpg">
+                     <div class="mask">
+                        <h2>BLACK SWAN (2010)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="WEBSITE/DVDS/91AHcUYdOxL.jpg">
+                     <div class="mask">
+                        <h2>LITTLE MISS SUNSHINE (2006)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BMTc4NzljMDQtMWYxMS00ZDIxLTkwY2ItMjZhMzIzNjQ4NDNkXkEyXkFqcGc@._V1_QL75_UY281_CR1,0,190,281_.jpg">
+                     <div class="mask">
+                        <h2>THE LOST BOYS (1987)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/My_Own_Private_Idaho.png">
+                     <div class="mask">
+                        <h2>MY OWN PRIVATE IDAHO (1991)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/American_Psycho.png">
+                     <div class="mask">
+                        <h2>AMERICAN PSYCHO (2000)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BNDdhOGJhYzctYzYwZC00YmI2LWI0MjctYjg4ODdlMDExYjBlXkEyXkFqcGc@._V1_.jpg">
+                     <div class="mask">
+                        <h2>THE SILENCE OF THE LAMBS (1991)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/p21512_p_v8_ad.jpg">
+                     <div class="mask">
+                        <h2>BLADE (1998)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/415QA7TKZXL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>SCARFACE (1983)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/81-the-perks-of-being-a-wallflower.jpg">
+                     <div class="mask">
+                        <h2>THE PERKS OF BEING A WALLFLOWER (2012)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BMTcyNTEyOTY0M15BMl5BanBnXkFtZTgwOTAyNzU3MDI@._V1_.jpg">
+                     <div class="mask">
+                        <h2>THE LEGO BATMAN MOVIE (2017)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BMTY5MzYzNjc5NV5BMl5BanBnXkFtZTYwNTUyNTc2._V1_.jpg">
+                     <div class="mask">
+                        <h2>CATCH ME IF YOU CAN (2002)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+                     <div class="mask">
+                        <h2>THE SHAWSHANK REDEMPTION (1994)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/250px-A_Streetcar_Named_Desire_(1951).jpg">
+                     <div class="mask">
+                        <h2>A STREETCAR NAMED DESIRE (1951)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/A_Nightmare_on_Elm_Street_(1984)_theatrical_poster.jpg">
+                     <div class="mask">
+                        <h2>A NIGHTMARE ON ELM STREET (1984)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/71o3WgEjTlL.jpg">
+                     <div class="mask">
+                        <h2>SAINT TRINIANS (2007)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/gone-girl-movie-tie-in-edition-1.jpg">
+                     <div class="mask">
+                        <h2>GONE GIRL (2014)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BZDZhZmI1ZTUtYWI3NC00NTMwLTk3NWMtNDc0OGNjM2I0ZjlmXkEyXkFqcGc@._V1_QL75_UX190_CR0,1,190,281_.jpg">
+                     <div class="mask">
+                        <h2>BEFORE SUNRISE (1995)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="WEBSITE/DVDS/Scream_(1996_film)_poster.jpg">
+                     <div class="mask">
+                        <h2>SCREAM (1996)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="WEBSITE/DVDS/913LTvjr8rL.jpg">
+                     <div class="mask">
+                        <h2>PERCY JACKSON AND THE LIGHTNING THIEF / PERCY JACKSON: SEA OF MONSTERS DOUBLE PACK (2010-2013)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/71iHLfCWsZL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>TWILIGHT (2008)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/Batman_mask_of_the_phantasm_poster.jpg">
+                     <div class="mask">
+                        <h2>BATMAN: MASK OF THE PHANTASM (1993)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/817rU-jN4AL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>BATMAN: THE DARK KNIGHT RISES (2012)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BOTE5MDUxZDUtZWZmZC00NDVmLWFhOGQtNWI2YTc4NzY3MGQ0XkEyXkFqcGc@._V1_.jpg">
+                     <div class="mask">
+                        <h2>THE USUAL SUSPECTS (1995)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BN2E5NzI2ZGMtY2VjNi00YTRjLWI1MDUtZGY5OWU1MWJjZjRjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+                     <div class="mask">
+                        <h2>GOODFELLAS (1990)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/MV5BMWE3NTYzZmEtM2U5MS00MDZhLTk2ZTQtZTgzNjg0ZGQ5ZjM0XkEyXkFqcGc@._V1_.jpg">
+                     <div class="mask">
+                        <h2>DONNIE DARKO (2001)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/71gsq5EtvaL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>DIARY OF A WIMPY KID 2: RODRICK RULES (2011)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/the-crow-british-dvd-movie-cover.webp">
+                     <div class="mask">
+                        <h2>THE CROW (1994)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/61lEw5iW-DL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>SABRINA (1954)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/s-l400.jpg">
+                     <div class="mask">
+                        <h2>FUNNY FACE (1957)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/512hd7y5gRL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2>PARIS WHEN IT SIZZLES (1964)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/91eicG9oMWL.jpg">
+                     <div class="mask">
+                        <h2> ROMAN HOLIDAY (1953)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/91ma0Ih1wLL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2> BREAKFAST AT TIFFANY'S (1961)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/81QD2hHOkEL._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2> VENOM/VENOM: LET THERE BE CARNAGE (2018-2021)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/81r48OB9f9L._AC_UF894,1000_QL80_.jpg">
+                     <div class="mask">
+                        <h2> ROMEO + JULIET (1996)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div class="all">
+                  <div class="view view-first">
+                     <img src="/WEBSITE/DVDS/71Yrvb5VypL.jpg">
+                     <div class="mask">
+                        <h2> THE DARK KNIGHT: RISES (2008)</h2>
+                     </div>
+                  </div>
+               </div>
+            </td>
+         </tr>
+      </table>
+   </div>
+</html>

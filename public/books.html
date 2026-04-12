@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>&#10032; BOOK LOG &#10032;</title>
+  <style>
+   body {
+    background-color: #4b0101;
+    background-image: url("/WEBSITE/BOOKS/roses.gif");
+    color: white;
+    font-family: "Courier New", monospace;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+   }
+
+   h1,
+   h2,
+   h3 {
+    color: darkred;
+    text-align: center;
+   }
+
+   h1 {
+    font-size: 35px;
+   }
+
+   h2 {
+    font-size: 25px;
+   }
+
+   h3 {
+    font-size: 15px;
+   }
+
+   a:link,
+   a:visited {
+    color: darkred;
+   }
+
+   .review {
+    background-color: black;
+    margin: 20px auto;
+    padding: 20px;
+    width: 800px;
+    word-wrap: break-word;
+   }
+
+   .parent-element {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+   }
+
+   .textp1 img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding-right: 15px;
+   }
+
+   .textp2 {
+    flex: 1;
+   }
+
+   .dots {
+    display: inline;
+   }
+
+   .more {
+    display: none;
+   }
+
+   .button {
+    background-color: darkred;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-top: 10px;
+   }
+
+   * {
+    cursor: url(/WEBSITE/cursor.png), auto !important;
+   }
+  </style>
+ </head>
+ <>
+  <div class="review">
+   <h1>★ BOOK LOG ★</h1>
+   <p style="text-align: center;">A few years ago, I realised I was not reading enough, despite it being the one thing I was known for, and to remedy this, decided to read around 100 books in a year. A waste, truly, as I cannot remember a single one. I hope this log forces me to reflect more deeply on what I read. For much of 2025, I did at least write down some notes about the books I read, but fell into the opposite extreme, needing to understand every single page at a PhD level, scouring JSTOR and Sparknotes after reading. Of course, that burnt me out just as much as reading 5 books a day did, so now I have landed on this. Full sentence,brief reviews about my PERSONAL thoughts upon finishing each book. No more, no less. I might try to scrounge up all the other book reviews I've written in the past, as I did for my film log, but I make no promises.</p>
+  </div>
+  <!-- REVIEW START -->
+  <div class="review">
+   <div class="parent-element">
+    <div class="textp1">
+     <img src="/WEBSITE/BOOKS/thecolourpurplealicewalker.jpg">
+    </div>
+    <div id="thecolourpurple080426"
+    <div class="textp2">
+     <h2>The Color Purple (Alice Walker)</h2>
+     <h2>★★★★½</h2>
+     <h3>08-04-26</h3>
+     <p>It has been far too long since I have felt the satisfaction of completing a truly good book. It has been far too long since I have read any book at all, but I digress.</p>
+     <p>I always enjoy a good epistolary novel, and it works especially well as a format here because of how distinct the voices of Celie and Nettie are. In fact, all the characters feel incredibly distinc and real.</p>
+     <span class="dots">[...]</span>
+     <span class="more">
+      <p> The only thing is, it is a little difficult to get a sense of the time passing, until all of a sudden there is a reference to greying hair, an adult child, or Sofia's sentence being half over. Though I suppose that is how time works in real life too.</p>
+      <p>Nettie's parallel in Africa with the Olinka people is definitely something I took more of an interest in upon a reread, especially after studying <i>Heart of Darkness</i>. It fascinates me that Nettie and Samuel are so hurt by the Olinka's lack of accountability in selling their ancestors to slavery while simultaneously being complicit in thei colonisation through their missionary work. A houseguest at Samuel's aunt's party does point this fact out, mentioning the cruelty of the same King Leopald who presented her with a medal for her service.</p>
+      <p>I also particularly enjoyed thethemes of the importance of female relationships and solidarity, as well as the exchange Celie and Shug have about God: "People think pleasing God is all God care about. But any fool living in the world can see it always trying to please us back."</p>
+      <p>I did feel a little like the ending was a little too vague, too short, but I get it. Now reunited with Nettie and surrounded by family, Celie no longer has any need to communicate through letters.</p>
+     </span>
+     <button class="button" onclick="toggleMore(this)">Read more</button>
+    </div>
+   </div>
+  </div>
+</div>
+  <!-- REVIEW END -->
+
+  <script>
+   function toggleMore(btn) {
+    const review = btn.closest(".review");
+    const dots = review.querySelector(".dots");
+    const more = review.querySelector(".more");
+    if (more.style.display === "inline") {
+     more.style.display = "none";
+     dots.style.display = "inline";
+     btn.textContent = "Read more";
+    } else {
+     more.style.display = "inline";
+     dots.style.display = "none";
+     btn.textContent = "Read less";
+    }
+   }
+  </script>
+  <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+   <source src="/WEBSITE/BOOKS/stone_roses_i_wanna_be_adored.mp3">
+  </audio>
+  <script>
+   document.addEventListener("visibilitychange", function() {
+    document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+   })
+  </script>
+ </body>
+</html>

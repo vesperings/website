@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<style>
+  /* FONT IMPORT */
+
+
+/* -------------------------------------------------------- */
+/* VARIABLES */
+/* -------------------------------------------------------- */
+
+/* Variables are used like this: var(--text-color) */
+:root {
+  /* Background Colors: */
+  --background-color: #139ffd;
+  --content-background-color: #ffffff;
+  --sidebar-background-color: #d8efff;
+
+  /* Text Colors: */
+  --text-color: #000000;
+  --sidebar-text-color: #129fff;
+  --link-color: #13a0ff;
+  --link-color-hover: #0b588c;
+
+
+
+  /* Other Settings: */
+  --margin: 0px;
+  --padding: 20px;
+  --border: px solid #000000;
+  --round-borders: px;
+  --sidebar-width: 300px;
+}
+
+/* -------------------------------------------------------- */
+/* BASICS */
+/* -------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: var(--font-size);
+  margin: 0;
+  padding: var(--margin);
+  color: var(--text-color);
+  line-height: 1.2;
+  background: var(--background-color);
+  background-image: url("");
+    cursor: url("/WEBSITE/SHRINES/POPTROPICA/cursor.webp"), default;
+    /* just change the cursor.ico path to your location */
+
+}
+
+::selection {
+  /* (Text highlighted by the user) */
+  background: rgba(0, 0, 0, 0.2);
+}
+
+mark {
+  /* Text highlighted by using the <mark> element */
+  text-shadow: 1px 1px 4px var(--link-color);
+  background-color: inherit;
+  color: var(--text-color);
+}
+
+/* Links: */
+a {
+  text-decoration: underline;
+}
+
+a,
+a:visited {
+  color: var(--link-color);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-color-hover);
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------- */
+/* LAYOUT */
+/* -------------------------------------------------------- */
+
+.layout {
+  width: 1000px;
+  display: grid;
+  grid-gap: var(--margin);
+  grid-template: "header header" auto "main rightSidebar" auto "footer footer" auto / auto var(--sidebar-width);
+  /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
+}
+
+main {
+  grid-area: main;
+  overflow-y: auto;
+  padding: var(--padding);
+  background: var(--content-background-color);
+  border: var(--border);
+  border-radius: var(--round-borders);
+}
+
+/* -------------------------------------------------------- */
+/* HEADER */
+/* -------------------------------------------------------- */
+
+header {
+  grid-area: header;
+  font-size: 1.2em;
+  border: var(--border);
+  border-radius: var(--round-borders);
+  background: var(--content-background-color);
+}
+
+.header-content {
+  padding: var(--padding);
+}
+
+.header-title {
+  font-family: var(--heading-font);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* -------------------------------------------------------- */
+/* SIDEBARS */
+/* -------------------------------------------------------- */
+
+aside {
+  grid-area: aside;
+  border: var(--border);
+  border-radius: var(--round-borders);
+  overflow: hidden;
+  background: var(--sidebar-background-color);
+  padding: var(--padding);
+  color: var(--sidebar-text-color);
+}
+
+.left-sidebar {
+  grid-area: leftSidebar;
+}
+
+.right-sidebar {
+  grid-area: rightSidebar;
+}
+
+.sidebar-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: 'storychoice';
+  background-color: #129FFF;
+  color: #fff;
+}
+
+.sidebar-section:not(:last-child) {
+  margin-bottom: 3em;
+}
+
+.sidebar-section ul,
+.sidebar-section ol {
+  padding-left: 1.5em;
+}
+
+.sidebar-section > *:not(p):not(ul):not(ol):not(blockquote) {
+  margin-top: 10px;
+}
+
+/* Sidebar Blockquote: */
+
+.sidebar-section blockquote {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 1em 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sidebar-section blockquote > *:first-child {
+  margin-top: 0;
+}
+
+.sidebar-section blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+
+
+   @font-face
+{
+font-family:creativeblockbb;
+src: url('/WEBSITE/SHRINES/POPTROPICA/CREABBB_.TTF'),
+}
+h1 {
+  font-family: 'creativeblockbb';
+  z-index: 1;
+}
+
+   @font-face
+{
+font-family:storychoice;
+src: url('/WEBSITE/SHRINES/POPTROPICA/Story%20Choice%20Sans%20Serif.ttf'),
+}
+p {
+  font-family: 'storychoice';
+  z-index: 1;
+}
+
+h3 {
+  font-family: 'storychoice';
+  z-index: 1;
+}
+/* -------------------------------------------------------- */
+/* NAVIGATION */
+/* -------------------------------------------------------- */
+
+nav {
+  margin-bottom: 3em;
+}
+
+nav .sidebar-title {
+  margin-bottom: 0.5em;
+}
+
+nav ul {
+  margin: 0 -5px;
+  padding: 0;
+  list-style: none;
+  user-select: none;
+}
+
+nav ul li {
+  margin-bottom: 0;
+}
+
+nav > ul li > a,
+nav > ul li > strong {
+  display: inline-block;
+}
+
+nav > ul li > a,
+nav > ul li > details summary,
+nav > ul li > strong {
+  padding: 5px 10px;
+}
+
+nav > ul li > a.active,
+nav > ul li > details.active summary {
+  font-weight: bold;
+}
+
+nav ul summary {
+  cursor: pointer;
+}
+
+nav ul ul li > a {
+  padding-left: 30px;
+}
+
+
+
+/* -------------------------------------------------------- */
+/* CONTENT */
+/* -------------------------------------------------------- */
+
+main {
+  line-height: 1.5;
+}
+
+main a,
+main a:visited {
+  color: var(--link-color);
+}
+
+main a:hover,
+main a:focus {
+  color: var(--link-color-hover);
+  text-decoration-style: wavy;
+}
+
+main p,
+main .image,
+main .full-width-image,
+main .two-columns {
+  margin: 0.75em 0;
+}
+
+main ol,
+main ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+main ol li,
+main ul li {
+  margin-bottom: 0.2em;
+  line-height: 1.3;
+}
+
+main ol {
+  padding-left: 2em;
+}
+
+main blockquote {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 1em 0;
+  border-radius: 10px;
+}
+
+main pre {
+  margin: 1em 0 1.5em;
+}
+
+main code {
+  text-transform: none;
+}
+
+main center {
+  margin: 1em 0;
+  padding: 0 1em;
+}
+
+main hr {
+  border: 0;
+  border-top: var(--border);
+  margin: 1.5em 0;
+}
+
+/* HEADINGS: */
+
+main h1,
+main h2
+{
+  font-family: 'creativeblockbb';
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #0269C9;
+}
+
+main h1:first-child,
+main h2:first-child,
+main h3:first-child,
+main h4:first-child,
+main h5:first-child,
+main h6:first-child {
+  margin-top: 0;
+}
+
+main h1 {
+  font-size: 1.5em;
+}
+
+main h2 {
+  font-size: 1.4em;
+}
+
+main h3 {
+  font-size: 1.3em;
+}
+
+main h4 {
+  font-size: 1.2em;
+}
+
+main h5 {
+  font-size: 1.1em;
+}
+
+main h6 {
+  font-size: 1em;
+}
+
+/* COLUMNS: */
+
+.two-columns {
+  display: flex;
+}
+
+.two-columns > * {
+  flex: 1 1 0;
+  margin: 0;
+}
+
+.two-columns > *:first-child {
+  padding-right: 0.75em;
+}
+
+.two-columns > *:last-child {
+  padding-left: 0.75em;
+}
+
+/* -------------------------------------------------------- */
+/* CONTENT IMAGES */
+/* -------------------------------------------------------- */
+
+.image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.full-width-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.images {
+  display: flex;
+  width: calc(100% + 5px + 5px);
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------- */
+/* ACCESSIBILITY */
+/* -------------------------------------------------------- */
+
+/* please do not remove this. */
+
+#skip-to-content-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  line-height: 1;
+  font-size: 1.25rem;
+  background-color: var(--content-background-color);
+  color: var(--text-color);
+  transform: translateY(-3rem);
+  transition: transform 0.1s ease-in;
+  z-index: 99999999999;
+}
+
+#skip-to-content-link:focus,
+#skip-to-content-link:focus-within {
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------- */
+/* MOBILE RESPONSIVE */
+/* -------------------------------------------------------- */
+
+/* CSS Code for devices < 800px */
+@media (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+
+  .layout {
+    width: 100%;
+    grid-template: "header" auto  "leftSidebar" auto "main" auto "footer" auto / 1fr;
+    /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
+  }
+
+
+  .right-sidebar {
+    display: none;
+  }
+
+  aside {
+    border-bottom: 1px solid;
+    padding: 9px;
+    font-size: 0.9em;
+  }
+
+  header nav {
+    display: block !important;
+  }
+  nav {
+    padding: 0;
+  }
+
+  nav > ul {
+    padding-top: 0.5em;
+  }
+
+  nav > ul li > a,
+  nav > ul li > details summary,
+  nav > ul li > strong {
+    padding: 0.5em;
+  }
+
+  main {
+    max-height: none;
+    padding: 15px;
+  }
+
+  .images {
+    flex-wrap: wrap;
+  }
+
+  .images img {
+    width: 100%;
+  }
+
+  #skip-to-content-link {
+    font-size: 1rem;
+  }
+}
+/* FONT IMPORT */
+
+
+/* -------------------------------------------------------- */
+/* VARIABLES */
+/* -------------------------------------------------------- */
+
+/* Variables are used like this: var(--text-color) */
+:root {
+  /* Background Colors: */
+  --background-color: #139ffd;
+  --content-background-color: #ffffff;
+  --sidebar-background-color: #d8efff;
+
+  /* Text Colors: */
+  --text-color: #000000;
+  --sidebar-text-color: #129fff;
+  --link-color: #13a0ff;
+  --link-color-hover: #0b588c;
+
+
+
+  /* Other Settings: */
+  --margin: 0px;
+  --padding: 20px;
+  --border: px solid #000000;
+  --round-borders: px;
+  --sidebar-width: 300px;
+}
+
+/* -------------------------------------------------------- */
+/* BASICS */
+/* -------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: var(--font-size);
+  margin: 0;
+  padding: var(--margin);
+  color: var(--text-color);
+  line-height: 1.2;
+  background: var(--background-color);
+  background-image: url("");
+    cursor: url("/WEBSITE/SHRINES/POPTROPICA/cursor.webp"), default;
+    /* just change the cursor.ico path to your location */
+
+}
+
+::selection {
+  /* (Text highlighted by the user) */
+  background: rgba(0, 0, 0, 0.2);
+}
+
+mark {
+  /* Text highlighted by using the <mark> element */
+  text-shadow: 1px 1px 4px var(--link-color);
+  background-color: inherit;
+  color: var(--text-color);
+}
+
+/* Links: */
+a {
+  text-decoration: underline;
+  font-family: "storychoice";
+
+}
+
+a,
+a:visited {
+  color: var(--link-color);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-color-hover);
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------- */
+/* LAYOUT */
+/* -------------------------------------------------------- */
+
+.layout {
+  width: 1000px;
+  display: grid;
+  grid-gap: var(--margin);
+  grid-template: "header header" auto "main rightSidebar" auto "footer footer" auto / auto var(--sidebar-width);
+  /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
+}
+
+main {
+  grid-area: main;
+  overflow-y: auto;
+  padding: var(--padding);
+  background: var(--content-background-color);
+  border: var(--border);
+  border-radius: var(--round-borders);
+}
+
+/* -------------------------------------------------------- */
+/* HEADER */
+/* -------------------------------------------------------- */
+
+header {
+  grid-area: header;
+  font-size: 1.2em;
+  border: var(--border);
+  border-radius: var(--round-borders);
+  background: var(--content-background-color);
+}
+
+.header-content {
+  padding: var(--padding);
+}
+
+.header-title {
+  font-family: var(--heading-font);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* -------------------------------------------------------- */
+/* SIDEBARS */
+/* -------------------------------------------------------- */
+
+aside {
+  grid-area: aside;
+  border: var(--border);
+  border-radius: var(--round-borders);
+  overflow: hidden;
+  background: var(--sidebar-background-color);
+  padding: var(--padding);
+  color: var(--sidebar-text-color);
+}
+
+.left-sidebar {
+  grid-area: leftSidebar;
+}
+
+.right-sidebar {
+  grid-area: rightSidebar;
+}
+
+.sidebar-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: 'storychoice';
+  background-color: #129FFF;
+  color: #fff;
+}
+
+.sidebar-section:not(:last-child) {
+  margin-bottom: 3em;
+}
+
+.sidebar-section ul,
+.sidebar-section ol {
+  padding-left: 1.5em;
+}
+
+.sidebar-section > *:not(p):not(ul):not(ol):not(blockquote) {
+  margin-top: 10px;
+}
+
+/* Sidebar Blockquote: */
+
+.sidebar-section blockquote {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 1em 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sidebar-section blockquote > *:first-child {
+  margin-top: 0;
+}
+
+.sidebar-section blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+
+
+   @font-face
+{
+font-family:creativeblockbb;
+src: url('/WEBSITE/SHRINES/POPTROPICA/CREABBB_.TTF'),
+}
+h1 {
+  font-family: 'creativeblockbb';
+  z-index: 1;
+}
+
+   @font-face
+{
+font-family:storychoice;
+src: url('/WEBSITE/SHRINES/POPTROPICA/Story%20Choice%20Sans%20Serif.ttf'),
+}
+p {
+  font-family: 'storychoice';
+  z-index: 1;
+}
+
+h3 {
+  font-family: 'storychoice';
+  z-index: 1;
+}
+/* -------------------------------------------------------- */
+/* NAVIGATION */
+/* -------------------------------------------------------- */
+
+nav {
+  margin-bottom: 3em;
+}
+
+nav .sidebar-title {
+  margin-bottom: 0.5em;
+}
+
+nav ul {
+  margin: 0 -5px;
+  padding: 0;
+  list-style: none;
+  user-select: none;
+}
+
+nav ul li {
+  margin-bottom: 0;
+}
+
+nav > ul li > a,
+nav > ul li > strong {
+  display: inline-block;
+}
+
+nav > ul li > a,
+nav > ul li > details summary,
+nav > ul li > strong {
+  padding: 5px 10px;
+}
+
+nav > ul li > a.active,
+nav > ul li > details.active summary {
+  font-weight: bold;
+}
+
+nav ul summary {
+  cursor: pointer;
+}
+
+nav ul ul li > a {
+  padding-left: 30px;
+}
+
+
+
+/* -------------------------------------------------------- */
+/* CONTENT */
+/* -------------------------------------------------------- */
+
+main {
+  line-height: 1.5;
+}
+
+main a,
+main a:visited {
+  color: var(--link-color);
+}
+
+main a:hover,
+main a:focus {
+  color: var(--link-color-hover);
+  text-decoration-style: wavy;
+}
+
+main p,
+main .image,
+main .full-width-image,
+main .two-columns {
+  margin: 0.75em 0;
+}
+
+main ol,
+main ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+main ol li,
+main ul li {
+  margin-bottom: 0.2em;
+  line-height: 1.3;
+}
+
+main ol {
+  padding-left: 2em;
+}
+
+main blockquote {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 1em 0;
+  border-radius: 10px;
+}
+
+main pre {
+  margin: 1em 0 1.5em;
+}
+
+main code {
+  text-transform: none;
+}
+
+main center {
+  margin: 1em 0;
+  padding: 0 1em;
+}
+
+main hr {
+  border: 0;
+  border-top: var(--border);
+  margin: 1.5em 0;
+}
+
+/* HEADINGS: */
+
+main h1,
+main h2
+{
+  font-family: 'creativeblockbb';
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #0269C9;
+}
+
+main h1:first-child,
+main h2:first-child,
+main h3:first-child,
+main h4:first-child,
+main h5:first-child,
+main h6:first-child {
+  margin-top: 0;
+}
+
+main h1 {
+  font-size: 1.5em;
+}
+
+main h2 {
+  font-size: 1.4em;
+}
+
+main h3 {
+  font-size: 1.3em;
+}
+
+main h4 {
+  font-size: 1.2em;
+}
+
+main h5 {
+  font-size: 1.1em;
+}
+
+main h6 {
+  font-size: 1em;
+}
+
+/* COLUMNS: */
+
+.two-columns {
+  display: flex;
+}
+
+.two-columns > * {
+  flex: 1 1 0;
+  margin: 0;
+}
+
+.two-columns > *:first-child {
+  padding-right: 0.75em;
+}
+
+.two-columns > *:last-child {
+  padding-left: 0.75em;
+}
+
+/* -------------------------------------------------------- */
+/* CONTENT IMAGES */
+/* -------------------------------------------------------- */
+
+.image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.full-width-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.images {
+  display: flex;
+  width: calc(100% + 5px + 5px);
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------- */
+/* ACCESSIBILITY */
+/* -------------------------------------------------------- */
+
+/* please do not remove this. */
+
+#skip-to-content-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  line-height: 1;
+  font-size: 1.25rem;
+  background-color: var(--content-background-color);
+  color: var(--text-color);
+  transform: translateY(-3rem);
+  transition: transform 0.1s ease-in;
+  z-index: 99999999999;
+}
+
+#skip-to-content-link:focus,
+#skip-to-content-link:focus-within {
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------- */
+/* MOBILE RESPONSIVE */
+/* -------------------------------------------------------- */
+
+/* CSS Code for devices < 800px */
+@media (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+
+  .layout {
+    width: 100%;
+    grid-template: "header" auto  "leftSidebar" auto "main" auto "footer" auto / 1fr;
+    /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
+  }
+
+
+  .right-sidebar {
+    display: none;
+  }
+
+  aside {
+    border-bottom: 1px solid;
+    padding: 9px;
+    font-size: 0.9em;
+  }
+
+  header nav {
+    display: block !important;
+  }
+  nav {
+    padding: 0;
+  }
+
+  nav > ul {
+    padding-top: 0.5em;
+  }
+
+  nav > ul li > a,
+  nav > ul li > details summary,
+  nav > ul li > strong {
+    padding: 0.5em;
+  }
+
+  main {
+    max-height: none;
+    padding: 15px;
+  }
+
+  .images {
+    flex-wrap: wrap;
+  }
+
+  .images img {
+    width: 100%;
+  }
+
+  #skip-to-content-link {
+    font-size: 1rem;
+  }
+}
+</style>
+    <!-- Change your site title: (It is shown in the tab) -->
+    <title>Poptropica</title>
+
+    <!-- Change your site description: (It is shown in Google results) -->
+    <meta content="My personal website!" name="description" />
+
+    <!-- Setting character encoding and viewport size. Do not remove. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!-- CSS: -->
+    <!-- You will have to change this to "../style.css" if this HTML file is in a subfolder, to "../../style.css" if this HTML file is in 2 subfolders, etc. -->
+
+
+    <script>
+      // Template generated with petrapixel's layout generator.
+      // (Please do not remove this credit.)
+      console.log("%c Template generated with petrapixel's layout generator.", "font-size: 14pt;");
+      console.log("%c https://petrapixel.neocities.org/coding/layout-generator", "font-size: 14pt;");
+    </script>
+  </head>
+  <body>
+    <!-- The next line is a skip-to-content link for keyboard users. Do not remove it! -->
+    <a href="#content" id="skip-to-content-link">Skip to content</a>
+
+    <div class="layout">
+
+      <!-- =============================================== -->
+      <!-- HEADER -->
+      <!-- =============================================== -->
+
+      <header>
+<div class="header-image">
+          <img src="/WEBSITE/SHRINES/POPTROPICA/BLOG/poptropicaheader.png" alt="" />
+        </div>
+      </header>
+
+
+
+
+      <!-- =============================================== -->
+      <!-- RIGHT SIDEBAR -->
+      <!-- =============================================== -->
+
+      <aside class="right-sidebar">
+
+
+        <!-- NAVIGATION -->
+       <div class="sidebar-section">
+          <p><img src="/WEBSITE/SHRINES/POPTROPICA/BLOG/journal.jpg" align="left"><b>Welcome to the Poptropica Shrine Blog:</b> a creative journal from the biggest fan of Poptropica.</p>
+        </div>
+        <nav>
+          <div class="sidebar-title"><img src="/WEBSITE/SHRINES/POPTROPICA/BLOG/star.png" width="15px">Navigation</div>
+          <ul>
+            <li><a href="#welcometomypoptropicashrine">Welcome to my Poptropica Shrine!</a></li>
+            <li><a href="#evilafroguy">Evil Afro Guy</a></li>
+        	<li>
+            </li>
+          </ul>
+        </nav>
+
+
+
+        <div class="sidebar-section">
+          <div class="sidebar-title"><img src="/WEBSITE/SHRINES/POPTROPICA/BLOG/star.png" width="15px">Poptropica Life Size Body Pillow</div>
+          	<img src="/WEBSITE/SHRINES/POPTROPICA/BLOG/bodypillowad.png" width="200px">
+          </div>
+      </aside>
+
+
+      <main id="content"> <!-- Do NOT remove the ID here -->
+
+
+
+        <!-- =============================================== -->
+        <!-- MAIN CONTENT -->
+        <!-- =============================================== -->
+
+        <section>
+<div id="evilafroguy">
+<h1>Evil Afro Guy</h1>
+</div>
+<h3>20-4-2025</h3>
+<p>Have you ever heard of the Evil Afro Guy? I&rsquo;m guessing you haven&rsquo;t, and probably think that name is vaguely racist. But if you ever played Poptropica during the heyday of Flash, you might have seen him. Maybe you disregarded him as nothing but a glitch. For those of you who don&rsquo;t know, Poptropica was a children&rsquo;s online adventure game in the 2010s, in which players complete many quests on various &ldquo;islands.&rdquo; I loved getting lost in all those worlds, bouncing around every scene like a maniac. Out of curiosity, I looked it up again a few weeks ago, and it turns out most of the islands have been wiped. There&rsquo;s only a couple on the map now, none of them from when I used to play. They say it&rsquo;s because Flash died and they couldn&rsquo;t port everything over, but I know better. I know it&rsquo;s because of him</p>
+<p>I was eight the first time I saw him. It was late, I was supposed to be asleep but I&rsquo;d snuck onto the desktop computer in my room anyway once I was sure my parents wouldn&rsquo;t check on me. I was in the Soda Pop Shop on Early Poptropica Island. Usually it was pretty busy, that commonroom with the checkerboard floor and neon signs laggy as hell and filled with dozens of avatars bouncing around playing mini-games. But that night, it was empty. Except for him. He was grinning with pure white skin, wearing a white vest and black pants. And of course, as the name suggests, he had a black afro. As far as the crazy character customisation on the game went, this was incredibly basic. Boring even. But something about it still gave me the creeps.&nbsp;</p>
+<p>Having nothing better to do, I decided to add him as a friend. It was odd, instead of the silly Poptropica character names like Zany Hamburger or Purple Foot, his showed up as UNDEFINED UNDEFINED. I disregarded it as a glitch. Great as the game was, it was famously riddled with them. I decided to challenge him to a game of Skydiving. I had a 5 star battle ranking and expected some easy wins, but he obliterated me. Every single time. Before I could even click to jump, it was over. My childish ego was bruised, and like any sore loser, after the 7th humiliation, I ended the minigame. Instead, I decided to use the in-game chat system to talk to him.&nbsp;</p>
+<p>&ldquo;Who&rsquo;s your favourite Poptropica character?&rdquo; I picked from the canned list, expecting Black Widow or Dr. Hare. His answer appeared instantly.</p>
+<p>&ldquo;You are, [MY NAME].&rdquo;</p>
+<p>I froze. Not my username, not my character&rsquo;s name. My <em>real </em>name. The one I knew I hadn&rsquo;t entered anywhere. Poptropican eyes follow the player&rsquo;s cursor, but his were staring into me, black pupils boring through the screen.</p>
+<p>I tried to shut down the browser window, get away from him, but my mouse and keyboard weren&rsquo;t working. I could hear my heart pound over my sister&rsquo;s faint snoring and the whir of my computer fan.</p>
+<p>My Poptropica character started crying. Her cartoon tears rained as she wailed with a silent mouth and I didn&rsquo;t know what to do. Then he asked me a question. In the same style as the pre-scripted Poptropica bubbles, but I knew this was definitely not part of the game.</p>
+<p>&ldquo;How do you want to die?&rdquo;</p>
+<p>Above my character, still crying, were actual clickable answers. Each violent and painful.</p>
+<p>My hand wasn&rsquo;t on the mouse, I swear to God it wasn&rsquo;t. But the cursor moved, gliding towards the options like some twisted planchette. I didn&rsquo;t want to find out what it would select. Panicking, I yanked out the power cord straight from the back. The screen went black and I gasped out a breath I didn&rsquo;t even know I was holding in relief. With trembling fingers, I slapped a random horse sticker from the drawer in my desk onto my webcam. I didn&rsquo;t sleep that night.&nbsp;</p>
+<p>You&rsquo;d think I&rsquo;d never touch Poptropica again after that, but I was a dumb kind and it was a fun game. I figured it was just a hacker and I&rsquo;d be fine if I avoided the common rooms. I deleted him from my friends list the next time I logged in, but when the page refreshed, he was still there. Only now his name wasn&rsquo;t UNDEFINED UNDEFINED, it was Gentle Seal. That was my sister&rsquo;s character. Her Poptropican, the one with the Viking helmet and twin braids, was gone. It had been replaced by <em>him.</em> I asked her about it, maybe she had changed her appearance as a sick joke &ndash; though there was no way she could have known &ndash; and she had no idea what I was talking about. She hadn&rsquo;t played the game in months. We tried logging into her account but it just didn&rsquo;t work. User not found.&nbsp;</p>
+<p>I ended up making a new account. If you&rsquo;ve read my previous blog post, you&rsquo;ll know that I switched my original account after a year. This was why. It was a completely different username, and I made sure my new Poptropican looked nothing alike the first. I didn&rsquo;t go to common rooms anymore. I just stuck to the islands. The islands were safe.</p>
+<p>Until he came back.</p>
+<p>I was on Mythology Island, trying to costumise the rose crown from Aphrodite. But when I opened the costumiser, she wasn&rsquo;t there. Evil Afro Guy was. His eyes flickered wildly as he grinned at me, bloody sockets flashing between cartoon frames. Even with my webcam covered, I knew he was watching me. Another time on Spy Island, Director D had been replaced by Evil Afro Guy. When I clicked him, instead of his usual mission, the text bubble overflowed with garbled unicode. I couldn&rsquo;t make out any of it, but it filled me with a pit of dread. I refreshed the page and it returned to normal. Those things I could have dismissed as mere glitches, but I know there&rsquo;s more to it.&nbsp;</p>
+<p>Do you remember the Goth Guy NPC on Reality TV Island? With the floppy hair and skull t-shirt? He wasn&rsquo;t important to the plot or anything. If you played after 2013, you&rsquo;ve probably never seen him and it&rsquo;s all my fault. I had a bit of a crush on him as a kid even despite the goofy Poptropica art style and I wanted to take a screenshot of my Poptropican next to him. Just something silly. I clicked on him to initiate dialogue. He flickered. I blinked and he wasn&rsquo;t himself anymore. It was Evil Afro Guy. I refreshed the page, and he was just&hellip;. Gone. No matter how many times I restarted the island, he just wasn&rsquo;t there. I tried to ignore it, finish the rest of the island, but once I got to the Reality TV show aspect of the Island, instead of the usual variety of characters, all of the contestants were all identical. They were all him. They taunted me during the challenges. Not in the usual canned phrases. Real things. Awful, personal things. He knew things about me he shouldn&rsquo;t, like what I really kept in the box under the bed, or why I&rsquo;d burnt those journals. When I tried to vote any of them out, they spoke in unison, chat bubbles overlapping.</p>
+<p>&ldquo;You can&rsquo;t get rid of me.&rdquo;</p>
+<p>I never finished that island.</p>
+<p>I stopped playing for good after that. Years slipped by and I grew older, time hazing over any memory of Poptropica. I&rsquo;d convinced myself it was just a bad dream I&rsquo;d had and moved on with my life. Until a few weeks ago. I&rsquo;d seen a post about Poptropica on one of those nostalgia-bait Instagram accounts, and something about it made me want to log in again, prove to myself how silly my childhood nightmare had been. My account was exactly the same 15 years later, but the game itself had been stripped down. The sprawling multi-page map had been gutted to just 3 and all the islands I remembered were gone. Early Poptropica, Spy, Mythology, Reality TV. They may as well have never existed. At first I believed the official story, the death of Flash and budget cuts. But the more I expired the overly simplistic and polished new islands, the more I was convinced otherwise. The removal of the costumiser feature really solidified it for me. They didn&rsquo;t lose the islands, they quarantined them. Removed any feature that could have let him slip through. Sealed away childhood joy to stop him spreading. The new islands were sterile, purposefully dull. No more real interaction. Safe.&nbsp;</p>
+<p>Or so I thought. I saw a thread on Reddit (sue me, I know), discussing how to play the old islands. Flashpoint was heralded as a popular option. It&rsquo;s a sort of digital archive that lets you play dead Flash games offline. Local copies, stored directly on your computer. No central servers, no web devs to monitor or patch any cracks. All the old islands, all the old code. Everything exactly as it was. Including him.</p>
+<p>I doubt anyone will listen, but please, DO NOT DOWNLOAD FLASHPOINT. You aren&rsquo;t just resurrecting the old islands, you&rsquo;re resurrecting Evil Afro Guy too. And with every computer he has access to, he only grows stronger. They may have removed the common rooms, but he will find a way. And when he does, it will already be too late.</p>
+<br>
+<img src="/WEBSITE/SHRINES/POPTROPICA/BLOG/poppfp.png" width="70px">
+          <br>
+          <p>Vesperings</p>
+        </section>
+
+        <section>
+<div id="welcometomypoptropicashrine">
+<h1>Welcome to my Poptropica Shrine!</h1>
+</div>
+<h3>17-4-2025</h3>
+         <p>I joke about it a lot, but Poptropica is genuinely so dear to my heart. And because I embue everything with unecessary sentimental spirit, I'll tell you all about it. I was an immigrant child entering a British school for the first time during the middle of the year, so my parents were quite concerned about my progress and wanted to know how I could enrich myself at home. My mother discussed it with my teacher,&nbsp;Miss Matthews&nbsp;&mdash;&nbsp;darling woman who opened the whole world to me!&nbsp;&mdash; suggested I using educational websites for kids. Dutifully, I played multiplication games on Funbrain until something caught my eye. An ad, for Poptropica. I was curious and clicked it, not for a second expecting it to consume me in the way it has done. And it&nbsp;<em>was</em> still educational, the first island I played was Mythology Island and it fostered in me an ever-enduring passion for Classics.</p>
+<p><img src="/WEBSITE/SHRINES/POPTROPICA/BLOG/shinydolphin.png" alt="" width="250px" align="right" /></p>
+<p>I started playing Poptropica whenever I could, too scared to make an account for some reason. I think I was worried I'd have to pay for it. Eventually, I realised that wasn't the case and made my very first account in January 2012. But it was the account I made a year later, on the 7th of June 2013, that really felt like my own. I spent hours randomising the character creator until I landed on her, my perfect Shiny Dolphin. By then I'd become an expert at using the Costumiser and travelled all of Poptropica to find her the perfect items of clothing. Often people see their video game characters as an extension of themselves, but Shiny was more of a friend. I'd watched her emerge from that crate on the sign up page&nbsp;and spent years on adventures with her <span style="text-decoration: line-through;">looking up tutorials because I was too stupid to figure things out on my own. Honestly, I remember when the Poptropica Help Blog didn't even have a custom domain.</span> She looks identical to how she did when I first made her, in what I dub her "civilian" outfit. I used to create different outfits for each island, saving them using the short-lived camera function, but those are lost now.</p>
+<p>And I spred this shit like gospel. Even after moving Primary schools, I hijacked the ICT Suite during lunchtimes to play Poptropica with other kids. I delighted in my cousins visiting so we could tackle islands together. I loved poring over fanmade blogs listing conspiraries about Monster Carnival Island and bugs you could exploit to make your game more fun. Even though it wasn't a multiplayer game, Poptropica never felt&nbsp;<em>lonely.&nbsp;</em>(That is, if you ignore Steamworks Island.)</p>
+<p>I'm so glad I got to experience Poptropica in its heyday before watching the switch to HAXE and subsequent crumbling after the death of Flash. Poor Shiny... the world she was born into no longer exists. But there are always emulators, so she lives on even if they don't load her hair correctly.</p>
+<br>
+<img src="/WEBSITE/SHRINES/POPTROPICA/BLOG/poppfp.png" width="70px">
+          <br>
+          <p>Vesperings</p>
+        </section>
+      </main>
+  <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+  <source src=/WEBSITE/SHRINES/POPTROPICA/jeff_heim_poptropica_overture.mp3>
+</audio><script>
+  document.addEventListener("visibilitychange", function() {
+    document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+  })
+</script>
+    <!-- Closing .layout: -->
+    </div>
+<div style="float:  ; max-height: 150px; position: fixed; left: 30px; bottom: 0px; z-index: 400;">
+<img src="/WEBSITE/SHRINES/POPTROPICA/popslendy.gif" width="150px"/></div>
+
+    <!-- Add any additional Javascript code (<script></script>) here. -->
+  </body>
+</html>

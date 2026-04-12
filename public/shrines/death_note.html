@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#x2730; DEATH NOTE &#x2730;</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+<style>
+/* You can either copy the below and paste it between style tags on your HTML page, OR you can copy this to a file and name it .css and link it from your HTML page. */
+@font-face {
+  font-family: Vesperings;
+  src: url(/WEBSITE/vesperings.ttf);
+}
+
+p {
+   font-family: Vesperings;
+
+}
+
+:root {
+  --accent-light: #4b0101;
+  --accent-dark: #4b0101;
+  --accent-muted: #4b0101;
+}
+
+    h1, h2, h4, h4 {
+      font-family: garamond;
+      color: #4b0101;
+    }
+* { 
+  cursor: url(/WEBSITE/cursor.png),
+  auto !important; 
+  }
+html,
+body {
+  margin: 0;
+  font-size: 20px;
+  background-color: pink;
+  background-image: url("/WEBSITE/SHRINES/DEATH_NOTE/bg.jpg");
+}
+strong {
+  color: var(--accent-dark);
+}
+em {
+  color: var(--accent-light);
+}
+u {
+  color: var(--accent-dark);
+}
+a {
+  color: var(--accent-dark);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  content: "";
+  background-image: url("/WEBSITE/SHRINES/DEATH_NOTE/notebook.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  max-width: 900px;
+  height: 770px;
+  margin: 0 auto;
+}
+.post-it,
+.white-box,
+.notebook,
+.yellow-note {
+  position: absolute;
+}
+.post-it {
+  top: 20px;
+  left: 40px;
+  width: 130px;
+}
+.white-box {
+  top: 20px;
+  left: 180px;
+  width: 500px;
+  height: 100px;
+  overflow: hidden;
+}
+.notebook {
+  top: 172px;
+  left: 145px;
+}
+.notebook > .wrapper {
+  overflow: auto;
+  height: 450px;
+  width: 380px;
+  padding-right: 84px;
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #000 #c4c4c4; /* scroll thumb and track */
+}
+.notebook > .wrapper p {
+  line-height: 20px;
+  margin-bottom: 16.5px;
+}
+.yellow-note {
+  left: 640px;
+  top: 160px;
+  width: 180px;
+  height: 550px;
+  overflow: auto;
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #e8d866 #d6ca71; /* scroll thumb and track */
+}
+.title {
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 3px dotted var(--accent-muted);
+  color: var(--accent-dark);
+}
+.content {
+}
+.subtitle {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 3px dotted var(--accent-muted);
+  margin-bottom: 10px;
+  color: var(--accent-dark);
+}
+ul.pixelbullets {
+  list-style-image: url("https://sadgrl.online/images/lyts/not-mine/hearth_rosa.gif");
+  padding-left: 25px;
+}
+.page-title {
+  font-size: 25px;
+  padding-bottom: 4px;
+  color: var(--accent-dark);
+  font-weight: bold;
+}
+.footer {
+  text-align:center;
+}
+
+.yellow-note::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.yellow-note::-webkit-scrollbar-track {
+  background: #e8d866; /* color of the tracking area */
+}
+
+.yellow-note::-webkit-scrollbar-thumb {
+  background-color: #d6ca71; /* color of the scroll thumb */
+}
+.notebook > .wrapper::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.notebook > .wrapper::-webkit-scrollbar-track {
+  background: #c4c4c4;; /* color of the tracking area */
+}
+
+.notebook > .wrapper::-webkit-scrollbar-thumb {
+  background-color:  #000; /* color of the scroll thumb */
+}
+.removeThis {
+  background-color:yellow;
+}</style>
+  </head>
+ <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+
+<style>
+.font-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+
+    background-color: black;
+    color: red;
+    font-family: Garamond, serif;
+    padding: 10px 15px;
+    border: 1px solid red; 
+    cursor: pointer;
+}
+</style>
+
+<script>
+let fontChanged = false;
+let styleEl;
+
+function toggleFont() {
+    if (!fontChanged) {
+        styleEl = document.createElement('style');
+        styleEl.id = "fontOverride";
+
+        styleEl.innerHTML = `
+            * {
+                font-family: Garamond, serif !important;
+            }
+        `;
+
+        document.head.appendChild(styleEl);
+        fontChanged = true;
+
+    } else {
+        const existing = document.getElementById("fontOverride");
+        if (existing) existing.remove();
+
+        fontChanged = false;
+    }
+}
+</script>
+  <body>
+   <!-- Everything here goes inside of your <body></body> tags! -->
+<div class="container">
+  <div class="white-box">
+    <div class="title"><center>Death Note</center></div>
+ 
+  </div>
+  <div class="notebook">
+    <div class="wrapper">
+<p>Hello! This is my first shrine, so I wanted it to be special. The two great loves of my life are <em>Death Note</em> and <em>Poptropica</em>, so it was a no-brainer I start with one of those. </p>
+<p> </p>
+<p><em>Death Note</em> was my first anime, discovered before I even know what anime was, watched in 240p 3-part-per-episode YouTube uploads. I was a morbid little child who loved horror, so you just know the second 8 year old Vesperings head about "a notebook that kills people" she was sold on it. I tried to very excitedly tell people all about it at school the next day, but they just didn't seem to be as into it as I was. </p>
+<p> </p>
+<p>Ever since then, it's just been a part of me. In high school, I was just associated with it in my weeb (affectionate) circles. It was <em>my </em>show. I mean it when I say I wouldn't be who I am without it, <em>Death Note</em> is even the reason I got into Visual Kei and then more broadly goth and metal -- who would I be without my little tunes? Obsessed with <em>The World</em>, I decided to check out the rest of <em>Nightmare's </em>discography, which led me to <em>The GazettE </em>and <em>exist&dagger;trace</em>, who I'd spend hours admiring on Pinterest. Now, my <a href="https://open.spotify.com/playlist/6GL8shJMGMrCHdrpzj1BGR?si=93d7633051d14575">V系 playlist</a> is near 600 songs and counting, and I owe it all to the silly little killing people diary show.</p>
+<p> </p>
+<h4>Wow, you speak so highly of it! Is Death Note really that good?</h4>
+<p>Um..... hmm... I uh... have to go return some video tapes. Seriously though, I maintain the best way to enjoy <em>Death Note</em> is to think of it as a comedy. Which isn't difficult because it is so fucking funny. Who cares about morality and rooting for a side when you can giggle at Ryuk's one liners and the long, ridiculous monologues? Okay wait I'm not advocating for media illiteracy here, I'm just saying it's a fun show and you should have fun watching it. And yes there are a lot of great ~themes~ and it is very entertaining because it is a solid piece of source material, but in my opinion half its greatness comes from the fandom. The L/Light internal monologue format NEVER gets old and without it, the anime would not be as well loved. The anime takes itself seriously as a whole, but is at its best when it doesn't.</p>
+<p></p>
+<h4>What about the characters? You're being suspiciously quiet about them. </h4>
+<p>Calm down, I'm getting there. From the moment I first saw him, I ended up absorbing L into my personality. We had the same birthday, were both the smartest people we knew (listen, I'm not a narcissist, it's just not that difficult when you're in Year 4, okay?), sugar addicts, and even look alike. No kidding, I put on a white T-shirt and look like I'm cosplaying L. Or Jeff the Killer.... As a kid I found Misa annoying and wished Naomi lasted longer (I still miss her come back babygirl), but now I'm old enough to realise Misa is just the victim of bad writing. She is <em>so </em>compelling when she's first introduced but gets bimbofied 2 seconds later. So much wasted potential. She is childish and manipulative and so intelligent and it's all wasted to make her a whiny loser when she could be so much more. Also she managed to get two shinigami to fall for her? And she just doesn't care? Misa Amane I wish I was your writer I could make you so good.</p>
+<p> </p>
+<h4>Aren't you forgetting someone?</h4>No.
+<p> </p>
+<h4>You sure? It seems like there's a pretty important character you haven't mentioned yet.</h4>
+<p> Goddamnit. This is for your own good. Trust me. You know what, this has been great, but why don't you check out some other page of mine now?</p>
+<p> </p>
+<h4>Come on! What about the Light Yagami of it all?</h4>
+<p>Ugh fine. But don't say I didn't warn you.
+<p>*deep breath*</p>
+<P>AHSFHKDFKHFKDFHSKFHSJFSHFJ LIGHT YAGAMI MAKES MY BLOOD BOIL I HAVE NEVER FELT ANYTHING SO INTENSE TOWARDS A MAN HE ENRAGES ME SO MUCH BUT I CANNOT HELP BUT LOVE HIM IN THE WAY ONE LOVES A PARTICULARLY PATHETIC CAT. BUT UNLIKE A CAT I WANT TO KICK HIM TO DEATH, BASH IN HIS SKULL WITH HAMMERS AND RUN OVER HIM WITH A CYBERTRUCK HE IS SOOOOOO ANNOYING. CRINGE LOSER!!! HE IS ALSO VERY PRETTY I WILL ADMIT BUT EVIL EVIL MAN KNOWS THIS AND USES IT TO HIS ADVANTAGE AND THE WAY HE USES ALLLL THE WOMEN IN HIS LIFE IS SO EVIL AND MISOGYNISTIC!!! SPEAKING OF MISOGYNY, YOU'D THINK HIS DISREGARD OF WOMEN IS A SMART WRITING CHOICE AND A PURPOSEFUL CHARACTER FLAW, WOULDN'T YOU? LMAO NO! THE WRITER IS JUST A MISOGYNIST HIMSELF AND PROJECTED HIS OWN FEELINGS ONTO LIGHT. BUT AT THE SAME TIME IT'S A LITTLE BIT FUNNY HOW DURING THE YOTSUBA ARC HE'S SCANDALISED BY THE IDEA OF USING A WOMAN. YOU LITTLE LIAR!!!! ACTUALLY YOTSUBA LIGHT IS SO SPECIAL TO ME BECAUSE I CANNOT IMAGINE HOW IT MUST FEEL TO CONDEMN SOMETHING YOU CAN TELL EXISTS IN YOUR BONES. TO DESPERATELY HOPE YOU ARE BETTER THAN YOUR NIGHTMARES, BUT BETRAY YOURSELF ANYWAY. UNFORTUNATELY I HAVE ON OCCASION FELT SYMPATHY FOR THIS COCKROACH... I ALWAYS FEEL A PANG IN MY HEART WHEN LIGHT IS A LITTLE OUT OF IT AND HIS MOTHER JUST ASKS HIM ABOUT HIS GRADES... LORD. NO WONDER YOU THINK YOU HAVE TO BE A GOD, YOU'VE NEVER BEEN GIVEN AN OPTION OTHER THAN PERFECTION. I LOVE CHARACTERS WITH GOD COMPLEXES THEY ARE SO FUN I LOVE HOW SURFACE LEVEL LIGHT'S WHOLE JUSTICE SCHTICK IS. ALSO COMEDY KING ACTUALLY BECAUSE IN THE SPAN OF TWO EPISODES BRO GOES FROM "HMM MURDER IS WRONG MAYBE I SHOULDN'T USE THIS BOOK" TO "YOU LOOKED AT ME THE WRONG WAY, NOW YOU WILL DIE:3" WHICH... LOVE A CORRUPTION ARC BUT HE DID NOT EVEN TRY TO BE NORMAL!!! ALSO SORRY BUT WE DON'T TALK ENOUGH ABOUT HOW MUCH OF A SADISTIC LITTLE FUCK THIS MAN IS. WHEN HE'S KILLING NAOMI, HE *KNOWS* HE'S WON BUT STILL TOYS WITH HER WITH THAT STUPID ANGELIC SMILE ON HIS FACE ASKING IF HE CAN HELP HER MOTHERFUCKER I WISH SHE HAD SHOT YOU. ALSO SORRY BUT I KNOW YOU THINK YOU'RE A GOD AND ALL BUT THE EGO AND AUDACITY OF YOU THINKING YOU CAN TAKE ON AN FBI AGENT TRAINED IN CAPOEIRA JUST BECAUSE SHE'S A WOMAN??? JAIL! AND BY SADISTIC I MEAN SADISTIC BECAUSE WHY ON EARTH WOULD YOU GIVE A GUY YOU WORKED WITH FOR MANY MONTHS TERMINAL CANCER INSTEAD OF PUTTING HIM OUT OF HIS MISERY ANY OTHER WAY???? YOU CAN STILL EXERT POWER AND EVERYTHING WITHOUT BEING SUCH A DICK??? BUT I DO THINK IT IS SOOO ADORABLE HOW HE OVERTHINKS LITERALLY EVERY TINY LITTLE THING HE JUST DOES NOT KNOW HOW TO BE NORMAL AND SOMEHOW NOBODY BUT L SEEMS TO REALISE THIS? L AUTISM LAWLIET????? IF YOU THINK ABOUT IT LIGHT IS LIKE EVIL(ER) FLEABAG AND L IS THE PRIEST. ANYWAY I JUST... YES BABYGIRL IT IS SOOOO NONCHALANT AND CASUAL OF YOU TO SPEND 15 MINUTES DECIDING WHAT COFFEE ORDER MAKES YOU SEEM LESS LIKE KIRA. HERE'S THE SECRET THOUGH, NO MATTERWHAT YOU CHOOSE YOU WILL SEEM LIKE KIRA BECAUSE YOU <EM>ARE</EM> KIRA!!!! ALSO I LOVE HOW EVERYTHING LIGHT DOES IS FOR ULTERIOR MOTIVES THERE IS NOT A DROP OF SINCERITY IN HIS BLOOD, EVEN WHEN HE SEEMS TO OFFER A MOMENT OF KINDNESS THE COGS ARE TURNING IN HIS RAT BRAIN ON HOW TO EXPLOIT IT!!! HE JUST DOES NOT CARE HE JUST WANTS TO BE SERVED LIKE A GOD AND USES BENEVOLENCE AS DIVINE CURRENCY AAAAAAHHHHH!!! HE IS SOOO FASCINATING I'D BE TERRIFIED OF LIGHT IF HE WAS REAL LIKE THIS COULD HAVE BEEN SUCH A GOOD HORROR CONCEPT. VENGEFUL GOD WHO CAN CONDEMN LITERALLY ANYTHING AS SIN. I THINK HE'D BE A GOOD CASUAL FRIEND LOWKEY BUT I WOULD NOT TRUST MYSELF NOT TO GET ON HIS BAD SIDE. ALSO THOSE BIG BEAUTIFUL DOE BROWN EYES??? GET THEM AWAY!!! THEY SCARE ME!!! I WANT TO COMMIT THE MOST VIOLENT ACTS AGAINST THEM. ALSO WISH LIGHT HAD ACCESS TO TWITTER I THINK SEEING ALL THOSE DEGENERATES WOULD ACTUALLY MAKE HIM IMPLODE. HE WOULD NOT KNOW WHERE TO START LMAO. ALSO I WILL SAY I THINK LIGHT IS ACTUALLY A LOT MORE WOKE THAN PEOPLE GIVE HIM CREDIT FOR (EVEN IF THAT'S ONLY A FACADE, SO WHAT, SO IS EVERYTHING WITH HIM), BUT ITS FUNNIER TO IMAGINE HIM AS A REPUBLICAN SO I WILL KEEP DOING THAT. I UNDERSTAND CHARACTERISATION I JUST LIKE MAKING JOKES SOMETIMES ETC ETC. ANYWAY I THINK HE WOULD ABSOLUTELY DESPISE ME AND KILL ME WITHIN 2 SECONDS OF GETTING TO KNOW ME BOTH FOR CALLING HIM A LOSER AND FOR TRIVIALISING A MURDERER &LT;333</P>
+<p> </p>
+<h4>What the fuck...</h4>
+<p>I am Very Normal about Light Yagami :))))))</p>
+  </div>
+</div>
+<audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+      <source src=/WEBSITE/SHRINES/DEATH_NOTE/the_world_nightmare.mp3>
+    </audio>
+    <script>
+      document.addEventListener("visibilitychange", function() {
+        document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+      })
+    </script>
+  </body>
+</html>

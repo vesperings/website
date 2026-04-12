@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;
+         top: 10px;
+         left: 10px;
+         z-index: 9999;
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+
+                 fontChanged = false;
+             }
+         }
+      </script>
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don’t know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+               <p>Much like Andy Warhol enjoyed perusing the medicine cabinets of his friends and party hosts, I enjoy seeing the contents of people's bags. Sure, this whole "What's In My Bag" genre of content is probably problematic, reducing one's identity to arbritary purchases which are abstracted into social statuses, but at the end of the day they are FUN. So here is what is in my bag, except fair warning I am a little bit insane (Type A, if you want to be polite), so buckle in because this is going to be a long one. Every time you start to think it's almost done, I will pull out a new pouch.  A post like this requires photos, which I will upload at some point whenever I can be bothered to take them, but for now use your imagination. Yes I carry all this every time I leave my house, yes I have scoliosis. Moving on.</p>
+               <h2>What's On My Bag</h2>
+               <p>The amount of junk hanging off my bag is almost as significant as the contents themselves. I think the scourge of "birkinifying" bags with Shein and Aliexpress charms looks tacky as fuck (and I'm one to talk), but hanging stuff off straps is a great space-saving life hack. Which, as you will soon find out, I have optimised as much as humanly possible.</p>
+               <ol>
+                  <li>A red and black studded belt from Hot Topic buckled around the top of the bag. The bag did come with its own canvas belt, but it wasn't functional, whereas I can take this one off and wear if it I need to.</li>
+                  <li>Assorted hairclips snapped onto the belt loops.</li>
+                  <li>A broken Ghostface claw clip on the shoulder straps. It still works perfectly find, just looks busted because one of the Ghostfaces came off when I was on the plane.</li>
+                  <li>A faux grey fox fur tail and a black rosary clipped onto one of the other belt loops. Just because everyone asks whenever they see it, *Alfie Deyes voice* I AM NOT A FURRY!!!!</li>
+                  <li>A black and red New York snapback from 2017 also attached to the shoulder straps. The top has no structure and the brim is flat so it looks utterly awful on me, and I don't really like the text on it, but I hate buying new things unecessarily so I keep it for whenever it gets sunny.</li>
+                  <li>Some random pins on the right front pocket. A vampire guitarist pin originally from Hard Rock cafe that I found in a vintage store (she looks like a Hex Girl), a Black Sabbath pin, and one of Light and L that came from those little sets they sell for £2.50 at HMV and is probably the only worthwhile thing in that whole shop.</li>
+                  <li>The side pockets have these X shaped straps on them, which are 100% supposed to be purely decorative, but I have decided to ignore that. On the left side, I stuff a water bottle, or sometimes a Monster, because hydration is very important.</li>
+                  <li>Outside the right pocket, I have slipped in a mini umbrella. I live in the UK, go figure.</li>
+                  <li>Attached to the shoulder strap at the back of my bag is another bag, one of those tiny tourist shop ones with the place's name printed all over in garish colours, that my father brought home from Jersey as a souveneir years ago.</li>
+               </ol>
+               <h3>The Jersey Pouch</h3>
+               <p>This is largely a makeup pouch, with a couple of creams for easy access. I don't carry around full sized bottles of any of this stuff, I have decanted them into approximately 5ml tubes. It's great for if I'm travelling and didn't want to get ready at home, so I can quickly emo-ify myself in the service station bathroom, or if I just need to touch up. It works decently for longer trips too, if I don't want to haul my whole makeup bag somewhere. I got by using this on my trip to Canada, and it's all I take with me if I am going to see family for a weekend.</p>
+               <ol>
+                  <li>Hand cream. I don't really use it often, but someone else invariably needs it. I probably should though.</li>
+                  <li>Compact mirror with lip balm. I don't like the lipbalm and doubt it does anything but the compact itself (pink with a squirrel on it) is adorable.</li>
+                  <li>Kuromi pimple patches. Do they work? I have no idea, but they stop me picking at the rare spot I sometimes get if I've been too sugarpilled.</li>
+                  <li>Setting powder. Most of my travel makeup is just the cheapest thing I could find at Superdrug, including this one. My face sweats a Lot in the summer so I usually prefer just not to wear any makeup, but on the off-chance I do, this is handy.</li>
+                  <li>False lashes and lash glue. Great for obscuring how busted my eye makeup usually is.</li>
+                  <li>Foundation. This is mostly just for touch ups after the aforementioned face sweaking.</li>
+                  <li>BB cream. Most days, I cannot be bothered to blend out foundation, so I prefer BB cream because I can just rub it all over my face with my hands and be done with it.</li>
+                  <li>White BB cream. Same as above, but for when I want to look even more corpselike than usual.</li>
+                  <li>Mascara</li>
+                  <li>Liquid purple eyeshadow. Shitty Superdrug own brand, too sheer, and more pink than purple, but it gets the job done in a pinch.</li>
+                  <li>Colour corrector. Sometimes people shout at me for having dark sunken eyes and when I want to avoid that I use this.</li>
+                  <li>Travel-size perfume so that I always smell like myself.</li>
+                  <li>Black eyeshadow. Disappointingly, this is very unpigmented and shows up as grey on my skin instead.</li>
+                  <li>Kohl. Who would I be without this? Someone who gets far fewer eye infections, probably. I know it isn't good for you but this is the singular most important makeup product I use.</li>
+                  <li>Red lipstick. It doesn't really suit me, but I love wearing it with my big oversized sunglasses in the summer.</li>
+                  <li>Liquid liner.</li>
+                  <li>Chateau Wine lip tint, like the EXO song. The only time product placement has ever worked on me.</li>
+                  <li>Fake piercings. I am a fraud. Only some of the holes in my face are real.</li>
+               </ol>
+               <h2>The Outer Pockets</h2>
+               <p>The thing I love about this bag is not just how spacious it is, but how many compartments it has to allow me to stay organised. I could easily have a tote bag double this size, but I hate blindly rummaging around for things and inevitably having my hand scratched up by all the sharp objects thrown inside. No such problems here. There are 5 outer pockets, one buttoned at the back, and two zip compartments on the front of the bag, and one each on either side. Of course, I have stuffed each one to the brim.</p>
+               <h3>Back Pocket</h3>
+               <ol>
+                  <li>Because the rest of my bag is so stuffed, I can just about fit a book in here. Generally, I like to keep poetry or an anthology with me for when I am travelling or out and about, because I hate having to start and stop novels. Right now, I am reading a book of Persian poetry my darling best friend gifted me</li>
+                  <li>I also keep a little pocketbook with me at all times. It isn't quite my journal, more like a physical notes app.</li>
+                  <li>My actual diary is also here. Usually I would have to keep it inside my bag, but the notebook I am using currently is a soft-cover, so I can just stuff it in. Weirdly, even though my diaries are some of my most prized posessions, I am not that precious with them. They live life alongside me, and rest only when it is time for them to retire.</li>
+                  <li>This all leaves just enough space for me to slot in a CD or two if I have bought one. Most times I go out, I do find something or another.</li>
+               </ol>
+               <h3>Left Side Pocket</h3>
+               <ol>
+                  <li>A black chiffon scarf that can come in handy for so many different things.</li>
+                  <li>If one massive bag wasn't enough, how about two? My old bookstore totebag comes in very handy if I end up having a shopping spree.</li>
+                  <li>A literal pair of shoes. Ballet flats, to be precise, because whenever I wear my platform boots, I always end up regretting it (especially after a show), but I never stop. These give me much needed relief.</li>
+                  <li>Spare socks.</li>
+               </ol>
+               <h3>Right Side Pocket</h3>
+               <ol>
+                  <li>Yet another bag though this one is lighter and waterproof.</li>
+                  <li>Summer gloves.</li>
+                  <li>Winter gloves.</li>
+                  <li>Spare boxers.</li>
+                  <li>Face masks, because I can never remember where I last left the one I was wearing right as I am leaving the house.</li>
+               </ol>
+               <h3>Left Front Pocket</h3>
+               <ol>
+                  <li>Power bank. This is my first real one that doesn't come from the questionable TKMaxx clearance section, so we shall see how it goes.</li>
+                  <li>My Sony DSC-HX9V. Unfortunately, the flash doesn't work and I can't afford to repair it right now, but she still comes everywhere with me.</li>
+                  <li>Spare batteries for the camera.</li>
+                  <li>Mini binoculars. I told you this was going to be ridiculous. It gets stupider later on.</li>
+                  <li>Wired earphones. I never understood the airpod/wireless earphone hype. I have proper over-the-ear headphones too, but these suffice for casual outings.</li>
+                  <li>A kit full of assorted adaptors so I can charge all my devices using one power bank.</li>
+                  <li>Apple watch charger adaptor.</li>
+                  <li>3DS charger adaptor.</li>
+                  <li>My keys. Attached to every keychain I own because I will lose them otherwise.</li>
+               </ol>
+               <h3>Right Front Pocket</h3>
+               <ol>
+                  <li>My 3DS. Sometimes I just crave a screen, you know? Games like <i>Animal Crossing: New Leaf, Tomodachi Life</i> and <i>Pokemon</i> are great to pick up for like 5 minutes when you're waiting for the train or something. I've also been playing <i>Ace Attorney</i> lately, but that needs a little more time.</li>
+                  <li>Bubble wand shaped like a shark.</li>
+                  <li>Mini ludo board that has come in handy on so many occasions. It's such a great way to pass the time and bond with people. Nothing brings you closer than healthy competition.</li>
+                  <li>Mini pack of cards. I am alone a lot and play solitaire a lot.</li>
+                  <li>Foldable ouija board. I'm not kidding. But honestly, what else do you expect from me?</li>
+                  <li>MP3 Player. DOWN WITH STREAMING SERVICES!!! I thrifted an iPod shuffle recently, and keep that for daily use, and my cheap 64GB player for longer trips. Having a limited collection of albums you well and truly love enriches your relationship with music as art so much.</li>
+                  <li>Earphone adaptor for new iPhones.</li>
+               </ol>
+               <h2>Inside the Bag</h2>
+               <p>We have <i>finally</i> made to to the actual internal compartment of the bag. I did warn you this would be long. Bar one or two things, this is also organised further into little pouches, and the interior bag pockets.</p>
+               <h3>Interior Pockets</h3>
+               <p>I had intended to keep this one light, maybe a pack of gum and my keys, but.... well I think you've seen enough by now to know how this went.</p>
+               <ol>
+                  <li>Sunglasses. These are not a fashion thing, I genuinely need these to go outside if its even slightly sunny, or else I will get a migraine.</li>
+                  <li>Actual glasses. Most people are shocked I need glasses because I hardly ever wear them. Whoops.</li>
+                  <li>Cough sweets, usually cherry flavoured.</li>
+                  <li>Snack bar.</li>
+                  <li>Packets of brown sugar and sweetener stolen from Costa.</li>
+                  <li>Assorted herbal teas.</li>
+                  <li>Sachets of Buldak sauce. I hate ketchup, but sometimes a girl needs some flavour.</li>
+                  <li>Glasses cleaning cloth.</li>
+                  <li>Nuts and dried cranberries. My go-to snack lately.</li>
+                  <li>Some other snack. Dark chocolate, Kopiko candies, or (my favourite) peach gummies if I can find the vegan version. These never lasts long in here.</li>
+               </ol>
+               <h3>Pencil Case</h3>
+               <ol>
+                  <li>Tape measure.</li>
+                  <li>Spools of thread.</li>
+                  <li>Sewing needles.</li>
+                  <li>Buttons.</li>
+                  <li>Needle threader.</li>
+                  <li>Ink pad.</li>
+                  <li>Kneaded eraser.</li>
+                  <li>Glue tape.</li>
+                  <li>Fountain pens. My go-to pen is the Parker 21, but I keep a Jinhao 86 too in case anyone needs to borrow it.</li>
+                  <li>Solid eraser.</li>
+                  <li>Mechanical pencil. It's more compact and less messy than carrying around a pencil sharpener, but less great for shading or taking impressions, which is a shame.</li>
+                  <li>Ruler.</li>
+                  <li>Multi-coloured pen. Definitely intended for 5 year olds, but it is so convenient.</li>
+                  <li>Mini highlighters. My father got me this set years and years ago with little anime characters on it.</li>
+                  <li>Clear tape</li>
+                  <li>A mini bottle of Diamine Oxblood ink in case my pens run out. I adore the colour, it really does look like blood, especially if you see the chromatography, but I wish it was a little more water resistant. Clammy hands alone will wipe it completely off the page. None of my diaries would survive a flood, I am realising.</li>
+                  <li>Scale</li>
+               </ol>
+               <h3>First Aid Kit</h3>
+               <p>This is 100% overkill and though I hope I never have to use the stuff in here, there have been several occasions where someone has needed one of these and would be fucked (or at least incredibly uncomfortable) otherwise. Not much to say about most of them other than I am surprised it all fits into the small mesh pouch I use.</p>
+               <ol>
+                  <li>Pads.</li>
+                  <li>Low adherent dressing.</li>
+                  <li>Triangular Bandages.</li>
+                  <li>Foil blanket.</li>
+                  <li>Fabric plaster strip.</li>
+                  <li>Latex free gloves.</li>
+                  <li>Self adheisive dressing.</li>
+                  <li>Finger bandage.</li>
+                  <li>Adheisive wound closure strips.</li>
+                  <li>Blister plasters.</li>
+                  <li>Stretch bandage.</li>
+                  <li>Eye wash.</li>
+                  <li>Assorted plasters.</li>
+                  <li>Eye pad.</li>
+                  <li>Microporous tape.</li>
+                  <li>Burn gel.</li>
+                  <li>Wound cleansing wipe.</li>
+                  <li>Lemsip.</li>
+                  <li>Afterbite.</li>
+                  <li>Benadryl.</li>
+                  <li>Aspirin.</li>
+                  <li>Ibuprofen.</li>
+                  <li>Paracetamol.</li>
+                  <li>Buscopan.</li>
+                  <li>Laxatives.</li>
+                  <li>Imodium.</li>
+                  <li>Vicks inhaler.</li>
+               </ol>
+               <h3>Cutlery Pouch</h3>
+               <p>Probably wholly unecessary because I am probably not eating out most days, but you never know, I guess. Don't tell my mother, but I did just take all of these from our kitchen.</p>
+               <ol>
+                  <li>Teaspoon.</li>
+                  <li>Tablespoon.</li>
+                  <li>Fork.</li>
+                  <li>Butter knife.</li>
+                  <li>Straw. This is probably the thing that gets most regular use. Paper straws just don't have the same experience. Of course one should limit their use of single-use items, but I miss chewing on those green plastic Starbucks straws after downing a frapuccino.</li>
+               </ol>
+               <h3>Coin Purse Without a Single Coin Inside</h3>
+               <p>This was a gift from my aunt about a decade ago now, and I am so glad I have managed not to lose it. She has been used to death over the years for many different purposes, but right now I just use it to contain things that are perhaps not very useful, but make me happy. Plus she matches my bag so well, black leather with red roses printed all over it.</p>
+               <li>Tatoo chokers. I love these things because they are such an easy way to make you look like you probably have a website that looks like this, no matter what you are wearing. Plus these are less hassle than my spiked choker, which is a pain in the summer or for long periods of time.</li>
+               <li>Bendy Count Dracula toy from the 80s. I have had this since I was a kid, no idea how I got it, and I love him. He is soooo hideous. I also had a skeleton, but I think I broke him when I was younger.</li>
+               <>My favourite lipstick. This doesn't go in the main makeup bag for reasons I do not myself understand, but make sense to me in my brain. Unfortunately has been discontinued &lt;3 and I only have 3 more tubes left because I stocked up.</li>
+               <li>Lip liner.</li>
+               <li>Poptropica credit. Huh, maybe the coin purse is technically fulfilling its purpose.I carry a lot of purposeless junk with me because it makes me happy to look at.</li>
+               <li>A small pair of silver jhumkas. These are way lighter than the big ones I have, so I can wear them for longer without worrying about stretching out my lobes. You would be surprised how many occasions have called for an emergency pair of earrings.</li>
+               <li>Silver hoops for the same reason as above. They look a bit weird on me because of the position of my ears, but often are the only earrings one can actually see under my hair.</li>
+               <li>Necklace. Which one it is varies, but it is invariably silver.</li>
+               <li>Rockstar Lego Batman. Why not?</li>
+               <li>My pet rock. Her name is Calcie because she is a piece of calcite and I got her in a cave in 2015 or 16. She is the only pet rock I have not lost. I have had several.</li>
+               <li>Miniature bottle of my perfume. Probably unecessary because I also carry the travel-size with me, but something about an actual tiny bottle brings me joy.</li>
+               <h3>Pouch of Miscellaneous Essentials</h3>
+               <ol>
+                  <li>Mini Yankee candle in the cherry vanilla scent. "Essentials" is relative.</li>
+                  <li>Bathroom wipes.</li>
+                  <li>Makeup wipes.</li>
+                  <li>Nail kit.</li>
+                  <li>Glasses wipes.</li>
+                  <li>Deodorant. Lynx Africa because a) it' funny and b) contrary to the propaganda it actually does smell good in moderation.</li>
+                  <li>Dry shampoo.</li>
+                  <li>Mouthwash.</li>
+                  <li>Sunscreen stick. Oh right, while I don't usually wear makeup in summer, I do use physical sunscreen and thr white cast it gives me makes me look like I've fallen into clown paint.</li>
+                  <li>Hairbrush.</li>
+                  <li>Torch.</li>
+                  <li>Tide pen.</li>
+                  <li>Toothbrush.</li>
+                  <li>Toothpaste. Do you know how difficult it is to find vegan toothpaste?? Especially in travel sizes?</li>
+                  <li>Hand sanitiser.</li>
+                  <li>Matches. A lighter would be far more convenient sure, but I am saving up for my dream one and don't want disposables in the meantime.</li>
+                  <li>Red nail polish. Supposedly the same colour of a TFL bus because I &lt;3 Londonistan.</li>
+                  <li>Swiss Army knife. Guess which feature I use the most. Hint: it isn't the knife.</li>
+                  <li>Foam earplugs. Those loops things look cuter, sure, but I highly doubt they're worth the splurge.</li>
+                  <li>Perfume samples. I like sniffing and trying new perfumes but never deviate from my own, so I keep these in here in case someone else needs to use it.</li>
+                  <li>Hair ties.</li>
+                  <li>Bobby pins.</li>
+                  <li>Floss.</li>
+                  <li>Safety pins.</li>
+                  <li>Bug spray.</li>
+                  <li>Hairspray, because what if I need to tease my hair into a bat's nest when I'm travelling?</li>
+               </ol>
+               <h2>Randomly Thrown In</h2>
+               <ol>
+                  <li>Hand fan.</li>
+                  <li>Wallet with absolutely no money because I am broke. Well, maybe a couple of dollars, but those are useless.</li>
+                  <li>Phone.</li>
+                  <li>Tripod.</li>
+               </ol>
+               <br>
+               <p>And finally, we are done. What little space remains usually gets stuffed with shopping, or my jacket if I don't feel like wearing it anymore. I do wonder if this is the result of patriarchical conditioning. Men never feel the need to walk around carrying anything more than what's in their pockets. Definitely not half their vanity table. Probably. But men probably also don't know the joy of pulling out a full-size Ouija board and candle out of thin air when someone so much as mentions a ghost. At least having all tthis on me at all times makes packing really easy, I just throw in a couple of clothes.</p>
+               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[Whats-In-My-Bag]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>

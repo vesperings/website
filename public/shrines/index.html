@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<style>
+   @font-face {
+   font-family: Vesperings;
+   src: url(/WEBSITE/vesperings.ttf);
+   }
+   * {
+   font-family: vesperings;
+   }
+   * {
+   cursor: url(/WEBSITE/cursor.png),
+   auto !important;
+   }
+   :root {
+   --header-image: url('/WEBSITE/SHRINES/header.jpg');
+   --body-bg-image: url('/WEBSITE/SHRINES/bg.gif');
+   --content: #820404
+   }
+   body {
+   margin: 0;
+   background-color: #08031a;
+   background-size: 65px;
+   color: #820404;
+   background-image: var(--body-bg-image)
+   }
+   * {
+   box-sizing: border-box
+   }
+   #container {
+   max-width: 900px;
+   margin: 0 auto
+   }
+   a:visited {
+   color: #4b0101
+   }
+   a:hover {
+   color: red
+   }
+   a:active {
+   color: #820404
+   }
+   #header {
+   width: 100%;
+   height: 150px;
+   background-image: var(--header-image);
+   background-size: 100%
+   }
+   #flex {
+   display: flex
+   }
+   aside {
+   background-color: #241445;
+   width: 200px;
+   padding: 20px;
+   font-size: smaller
+   }
+   main {
+   background-color: #000;
+   flex: 1;
+   padding: 20px;
+   order: 2
+   }
+   h1,
+   h2,
+   h3 {
+   color: red
+   }
+   h1 {
+   font-size: 25px
+   }
+   strong {
+   color: red
+   }
+   .box {
+   background-color: #13092d;
+   border: 1px solid red;
+   padding: 10px
+   }
+   #topBar {
+   width: 100%;
+   height: 30px;
+   padding: 10px;
+   font-size: smaller;
+   background-color: #13092d
+   }
+   @media only screen and (max-width:800px) {
+   #flex {
+   flex-wrap: wrap
+   }
+   aside {
+   width: 100%
+   }
+   main {
+   order: 1
+   }
+</style>
+<title>&#x2730; SHRINES &#x2730;</title>
+<button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+<style>
+   .font-toggle {
+   position: fixed;
+   top: 10px;
+   left: 10px;
+   z-index: 9999;
+   background-color: black;
+   color: red;
+   font-family: Garamond, serif;
+   padding: 10px 15px;
+   border: 1px solid red;
+   cursor: pointer;
+   }
+</style>
+<script>
+   let fontChanged = false;
+   let styleEl;
+
+   function toggleFont() {
+       if (!fontChanged) {
+           styleEl = document.createElement('style');
+           styleEl.id = "fontOverride";
+
+           styleEl.innerHTML = `
+               * {
+                   font-family: Garamond, serif !important;
+               }
+           `;
+
+           document.head.appendChild(styleEl);
+           fontChanged = true;
+
+       } else {
+           const existing = document.getElementById("fontOverride");
+           if (existing) existing.remove();
+
+           fontChanged = false;
+       }
+   }
+</script>
+<div id=container>
+   <div id=headerArea>
+      <div id=header style=margin-bottom:0></div>
+   </div>
+   <div id=flex>
+      <main>
+         <h1 style=text-align:center>Shrine Page!</h1>
+         <p style=text-align:center>This page is a collection of many films, TV shows, musicians, books and other media I have enjoyed over the course of my life. Of course, being that I'm <s>21</s> 22 years old and have rotted my brain through a healthy mix of trauma and blue screen overexposure, I do not remember everything but I will try my best.</p>
+         <center>
+            <img src="/WEBSITE/SHRINES/GTA/gta.png" style="width: 150px">
+            <a href="/shrines/poptropica"><img src="/WEBSITE/SHRINES/POPTROPICA/poptropica.png" width="150px"></a>
+            <a href="/shrines/death_note"><img src="/WEBSITE/SHRINES/DEATH_NOTE/deathnote.png" style="width: 150px"></a>
+            <img src="/WEBSITE/SHRINES/JUSTIN_BIEBER/justinbieber.png" style="width: 150px">
+            <img src=/WEBSITE/SHRINES/divider.gif>
+            <a href="/shrines/weebly"><img src="/WEBSITE/SHRINES/WEEBLY/weebly.png" style="width: 150px"></a>
+            <img src="/WEBSITE/SHRINES/SPN/supernatural.png" style="width: 150px">
+            <img src=/WEBSITE/SHRINES/divider.gif>
+               <img src=/WEBSITE/SHRINES/divider.gif>
+               <img src=/WEBSITE/SHRINES/divider.gif>
+         </center>
+      </main>
+   </div>
+          <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+            <source src=/WEBSITE/SHRINES/superstar.mp3>
+         </audio>
+         <script>
+            document.addEventListener("visibilitychange", function() {
+              document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
+            })
+         </script>
+
+</div>
+</html>
