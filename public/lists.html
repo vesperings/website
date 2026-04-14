@@ -299,30 +299,30 @@
       <script>
          let fontChanged = false;
          let styleEl;
-
-
+         
+         
          function toggleFont() {
              if (!fontChanged) {
                  styleEl = document.createElement('style');
                  styleEl.id = "fontOverride";
-
-
+         
+         
                  styleEl.innerHTML = `
                      * {
                          font-family: Garamond, serif !important;
                      }
                  `;
-
-
+         
+         
                  document.head.appendChild(styleEl);
                  fontChanged = true;
-
-
+         
+         
              } else {
                  const existing = document.getElementById("fontOverride");
                  if (existing) existing.remove();
-
-
+         
+         
                  fontChanged = false;
              }
          }
@@ -353,15 +353,89 @@
                </header>
                <div class="listtext">
                   <ul>
-                     <li>Dirt (Alice in Chains)</li>
-                     <li>The Downward Spiral (Nine Inch Nails)</li>
-                     <li>The Perfect Red Velvet (Red Velvet)</li>
-                     <li>Cinematics [Expanded Edition] (Set It Off)</li>
+                     <ul>
+                        <li>Dirt (Alice in Chains)</li>
+                        <li>The Perfect Red Velvet (Red Velvet)</li>
+                        <li>Cinematics [Expanded Edition] (Set It Off)</li>
+                        <li>A Love Supreme (John Coltrane)</li>
+                        <li>130 Mood: TRBL (Dean)</li>
+                        <li>Born to Die: The Paradise Edition (Lana Del Rey)</li>
+                        <li>Lust for Life (Lana Del Rey)</li>
+                        <li>Cry Baby (Melanie Martinez)</li>
+                        <li>Beyond the Valley of the Murderdolls (Murderdolls)</li>
+                        <li>Folklore (Taylor Swift)</li>
+                        <li>Norman Fucking Rockwell (Lana del Rey)</li>
+                        <li>Violator (Depeche Mode)</li>
+                        <li>Favourite (NCT 127)</li>
+                        <li>Pretentious, Moi? (Pretentious, Moi)</li>
+                        <li>Soul Lady (YUKIKA)</li>
+                        <li>Women and Children Last (Murderdolls)</li>
+                        <li>But For Now Leave Me Alone (pH-1)</li>
+                        <li>Crimson Curse (The Kentucky Vampires)</li>
+                        <li>Moodswings In To Order (DPR IAN)</li>
+                        <li>Chip Chrome and the Monotones (The Neighbourhood)</li>
+                        <li>Honeymoon (Lana Del Rey)</li>
+                        <li>Evermore (Taylor Swift)</li>
+                        <li>Toxicity (The GAZETTE)</li>
+                        <li>Adrenaline (Rosetta Stone)</li>
+                        <li>Chemtrails Over the Country Club (Lana Del Rey)</li>
+                        <li>Kids in the Night (Weathers)</li>
+                        <li>Olivia Inspi' Reira (Trapnest)</li>
+                        <li>Phases (Chase Atlantic)</li>
+                        <li>Revolution Girl Style (Bikini Kill)</li>
+                        <li>The Black Parade (My Chemical Romance)</li>
+                        <li>The Kentucky Vampires (The Kentucky Vampires)</li>
+                        <li>The Perfect Red Velvet (Red Velvet)</li>
+                        <li>The Reve Festival: Finale (Red Velvet)</li>
+                        <li>Troubleshooting (Xdinary Heroes)</li>
+                        <li>Dosii (Dosii)</li>
+                        <li>EXIST (EXO)</li>
+                        <li>Fearless (Taylor Swift)</li>
+                        <li>Halo (pH-1)</li>
+                        <li>Servant of the Grail (Angels of Liberty)</li>
+                        <li>The War (EXO)</li>
+                        <li>The Puzle of Time (divin')</li>
+                        <li>Beautiful Deformity (The GAZETTE)</li>
+                        <li>Bossa Nova (Sunset Rollercoaster)</li>
+                        <li>Disintegration (The Cure)</li>
+                        <li>Duran Duran (Duran Duran)</li>
+                        <li>Electra Heart (Marina and the Diamonds)</li>
+                        <li>I Am Mortal (THE MORTAL)</li>
+                        <li>The Fragile (Nine Inch Nails)</li>
+                        <li>Year Zero (Nine Inch Nails)</li>
+                        <li>The Slip (Nine Inch Nails)</li>
+                        <li>Hesitation Marks (Nine Inch Nails)</li>
+                        <li>Bad Witch (Nine Inch Nails)</li>
+                        <li>NIL (The GAZETTE)</li>
+                        <li>Stacked Rubbish (The GAZETTE)</li>
+                        <li>Telepathine (Angels of Liberty)</li>
+                        <li>The Queen is Dead (The Smiths)</li>
+                        <li>Anna Tsuchiya Inspi' Nana (Black Stones)</li>
+                        <li>boy. (offonoff)</li>
+                        <li>Xdinary Heroes (Deadlock)</li>
+                        <li>Enter the Wu-Tang (Wu Tang Clan)</li>
+                        <li>Fire of an Unknown Origin (Blue Oyster Cult)</li>
+                        <li>Hello, World! (Baekhyun)</li>
+                        <li>Xdinary Heroes (Livelock)</li>
+                        <li>Obsession (EXO)</li>
+                        <li>Obsession (Boyfriend)</li>
+                        <li>Reject All American (Bikini Kill)</li>
+                        <li>Rise (Taeyang)</li>
+                        <li>Rise (Nosferatu)</li>
+                        <li>Take.2 We Are Here (Monsta X)</li>
+                        <li>The Stone Roses (The Stone Roses)</li>
+                        <li>The Sky's Gone Out (Bauhaus)</li>
+                        <li>Universe (EXO)</li>
+                        <li>VIRGIN (exist trace)</li>
+                        <li>VOODOO (VIXX)</li>
+                        <li>Wings (BTS)</li>
+                        <li>O!RUL8,2? (BTS)</li>
+                     </ul>
                   </ul>
                </div>
                <footer class="foot">
                   <p>april 02 2026 &infin;</p>
-                  <p>april 02 2026 +</p>
+                  <p>april 13 2026 +</p>
                </footer>
             </section>
             <section id="stuckinmyhead" class="color4">
@@ -400,7 +474,7 @@
             </section>
             <section id="sak" class="color5">
                <header class="listheader">
-                  <h2><a href="#sak">things i've used my swiss army knife for <span class="subtitle">(poem)</span></a></h2>
+                  <h2><a href="#sak">things i've used my swiss army knife for <span class="subtitle">(words)</span></a></h2>
                   <span class="handle">&#172;</span>
                </header>
                <div class="listtext">
@@ -460,42 +534,43 @@
                   <span class="handle">&#172;</span>
                </header>
                <div class="listtext">
-<ul>
-<li>Discipline - Nine Inch Nails [HOME]</li>
-<li>Gee - SNSD [HOME, APRIL FOOLS EDITION]</li>
-<li>Born For This - Paramore [CHANGELOG]</li>
-<li>Overdose - EXO [ROOM]</li>
-<li>Burn - The Cure [BLOG]</li>
-<li>Tefutefu - Plastic Tree [DREAM DIARY]</li>
-<li>Something in the Way - Nirvana [DIGICAM]</li>
-<li>Dally - Hyolyn [FAUXTAGRAM]</li>
-<li>You Showed Me - The Turtles [FILM LOG]</li>
-<li>I Don't Care If You're Contagious - Pierce the Veil [ASKS]</li>
-<li>(Don't) Fear the Reaper - Pierce the Veil [LETTERS TO THE ABYSS]</li>
-<li>Kyrie - Yoshihisa Hirano [LEGEND OF KIRA THE SAVIOUR]</li>
-<li>Halloween Theme - John Carpenter [CRAPPYPASTA]</li>
-<li>XOXO Kisses Hugs - 6arelyhuman [STAMPS]</li>
-<li>You Can Tell She's a Princess - Mattel [DRESS UP]</li>
-<li>Sleepflower - Manic Street Preachers [OOTD]</li>
-<li>The World - Nightmare [DEATH NOTE SHRINE]</li>
-<li>Given Up - Linkin Park [TELEVISION]</li>
-<li>Black Fairy Edit - Akira Yamaoka [OUIJA BOARD]</li>
-<li>Climbing Up the Walls - Radiohead [CD COLLECTION]</li>
-<li>Dress Bloody Trinity Remix - BUCK-TICK [BOOKSHELF]</li>
-<li>H8M4CH1N3 - The Neighbourhood [MICROBLOG]</li>
-<li>Afraid - The Neighbourhood [FOOD]</li>
-<li>Popularity Ranking - Tomodachi Life OST [TOMODACHI]</li>
-<li>Cannibal - Kesha [CYBER PETS]</li>
-<li>Cry Little Sister - Gerard McMahon [DVD COLLECTION]</li>
-<li>Poptropica Overture - Jeff Heim [POPTROPICA SHRINE]</li>
-<li>S&amp;M - Rihanna&nbsp;[WEEBLY SHRINE]</li>
-<li>Firework - Katy Perry&nbsp;[WEEBLY SHRINE]</li>
-<li>I Wanna Go - Britney Spears&nbsp;[WEEBLY SHRINE]</li>
-<li>Gangnam Style - PSY&nbsp;[WEEBLY SHRINE]</li>
-<li>Milky Way - Cherry Coke [WEEBLY SHRINE]</li>
-<li>The Background World - Nine Inch Nails [LISTFAUGRAPHY]</li>
-<li>Superstar - Toybox [SHRINE HOMEPAGE]</li>
-</ul>               </div>
+                  <ul>
+                     <li>Discipline - Nine Inch Nails [HOME]</li>
+                     <li>Gee - SNSD [HOME, APRIL FOOLS EDITION]</li>
+                     <li>Born For This - Paramore [CHANGELOG]</li>
+                     <li>Overdose - EXO [ROOM]</li>
+                     <li>Burn - The Cure [BLOG]</li>
+                     <li>Tefutefu - Plastic Tree [DREAM DIARY]</li>
+                     <li>Something in the Way - Nirvana [DIGICAM]</li>
+                     <li>Dally - Hyolyn [FAUXTAGRAM]</li>
+                     <li>You Showed Me - The Turtles [FILM LOG]</li>
+                     <li>I Don't Care If You're Contagious - Pierce the Veil [ASKS]</li>
+                     <li>(Don't) Fear the Reaper - Pierce the Veil [LETTERS TO THE ABYSS]</li>
+                     <li>Kyrie - Yoshihisa Hirano [LEGEND OF KIRA THE SAVIOUR]</li>
+                     <li>Halloween Theme - John Carpenter [CRAPPYPASTA]</li>
+                     <li>XOXO Kisses Hugs - 6arelyhuman [STAMPS]</li>
+                     <li>You Can Tell She's a Princess - Mattel [DRESS UP]</li>
+                     <li>Sleepflower - Manic Street Preachers [OOTD]</li>
+                     <li>The World - Nightmare [DEATH NOTE SHRINE]</li>
+                     <li>Given Up - Linkin Park [TELEVISION]</li>
+                     <li>Black Fairy Edit - Akira Yamaoka [OUIJA BOARD]</li>
+                     <li>Climbing Up the Walls - Radiohead [CD COLLECTION]</li>
+                     <li>Dress Bloody Trinity Remix - BUCK-TICK [BOOKSHELF]</li>
+                     <li>H8M4CH1N3 - The Neighbourhood [MICROBLOG]</li>
+                     <li>Afraid - The Neighbourhood [FOOD]</li>
+                     <li>Popularity Ranking - Tomodachi Life OST [TOMODACHI]</li>
+                     <li>Cannibal - Kesha [CYBER PETS]</li>
+                     <li>Cry Little Sister - Gerard McMahon [DVD COLLECTION]</li>
+                     <li>Poptropica Overture - Jeff Heim [POPTROPICA SHRINE]</li>
+                     <li>S&amp;M - Rihanna&nbsp;[WEEBLY SHRINE]</li>
+                     <li>Firework - Katy Perry&nbsp;[WEEBLY SHRINE]</li>
+                     <li>I Wanna Go - Britney Spears&nbsp;[WEEBLY SHRINE]</li>
+                     <li>Gangnam Style - PSY&nbsp;[WEEBLY SHRINE]</li>
+                     <li>Milky Way - Cherry Coke [WEEBLY SHRINE]</li>
+                     <li>The Background World - Nine Inch Nails [LISTFAUGRAPHY]</li>
+                     <li>Superstar - Toybox [SHRINE HOMEPAGE]</li>
+                  </ul>
+               </div>
                <footer class="foot">
                   <p>april 02 2026 &infin;</p>
                   <p>april 02 2026 +</p>
@@ -521,11 +596,13 @@
                      <li>Young Dracula: The Complete Series (2006-2014)</li>
                      <li>Strangers from Hell (2019)</li>
                      <li>Black Butler: The Complete Series (2008-2014)</li>
+                     <li>Batman: The Animated Series (1992-1995)</li>
+                     <li>The Love Witch (2016)</li>
                   </ul>
                </div>
                <footer class="foot">
                   <p>april 02 2026 &infin;</p>
-                  <p>april 08 2026 +</p>
+                  <p>april 14 2026 +</p>
                </footer>
             </section>
             <section id="books" class="color1">
@@ -561,7 +638,6 @@
                   <p>april 05 2026 +</p>
                </footer>
             </section>
-
          </div>
          <!-- END THIRD COLUMN -->
       </main>
