@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
+      <style>
+         .font-toggle {
+         position: fixed;
+         top: 10px;
+         left: 10px;
+         z-index: 9999;
+         background-color: black;
+         color: red;
+         font-family: Garamond, serif;
+         padding: 10px 15px;
+         border: none;
+         cursor: pointer;
+         }
+      </style>
+      <script>
+         let fontChanged = false;
+         let styleEl;
+
+         function toggleFont() {
+             if (!fontChanged) {
+                 styleEl = document.createElement('style');
+                 styleEl.id = "fontOverride";
+
+                 styleEl.innerHTML = `
+                     * {
+                         font-family: Garamond, serif !important;
+                     }
+                 `;
+
+                 document.head.appendChild(styleEl);
+                 fontChanged = true;
+
+             } else {
+                 const existing = document.getElementById("fontOverride");
+                 if (existing) existing.remove();
+
+                 fontChanged = false;
+             }
+         }
+      </script>
+      <title>&#x2730; BLOG &#x2730;</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="/blog/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="layout">
+         <header>
+            <div class="header-image">
+               <img src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png" alt="" />
+            </div>
+            <div class="header-content">
+            </div>
+         </header>
+         <aside class="left-sidebar">
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>PROFILE</h5>
+               </div>
+               <blockquote>
+                  <p>My name is Vesperings Tenebr'sity Anesthesia Carrion Bieber and I have chopped up raven black hair (that's how I got my name) that cascades like waterfalls down my back and ambery gold eyes like pools of honey and a lot of people tell me I look like L Lawliet (AN: if u don’t know who he is get da hell out of here!)</p>
+               </blockquote>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <h5>RECENT POSTS</h5>
+               </div>
+               <div id="recentpostlistdiv"></div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/blog/archive">
+                     <h5>ARCHIVE</h5>
+                  </a>
+               </div>
+            </div>
+            <div class="sidebar-section">
+               <div class="sidebar-title">
+                  <a href="/microblog">
+                     <h5>MICROBLOG</h5>
+                  </a>
+               </div>
+            </div>
+         </aside>
+         <main id="content">
+            <section>
+               <h1 id="postTitleH1"></h1>
+               <h4 id="postDate"></h4>
+<p>Like all things, it begins with a joke. I tell my best friend that one day my website will become so famous, I will be able to interview Mark Lee on here. Then I start to think about it seriously. Not Mark Lee, obviously, but interviews. I want so badly to create something that connects with people, and surely there is no purer form of that than a conversation, right? I realise then, that while I do not personally know any K-Pop stars, I am friends with a musician, and I genuinely would like to know more about his creative process, indulge my curiosity for someone outside myself. And so he kindly agrees to take some time out of his day (well, night in Japan) and talk to me about his music. The musician in question is, of course, Seiken Habukawa, and you can discover his music <a href="https://open.spotify.com/artist/0KV6JAEcmVKAtbv0oW7J9v"><span style="text-decoration: underline;">here</span></a>. Thank you for agreeing to this interview &lt;3 and to you, dear reader, thank you for reading it &lt;33</p>
+<p><span style="text-decoration: underline;"><strong>Hey, it is so good to talk to you again. How are you doing?</strong></span></p>
+<p>I'm alright. I just started working in April, so I wake up early, go to work, come back home, and go to sleep.</p>
+<p><span style="text-decoration: underline;"><strong>Are you working on anything right now?</strong></span></p>
+<p>So right now I am not working on anything because simply I just don't have the time. But before I started my job I was working on a new song. I think the instrumental is done and I got stuck in the vocals. We have like a week off from like the 29th so I'll try to do the vocals then.&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong>You have been releasing music pretty consistently recently, a single every month or so. Are these tracks you have been sitting on from various points in your life, or have you been releasing them as you make them?</strong></span></p>
+<p>I have a stock of songs and I just pick the ones that I want to produce. The ones that I feel like are, you know, hot in me right now. And I if they're not finished, I finish them and then I start producing. Yeah. That's that's that's the way it goes.</p>
+<p><span style="text-decoration: underline;"><strong>Putting out new songs so regularly must take a lot of work. Do you plan on sticking to this or slowing down, especially now that you have a full-time job?</strong></span></p>
+<p>Yeah, I definitely can't do that. I actually wanted to last year. My first song was [released] October 10th, second song was was November 11th and then I skipped December because I couldn't finished my third song and I released it on I think it was the 11th of January. Yeah. Uh and then I skipped another month and I released my fourth on March. Uh and hopefully my my fifth song is going to be in May.&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong>How do you choose your release dates?</strong></span></p>
+<p>October is the 10th month, so, I just wanted it to be released on 10/10. March was 3/21 like 321. So, I don't know what May could be.&nbsp;</p>
+<p>Your releases have all been singles. Are you interested in creating a full length album?</p>
+<p>&nbsp;I am super interested in that. It's just obviously a lot of work. If I try to release an album, I want to do 10 songs. I don't know how long that would take me. I have enough song ideas for an album and I really really want to do that. I've categorized my songs depending on genre and what they mean to me. I just don't have the time or the skill to [produce] it quickly.</p>
+<p><span style="text-decoration: underline;"><strong>Do you hope to turn your music into a career, or is it more of a hobby for you?</strong></span></p>
+<p>For now it's something that I'm doing on the side because it has to be. But if something blows up or I keep on doing this and little by little and it eventually accumulates to something bigger then I would I would quit my job, probably.Wait, but maybe that shouldn't be on record. [laughs]</p>
+<p><span style="text-decoration: underline;"><strong>Of course, a lot goes into making music. What is your favourite part of the process?</strong></span></p>
+<p>Writing it definitely. The instrumentals usually come with the lyrics. It's sort of a process of sitting down um playing with the instruments and adding words. So yeah, it's all it's all like a set. There's some people that start off with a demo by someone else or they sample something and that's totally fine. It's adding your creativity to something else that already exists. I just like to start everything from scratch.</p>
+<p><span style="text-decoration: underline;"><strong>You write all your own lyrics too. What inspires you and what themes do you find yourself most drawn to?</strong></span></p>
+<p>I have two main themes. One would be heartbreak and the other would probably be about really generally speaking life and wasting your time. Trying to live your life. And the inspiration behind heartbreak, it's usually obviously a heartbreak. Or I watch a movie and I get inspired by the story of the characters and when I can relate to them. Then after I watch the movie, I just sit down by the piano or with the guitar and I just strum chords or play chords or arpeggios and if I find something that resonates in my heart, then I add a melody and then the lyrics. I have to think of the lyrics because you know I don't read, so my vocabulary is limited [he's joking here... I think] but eventually it comes to me. Yeah, if you're just writing lyrics about your own life it is really limited. Especially if you're doing music, then you're in your house a lot of the time. So, you need to grab inspiration from somewhere else and I think movies are probably the best way to do that.&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong>Can you tell me more about a film that has inspired your music?</strong></span></p>
+<p>Yeah. There was this movie called A Beautiful Life. So, it's this guy that you know starts off as a fisherman and he just does gigs for fun with his friend, but then eventually, someone finds him and he starts to record music. The stereotypical music movie that people like because the character goes from nothing to someone. It touches on the aspect of getting drunk on fame and losing people you love. And there was the last scene where he plays a song for his wife that now had had a baby. And something about his story sort of stuck with me. And I just came up with chords for that and that would actually be the second song I released. The lyrics don't really have to do too much with the character and it doesn't have to do with me either. But I wanted to write a story about someone else. I think it's actually about someone cheating on you. The story isn't based on the movie. It's just the feeling that I got from the movie. And it's not even my story, but I think it's a feeling that I had when I was dating my ex. This feeling of being scared that the other person's going to cheat on you. And I sort of just gave that feeling a shape.</p>
+<p><span style="text-decoration: underline;"><strong>Like you said with your ex, you put a lot of your personal experience into your music as well. Has there been a specific situation or moment in your life that's inspired any of your songs that you would be willing to talk about?</strong></span></p>
+<p>I think most of my songs are inspired by events in my life. But one song, it's not released, is about when I was job hunting like you are right now [ouch], and I had this feeling that I wanted to leave home and just earn money and be independent, but then I was thinking, well, after I do that, I'm probably going to be extremely extremely homesick and just defeated by life and by social conventions around work and this expectation that I have from society. And I'm just going to go. I'm just going to want to go back home. And it's that thought that I had during job hunting and I wrote the song when I was in my room and I was just really comfortable and I wrote a song about going back to my room. Yeah, I really really want to release that song. It's one of the most sentimental songs that I've written so I'm really looking forward to actually finishing this song and producing and releasing it.</p>
+<p><span style="text-decoration: underline;"><strong>I think with most art, especially music, creatives want it to be shared, but I know it can be hard to feel seen, especially in this fast-paced era of mass production and consumption. How have you been dealing with this, especially since you do not have a team, and would you say you have managed to connect with the audience you want?</strong></span></p>
+<p>That's something that I have trouble with. I post mainly on Tik Tok and it just throws your content to random people. You just hope and pray that it's that it resonates with them. But if it doesn't then your content doesn't get spread. For the first month that I was releasing content on Tik Tok it obviously started slow. Not many people commented and I still released my song. Yeah. But I was trying to kind of invoke this feeling through visuals, not that much the music. And I don't know if that really worked. Some people liked it.&nbsp;</p>
+<p>But it's hard because I don't really have the audience yet. People have been commenting more and more and I think they like the content that I put out, but my content isn't really focused on hitting people in the heart. It's more of trying to get a mass just to get involved with my content.&nbsp;</p>
+<p>I think in earlier days people would just go out and play their songs and that's how people gained recognition and I think it takes the same amount of time and effort to do that. It's just the way that it is now feels a bit more evil because you're in your house alone doing it and you're just staring at a screen and it feels so unhealthy. You're just repeating every single day, editing the same thing every single day. But if you look at it the other way you know as people would do back in the days they would just go out and people would you know they would play and people just walk around them really not caring about them so the feeling that we get is probably sort of similar.&nbsp;</p>
+<p>&nbsp;I think it all comes with being consistent, but actually putting out something that's valuable to other people because you have to put yourself in the audience's shoes. And obviously if the music isn't good, you're not going to want to listen to it. The evil part is that you have to grab people's attention in the first like two seconds. And that's really hard and then maintaining the retention is even harder. It's become much more strategic.&nbsp;</p>
+<p>I look at the analytics for my Tik Tok videos and my Spotify listeners, and a lot of them are in the Philippines and some in Japan. But if it's Tik Tok, then for some reason it gets pushed towards the Philippines. Africa sometimes. But yeah, it's really weird and I can't explain it. Maybe the type of music that I create is just better in the Philippines. I really want to push my music towards America and England too.</p>
+<p><span style="text-decoration: underline;"><strong>Your songs all have a very distinctive casual, stripped back quality to them. Are there any other artists you feel have inspired your sound?</strong></span></p>
+<p>Definitely. The way that I want to produce music is sort of inspired by Joji and Djo. Maybe some Daniel Caesar, slightly R&amp;B, but not as complicated.The way FINNEAS produces is really interesting. like the way he produces Billie Eilish's songs, they're really fun. I've been trying to add some of those aspects into my songs. They never work because they're so complicated and I don't understand it, but I do get inspired a lot by the way they make music.&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong>Have you always wanted to be a musician? What got you into it?</strong></span></p>
+<p>I didn't really always want to be a musician. I always wanted to be an actor when I was in high school, but that sort of faded away after I started university. And I don't really know when I started loving music. I would probably be around high school, university, but I don't know exactly. I've been learning how to play the piano since I was little. And it's strange because I hated it, that's why I don't read sheet music, but that probably had some sort of influence on me.</p>
+<p>I think I started writing music when I was in my first year of high school. I tried to write a song for my mom on her birthday, and I think that was the first song that I wrote. It was horrible. I can't even remember it. I'm sure it was bad. Trust me, it was horrible.</p>
+<p>And what got me into wanting to be an artist? The first time I actually felt something when writing music was in my first year of university after watching a movie called Sing Street. It's about teenagers making music. For some reason it hit me on a different level of deepness., and after the movie, I just sat down in front of the piano. I started just touching the keyboard, you know, just making noises, sounds, and it was the first time I actually connected with my emotions when writing a song. And that was probably when I thought, "Oh, this really means something to me." That song is actually still probably one of my favorites. I haven't released it. I haven't even finished it, but it has something really meaningful to me.</p>
+<p>After that, I just started to connect more to my emotions and make them flow into music. And that's probably when I started thinking I really want to do this seriously. It was probably my second year of university or third when I was 20 or 21 that I said "Okay, I'm going to start producing music," and I started learning how to use Logic Pro by myself.&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong>You mentioned you were originally interested in acting, right? Have you worked on any interesting projects in the past, and are you pursuing any opportunities at the moment?</strong></span></p>
+<p>When I was in my first year, no, third year of high school in Japan, I was offered a role for a short film for these people who were making films as an assignment for university. And I took the job. It was a two day shoot. I didn't really even have that many lines and it was in Japanese. But it did feel really really nice to see myself as this other character, as this other person. I love the feeling of being captured in something and then they polish it and make it look really nice. So that is one thing that I love about film. As for my future acting career, if there's anything that pops up, I would like to do it. I do not feel as confident as I was in my early acting days about my acting, but I would definitely love to do it.</p>
+<p><span style="text-decoration: underline;"><strong>What would be your dream role? And if we are being self-indulgent, who would you most like to work with?</strong></span></p>
+<p>Definitely Timothee Chalamet.Or Jake Gyllenhaal, but he's probably too charismatic for me.&nbsp;</p>
+<p>I would love to play a student in one of the magic schools in Harry Potter. Maybe at the Japanese magic school that they have. Apparently it exists. So, they could make a TV series about that and I would love to apply to audition.&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong>Music videos are a unique way of bringing together acting and music. What would your ideal music video be like?</strong></span></p>
+<p>It would be really fun to just dress up as like a Sith Lord and do random stuff around.&nbsp;</p>
+<p>Probably really nostalgic with beautiful Wes Anderson color grading or something really really weird like what the Beatles used to do sometimes that just boggles your head.&nbsp;</p>
+<p>I haven't really put thought into directing a music video for myself. 3 minutes is actually long when you want to do a music video because you have to take a lot of shots in different places and a lot of scenes doing the same thing or sometimes even exploding within yourself which takes a lot of stamina to do.</p>
+<p><span style="text-decoration: underline;"><strong>So, what is next for you? Where do you see yourself in a year from now, what do you hope to accomplish?</strong></span></p>
+<p>My very specific goal would be an album but before that I think I'd like to release an EP. I don't know when that could be. It will probably take me a year to finish. So hopefully I could just find the time to produce these songs. And you know, it would be great if I could find someone that just produces and if they could come to my house and I could just tell them what to do and they do it and I just record vocals and they can also mix and master the vocals and the song. That'd be really smooth. Then I could probably release a song each month even with my job. But I can't find someone like that.</p>
+<p><span style="text-decoration: underline;"><strong>Thank you so much for your time. To end with, is there anything else you would like to add, anything you want listeners or fans to know?</strong></span></p>
+<p>To anyone who's listened to my music, I make everything with pure emotion and it's just things that come out of my heart and nothing else. I make it so that people can enjoy it. So, it would be really nice to hear from these people, see what they think. I haven't been able to post any sort of content for a while so I just want to make sure that the people know I haven't logged out or anything. I'm still in the game and I will continue to be as long as I can, as long as I can make music, and I would definitely love it forever. Hopefully I will have a larger audience to tell this to in the future, but for now, I think with the amount of things that I release and the amount of time that I have, the audience that I have right now is really adequate. But, well, you know, you just never know what comes in the future. And I'm hoping for the best and I will do my best to bring that outcome.&nbsp;</p>
+<p><br /><br /></p>
+<p><br /><br /></p>               <br>
+               <img src="/WEBSITE/BLOG/divider.png">
+               <br>
+               <div id="nextprev"></div>
+               <br>
+               <h1>Add a Comment</h1>
+               <br>
+               <div id="convocomet-widget" data-site="104354991187894" data-page="[Interview-with-Musician-Seiken-Habukawa]"></div>
+               <script src="https://convocomet.dev/widget.js" async></script>
+            </section>
+         </main>
+      </div>
+      <script src="/blog/script.js"></script>
+      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
+         <source src=/WEBSITE/BLOG/cure_burn.mp3>
+      </audio>
+      <script> document.addEventListener("visibilitychange", function() { document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play() }) </script>
+   </body>
+</html>
