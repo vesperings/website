@@ -16,58 +16,9 @@
          a:hover {
             color: indianred;
          }
-         @font-face {
-         font-family: Vesperings;
-         src: url(/WEBSITE/vesperings.ttf);
-         }
-         * {
-         font-family: vesperings;
-         }
-         }
       </style>
    </head>
    <body style="background-color:black;">
-      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
-      <style>
-         .font-toggle {
-         position: fixed;
-         top: 10px;
-         left: 10px;
-         z-index: 9999;
-         background-color: black;
-         color: red;
-         font-family: Garamond, serif;
-         padding: 10px 15px;
-         border: 1px solid red;
-         cursor: pointer;
-         }
-      </style>
-      <script>
-         let fontChanged = false;
-         let styleEl;
-
-         function toggleFont() {
-             if (!fontChanged) {
-                 styleEl = document.createElement('style');
-                 styleEl.id = "fontOverride";
-
-                 styleEl.innerHTML = `
-                     * {
-                         font-family: Garamond, serif !important;
-                     }
-                 `;
-
-                 document.head.appendChild(styleEl);
-                 fontChanged = true;
-
-             } else {
-                 const existing = document.getElementById("fontOverride");
-                 if (existing) existing.remove();
-
-                 fontChanged = false;
-             }
-         }
-      </script>
       <br>
       <br>
       <h1>Sitemap</h1>

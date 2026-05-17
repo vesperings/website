@@ -161,20 +161,6 @@
       cursor: url(/WEBSITE/cursor.png),
       auto !important;
       }
-      @font-face {
-      font-family: Vesperings;
-      src: url(/WEBSITE/vesperings.ttf);
-      }
-      body {
-      font-family: vesperings;
-      }
-      h1,
-      h2,
-      h3,
-      h4 {
-      font-family: garamond;
-      property: value !important;
-      }
    </style>
    <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
       <source src=/WEBSITE/FILMS/you_showed_me_the_turtles.mp3>
@@ -183,47 +169,6 @@
       document.addEventListener("visibilitychange", function() {
        document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
       })
-   </script>
-   <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
-   <style>
-      .font-toggle {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 9999;
-      background-color: black;
-      color: red;
-      font-family: Garamond, serif;
-      padding: 10px 15px;
-      border: none;
-      cursor: pointer;
-      }
-   </style>
-   <script>
-      let fontChanged = false;
-      let styleEl;
-
-      function toggleFont() {
-          if (!fontChanged) {
-              styleEl = document.createElement('style');
-              styleEl.id = "fontOverride";
-
-              styleEl.innerHTML = `
-                  * {
-                      font-family: Garamond, serif !important;
-                  }
-              `;
-
-              document.head.appendChild(styleEl);
-              fontChanged = true;
-
-          } else {
-              const existing = document.getElementById("fontOverride");
-              if (existing) existing.remove();
-
-              fontChanged = false;
-          }
-      }
    </script>
    <center>
       <h1 class="headers title">&starf; FILM LOG &starf;</h1>
@@ -665,6 +610,7 @@
             <li>The Crocodiles Strike Back (2010)</li>
             <li>The Devil Wears Prada (2006)</li>
             <li>The Dictator (2012)</li>
+            <li>The Drama (2026)</li>
             <li>The Emperor's New Groove (2000)</li>
             <li>The Empire Strikes Back (1980)</li>
             <li>The Exorcism of Emily Rose (2005)</li>

@@ -9,27 +9,11 @@
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
 <style>
-/* You can either copy the below and paste it between style tags on your HTML page, OR you can copy this to a file and name it .css and link it from your HTML page. */
-@font-face {
-  font-family: Vesperings;
-  src: url(/WEBSITE/vesperings.ttf);
-}
-
-p {
-   font-family: Vesperings;
-
-}
-
 :root {
   --accent-light: #4b0101;
   --accent-dark: #4b0101;
   --accent-muted: #4b0101;
 }
-
-    h1, h2, h4, h4 {
-      font-family: garamond;
-      color: #4b0101;
-    }
 * { 
   cursor: url(/WEBSITE/cursor.png),
   auto !important; 
@@ -170,50 +154,6 @@ ul.pixelbullets {
   background-color:yellow;
 }</style>
   </head>
- <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
-
-<style>
-.font-toggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 9999;
-
-    background-color: black;
-    color: red;
-    font-family: Garamond, serif;
-    padding: 10px 15px;
-    border: 1px solid red; 
-    cursor: pointer;
-}
-</style>
-
-<script>
-let fontChanged = false;
-let styleEl;
-
-function toggleFont() {
-    if (!fontChanged) {
-        styleEl = document.createElement('style');
-        styleEl.id = "fontOverride";
-
-        styleEl.innerHTML = `
-            * {
-                font-family: Garamond, serif !important;
-            }
-        `;
-
-        document.head.appendChild(styleEl);
-        fontChanged = true;
-
-    } else {
-        const existing = document.getElementById("fontOverride");
-        if (existing) existing.remove();
-
-        fontChanged = false;
-    }
-}
-</script>
   <body>
    <!-- Everything here goes inside of your <body></body> tags! -->
 <div class="container">

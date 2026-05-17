@@ -10,13 +10,6 @@
          font-family: 'Chiller';
          src: url('https://fonts.cdnfonts.com/css/chiller');
          }
-         @font-face {
-         font-family: Vesperings;
-         src: url(/WEBSITE/vesperings.ttf);
-         }
-         body {
-         font-family: Vesperings;
-         }
          :root {
          --main-bg: #0a0505;
          --text-color: #8a7676;
@@ -266,47 +259,6 @@
          }
       </style>
    </head>
-   <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
-   <style>
-      .font-toggle {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 9999;
-      background-color: black;
-      color: red;
-      font-family: Garamond, serif;
-      padding: 10px 15px;
-      border: 1px solid red; 
-      cursor: pointer;
-      }
-   </style>
-   <script>
-      let fontChanged = false;
-      let styleEl;
-      
-      function toggleFont() {
-          if (!fontChanged) {
-              styleEl = document.createElement('style');
-              styleEl.id = "fontOverride";
-      
-              styleEl.innerHTML = `
-                  * {
-                      font-family: Garamond, serif !important;
-                  }
-              `;
-      
-              document.head.appendChild(styleEl);
-              fontChanged = true;
-      
-          } else {
-              const existing = document.getElementById("fontOverride");
-              if (existing) existing.remove();
-      
-              fontChanged = false;
-          }
-      }
-   </script>
    <body>
       <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
          <source src=/WEBSITE/CRAPPYPASTA/john_carpenter_halloween.mp3>

@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html>
 <style>
-   @font-face {
-   font-family: Vesperings;
-   src: url(/WEBSITE/vesperings.ttf);
-   }
-   * {
-   font-family: vesperings;
-   }
    * {
    cursor: url(/WEBSITE/cursor.png),
    auto !important;
@@ -96,47 +89,6 @@
    }
 </style>
 <title>&#x2730; SHRINES &#x2730;</title>
-<button class="font-toggle" onclick="toggleFont()">Click to change font</button>
-<style>
-   .font-toggle {
-   position: fixed;
-   top: 10px;
-   left: 10px;
-   z-index: 9999;
-   background-color: black;
-   color: red;
-   font-family: Garamond, serif;
-   padding: 10px 15px;
-   border: 1px solid red;
-   cursor: pointer;
-   }
-</style>
-<script>
-   let fontChanged = false;
-   let styleEl;
-
-   function toggleFont() {
-       if (!fontChanged) {
-           styleEl = document.createElement('style');
-           styleEl.id = "fontOverride";
-
-           styleEl.innerHTML = `
-               * {
-                   font-family: Garamond, serif !important;
-               }
-           `;
-
-           document.head.appendChild(styleEl);
-           fontChanged = true;
-
-       } else {
-           const existing = document.getElementById("fontOverride");
-           if (existing) existing.remove();
-
-           fontChanged = false;
-       }
-   }
-</script>
 <div id=container>
    <div id=headerArea>
       <div id=header style=margin-bottom:0></div>

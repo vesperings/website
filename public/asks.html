@@ -16,16 +16,9 @@
    }
 </script>
 <style>
-   @font-face {
-   font-family: Vesperings;
-   src: url(/WEBSITE/vesperings.ttf);
-   }
-   * {
-   font-family: vesperings;
-   }
    .fa {
    display: inline-block;
-   font: normal normal normal 14px/1 FontAwesome;
+   font: normal normal normal 14px/1 ;
    font-size: inherit;
    text-rendering: auto;
    -webkit-font-smoothing: antialiased;
@@ -226,7 +219,6 @@
    position: relative;
    margin-left: auto;
    margin-right: auto;
-   font-family: arial;
    background-image: url(/WEBSITE/ASKS/emobg2.jpg)
    }
    .wrap {
@@ -308,47 +300,6 @@
    transform: translateX(8px)
    }
 </style>
-<button class="font-toggle" onclick="toggleFont()">Click to change font</button>
-<style>
-   .font-toggle {
-   position: fixed;
-   top: 10px;
-   left: 10px;
-   z-index: 9999;
-   background-color: black;
-   color: red;
-   font-family: Garamond, serif;
-   padding: 10px 15px;
-   border: 1px solid red;
-   cursor: pointer;
-   }
-</style>
-<script>
-   let fontChanged = false;
-   let styleEl;
-
-   function toggleFont() {
-       if (!fontChanged) {
-           styleEl = document.createElement('style');
-           styleEl.id = "fontOverride";
-
-           styleEl.innerHTML = `
-               * {
-                   font-family: Garamond, serif !important;
-               }
-           `;
-
-           document.head.appendChild(styleEl);
-           fontChanged = true;
-
-       } else {
-           const existing = document.getElementById("fontOverride");
-           if (existing) existing.remove();
-
-           fontChanged = false;
-       }
-   }
-</script>
 <div class=wrap>
    <div class=box1>
       <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/798e4d0590810c8989ec71ea76a5eafa?embedded=1"></div>

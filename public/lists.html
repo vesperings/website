@@ -9,21 +9,12 @@
       <script src="dragula.js"></script>
       <script src="drag.js"></script>
       <style>
-         @font-face {
-         font-family: Vesperings;
-         src: url(/WEBSITE/vesperings.ttf);
-         }
-         * {
-         font-family: Vesperings;
-         }
          :root {
          /* Page background */
          --background: black;
          /* Universal text and link colors */
          --color: white;
          --link: #562607;
-         /* Font family (can include fallbacks) */
-         --bodyfont: sans-serif;
          /* List background colors */
          --color1: #580c1f;
          --color5: #74121d;
@@ -282,51 +273,6 @@
       </style>
    </head>
    <body>
-      <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
-      <style>
-         .font-toggle {
-         position: fixed;
-         top: 10px;
-         left: 10px;
-         z-index: 9999;
-         background-color: black;
-         color: red;
-         font-family: Garamond, serif;
-         padding: 10px 15px;
-         border: 1px solid red;
-         }
-      </style>
-      <script>
-         let fontChanged = false;
-         let styleEl;
-         
-         
-         function toggleFont() {
-             if (!fontChanged) {
-                 styleEl = document.createElement('style');
-                 styleEl.id = "fontOverride";
-         
-         
-                 styleEl.innerHTML = `
-                     * {
-                         font-family: Garamond, serif !important;
-                     }
-                 `;
-         
-         
-                 document.head.appendChild(styleEl);
-                 fontChanged = true;
-         
-         
-             } else {
-                 const existing = document.getElementById("fontOverride");
-                 if (existing) existing.remove();
-         
-         
-                 fontChanged = false;
-             }
-         }
-      </script>
       <div id="start"></div>
       <header id="top">
          <div id="infocontainer">
@@ -558,11 +504,12 @@
                      <li>What's Your Problem? (IRENE & SEULGI))</li>
                      <li>All Bad (Justin Bieber)</li>
                      <li>Hold on Tight (Justin Bieber)</li>
+                     <li>OMG (The Neighbourhood)</li>
                   </ul>
                </div>
                <footer class="foot">
                   <p>april 02 2026 &infin;</p>
-                  <p>april 04 2026 +</p>
+                  <p>may 17 2026 +</p>
                </footer>
             </section>
             <section id="concerts" class="color2">
@@ -591,11 +538,12 @@
                      <li>Opening parcels.</li>
                      <li>Scrapbooking in my diary.</li>
                      <li>Unscrewing the grill of a desk fan to clean it.</li>
+                     <li>Cutting false lashes down to size</li>
                   </ul>
                </div>
                <footer class="foot">
                   <p>april 08 2026 &infin;</p>
-                  <p>april 08 2026 +</p>
+                  <p>may 17 2026 +</p>
                </footer>
             </section>
          </div>

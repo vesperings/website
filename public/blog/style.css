@@ -30,13 +30,6 @@ line-height: 1.2;
 background: var(--background-color);
 background-image: url("/WEBSITE/BLOG/background.gif");
 }
-@font-face {
-font-family: Vesperings;
-src: url(/WEBSITE/vesperings.ttf);
-}
-* {
-font-family: vesperings;
-}
 ::selection {
 background: rgba(0, 0, 0, 0.2);
 }
