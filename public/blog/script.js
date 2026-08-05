@@ -35,6 +35,7 @@ let postsArray = [
 //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
 //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
 
+["posts/The-Human-Rights-Issue-You-Can-Say-You-Supported-Before-It-Became-Trendy.html"],
 [ "posts/Interview-with-Musician-Seiken-Habukawa.html" ],
 [ "posts/2026-03-28-Daydreams.html", encodeURI("Diary Entry: Daydreams" ) ],
 [ "posts/Whats-In-My-Bag.html", encodeURI( "What's In My Bag" ) ],
