@@ -37,12 +37,9 @@ let postsArray = [
 
 ["posts/The-Human-Rights-Issue-You-Can-Say-You-Supported-Before-It-Became-Trendy.html"],
 [ "posts/Interview-with-Musician-Seiken-Habukawa.html" ],
-[ "posts/2026-03-28-Daydreams.html", encodeURI("Diary Entry: Daydreams" ) ],
 [ "posts/Whats-In-My-Bag.html", encodeURI( "What's In My Bag" ) ],
 [ "posts/BURYPINK-Questionnaire.html" ],
 [ "posts/Windows-Open-In-Negative-20-Degree-Weather.html"],
-[ "posts/2025-07-19-Graduation.html",  encodeURI( "Diary Entry: Graduation" ) ],
-[ "posts/2025-06-18-Losing-My-Concert-Virginity.html",  encodeURI( "Diary Entry: Losing My Concert Virginity" ) ],
 [ "posts/Sentimentalism-May-Be-The-Antidote-To-Overconsumption.html"],
 [ "posts/Stages.html"],
 [ "posts/Who-We-Owe-to-Others.html"],
