@@ -40,7 +40,6 @@ let postsArray = [
 [ "posts/Interview-with-Musician-Seiken-Habukawa.html" ],
 [ "posts/Whats-In-My-Bag.html", encodeURI( "What's In My Bag" ) ],
 [ "posts/BURYPINK-Questionnaire.html" ],
-[ "posts/Windows-Open-In-Negative-20-Degree-Weather.html"],
 [ "posts/Who-We-Owe-to-Others.html"],
 [ "posts/Webpage-Ideas.html"],
 [ "posts/A-Brief-Analysis-Of-Greg-Heffley-and-His-Art-Style.html"] ];
