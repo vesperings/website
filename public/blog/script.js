@@ -36,13 +36,8 @@ let postsArray = [
 //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
 
 [ "posts/Death-Note-The-Musical.html", encodeURI( "Death Note: The Musical" ) ],
-["posts/The-Human-Rights-Issue-You-Can-Say-You-Supported-Before-It-Became-Trendy.html"],
-[ "posts/Interview-with-Musician-Seiken-Habukawa.html" ],
-[ "posts/Whats-In-My-Bag.html", encodeURI( "What's In My Bag" ) ],
-[ "posts/BURYPINK-Questionnaire.html" ],
 [ "posts/Who-We-Owe-to-Others.html"],
-[ "posts/Webpage-Ideas.html"],
-[ "posts/A-Brief-Analysis-Of-Greg-Heffley-and-His-Art-Style.html"] ];
+[ "posts/Webpage-Ideas.html"] ];
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
