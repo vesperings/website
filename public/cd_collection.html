@@ -1,1004 +1,1379 @@
 <!doctype html>
-<html lang=en>
-   <meta charset=UTF-8>
-   <title>&#x2730; CD COLLECTION &#x2730;</title>
-   <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
-      <source src=/WEBSITE/MUSIC/CDS/climbing_up_the_walls.mp3>
-   </audio>
-   <script>
-      document.addEventListener("visibilitychange", function() {
-        document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
-      })
-   </script>
-   <style>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>&#x2730; CD COLLECTION &#x2730;</title>
+
+    <style>
       body {
-      background-image: url(/WEBSITE/MUSIC/CDS/emowallpaper.jpg);
-      font-family: garamond;
-      color: #000;
-      font-size: 14px
+        background-image: url("/WEBSITE/MUSIC/CDS/emowallpaper.jpg");
+        font-family: Garamond, serif;
+        color: #000;
+        font-size: 14px;
       }
+
       * {
-      cursor: url(/WEBSITE/cursor.png),
-      auto !important;
+        cursor: url("/WEBSITE/cursor.png"), auto !important;
       }
+
       h1 {
-      color: #000;
-      font-family: garamond;
-      text-align: center;
-      font-size: 2em
+        color: #000;
+        font-family: Garamond, serif;
+        text-align: center;
+        font-size: 2em;
       }
+
       a:link,
       a:link:active {
-      color: #fff;
-      text-decoration: underline;
-      font-family: garamond
+        color: #fff;
+        text-decoration: underline;
+        font-family: Garamond, serif;
       }
+
       a:visited,
       a:visited:active {
-      color: #fff;
-      text-decoration: underline
+        color: #fff;
+        text-decoration: underline;
       }
+
       a:hover {
-      text-decoration: solid
+        text-decoration: solid;
       }
+
       #centerimg {
-      text-align: center
+        text-align: center;
       }
+
       html {
-      min-height: 100%
+        min-height: 100%;
       }
+
       #hover {
-      color: rgba(188, 175, 204, .9)
+        color: rgba(188, 175, 204, 0.9);
       }
+
       .view {
-      margin: 2px;
-      float: left;
-      overflow: hidden;
-      position: relative;
-      text-align: center
+        margin: 2px;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
       }
+
       .view .content,
       .view .mask {
-      width: 150px;
-      height: 150px;
-      position: absolute;
-      overflow: hidden;
-      top: 0;
-      left: 0
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
       }
+
       .view img {
-      display: block
+        display: block;
       }
+
       .view h2 {
-      text-transform: uppercase;
-      color: #fff;
-      text-align: center;
-      position: relative;
-      font-size: 12px;
-      font-family: garamond;
-      padding: 4px;
-      margin: 2px 0 0 0
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        font-size: 12px;
+        font-family: Garamond, serif;
+        padding: 4px;
+        margin: 2px 0 0 0;
       }
+
       .view p {
-      font-family: garamond;
-      font-size: 12px;
-      position: relative;
-      color: #fff;
-      text-align: center;
-      margin: 3px 0 0 0
+        font-family: Garamond, serif;
+        font-size: 12px;
+        position: relative;
+        color: #fff;
+        text-align: center;
+        margin: 3px 0 0 0;
       }
+
       .view-first img {
-      width: 150px;
-      height: 150px
+        width: 150px;
+        height: 150px;
       }
+
       .view-first .mask {
-      opacity: 0;
-      background-color: rgba(0, 0, 0, .5)
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.5);
       }
+
       .view-first h2 {
-      transform: translateY(-100px);
-      opacity: 0;
-      font-family: garamond
+        transform: translateY(-100px);
+        opacity: 0;
+        font-family: Garamond, serif;
       }
+
       .view-first p {
-      transform: translateY(100px);
-      opacity: 0
+        transform: translateY(100px);
+        opacity: 0;
       }
+
       .view-first a.info {
-      opacity: 0
+        opacity: 0;
       }
+
       .view-first:hover .mask {
-      opacity: 1
+        opacity: 1;
       }
+
       .view-first:hover a.info,
       .view-first:hover h2,
       .view-first:hover p {
-      opacity: 1;
-      transform: translateY(0)
+        opacity: 1;
+        transform: translateY(0);
       }
+
       td,
       tr {
-      border: 1px solid red;
-      background-color: #000
+        border: 1px solid red;
+        background-color: #000;
       }
+
       table {
-      border-spacing: 1px;
-      width: 150px;
-      height: 150px;
-      border: 1px solid black;
-      background-color: #000;
-      margin-left: auto;
-      margin-right: auto
+        border-spacing: 1px;
+        width: 150px;
+        height: 150px;
+        border: 1px solid black;
+        background-color: #000;
+        margin-left: auto;
+        margin-right: auto;
       }
+
       td {
-      padding: 0
+        padding: 0;
       }
-   </style>
-   <div class=topnav>
-      <a href="/albums" style=color:#fff>Click here to see my album reviews!</a>
-      <div id=centerimg><img src=/WEBSITE/MUSIC/CDS/text.gif></div>
+    </style>
+  </head>
+
+  <body>
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+    >
+      <source
+        src="/WEBSITE/MUSIC/CDS/climbing_up_the_walls.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <script>
+      const audio = document.getElementById("myAudio");
+      audio.volume = 0.3;
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          audio.pause();
+        } else {
+          audio.play();
+        }
+      });
+    </script>
+
+    <div class="topnav">
+      <a href="/albums" style="color: #fff">
+        Click here to see my album reviews!
+      </a>
+
+      <div id="centerimg">
+        <img src="/WEBSITE/MUSIC/CDS/text.gif" alt="CD Collection" />
+      </div>
+
       <table>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/1989.png>
-                     <div class=mask>
-                        <h2>1989 (Taylor Swift, 2014)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/2cool4skool.jpg>
-                     <div class=mask>
-                        <h2>2 Cool 4 Skool (BTS, 2013)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/am.jpg>
-                     <div class=mask>
-                        <h2>AM (Arctic Monkeys, 2013)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/americanbeautyamericanpsycho.jpg>
-                     <div class=mask>
-                        <h2>American Beauty/American Pyscho (Fall Out Boy, 2015)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/americanidiot.jpg>
-                     <div class=mask>
-                        <h2>American Idiot (Green Day, 2004)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/believe.jpg>
-                     <div class=mask>
-                        <h2>Believe (Justin Bieber, 2012)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/chainedup.jpg>
-                     <div class=mask>
-                        <h2>Chained Up (VIXX, 2015)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/danger.jpg>
-                     <div class=mask>
-                        <h2>Danger (BTS, 2014)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/empathy.jpeg>
-                     <div class=mask>
-                        <h2>Empathy (NCT, 2018)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/fallen.png>
-                     <div class=mask>
-                        <h2>Fallen (Evanescence, 2003)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/favouriteworstnightmare.jpg>
-                     <div class=mask>
-                        <h2>Favourite Worst Nightmare (Arctic Monkeys, 2007)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/firstandlastandalways.jpg>
-                     <div class=mask>
-                        <h2>Favourite First and Last and Always (Sisters of Mercy, 1985)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/floodland.png>
-                     <div class=mask>
-                        <h2>Floodland (Sisters of Mercy, 1987)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/fromunderthecorktree.jpg>
-                     <div class=mask>
-                        <h2>From Under the Cork Tree (Fall Out Boy, 2005)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/history.jpg>
-                     <div class=mask>
-                        <h2>HIStory: Past, Present and Future, Book I (Michael Jackson, 1995)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/iloveyou.jpg>
-                     <div class=mask>
-                        <h2>I Love You (The Neighbourhood, 2013)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/intheflatfield.jpg>
-                     <div class=mask>
-                        <h2>In the Flat Field (Bauhaus, 1999)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/inutero.jpg>
-                     <div class=mask>
-                        <h2>In Utero (Nirvana, 1993)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/metalgalaxy.png>
-                     <div class=mask>
-                        <h2>Metal Galaxy (Babymetal, 2019)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/metalresistance.jpg>
-                     <div class=mask>
-                        <h2>Metal Resistance (Babymetal, 2016)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/cherrybomb.jpg>
-                     <div class=mask>
-                        <h2>Cherry Bomb (NCT 127, 2017)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/pagesend.jpg>
-                     <div class=mask>
-                        <h2>PagesEND (PagesEND, 2008)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/nevermind.jpg>
-                     <div class=mask>
-                        <h2>Nevermind (Nirvana, 1991)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/parklife.jpg>
-                     <div class=mask>
-                        <h2>Parklife (Blur, 1994)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/skoolluvaffair.jpg>
-                     <div class=mask>
-                        <h2>Skool Luv Affair - Special Addition (BTS, 2014)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/starsandtopsoil.jpg>
-                     <div class=mask>
-                        <h2>Stars and Topsoil (Cocteau Twins, 2000)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <!-- NCT-->
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/NCT_127_-_2_Baddies.png">
-                     <div class=mask>
-                        <h2>2 Baddies (NCT 127, 2020)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/71Y55FU5VGL.jpg">
-                     <div class=mask>
-                        <h2>BACK TO BLACK (AMY WINEHOUSE, 2006)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/holybible.jpg>
-                     <div class=mask>
-                        <h2>The Holy Bible (Manic Street Preachers, 1994)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/thenbhd.jpg>
-                     <div class=mask>
-                        <h2>The Neighbourhood (The Neighbourhood, 2018)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/3cheers.jpg>
-                     <div class=mask>
-                        <h2>Three Cheers for Sweet Revenge (My Chemical Romance, 2004)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/ultraviolence.jpg>
-                     <div class=mask>
-                        <h2>Ultraviolence (Lana del Rey, 2014)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/doab.jpg>
-                     <div class=mask>
-                        <h2>Death of a Bachelor (Panic! At the Disco, 2016)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/sticker.png>
-                     <div class=mask>
-                        <h2>Sticker</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/ray.jpg>
-                     <div class=mask>
-                        <h2>Ray (L'Arc~en~Ciel, 1999)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/resonance.jpg>
-                     <div class=mask>
-                        <h2>Resonance (NCT U, 2020)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/whateverpeoplesayiam.jpg>
-                     <div class=mask>
-                        <h2>Whatever People Say I Am, That's What I'm Not (Arctic Monkeys, 2006)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/whitepony.jpg>
-                     <div class=mask>
-                        <h2>White Pony (Deftones, 2000)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/wipedout.jpg>
-                     <div class=mask>
-                        <h2>Wiped Out! (The Neighbourhood, 2015)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/youngforever.jpg>
-                     <div class=mask>
-                        <h2>The Most Beautiful Moment in Life: Young Forever (BTS, 2016)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/agentsoffortune.jpg>
-                     <div class=mask>
-                        <h2>Agents of Fortune (Blue Oyster Cult, 1976)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/amo.jpg>
-                     <div class=mask>
-                        <h2>Amo (Bring Me the Horizon, 2019)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/lmr.jpg>
-                     <div class=mask>
-                        <h2>Love Me Right (EXO, 2015)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/m2m.jpg>
-                     <div class=mask>
-                        <h2>Minutes to Midnight (Linkin Park, 2007)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/myworlds.jpg>
-                     <div class=mask>
-                        <h2>My Worlds (Justin Bieber, 2010)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/crow.jpg>
-                     <div class=mask>
-                        <h2>The Crow: Original Motion Picture Soundtrack (1994)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/twilight.jpg>
-                     <div class=mask>
-                        <h2>Twilight: Original Motion Picture Soundtrack (2008)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src=/WEBSITE/MUSIC/CDS/badlands.jpg>
-                     <div class=mask>
-                        <h2>Badlands (Halsey, 2015)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/prettyhatemachine.jpg">
-                     <div class=mask>
-                        <h2></h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/ab67616d0000b2731de0ae8daba390a3cd627c55.jpg">
-                     <div class=mask>
-                        <h2>2025 SM Town: The Culture, the Future (SM Town, 2025)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/PanicAtTheDisco-FeverCover.jpg">
-                     <div class=mask>
-                        <h2>A Fever You Can't Sweat Out (Panic! At the Disco, 2005)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="WEBSITE/MUSIC/CDS/81j+11PUKQL.jpg">
-                     <div class=mask>
-                        <h2>A Flair for the Dramatic (Pierce the Veil, 2007)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Add_Violence.jpg">
-                     <div class=mask>
-                        <h2>Add Violence (Nine Inch Nails, 2017)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="WEBSITE/MUSIC/CDS/Awaken_the_World_digital_cover.jpg">
-                     <div class=mask>
-                        <h2>Awaken the World (WayV, 2020)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/81sIBu6Hd2L.jpg">
-                     <div class=mask>
-                        <h2>Brand New Eyes (Paramore, 2009)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Red_Velvet_-_Chill_Kill.png">
-                     <div class=mask>
-                        <h2>Chill Kill (Red Velvet, 2023)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/91LxIbNteLL._UF894,1000_QL80_.jpg">
-                     <div class=mask>
-                        <h2>Demi (Demi Lovato, 2013)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Justin_Bieber_Journals.png">
-                     <div class=mask>
-                        <h2>Journals (Justin Bieber, 2013)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Kai_-_cover.png">
-                     <div class=mask>
-                        <h2>Kai (Kai, 2020)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/KnowYourEnemyAlbumCover.jpg">
-                     <div class=mask>
-                        <h2>Know Your Enemy (Manic Street Preachers, 2001)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/31b++p+cbXL._UF894,1000_QL80_.jpg">
-                     <div class=mask>
-                        <h2>LOTTO [Chinese ver.] (EXO, 2016)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/s-l400.jpg">
-                     <div class=mask>
-                        <h2>Neo Zone: The Final Round (NCT 127, 2020)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/R-7717555-1447497442-7892.jpg">
-                     <div class=mask>
-                        <h2>Purpose (Justin Bieber, 2015)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Taylor_Swift_-_Red.png">
-                     <div class=mask>
-                        <h2>Red (Taylor Swift, 2012)</h2>
-                     </div>
-                  </div>
-               </div>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/91b6aYwjwjL.jpg">
-                     <div class=mask>
-                        <h2>Riot (Paramore, 2007)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/81CSXCmstdL.jpg">
-                     <div class=mask>
-                        <h2>Set the World on Fire (Black Veil Brides, 2011)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/ab67616d0000b2735503eeb8dc15639de719dd03.jpg">
-                     <div class=mask>
-                        <h2>Tilt (Irene & Seulgi, 2025)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/NCT_127_-_Walk.png">
-                     <div class=mask>
-                        <h2>Walk (NCT 127, 2024)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Michael_Jackson_-_Thriller.png">
-                     <div class=mask>
-                        <h2>THRILLER (MICHAEL JACKSON, 1982)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Rihanna_-_Loud.png">
-                     <div class=mask>
-                        <h2>LOUD (RIHANNA, 2010)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/61lMwNQGYbL._UF894,1000_QL80_.jpg">
-                     <div class=mask>
-                        <h2>21 (ADELE, 2011)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Official_Album_Cover_of__The_Downward_Spiral__by_Nine_Inch_Nails.png">
-                     <div class=mask>
-                        <h2>THE DOWNWARD SPIRAL (NINE INCH NAILS, 1994)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-         </tr>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/426141.jpg">
-                     <div class=mask>
-                        <h2>WITH TEETH (NINE INCH NAILS, 2005)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/SuperM_-_Super_One.png">
-                     <div class=mask>
-                        <h2>SUPER ONE (SUPERM, 2020)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Tinashe_-_Aquarius.png">
-                     <div class=mask>
-                        <h2>AQUARIUS (TINASHE, 2014)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/R-8785050-1693611005-1906.jpg">
-                     <div class=mask>
-                        <h2>BLUE NEIGHBOURHOOD (TROYE SIVAN, 2016)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-         </tr>
-         <tr> 
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Tinashe_-_Joyride_(Official_Album_Cover).png">
-                     <div class=mask>
-                        <h2>JOYRIDE (TINASHE, 2018)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Nirvana-Bleach.jpg">
-                     <div class=mask>
-                        <h2>BLEACH (NIRVANA, 1989)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Exo_–_Don't_Mess_Up_My_Tempo.png">
-                     <div class=mask>
-                        <h2>DON'T MESS UP MY TEMPO (EXO, 2018)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/4321fa6cc54123b3d4cca11a87bb96d3.1000x1000x1.png">
-                     <div class=mask>
-                        <h2>THE PERFECT RED VELVET (RED VELVET, 2018)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-         </tr>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Let_Go_cover.png">
-                     <div class=mask>
-                        <h2>LET GO (AVRIL LAVIGNE, 2002)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/Seulgi_–_28_Reasons.png">
-                     <div class=mask>
-                        <h2>28 REASONS (SEULGI, 2022)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/tlsp_EYCTE.jpg">
-                     <div class=mask>
-                        <h2>Everything You've Come to Expect (THE LAST SHADOW PUPPETS, 2016)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/a1685718456_16.jpg">
-                     <div class=mask>
-                        <h2>FROM THE NEW WORLD (ALLT, 2024)</h2>
-                     </div>
-                  </div>
-               </div>
-            </td>
-         </tr>
-         <tr>
-            <td>
-               <div class=all>
-                  <div class="view view-first">
-                     <img src="/WEBSITE/MUSIC/CDS/13e73e489f49e361e7f6d4c09ccec964.1000x1000x1.png">
-                     <div class=mask>
-                        <h2>GORILLAZ (GORILLAZ, 2001)</h2>
-                     </div>
-                  </div>
-               </div>
-         </tr>
+        <!-- ROW 1 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/1989.png" alt="1989" />
+                <div class="mask">
+                  <h2>1989 (Taylor Swift, 2014)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/2cool4skool.jpg"
+                  alt="2 Cool 4 Skool"
+                />
+                <div class="mask">
+                  <h2>2 Cool 4 Skool (BTS, 2013)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/am.jpg" alt="AM" />
+                <div class="mask">
+                  <h2>AM (Arctic Monkeys, 2013)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/americanbeautyamericanpsycho.jpg"
+                  alt="American Beauty/American Psycho"
+                />
+                <div class="mask">
+                  <h2>American Beauty/American Pyscho (Fall Out Boy, 2015)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 2 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/americanidiot.jpg"
+                  alt="American Idiot"
+                />
+                <div class="mask">
+                  <h2>American Idiot (Green Day, 2004)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/believe.jpg" alt="Believe" />
+                <div class="mask">
+                  <h2>Believe (Justin Bieber, 2012)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/chainedup.jpg" alt="Chained Up" />
+                <div class="mask">
+                  <h2>Chained Up (VIXX, 2015)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/danger.jpg" alt="Danger" />
+                <div class="mask">
+                  <h2>Danger (BTS, 2014)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 3 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/empathy.jpeg" alt="Empathy" />
+                <div class="mask">
+                  <h2>Empathy (NCT, 2018)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/fallen.png" alt="Fallen" />
+                <div class="mask">
+                  <h2>Fallen (Evanescence, 2003)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/favouriteworstnightmare.jpg"
+                  alt="Favourite Worst Nightmare"
+                />
+                <div class="mask">
+                  <h2>Favourite Worst Nightmare (Arctic Monkeys, 2007)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/firstandlastandalways.jpg"
+                  alt="First and Last and Always"
+                />
+                <div class="mask">
+                  <h2>First and Last and Always (Sisters of Mercy, 1985)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 4 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/floodland.png" alt="Floodland" />
+                <div class="mask">
+                  <h2>Floodland (Sisters of Mercy, 1987)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/fromunderthecorktree.jpg"
+                  alt="From Under the Cork Tree"
+                />
+                <div class="mask">
+                  <h2>From Under the Cork Tree (Fall Out Boy, 2005)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/history.jpg" alt="HIStory" />
+                <div class="mask">
+                  <h2>
+                    HIStory: Past, Present and Future, Book I (Michael Jackson,
+                    1995)
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/iloveyou.jpg" alt="I Love You" />
+                <div class="mask">
+                  <h2>I Love You (The Neighbourhood, 2013)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 5 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/intheflatfield.jpg"
+                  alt="In the Flat Field"
+                />
+                <div class="mask">
+                  <h2>In the Flat Field (Bauhaus, 1999)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/inutero.jpg" alt="In Utero" />
+                <div class="mask">
+                  <h2>In Utero (Nirvana, 1993)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/metalgalaxy.png"
+                  alt="Metal Galaxy"
+                />
+                <div class="mask">
+                  <h2>Metal Galaxy (Babymetal, 2019)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/metalresistance.jpg"
+                  alt="Metal Resistance"
+                />
+                <div class="mask">
+                  <h2>Metal Resistance (Babymetal, 2016)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 6 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/cherrybomb.jpg"
+                  alt="Cherry Bomb"
+                />
+                <div class="mask">
+                  <h2>Cherry Bomb (NCT 127, 2017)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/pagesend.jpg" alt="PagesEND" />
+                <div class="mask">
+                  <h2>PagesEND (PagesEND, 2008)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/nevermind.jpg" alt="Nevermind" />
+                <div class="mask">
+                  <h2>Nevermind (Nirvana, 1991)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/parklife.jpg" alt="Parklife" />
+                <div class="mask">
+                  <h2>Parklife (Blur, 1994)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 7 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/skoolluvaffair.jpg"
+                  alt="Skool Luv Affair"
+                />
+                <div class="mask">
+                  <h2>Skool Luv Affair - Special Addition (BTS, 2014)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/starsandtopsoil.jpg"
+                  alt="Stars and Topsoil"
+                />
+                <div class="mask">
+                  <h2>Stars and Topsoil (Cocteau Twins, 2000)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/NCT_127_-_2_Baddies.png"
+                  alt="2 Baddies"
+                />
+                <div class="mask">
+                  <h2>2 Baddies (NCT 127, 2020)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/71Y55FU5VGL.jpg"
+                  alt="Back to Black"
+                />
+                <div class="mask">
+                  <h2>BACK TO BLACK (AMY WINEHOUSE, 2006)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 8 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/holybible.jpg"
+                  alt="The Holy Bible"
+                />
+                <div class="mask">
+                  <h2>The Holy Bible (Manic Street Preachers, 1994)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/thenbhd.jpg"
+                  alt="The Neighbourhood"
+                />
+                <div class="mask">
+                  <h2>The Neighbourhood (The Neighbourhood, 2018)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/3cheers.jpg"
+                  alt="Three Cheers for Sweet Revenge"
+                />
+                <div class="mask">
+                  <h2>
+                    Three Cheers for Sweet Revenge (My Chemical Romance, 2004)
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/ultraviolence.jpg"
+                  alt="Ultraviolence"
+                />
+                <div class="mask">
+                  <h2>Ultraviolence (Lana del Rey, 2014)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 9 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/doab.jpg"
+                  alt="Death of a Bachelor"
+                />
+                <div class="mask">
+                  <h2>Death of a Bachelor (Panic! At the Disco, 2016)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/sticker.png" alt="Sticker" />
+                <div class="mask">
+                  <h2>Sticker</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/ray.jpg" alt="Ray" />
+                <div class="mask">
+                  <h2>Ray (L'Arc~en~Ciel, 1999)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/resonance.jpg" alt="Resonance" />
+                <div class="mask">
+                  <h2>Resonance (NCT U, 2020)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 10 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/whateverpeoplesayiam.jpg"
+                  alt="Whatever People Say I Am, That's What I'm Not"
+                />
+                <div class="mask">
+                  <h2>
+                    Whatever People Say I Am, That's What I'm Not (Arctic
+                    Monkeys, 2006)
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/whitepony.jpg" alt="White Pony" />
+                <div class="mask">
+                  <h2>White Pony (Deftones, 2000)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/wipedout.jpg" alt="Wiped Out!" />
+                <div class="mask">
+                  <h2>Wiped Out! (The Neighbourhood, 2015)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/youngforever.jpg"
+                  alt="Young Forever"
+                />
+                <div class="mask">
+                  <h2>
+                    The Most Beautiful Moment in Life: Young Forever (BTS, 2016)
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 11 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/agentsoffortune.jpg"
+                  alt="Agents of Fortune"
+                />
+                <div class="mask">
+                  <h2>Agents of Fortune (Blue Oyster Cult, 1976)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/amo.jpg" alt="Amo" />
+                <div class="mask">
+                  <h2>Amo (Bring Me the Horizon, 2019)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/lmr.jpg" alt="Love Me Right" />
+                <div class="mask">
+                  <h2>Love Me Right (EXO, 2015)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/m2m.jpg"
+                  alt="Minutes to Midnight"
+                />
+                <div class="mask">
+                  <h2>Minutes to Midnight (Linkin Park, 2007)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 12 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/myworlds.jpg" alt="My Worlds" />
+                <div class="mask">
+                  <h2>My Worlds (Justin Bieber, 2010)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/crow.jpg"
+                  alt="The Crow soundtrack"
+                />
+                <div class="mask">
+                  <h2>The Crow: Original Motion Picture Soundtrack (1994)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/twilight.jpg"
+                  alt="Twilight soundtrack"
+                />
+                <div class="mask">
+                  <h2>Twilight: Original Motion Picture Soundtrack (2008)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/badlands.jpg" alt="Badlands" />
+                <div class="mask">
+                  <h2>Badlands (Halsey, 2015)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 13 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/prettyhatemachine.jpg"
+                  alt="Pretty Hate Machine"
+                />
+                <div class="mask">
+                  <h2></h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/ab67616d0000b2731de0ae8daba390a3cd627c55.jpg"
+                  alt="2025 SM Town"
+                />
+                <div class="mask">
+                  <h2>2025 SM Town: The Culture, the Future (SM Town, 2025)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/PanicAtTheDisco-FeverCover.jpg"
+                  alt="A Fever You Can't Sweat Out"
+                />
+                <div class="mask">
+                  <h2>
+                    A Fever You Can't Sweat Out (Panic! At the Disco, 2005)
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/81j+11PUKQL.jpg"
+                  alt="A Flair for the Dramatic"
+                />
+                <div class="mask">
+                  <h2>A Flair for the Dramatic (Pierce the Veil, 2007)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 14 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Add_Violence.jpg"
+                  alt="Add Violence"
+                />
+                <div class="mask">
+                  <h2>Add Violence (Nine Inch Nails, 2017)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Awaken_the_World_digital_cover.jpg"
+                  alt="Awaken the World"
+                />
+                <div class="mask">
+                  <h2>Awaken the World (WayV, 2020)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/81sIBu6Hd2L.jpg"
+                  alt="Brand New Eyes"
+                />
+                <div class="mask">
+                  <h2>Brand New Eyes (Paramore, 2009)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Red_Velvet_-_Chill_Kill.png"
+                  alt="Chill Kill"
+                />
+                <div class="mask">
+                  <h2>Chill Kill (Red Velvet, 2023)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 15 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/91LxIbNteLL._UF894,1000_QL80_.jpg"
+                  alt="Demi"
+                />
+                <div class="mask">
+                  <h2>Demi (Demi Lovato, 2013)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Justin_Bieber_Journals.png"
+                  alt="Journals"
+                />
+                <div class="mask">
+                  <h2>Journals (Justin Bieber, 2013)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/Kai_-_cover.png" alt="Kai" />
+                <div class="mask">
+                  <h2>Kai (Kai, 2020)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/KnowYourEnemyAlbumCover.jpg"
+                  alt="Know Your Enemy"
+                />
+                <div class="mask">
+                  <h2>Know Your Enemy (Manic Street Preachers, 2001)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 16 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/31b++p+cbXL._UF894,1000_QL80_.jpg"
+                  alt="LOTTO"
+                />
+                <div class="mask">
+                  <h2>LOTTO [Chinese ver.] (EXO, 2016)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/s-l400.jpg"
+                  alt="Neo Zone The Final Round"
+                />
+                <div class="mask">
+                  <h2>Neo Zone: The Final Round (NCT 127, 2020)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/R-7717555-1447497442-7892.jpg"
+                  alt="Purpose"
+                />
+                <div class="mask">
+                  <h2>Purpose (Justin Bieber, 2015)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Taylor_Swift_-_Red.png"
+                  alt="Red"
+                />
+                <div class="mask">
+                  <h2>Red (Taylor Swift, 2012)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 17 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/91b6aYwjwjL.jpg" alt="Riot" />
+                <div class="mask">
+                  <h2>Riot (Paramore, 2007)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/81CSXCmstdL.jpg"
+                  alt="Set the World on Fire"
+                />
+                <div class="mask">
+                  <h2>Set the World on Fire (Black Veil Brides, 2011)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/ab67616d0000b2735503eeb8dc15639de719dd03.jpg"
+                  alt="Tilt"
+                />
+                <div class="mask">
+                  <h2>Tilt (Irene &amp; Seulgi, 2025)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/NCT_127_-_Walk.png" alt="Walk" />
+                <div class="mask">
+                  <h2>Walk (NCT 127, 2024)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 18 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Michael_Jackson_-_Thriller.png"
+                  alt="Thriller"
+                />
+                <div class="mask">
+                  <h2>THRILLER (MICHAEL JACKSON, 1982)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/Rihanna_-_Loud.png" alt="Loud" />
+                <div class="mask">
+                  <h2>LOUD (RIHANNA, 2010)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/61lMwNQGYbL._UF894,1000_QL80_.jpg"
+                  alt="21"
+                />
+                <div class="mask">
+                  <h2>21 (ADELE, 2011)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Official_Album_Cover_of__The_Downward_Spiral__by_Nine_Inch_Nails.png"
+                  alt="The Downward Spiral"
+                />
+                <div class="mask">
+                  <h2>THE DOWNWARD SPIRAL (NINE INCH NAILS, 1994)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 19 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/426141.jpg" alt="With Teeth" />
+                <div class="mask">
+                  <h2>WITH TEETH (NINE INCH NAILS, 2005)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/SuperM_-_Super_One.png"
+                  alt="Super One"
+                />
+                <div class="mask">
+                  <h2>SUPER ONE (SUPERM, 2020)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Tinashe_-_Aquarius.png"
+                  alt="Aquarius"
+                />
+                <div class="mask">
+                  <h2>AQUARIUS (TINASHE, 2014)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/R-8785050-1693611005-1906.jpg"
+                  alt="Blue Neighbourhood"
+                />
+                <div class="mask">
+                  <h2>BLUE NEIGHBOURHOOD (TROYE SIVAN, 2016)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 20 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Tinashe_-_Joyride_(Official_Album_Cover).png"
+                  alt="Joyride"
+                />
+                <div class="mask">
+                  <h2>JOYRIDE (TINASHE, 2018)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/Nirvana-Bleach.jpg" alt="Bleach" />
+                <div class="mask">
+                  <h2>BLEACH (NIRVANA, 1989)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Exo_–_Don't_Mess_Up_My_Tempo.png"
+                  alt="Don't Mess Up My Tempo"
+                />
+                <div class="mask">
+                  <h2>DON'T MESS UP MY TEMPO (EXO, 2018)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/4321fa6cc54123b3d4cca11a87bb96d3.1000x1000x1.png"
+                  alt="The Perfect Red Velvet"
+                />
+                <div class="mask">
+                  <h2>THE PERFECT RED VELVET (RED VELVET, 2018)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 21 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img src="/WEBSITE/MUSIC/CDS/Let_Go_cover.png" alt="Let Go" />
+                <div class="mask">
+                  <h2>LET GO (AVRIL LAVIGNE, 2002)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/Seulgi_–_28_Reasons.png"
+                  alt="28 Reasons"
+                />
+                <div class="mask">
+                  <h2>28 REASONS (SEULGI, 2022)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/tlsp_EYCTE.jpg"
+                  alt="Everything You've Come to Expect"
+                />
+                <div class="mask">
+                  <h2>
+                    Everything You've Come to Expect (THE LAST SHADOW PUPPETS,
+                    2016)
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src="/WEBSITE/MUSIC/CDS/a1685718456_16.jpg"
+                  alt="From the New World"
+                />
+                <div class="mask">
+                  <h2>FROM THE NEW WORLD (ALLT, 2024)</h2>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 22 -->
+        <tr>
+          <td>
+            <div class="all">
+              <div class="view view-first">
+                <img
+                  src=""
+                  alt="Gorillaz"
+                />
+                <div class="mask">
+                  <h2></h2>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
       </table>
-   </div>
+    </div>
+  </body>
 </html>

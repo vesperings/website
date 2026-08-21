@@ -1,120 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>&#10032; OOTDS &#10032;</title>
-      <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-      <style>
-         body {
-         background: url("/WEBSITE/FASHION/OOTD/bg.gif") fixed;
-         color: red;
-         }
-         * {
-         cursor: url(/WEBSITE/cursor.png), auto !important;
-         }
-         h1 {
-         }  
-         .main, .main-first {
-         margin-top: 30px;
-         margin-left: 450px;
-         width: 500px;
-         border: 1px solid black;
-         background: black;
-         color: red;
-         padding: 15px 25px 15px 25px;
-         box-shadow: 7px 7px rgb(0, 0, 0, 0.8);
-         }
-         .sidebar {
-         position: fixed;
-         width: 350px;
-         min-height: 75px;
-         border: 1px solid black;
-         background: black;
-         margin-top:0px;
-         margin-left:25px;
-         /*The 7px is vertical and horizontal offset for the shadow, if you want to change it.*/
-         box-shadow: 7px 7px rgb(0, 0, 0, 0.78);
-         }
-         /*Prevent image overflow*/  
-         .main img, .main-first img, .sidebar img {
-         max-width: 100%;
-         height: 400px;
-         }
-         /*Text section in sidebar.*/  
-         .sidebar-description {
-         padding: 15px;
-         }
-         .button {
-         padding: 5px;
-         padding-left: 10px;
-         display: inline-block
-         }
-         .si
-         }
-         /*For narrow screens*/
-         @media (max-width: 1100px) {
-         .sidebar {
-         width: 275px;
-         margin-left: 10px;
-         }
-         .main, .main-first {
-         width: 420px;
-         margin-left: 315px;
-         }
-         }
-         /*Mobile compatibility.*/
-         @media (orientation: portrait) {
-         .sidebar {
-         margin: 0 auto;
-         position: static;
-         margin-top: 60px;
-         margin-bottom: 15px;
-         width: 90%;
-         }
-         .main, .main-first {
-         margin: 0 auto;
-         margin-top: 20px;
-         width: 80%;
-         }
-         .footer {
-         width: 80%;
-         padding: 5%;
-         margin: 0 auto;
-         }
-         .top-bar {
-         font-size: 13.5px;
-         letter-spacing: 4px;
-         font-size: 90%; /*To help reduce height if it overflows the first line.*/
-         }
-         }
-         a {
-         color: indianred;
-         }
-      </style>
-   </head>
-   <body>
-      <div class=sidebar>
-         <div class=sidebar-description>
-            <h1>VESPERINGS' OOTDS!</h1>
-            <p>This is essentially just an outfit diary. I don't have a "style" or "aesthetic", I just wear what I want when I want so don't expect anything inspirational lmao. Though I do tend to gravitate towards edgy/vintage pieces and a red/black colour scheme. 99% of the time every outfit is paired with a black mask, and I only ever really switch out my first lobe piercings while the rest remain the same, so I also don't include those in the collages.</p>
-         </div>
-      </div>
-      <div class=main>
-         <h2>DATE</h2>
-         <img src="/WEBSITE/FASHION/OOTD/LINK" align="left">
-         <p>Text</p>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&#10032; OOTDS &#10032;</title>
 
-      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
-         <source src=/WEBSITE/FASHION/OOTD/manic_street_preachers_sleepflower.mp3>
-      </audio>
-      <script>
-         document.addEventListener("visibilitychange", function() {
-           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
-         })
-      </script>
-   </body>
+    <style>
+      body {
+        background: url("/WEBSITE/FASHION/OOTD/bg.gif") fixed;
+        color: red;
+      }
+
+      * {
+        cursor: url("/WEBSITE/cursor.png"), auto !important;
+      }
+
+      .main,
+      .main-first {
+        margin-top: 30px;
+        margin-left: 450px;
+        width: 500px;
+        border: 1px solid black;
+        background: black;
+        color: red;
+        padding: 15px 25px;
+        box-shadow: 7px 7px rgba(0, 0, 0, 0.8);
+      }
+
+      .sidebar {
+        position: fixed;
+        width: 350px;
+        min-height: 75px;
+        border: 1px solid black;
+        background: black;
+        margin-top: 0;
+        margin-left: 25px;
+        box-shadow: 7px 7px rgba(0, 0, 0, 0.78);
+      }
+
+      /* Prevent image overflow */
+      .main img,
+      .main-first img,
+      .sidebar img {
+        max-width: 100%;
+        height: 400px;
+      }
+
+      /* Text section in sidebar */
+      .sidebar-description {
+        padding: 15px;
+      }
+
+      .button {
+        padding: 5px 5px 5px 10px;
+        display: inline-block;
+      }
+
+      /* For narrow screens */
+      @media (max-width: 1100px) {
+        .sidebar {
+          width: 275px;
+          margin-left: 10px;
+        }
+
+        .main,
+        .main-first {
+          width: 420px;
+          margin-left: 315px;
+        }
+      }
+
+      /* Mobile compatibility */
+      @media (orientation: portrait) {
+        .sidebar {
+          margin: 60px auto 15px;
+          position: static;
+          width: 90%;
+        }
+
+        .main,
+        .main-first {
+          margin: 20px auto 0;
+          width: 80%;
+        }
+
+        .footer {
+          width: 80%;
+          padding: 5%;
+          margin: 0 auto;
+        }
+
+        .top-bar {
+          font-size: 90%;
+          letter-spacing: 4px;
+        }
+      }
+
+      a {
+        color: indianred;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-description">
+        <h1>VESPERINGS' OOTDS!</h1>
+
+        <p>
+          This is essentially just an outfit diary. I don't have a "style" or
+          "aesthetic", I just wear what I want when I want so don't expect
+          anything inspirational lmao. Though I do tend to gravitate towards
+          edgy/vintage pieces and a red/black colour scheme. 99% of the time
+          every outfit is paired with a black mask, and I only ever really
+          switch out my first lobe piercings while the rest remain the same, so
+          I also don't include those in the collages.
+        </p>
+      </div>
+    </div>
+
+    <div class="main">
+      <h2>DATE</h2>
+
+      <img src="/WEBSITE/FASHION/OOTD/LINK" alt="OOTD" />
+
+      <p>Text</p>
+    </div>
+
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+    >
+      <source
+        src="/WEBSITE/FASHION/OOTD/manic_street_preachers_sleepflower.mp3"
+      />
+    </audio>
+
+    <script>
+      document.addEventListener("visibilitychange", function () {
+        const audio = document.getElementById("myAudio");
+
+        if (document.hidden) {
+          audio.pause();
+        } else {
+          audio.play();
+        }
+      });
+    </script>
+  </body>
 </html>

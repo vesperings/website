@@ -1,40 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>&#x2730; UNDER CONSTRUCTION &#x2730;</title>
-      <style>
-         body {
-         background-image: url('/WEBSITE/UNDER_CONSTRUCTION/dancebaby.gif');
-         }
-         * {
-         cursor: url(/WEBSITE/cursor.png),
-         auto !important;
-         }
-      </style>
-   </head>
-   <body>
-      <center>
-         <img src="/WEBSITE/UNDER_CONSTRUCTION/constructiongirl.gif" width="250px">
-         <br>
-         <img src="/WEBSITE/UNDER_CONSTRUCTION/sonicleft.gif">
-         <img src="/WEBSITE/UNDER_CONSTRUCTION/flamingtext.gif" width="700px">
-         <img src="/WEBSITE/UNDER_CONSTRUCTION/sonicright.gif">
-         <br>
-         <br>
-         <img src="/WEBSITE/UNDER_CONSTRUCTION/constructionline.gif">
-         <img src="/WEBSITE/UNDER_CONSTRUCTION/pudypetpet.gif" width="300px">
-         <img src="/WEBSITE/UNDER_CONSTRUCTION/constructionline.gif">
-         <br>
-      </center>
-   </body>
-   <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
-      <source src=/WEBSITE/UNDER_CONSTRUCTION/pukupukupowpow.mp3>
-   </audio>
-   <script>
-      document.addEventListener("visibilitychange", function() {
-        document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
-      })
-   </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&#x2730; UNDER CONSTRUCTION &#x2730;</title>
+
+    <style>
+      body {
+        background-image: url("/WEBSITE/UNDER_CONSTRUCTION/dancebaby.gif");
+      }
+
+      * {
+        cursor: url("/WEBSITE/cursor.png"), auto !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <img
+        src="/WEBSITE/UNDER_CONSTRUCTION/constructiongirl.gif"
+        width="250"
+        alt=""
+      />
+
+      <br />
+
+      <img src="/WEBSITE/UNDER_CONSTRUCTION/sonicleft.gif" alt="" />
+
+      <img
+        src="/WEBSITE/UNDER_CONSTRUCTION/flamingtext.gif"
+        width="700"
+        alt=""
+      />
+
+      <img src="/WEBSITE/UNDER_CONSTRUCTION/sonicright.gif" alt="" />
+
+      <br />
+      <br />
+
+      <img src="/WEBSITE/UNDER_CONSTRUCTION/constructionline.gif" alt="" />
+
+      <img
+        src="/WEBSITE/UNDER_CONSTRUCTION/pudypetpet.gif"
+        width="300"
+        alt=""
+      />
+
+      <img src="/WEBSITE/UNDER_CONSTRUCTION/constructionline.gif" alt="" />
+
+      <br />
+    </center>
+
+    <audio
+      id="myAudio"
+      autoplay
+      controls
+      loop
+      style="width: 0.1%; height: 0.1%"
+    >
+      <source
+        src="/WEBSITE/UNDER_CONSTRUCTION/pukupukupowpow.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <script>
+      var audio = document.getElementById("myAudio");
+
+      audio.volume = 0.3;
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          audio.pause();
+        } else {
+          audio.play();
+        }
+      });
+    </script>
+  </body>
 </html>

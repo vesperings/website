@@ -1,379 +1,517 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-   <head>
-      <title>&#10032; LISTFAUGRAPHY &#10032;</title>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="style.css" rel="stylesheet" type="text/css" />
-      <link href="dragula.css" rel="stylesheet" type="text/css" />
-      <script src="dragula.js"></script>
-      <script src="drag.js"></script>
-      <style>
-         :root {
-         /* Page background */
-         --background: black;
-         /* Universal text and link colors */
-         --color: white;
-         --link: #562607;
-         /* List background colors */
-         --color1: #580c1f;
-         --color5: #74121d;
-         --color2: #a7333f;
-         --color4: #a51c30;
-         --color3: #c52233;
-         /* Borders for each background color */
-         --color1border: white;
-         --color2border: white;
-         --color3border: white;
-         --color4border: white;
-         --color5border: white;
-         /* Header background and border */
-         --header: #580c1f;
-         --headerborder: white;
-         /* Scrollbars */
-         --scrollbg: #c52233;
-         --scrollcolor: #580c1f;
-         }
-         * {
-         margin: 0;
-         padding: 0;
-         scrollbar-color: var(--scrollcolor) var(--scrollbg);
-         }
-         body {
-         background-image: url(/WEBSITE/LISTS/BG4.png);
-         color: white;
-         font: 1.15rem var(--bodyfont);
-         line-height: 1.5;
-         }
-         /* Body text styles */
-         main ul {
-         list-style-position: outside;
-         margin-left: 20px;
-         line-height: 1.5;
-         }
-         p {
-         line-height: 1.5;
-         margin: 10px 0 10px 0;
-         }
-         a {
-         color: lightgrey;
-         }
-         /* Main header */
-         header#top {
-         width: 80%;
-         max-width: 1000px;
-         box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 3px;
-         background: var(--header);
-         border: 1px solid var(--headerborder);
-         margin: 25px auto;
-         border-radius: 5px;
-         }
-         header#top h1 {
-         font-size: 1.5em;
-         margin-bottom: 10px;
-         }
-         /* Header text */
-         #infocontainer {
-         padding: 20px;
-         min-height: 5.5em;
-         }
-         /* Header icon */
-         .header-icon {
-         margin-right: 20px;
-         border-radius: 5px;
-         height: 65px;
-         width: 65px;
-         float: left;
-         }
-         /* Menu */
-         nav {
-         margin-top: 10px;
-         border-top: 1px solid var(--headerborder);
-         font-size: 1rem;
-         }
-         nav ul {
-         list-style: none;
-         display: inline;
-         }
-         nav ul li {
-         display: inline-block;
-         width: 100px;
-         text-align: center;
-         padding: 6px 0;
-         border-left: 1px solid var(--headerborder);
-         }
-         nav ul li:first-child {
-         border: 0px;
-         }
-         nav a {
-         text-decoration: none;
-         }
-         nav a:hover {
-         text-decoration: underline;
-         }
-         /* Main content */
-         main {
-         margin: 40px 70px 0 70px;
-         display: grid;
-         grid-template-columns: repeat(3, 1fr);
-         }
-         /* Lists */
-         section {
-         margin: 20px;
-         box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 3px;
-         border: 1px solid;
-         border-radius: 5px;
-         padding: 15px;
-         }
-         /* List colors */
-         .color1 {
-         background: var(--color1);
-         border-color: var(--color1border);
-         & .listheader {
-         border-color: var(--color1border);
-         }
-         & .handle {
-         color: var(--color1border);
-         }
-         }
-         .color2 {
-         background: var(--color2);
-         border-color: var(--color2border);
-         & .listheader {
-         border-color: var(--color2border);
-         }
-         & .handle {
-         color: var(--color2border);
-         }
-         }
-         .color3 {
-         background: var(--color3);
-         border-color: var(--color3border);
-         & .listheader {
-         border-color: var(--color3border);
-         }
-         & .handle {
-         color: var(--color3border);
-         }
-         }
-         .color4 {
-         background: var(--color4);
-         border-color: var(--color4border);
-         & .listheader {
-         border-color: var(--color4border);
-         }
-         & .handle {
-         color: var(--color4border);
-         }
-         }
-         .color5 {
-         background: var(--color5);
-         border-color: var(--color5border);
-         & .listheader {
-         border-color: var(--color5border);
-         }
-         & .handle {
-         color: var(--color5border);
-         }
-         }
-         /* List titles */
-         header.listheader {
-         display: flex;
-         justify-content: space-between;
-         border-bottom: 0.5px solid;
-         padding-bottom: 5px;
-         margin-bottom: 10px;
-         }
-         h2 {
-         font-size: 1.1em;
-         }
-         h2 .subtitle {
-         font-weight: normal;
-         }
-         h2 a {
-         text-decoration: none;
-         color: var(--color);
-         }
-         h2 a:hover {
-         text-decoration: underline;
-         }
-         /* Drag handle */
-         .handle {
-         font-size: 1rem;
-         cursor: grab;
-         font-weight: bold;
-         }
-         /* List icons */
-         .listicon {
-         float: right;
-         margin: 0 0 5px 10px;
-         width: 80px;
-         height: 80px;
-         border-radius: 5px;
-         }
-         /* List content */
-         .listtext {
-         overflow: auto;
-         max-height: 300px;
-         padding: 10px;
-         }
-         /* List footers */
-         .foot {
-         font-size: 0.9em;
-         padding: 10px;
-         text-align: right;
-         }
-         .foot p {
-         margin: 0;
-         }
-         /* Main footer */
-         footer#bottom {
-         background: var(--header);
-         border: 1px solid var(--headerborder);
-         padding: 5px;
-         font-size: 1rem;
-         margin: 25px auto;
-         max-width: 700px;
-         width: 70%;
-         box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 3px;
-         text-align: center;
-         border-radius: 5px;
-         }
-         /* Phone stuff */
-         @media screen and (max-width: 899px) {
-         header#top {
-         width: calc(100% - 40px);
-         margin-top: 20px;
-         }
-         header#top h1 {
-         font-size: 1.4em;
-         }
-         main {
-         display: inline;
-         margin: auto;
-         width: calc(100% - 40px);
-         }
-         .listtext {
-         height: auto;
-         max-height: 250px;
-         }
-         .handle {
-         display: none;
-         }
-         .foot {
-         font-size: 0.85em;
-         }
-         h2 {
-         font-size: 1.2em;
-         }
-         footer#bottom {
-         width: 75%;
-         }
-         }
-      </style>
-   </head>
-   <body>
-      <div id="start"></div>
-      <header id="top">
-         <div id="infocontainer">
-            <h1>VESPERINGS' listfauxgraphy</h1>
-            <img src="" alt="" class="header-icon" /> <!-- Optional, feel free to delete -->
-            <p>A collection of lists until I make specifically dedicated pages for them, if ever.</p>
-         </div>
-         <nav>
+  <head>
+    <title>&#10032; LISTFAUGRAPHY &#10032;</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="dragula.css" rel="stylesheet" type="text/css" />
+
+    <script src="dragula.js"></script>
+    <script src="drag.js"></script>
+
+    <style>
+      :root {
+        /* Page background */
+        --background: black;
+
+        /* Universal text and link colors */
+        --color: white;
+        --link: #562607;
+
+        /* List background colors */
+        --color1: #580c1f;
+        --color5: #74121d;
+        --color2: #a7333f;
+        --color4: #a51c30;
+        --color3: #c52233;
+
+        /* Borders for each background color */
+        --color1border: white;
+        --color2border: white;
+        --color3border: white;
+        --color4border: white;
+        --color5border: white;
+
+        /* Header background and border */
+        --header: #580c1f;
+        --headerborder: white;
+
+        /* Scrollbars */
+        --scrollbg: #c52233;
+        --scrollcolor: #580c1f;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        scrollbar-color: var(--scrollcolor) var(--scrollbg);
+      }
+
+      body {
+        background-image: url(/WEBSITE/LISTS/BG4.png);
+        color: white;
+        font: 1.15rem var(--bodyfont);
+        line-height: 1.5;
+      }
+
+      /* Body text styles */
+
+      main ul {
+        list-style-position: outside;
+        margin-left: 20px;
+        line-height: 1.5;
+      }
+
+      p {
+        line-height: 1.5;
+        margin: 10px 0;
+      }
+
+      a {
+        color: lightgrey;
+      }
+
+      /* Main header */
+
+      header#top {
+        width: 80%;
+        max-width: 1000px;
+        box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 3px;
+        background: var(--header);
+        border: 1px solid var(--headerborder);
+        margin: 25px auto;
+        border-radius: 5px;
+      }
+
+      header#top h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      /* Header text */
+
+      #infocontainer {
+        padding: 20px;
+        min-height: 5.5em;
+      }
+
+      /* Header icon */
+
+      .header-icon {
+        margin-right: 20px;
+        border-radius: 5px;
+        height: 65px;
+        width: 65px;
+        float: left;
+      }
+
+      /* Menu */
+
+      nav {
+        margin-top: 10px;
+        border-top: 1px solid var(--headerborder);
+        font-size: 1rem;
+      }
+
+      nav ul {
+        list-style: none;
+        display: inline;
+      }
+
+      nav ul li {
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        padding: 6px 0;
+        border-left: 1px solid var(--headerborder);
+      }
+
+      nav ul li:first-child {
+        border: 0;
+      }
+
+      nav a {
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      /* Main content */
+
+      main {
+        margin: 40px 70px 0 70px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      /* Lists */
+
+      section {
+        margin: 20px;
+        box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 3px;
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 15px;
+      }
+
+      /* List colors */
+
+      .color1 {
+        background: var(--color1);
+        border-color: var(--color1border);
+      }
+
+      .color1 .listheader {
+        border-color: var(--color1border);
+      }
+
+      .color1 .handle {
+        color: var(--color1border);
+      }
+
+      .color2 {
+        background: var(--color2);
+        border-color: var(--color2border);
+      }
+
+      .color2 .listheader {
+        border-color: var(--color2border);
+      }
+
+      .color2 .handle {
+        color: var(--color2border);
+      }
+
+      .color3 {
+        background: var(--color3);
+        border-color: var(--color3border);
+      }
+
+      .color3 .listheader {
+        border-color: var(--color3border);
+      }
+
+      .color3 .handle {
+        color: var(--color3border);
+      }
+
+      .color4 {
+        background: var(--color4);
+        border-color: var(--color4border);
+      }
+
+      .color4 .listheader {
+        border-color: var(--color4border);
+      }
+
+      .color4 .handle {
+        color: var(--color4border);
+      }
+
+      .color5 {
+        background: var(--color5);
+        border-color: var(--color5border);
+      }
+
+      .color5 .listheader {
+        border-color: var(--color5border);
+      }
+
+      .color5 .handle {
+        color: var(--color5border);
+      }
+
+      /* List titles */
+
+      header.listheader {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 0.5px solid;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 1.1em;
+      }
+
+      h2 .subtitle {
+        font-weight: normal;
+      }
+
+      h2 a {
+        text-decoration: none;
+        color: var(--color);
+      }
+
+      h2 a:hover {
+        text-decoration: underline;
+      }
+
+      /* Drag handle */
+
+      .handle {
+        font-size: 1rem;
+        cursor: grab;
+        font-weight: bold;
+      }
+
+      /* List icons */
+
+      .listicon {
+        float: right;
+        margin: 0 0 5px 10px;
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+      }
+
+      /* List content */
+
+      .listtext {
+        overflow: auto;
+        max-height: 300px;
+        padding: 10px;
+      }
+
+      /* List footers */
+
+      .foot {
+        font-size: 0.9em;
+        padding: 10px;
+        text-align: right;
+      }
+
+      .foot p {
+        margin: 0;
+      }
+
+      /* Main footer */
+
+      footer#bottom {
+        background: var(--header);
+        border: 1px solid var(--headerborder);
+        padding: 5px;
+        font-size: 1rem;
+        margin: 25px auto;
+        max-width: 700px;
+        width: 70%;
+        box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 3px;
+        text-align: center;
+        border-radius: 5px;
+      }
+
+      /* Phone stuff */
+
+      @media screen and (max-width: 899px) {
+        header#top {
+          width: calc(100% - 40px);
+          margin-top: 20px;
+        }
+
+        header#top h1 {
+          font-size: 1.4em;
+        }
+
+        main {
+          display: inline;
+          margin: auto;
+          width: calc(100% - 40px);
+        }
+
+        .listtext {
+          height: auto;
+          max-height: 250px;
+        }
+
+        .handle {
+          display: none;
+        }
+
+        .foot {
+          font-size: 0.85em;
+        }
+
+        h2 {
+          font-size: 1.2em;
+        }
+
+        footer#bottom {
+          width: 75%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="start"></div>
+
+    <header id="top">
+      <div id="infocontainer">
+        <h1>VESPERINGS' listfauxgraphy</h1>
+
+        <img src="" alt="" class="header-icon" />
+
+        <p>
+          A collection of lists until I make specifically dedicated pages for
+          them, if ever.
+        </p>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="">main</a></li>
+          <li><a href="">ongoing</a></li>
+          <li><a href="">archive</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- FIRST COLUMN -->
+
+      <div class="column">
+        <section class="color2">
+          <header class="listheader">
+            <h2>
+              <a href="#">
+                things i have used my swiss army knife for
+                <span class="subtitle"></span>
+              </a>
+            </h2>
+
+            <span class="handle">&#172;</span>
+          </header>
+
+          <div class="listtext">
             <ul>
-               <li><a href="">main</a></li>
-               <li><a href="">ongoing</a></li>
-               <li><a href="">archive</a></li>
+              <li>opening parcels</li>
+              <li>scrapbooking</li>
+              <li>unscrewing the grill of a desk fan</li>
+              <li>cutting false lashes down to size</li>
+              <li>cutting out pages from my diary</li>
+              <li>changing the batteries on my cd player</li>
             </ul>
-         </nav>
-         </div>
-      </header>
-      <main>
-         <!-- FIRST COLUMN -->
-         <div class="column">
-         <section id="" class="color2">
-            <header class="listheader">
-               <h2><a href="#">things i have used my swiss army knife for<span class="subtitle"></span></a></h2>
-               <span class="handle">&#172;</span>
-            </header>
-            <div class="listtext">
-               <ul>
-                  <li>opening parcels</li>
-                  <li>scrapbooking</li>
-                  <li>unscrewing the grill of a desk fan</li>
-                  <li>cutting false lashes down to size</li>
-                  <li>cutting out pages from my diary</li>
-                  <li>changing the batteries on my cd player</li>
-               </ul>
-            </div>
-            <footer class="foot">
-               <p> april 08 2026 &infin;</p>
-               <p> august 08 2026 +</p>
-            </footer>
-         </section>
-         </div>
-         <!-- END FIRST COLUMN -->
-         <!-- SECOND COLUMN -->
-         <div class="column">
-         <section id="" class="color3">
-            <header class="listheader">
-               <h2><a href="#">concerts i have seen<span class="subtitle"></span></a></h2>
-               <span class="handle">&#172;</span>
-            </header>
-            <div class="listtext">
-               <ul>
-                  <li>nine inch nails: peel it back [o2 arena, london]</li>
-                  <li>sm town live 2025: the culture, the future [o2 arena, london]</li>
-                  <li>the neighbourhood: wourld tour [o2 arena, london]</li>
-               </ul>
-            </div>
-            <footer class="foot">
-               <p>april 02 2026 &infin;</p>
-               <p>june 26 2026 +</p>
-            </footer>
-         </section>
-         </div>
-         <!-- END SECOND COLUMN -->
-         <!-- THIRD COLUMN -->
-         <section id="" class="color4">
-            <header class="listheader">
-               <h2><a href="#">neocities to-do<span class="subtitle"></span></a></h2>
-               <span class="handle">&#172;</span>
-            </header>
-            <div class="listtext">
-               <ul>
-                  <li>add cyber pets to weebly shrine</li>
-                  <li>add games to weebly shrine</li>
-                  <li>remake poptropica shrine</li>
-                  <li>remake current cyber pets page</li>
-                  <li>make listfauxgraphy links functional</li>
-                  <li>make recipe page</li>
-                  <li>add more clothes to dress up page</li>
-                  <li>update film log</li>
-                  <li>update reading log</li>
-               </ul>
-            </div>
-            <footer class="foot">
-               <p> &infin;</p>
-               <p> +</p>
-            </footer>
-         </section>
-         </div>
-         <!-- END THIRD COLUMN -->
-      </main>
-      <!-- It would be nice if you didn't remove the links here, but I'm not your mom -->
-      <footer id="bottom">
-         <p>Original Listfauxgraphy concept by <a href="https://desertjaguar.casa" target="_blank">Desert Jaguar</a>, code by <a href="http://kalechips.net" target="_blank">Kalechips</a></p>
-         <p><a href="#start">Back to top</a></p>
-      </footer>
-      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
-         <source src=/WEBSITE/LISTS/tbgwnin.mp3>
-      </audio>
-      <script>
-         document.addEventListener("visibilitychange", function() {
-           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
-         })
-      </script>
-   </body>
+          </div>
+
+          <footer class="foot">
+            <p>april 08 2026 &infin;</p>
+            <p>august 08 2026 +</p>
+          </footer>
+        </section>
+      </div>
+
+      <!-- SECOND COLUMN -->
+
+      <div class="column">
+        <section class="color3">
+          <header class="listheader">
+            <h2>
+              <a href="#">
+                concerts i have seen
+                <span class="subtitle"></span>
+              </a>
+            </h2>
+
+            <span class="handle">&#172;</span>
+          </header>
+
+          <div class="listtext">
+            <ul>
+              <li>nine inch nails: peel it back [o2 arena, london]</li>
+              <li>
+                sm town live 2025: the culture, the future [o2 arena, london]
+              </li>
+              <li>the neighbourhood: wourld tour [o2 arena, london]</li>
+            </ul>
+          </div>
+
+          <footer class="foot">
+            <p>april 02 2026 &infin;</p>
+            <p>june 26 2026 +</p>
+          </footer>
+        </section>
+      </div>
+
+      <!-- THIRD COLUMN -->
+
+      <div class="column">
+        <section class="color4">
+          <header class="listheader">
+            <h2>
+              <a href="#">
+                neocities to-do
+                <span class="subtitle"></span>
+              </a>
+            </h2>
+
+            <span class="handle">&#172;</span>
+          </header>
+
+          <div class="listtext">
+            <ul>
+              <li>add cyber pets to weebly shrine</li>
+              <li>add games to weebly shrine</li>
+              <li>remake poptropica shrine</li>
+              <li>remake current cyber pets page</li>
+              <li>make listfauxgraphy links functional</li>
+              <li>make recipe page</li>
+              <li>add more clothes to dress up page</li>
+              <li>update film log</li>
+              <li>update reading log</li>
+            </ul>
+          </div>
+
+          <footer class="foot">
+            <p>&infin;</p>
+            <p>+</p>
+          </footer>
+        </section>
+      </div>
+
+      <!-- END THIRD COLUMN -->
+    </main>
+
+    <!-- It would be nice if you didn't remove the links here, but I'm not your mom -->
+
+    <footer id="bottom">
+      <p>
+        Original Listfauxgraphy concept by
+        <a href="https://desertjaguar.casa" target="_blank">Desert Jaguar</a>,
+        code by
+        <a href="http://kalechips.net" target="_blank">Kalechips</a>
+      </p>
+
+      <p>
+        <a href="#start">Back to top</a>
+      </p>
+    </footer>
+
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+    >
+      <source src="/WEBSITE/LISTS/tbgwnin.mp3" />
+    </audio>
+
+    <script>
+      const audio = document.getElementById("myAudio");
+
+      audio.volume = 0.3;
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          audio.pause();
+        } else {
+          audio.play();
+        }
+      });
+    </script>
+  </body>
 </html>

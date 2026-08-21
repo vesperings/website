@@ -1,322 +1,364 @@
-<!doctypehtml>
-<meta charset=UTF-8>
-<meta content="width=device-width,initial-scale=1" name=viewport>
+<!doctype html>
+<meta charset="UTF-8" />
+<meta content="width=device-width,initial-scale=1" name="viewport" />
 <title>&#10032; DREAM JOURNAL &#10032;</title>
-<link href=IMG-URL-FOR-FAVICON rel=icon type=image/x-icon>
 <style>
-   @font-face {
-   font-family: Vesperings;
-   src: url(/WEBSITE/vesperings.ttf);
-   }
-   * {
-   font-family: Vesperings;
-   }
-   html {
-   cursor: cell;
-   scrollbar-color: #e1d7d7 #000
-   }
-   * {
-   cursor: url(/WEBSITE/cursor.png),
-   auto !important;
-   }
-   body {
-   background-image: url(/WEBSITE/DREAM_JOURNAL/checker.gif);
-   margin: 0;
-   word-wrap: break-word;
-   font-size: 19px;
-   line-height: 25px;
-   word-spacing: 4px;
-   color: #000
-   }
-   mark {
-   background: #fafad2
-   }
-   #wrapper-index {
-   background: #161717;
-   position: relative;
-   margin: auto;
-   margin-top: 30px;
-   margin-bottom: 35px;
-   width: 1108px;
-   padding: 20px 10px 15px 10px;
-   border-radius: 20px;
-   border: 1px solid #000
-   }
-   #tab1-wrapper:after,
-   #tab2-wrapper:after,
-   #tab3-wrapper:after,
-   #tab4-wrapper:after,
-   #tab5-wrapper:after,
-   #tab6-wrapper:after,
-   #tab7-wrapper:after,
-   #tab8-wrapper:after {
-   content: url(https://files.catbox.moe/4v6k8c.png);
-   position: absolute;
-   z-index: 10;
-   transform: translate(-50%, -50%);
-   -ms-transform: translate(-50%, -50%);
-   top: 50%;
-   left: 50%;
-   pointer-events: none
-   }
-   .paper {
-   background: url(https://files.catbox.moe/evxip4.png);
-   z-index: 5;
-   position: relative;
-   display: inline-block;
-   box-sizing: border-box;
-   border: 1px solid #add8e6;
-   height: 600px
-   }
-   .left {
-   width: 490px;
-   margin-left: 50px;
-   margin-right: 10px;
-   border-radius: 10px 0 0 10px;
-   overflow: hidden
-   }
-   .left-in {
-   padding: 15px 10px 15px 25px;
-   height: 100%;
-   margin-right: 15px;
-   overflow: auto
-   }
-   .right {
-   padding: 15px 25px;
-   width: 490px;
-   margin-left: 10px;
-   border-radius: 0 10px 10px 0;
-   overflow: auto
-   }
-   .tab {
-   width: 590px;
-   height: 50px;
-   position: absolute;
-   transform: translate(-50%, -50%);
-   -ms-transform: translate(-50%, -50%);
-   rotate: -90deg;
-   top: -10px;
-   left: -232px
-   }
-   .tab2 {
-   width: 590px;
-   height: 50px;
-   position: absolute;
-   transform: translate(-50%, -50%);
-   -ms-transform: translate(-50%, -50%);
-   rotate: 90deg;
-   top: 590px;
-   right: -232px
-   }
-   .tab button,
-   .tab2 button {
-   z-index: 1;
-   position: relative;
-   vertical-align: top;
-   width: 120px;
-   margin: 0 8px;
-   padding: 10px 0 30px 0;
-   font-family: inherit;
-   border: none;
-   cursor: help;
-   font-size: 19px;
-   transition-duration: .5s;
-   top: 10px;
-   border-radius: 10px 10px 0 0;
-   border: 1px solid grey
-   }
-   .tab1-b {
-   background: #4b0101
-   }
-   .tab2-b {
-   background: #e1d7d7
-   }
-   .tab3-b {
-   background: #4b0101
-   }
-   .tab4-b {
-   background: #e1d7d7
-   }
-   .tab5-b {
-   background: #4b0101
-   }
-   .tab6-b {
-   background: #e1d7d7
-   }
-   .tab7-b {
-   background: #4b0101
-   }
-   .tab button:hover,
-   .tab2 button:hover {
-   top: 0;
-   cursor: -webkit-grab;
-   cursor: grab
-   }
-   .tab button.active,
-   .tab2 button.active {
-   top: 0;
-   cursor: -webkit-grabbing;
-   cursor: grabbing;
-   box-shadow: 1px 1px 20px 1px grey;
-   outline: 0
-   }
-   ::-webkit-scrollbar {
-   width: 8px;
-   height: 8px
-   }
-   ::-webkit-scrollbar-thumb:vertical {
-   background: #fff;
-   border: 1px solid #000;
-   border-radius: 10px
-   }
-   ::-webkit-scrollbar-thumb:horizontal {
-   background: #fff;
-   border: 1px solid #000;
-   border-radius: 10px
-   }
-   ::-webkit-scrollbar-track {
-   border-radius: 10px;
-   background: 0 0
-   }
+  @font-face {
+    font-family: Vesperings;
+    src: url(/WEBSITE/vesperings.ttf);
+  }
+  * {
+    font-family: Vesperings;
+  }
+  html {
+    cursor: cell;
+    scrollbar-color: #e1d7d7 #000;
+  }
+  * {
+    cursor: url(/WEBSITE/cursor.png), auto !important;
+  }
+  body {
+    background-image: url(/WEBSITE/DREAM_JOURNAL/checker.gif);
+    margin: 0;
+    word-wrap: break-word;
+    font-size: 19px;
+    line-height: 25px;
+    word-spacing: 4px;
+    color: #000;
+  }
+  mark {
+    background: #fafad2;
+  }
+  #wrapper-index {
+    background: #161717;
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    width: 1108px;
+    padding: 20px 10px 15px 10px;
+    border-radius: 20px;
+    border: 1px solid #000;
+  }
+  #tab1-wrapper:after,
+  #tab2-wrapper:after,
+  #tab3-wrapper:after,
+  #tab4-wrapper:after,
+  #tab5-wrapper:after,
+  #tab6-wrapper:after,
+  #tab7-wrapper:after,
+  #tab8-wrapper:after {
+    content: url(https://files.catbox.moe/4v6k8c.png);
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+  }
+  .paper {
+    background: url(https://files.catbox.moe/evxip4.png);
+    z-index: 5;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #add8e6;
+    height: 600px;
+  }
+  .left {
+    width: 490px;
+    margin-left: 50px;
+    margin-right: 10px;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+  }
+  .left-in {
+    padding: 15px 10px 15px 25px;
+    height: 100%;
+    margin-right: 15px;
+    overflow: auto;
+  }
+  .right {
+    padding: 15px 25px;
+    width: 490px;
+    margin-left: 10px;
+    border-radius: 0 10px 10px 0;
+    overflow: auto;
+  }
+  .tab {
+    width: 590px;
+    height: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    rotate: -90deg;
+    top: -10px;
+    left: -232px;
+  }
+  .tab2 {
+    width: 590px;
+    height: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    rotate: 90deg;
+    top: 590px;
+    right: -232px;
+  }
+  .tab button,
+  .tab2 button {
+    z-index: 1;
+    position: relative;
+    vertical-align: top;
+    width: 120px;
+    margin: 0 8px;
+    padding: 10px 0 30px 0;
+    font-family: inherit;
+    border: none;
+    cursor: help;
+    font-size: 19px;
+    transition-duration: 0.5s;
+    top: 10px;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid grey;
+  }
+  .tab1-b {
+    background: #4b0101;
+  }
+  .tab2-b {
+    background: #e1d7d7;
+  }
+  .tab3-b {
+    background: #4b0101;
+  }
+  .tab4-b {
+    background: #e1d7d7;
+  }
+  .tab5-b {
+    background: #4b0101;
+  }
+  .tab6-b {
+    background: #e1d7d7;
+  }
+  .tab7-b {
+    background: #4b0101;
+  }
+  .tab button:hover,
+  .tab2 button:hover {
+    top: 0;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  .tab button.active,
+  .tab2 button.active {
+    top: 0;
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+    box-shadow: 1px 1px 20px 1px grey;
+    outline: 0;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb:vertical {
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:horizontal {
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: 0 0;
+  }
 </style>
 <button class="font-toggle" onclick="toggleFont()">Click to change font</button>
 <style>
-   .font-toggle {
-   position: fixed;
-   top: 10px;
-   left: 10px;
-   z-index: 9999;
-   background-color: black;
-   color: red;
-   font-family: Garamond, serif;
-   padding: 10px 15px;
-   border: 1px solid red; 
-   cursor: pointer;
-   }
+  .font-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    background-color: black;
+    color: red;
+    font-family: Garamond, serif;
+    padding: 10px 15px;
+    border: 1px solid red;
+    cursor: pointer;
+  }
 </style>
 <script>
-   let fontChanged = false;
-   let styleEl;
-   
-   function toggleFont() {
-       if (!fontChanged) {
-           styleEl = document.createElement('style');
-           styleEl.id = "fontOverride";
-   
-           styleEl.innerHTML = `
+  let fontChanged = false;
+  let styleEl;
+
+  function toggleFont() {
+    if (!fontChanged) {
+      styleEl = document.createElement("style");
+      styleEl.id = "fontOverride";
+
+      styleEl.innerHTML = `
                * {
                    font-family: Garamond, serif !important;
                }
            `;
-   
-           document.head.appendChild(styleEl);
-           fontChanged = true;
-   
-       } else {
-           const existing = document.getElementById("fontOverride");
-           if (existing) existing.remove();
-   
-           fontChanged = false;
-       }
-   }
+
+      document.head.appendChild(styleEl);
+      fontChanged = true;
+    } else {
+      const existing = document.getElementById("fontOverride");
+      if (existing) existing.remove();
+
+      fontChanged = false;
+    }
+  }
 </script>
-<div id=wrapper-index>
-   <div class=tab><button class="tablinks tab4-b" onclick='openTab("tab4-wrapper")'>2029</button><button class="tablinks tab3-b" onclick='openTab("tab3-wrapper")'>2028</button><button class="tablinks tab2-b" onclick='openTab("tab2-wrapper")'>2027</button><button class="tablinks tab1-b" onclick='openTab("tab1-wrapper")'id=defaultOpen>2026</button></div>
-   <div class=tab2><button class="tablinks tab5-b" onclick='openTab("tab5-wrapper")'>2030</button><button class="tablinks tab6-b" onclick='openTab("tab6-wrapper")'>2031</button><button class="tablinks tab7-b" onclick='openTab("tab7-wrapper")'>2032</button><button class="tablinks tab8-b" onclick='openTab("tab8-wrapper")'>2033</button></div>
-   <div class=tabcontent id=tab1-wrapper>
-      <div class="paper left" id=tab1-p>
-         <br>
-         <br>
-         <a href="#15082026">Suicide Survivor Turned Incel</a>
-         <br>
-         <br>
-         <div class=left-in> 
-         </div>
+<div id="wrapper-index">
+  <div class="tab">
+    <button class="tablinks tab4-b" onclick="openTab('tab4-wrapper')">
+      2029</button
+    ><button class="tablinks tab3-b" onclick="openTab('tab3-wrapper')">
+      2028</button
+    ><button class="tablinks tab2-b" onclick="openTab('tab2-wrapper')">
+      2027</button
+    ><button
+      class="tablinks tab1-b"
+      onclick="openTab('tab1-wrapper')"
+      id="defaultOpen"
+    >
+      2026
+    </button>
+  </div>
+  <div class="tab2">
+    <button class="tablinks tab5-b" onclick="openTab('tab5-wrapper')">
+      2030</button
+    ><button class="tablinks tab6-b" onclick="openTab('tab6-wrapper')">
+      2031</button
+    ><button class="tablinks tab7-b" onclick="openTab('tab7-wrapper')">
+      2032</button
+    ><button class="tablinks tab8-b" onclick="openTab('tab8-wrapper')">
+      2033
+    </button>
+  </div>
+  <div class="tabcontent" id="tab1-wrapper">
+    <div class="paper left" id="tab1-p">
+      <br />
+      <br />
+      <a href="#15082026">Suicide Survivor Turned Incel</a>
+      <br />
+      <br />
+      <div class="left-in"></div>
+    </div>
+    <div class="paper right" id="tab1-p">
+      <div id="15082026">
+        <p>15-08-2026</p>
+        <p>
+          My family is hosting a lot of people, including, to my suprise Ash. I
+          have not seen him in years. He looks nothing like I expect him to,
+          younger and smaller than in my mind's eye. He is taking my room for
+          the night, and barges past me rudely. His voice is incredibly raspy,
+          and I wonder if it is a result of him swallowing bleach or pills in an
+          attempt to kill himself. I try to talk to him, but he shuns me,
+          muttering that he does not associate with "*** looking women", and an
+          array of other incel talking points. I am saddened to realise I have
+          lost this friendship.
+        </p>
       </div>
-      <div class="paper right" id=tab1-p>
-         <div id="15082026">
-            <p>15-08-2026</p>
-            <p>My family is hosting a lot of people, including, to my suprise Ash. I have not seen him in years. He looks nothing like I expect him to, younger and smaller than in my mind's eye. He is taking my room for the night, and barges past me rudely. His voice is incredibly raspy, and I wonder if it is a result of him swallowing bleach or pills in an attempt to kill himself. I try to talk to him, but he shuns me, muttering that he does not associate with "*** looking women", and an array of other incel talking points. I am saddened to realise I have lost this friendship.</p>
-         </div>
+    </div>
+  </div>
+  <div class="tabcontent" id="tab2-wrapper">
+    <div class="paper left" id="tab2-p">
+      <div class="left-in">
+        <a href="#"></a>
+        <br />
+        <br />
       </div>
-   </div>
-   <div class=tabcontent id=tab2-wrapper>
-      <div class="paper left" id=tab2-p>
-         <div class=left-in>
-            <a href="#"></a>
-            <br>
-            <br>
-         </div>
+    </div>
+    <div class="paper right" id="tab2-p">
+      <div id="">
+        <p>00-00-0000</p>
+        <p></p>
       </div>
-      <div class="paper right" id=tab2-p>
-         <div id="">
-            <p>00-00-0000</p>
-            <p></p>
-         </div>
+    </div>
+  </div>
+  <div class="tabcontent" id="tab3-wrapper">
+    <div class="paper left" id="tab3-p">
+      <div class="left-in">
+        <a href="#"></a>
+        <br />
+        <br />
       </div>
-   </div>
-   <div class=tabcontent id=tab3-wrapper>
-      <div class="paper left" id=tab3-p>
-         <div class=left-in>
-            <a href="#"></a>
-            <br>
-            <br>           
-         </div>
+    </div>
+    <div class="paper right" id="tab3-p">
+      <div id="">
+        <p>00-00-0000</p>
+        <p></p>
       </div>
-      <div class="paper right" id=tab3-p>
-         <div id="">
-            <p>00-00-0000</p>
-            <p></p>
-         </div>
-      </div>
-   </div>
-   <div class=tabcontent id=tab4-wrapper>
-      <div class="paper left" id=tab4-p>
-         <div class=left-in></div>
-      </div>
-      <div class="paper right" id=tab4-p></div>
-   </div>
-   <div class=tabcontent id=tab5-wrapper>
-      <div class="paper left" id=tab5-p>
-         <div class=left-in></div>
-      </div>
-      <div class="paper right" id=tab5-p></div>
-   </div>
-   <div class=tabcontent id=tab6-wrapper>
-      <div class="paper left" id=tab6-p>
-         <div class=left-in></div>
-      </div>
-      <div class="paper right" id=tab6-p></div>
-   </div>
-   <div class=tabcontent id=tab7-wrapper>
-      <div class="paper left" id=tab7-p>
-         <div class=left-in></div>
-      </div>
-      <div class="paper right" id=tab7-p></div>
-   </div>
-   <div class=tabcontent id=tab8-wrapper>
-      <div class="paper left" id=tab8-p>
-         <div class=left-in></div>
-      </div>
-      <div class="paper right" id=tab8-p></div>
-   </div>
+    </div>
+  </div>
+  <div class="tabcontent" id="tab4-wrapper">
+    <div class="paper left" id="tab4-p">
+      <div class="left-in"></div>
+    </div>
+    <div class="paper right" id="tab4-p"></div>
+  </div>
+  <div class="tabcontent" id="tab5-wrapper">
+    <div class="paper left" id="tab5-p">
+      <div class="left-in"></div>
+    </div>
+    <div class="paper right" id="tab5-p"></div>
+  </div>
+  <div class="tabcontent" id="tab6-wrapper">
+    <div class="paper left" id="tab6-p">
+      <div class="left-in"></div>
+    </div>
+    <div class="paper right" id="tab6-p"></div>
+  </div>
+  <div class="tabcontent" id="tab7-wrapper">
+    <div class="paper left" id="tab7-p">
+      <div class="left-in"></div>
+    </div>
+    <div class="paper right" id="tab7-p"></div>
+  </div>
+  <div class="tabcontent" id="tab8-wrapper">
+    <div class="paper left" id="tab8-p">
+      <div class="left-in"></div>
+    </div>
+    <div class="paper right" id="tab8-p"></div>
+  </div>
 </div>
 <script>
-   function openTab(e) {
-     var t, n = document.getElementById(e),
-       l = document.getElementsByClassName("tabcontent"),
-       a = (document.getElementById("defaultOpen"), document.getElementsByClassName("tablinks"));
-     for (t = 0; t < l.length; t++) l[t].style.display = "none";
-     for (t = 0; t < a.length; t++) a[t].classList.remove("active");
-     n.style.display = "block", event.currentTarget.className += " active"
-   }
-   document.getElementById("defaultOpen").click()
+  function openTab(e) {
+    var t,
+      n = document.getElementById(e),
+      l = document.getElementsByClassName("tabcontent"),
+      a =
+        (document.getElementById("defaultOpen"),
+        document.getElementsByClassName("tablinks"));
+    for (t = 0; t < l.length; t++) l[t].style.display = "none";
+    for (t = 0; t < a.length; t++) a[t].classList.remove("active");
+    ((n.style.display = "block"), (event.currentTarget.className += " active"));
+  }
+  document.getElementById("defaultOpen").click();
 </script>
-<audio id=myAudio autoplay controls loop style=width:.1%;height:.1% volume=0.3>
-   <source src="/WEBSITE/DREAM_JOURNAL/KUCHUBURANKO.mp3">
+<audio
+  id="myAudio"
+  autoplay
+  controls
+  loop
+  style="width: 0.1%; height: 0.1%"
+  volume="0.3"
+>
+  <source src="/WEBSITE/DREAM_JOURNAL/KUCHUBURANKO.mp3" />
 </audio>
 <script>
-   document.addEventListener("visibilitychange", (function() {
-     document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
-   }))
+  document.addEventListener("visibilitychange", function () {
+    document.hidden
+      ? document.getElementById("myAudio").pause()
+      : document.getElementById("myAudio").play();
+  });
 </script>

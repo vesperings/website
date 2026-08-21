@@ -1,4 +1,4 @@
-const img_array = Array.from({ length: 135 }, (_, index) => ({
+const img_array = Array.from({ length: 26 }, (_, index) => ({
   src: `/WEBSITE/PHOTOS/DIGICAM/PHOTOS/${index + 1}.JPG`,
 }));
 

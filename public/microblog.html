@@ -1,341 +1,471 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-   <head>
-      <meta charset="UTF-8">
-      <title>&#10032; MICROBLOG &#10032;</title>
-      <meta name="viewport" content="width=device-width,initial-scale=1.0">
-      <style>
-         * {
-         cursor: url(/WEBSITE/cursor.png),
-         auto !important;
-         }
-         :root {
-         --background: #000;
-         --borders: #4b0101;
-         --text: red;
-         --alt-text: red;
-         --accent: #4b0101;
-         --verified: none;
-         /* CHANGE TO block IF VERIFIED USER */
-         --profile-pic: url(/WEBSITE/MICROBLOG/pfp.jpg)center;
-         /* MUST BE AT LEAST 134px by 134px; any size/dimension at or above that will work */
-         --header-bg: url(/WEBSITE/MICROBLOG/header.jpg)center;
-         /* MUST BE AT LEAST 600px by 200px; any size/dimension at or above that will work */
-         }
-         /* GENERAL */
-         ::selection {
-         background: var(--accent);
-         color: var(--lightest);
-         }
-         ::-moz-selection {
-         background: var(--accent);
-         color: var(--lightest);
-         }
-         * {
-         box-sizing: border-box;
-         }
-         html {
-         background: var(--accent);
-         }
-         body {
-         margin: 0;
-         background: url(/WEBSITE/MICROBLOG/glitterbats.gif)center fixed;
-         background-size: 200px;
-         color: var(--text);
-         font-size: 14px;
-         min-height: 100vh;
-         line-height: 2;
-         }
-         img {
-         max-width: 100%;
-         }
-         h1,
-         h2,
-         h3,
-         h4,
-         h5,
-         h6 {
-         margin: 0;
-         }
-         a {
-         text-decoration: none;
-         color: var(--accent);
-         -webkit-transition: all 0.5s ease-in-out;
-         -moz-transition: all 0.5s ease-in-out;
-         -ms-transition: all 0.5s ease-in-out;
-         -o-transition: all 0.5s ease-in-out;
-         transition: all 0.5s ease-in-out;
-         }
-         a:hover {
-         color: var(--accent);
-         }
-         .alt {
-         color: var(--alt-text);
-         }
-         #credit {
-         position: fixed;
-         left: 10px;
-         bottom: 10px;
-         display: block;
-         font-weight: bold;
-         font-size: 8px;
-         text-transform: uppercase;
-         letter-spacing: 3px;
-         writing-mode: vertical-rl;
-         transform: rotate(180deg);
-         white-space: nowrap;
-         color: #fff;
-         }
-         /* CONTAINER */
-         #twitter {
-         width: 600px;
-         margin: 0 auto;
-         background: var(--background);
-         border: 1px solid var(--borders);
-         border-bottom: none;
-         color: var(--text);
-         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
-         }
-         .verified {
-         margin: 0 0 0 3px;
-         display: var(--verified);
-         }
-         /* HEADER */
-         #profile-header {
-         height: 200px;
-         background: var(--borders) var(--header-bg);
-         background-size: cover;
-         display: flex;
-         align-items: flex-end;
-         }
-         #profile-pic {
-         width: 134px;
-         height: 134px;
-         margin: 0 0 calc((134px / 2) * -1) 15px;
-         background: var(--accent) var(--profile-pic);
-         background-size: cover;
-         border-radius: 100%;
-         border: 2px solid var(--background);
-         }
-         #follow {
-         background: var(--accent);
-         color: #fff;
-         margin: 0 15px -54px auto;
-         padding: 0 25px;
-         height: 39px;
-         line-height: 39px;
-         border-radius: 30px;
-         }
-         /* PROFILE */
-         #profile {
-         padding: calc((134px / 2) + 10px) 15px 15px 15px;
-         line-height: 1.2;
-         }
-         #display-name {
-         font-size: 18px;
-         display: flex;
-         align-items: center;
-         }
-         #bio {
-         margin: 10px 0;
-         }
-         #account-details {
-         margin: 10px 0;
-         display: flex;
-         align-items: center;
-         flex-wrap: wrap;
-         }
-         #account-details img {
-         margin: 0 5px;
-         }
-         #account-details img:first-of-type,
-         #account-details img:last-of-type {
-         margin: 0 5px 0 0;
-         }
-         #divide {
-         width: 100%;
-         height: 5px;
-         }
-         /* VIEWBAR */
-         #viewbar {
-         display: flex;
-         align-items: center;
-         text-align: center;
-         height: 52px;
-         border-bottom: 1px solid var(--borders);
-         }
-         .selected {
-         border-bottom: 3px solid var(--accent);
-         color: var(--accent);
-         }
-         .option {
-         height: 49px;
-         line-height: 52px;
-         width: 100%;
-         margin: 0 0 -1px 0;
-         }
-         /* TWEETS */
-         .tweet {
-         padding: 15px;
-         border-bottom: 1px solid var(--borders);
-         display: flex;
-         justify-content: space-between;
-         flex-wrap: wrap;
-         }
-         .pfp {
-         width: 49px;
-         height: 49px;
-         margin: 0;
-         background: var(--accent) var(--profile-pic);
-         background-size: cover;
-         border-radius: 100%;
-         }
-         .t-body {
-         width: calc(100% - 49px - 10px);
-         }
-         .t-head {
-         display: flex;
-         align-items: center;
-         }
-         .user-time {
-         color: var(--alt-text);
-         margin: 0 0 0 5px;
-         }
-         .options {
-         margin: 0 0 0 auto;
-         }
-         .t-footer {
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         color: var(--alt-text);
-         font-size: 12px;
-         margin: 10px 0 0 0;
-         }
-         .stat {
-         margin: 0 auto 0 5px;
-         }
-         .share {
-         margin: 0 auto 0 0;
-         }
-         .sm-head {
-         width: 100%;
-         margin: 0 0 5px 40px;
-         font-size: 11px;
-         color: var(--alt-text);
-         display: flex;
-         align-items: center;
-         }
-         .sm-head img {
-         margin: 0 5px 0 0;
-         }
-         /* PINNED TWEET */
-         .pinned {
-         margin: 0 0 10px 0;
-         box-shadow: 0 10px 0 0 var(--borders);
-         }
-      </style>
-   </head>
-   <body>
-      <article id="twitter">
-         <header id="profile-header">
-            <div id="profile-pic"></div>
-            <b id="follow">Follow</b>
-         </header>
-         <main id="profile">
-            <h1 id="display-name">🥀🕯️🦇🦢</h1>
-            <div class="alt">@vesperings</div>
-            <div id="bio">voidposting. <br>excerpts from my diary and other musings. </div>
-            <div id="account-details">
-               <img src="/WEBSITE/MICROBLOG/location.png"> Aleka's Attic <img src="/WEBSITE/MICROBLOG/link.png">
-               <a href="/index">vesperings.com</a>
-               <img src="/WEBSITE/MICROBLOG/birth.png"> Born October 31 <span id="divide"></span>
-               <img src="/WEBSITE/MICROBLOG/joined.png"> Joined October 2024
-            </div>
-            <b>69</b>
-            <span class="alt">Following</span>
-            <b>127</b>
-            <span class="alt">Followers</span>
-         </main>
-         <nav id="viewbar">
-            <b class="selected option">Tweets</b>
-            <b class="option">Tweets & Replies</b>
-            <b class="option">Media</b>
-            <b class="option">Likes</b>
-         </nav>
-         <section class="pinned tweet">
-            <div class="sm-head">
-               <img src="/WEBSITE/MICROBLOG/pinned.png"> Pinned Tweet
-            </div>
-            <div class="pfp"></div>
-            <main class="t-body">
-               <header class="t-head">
-                  <b>🥀🕯️🦇🦢🍒</b>
-                  <div class="user-time">@vesperings · Mar 16 2025</div>
-               </header>
-               <img src="/WEBSITE/MICROBLOG/pinned.gif">
-               <footer class="t-footer">
-                  <img src="/WEBSITE/MICROBLOG/comment.png">
-                  <div class="stat"></div>
-                  <img src="/WEBSITE/MICROBLOG/retweet.png">
-                  <div class="stat"></div>
-                  <img src="/WEBSITE/MICROBLOG/like.png">
-                  <div class="stat"></div>
-                  <img src="/WEBSITE/MICROBLOG/share.png" class="share">
-               </footer>
-            </main>
-            </main>
-         </section>
-        <section class="tweet">
-            <div class="pfp"></div>
-            <main class="t-body">
-            <header class="t-head">
-               <b>🥀🕯️🦇🦢🍒</b>
-               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
-               <div class="user-time">@vesperings · Aug 18 2026</div>
-               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
-            </header>
-            When I say I am allergic to the sun I am afraid I mean that quite literally. The moment day breaks I am seized by a fit of sneezes and hayfever. I am such a cliche it pains me.
-            <footer class="t-footer">
-               <img src="/WEBSITE/MICROBLOG/comment.png">
-               <div class="stat"></div>
-               <img src="/WEBSITE/MICROBLOG/retweet.png">
-               <div class="stat"></div>
-               <img src="/WEBSITE/MICROBLOG/like.png">
-               <div class="stat"></div>
-               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
-            </footer>
-         </section>
-        <section class="tweet">
-            <div class="pfp"></div>
-            <main class="t-body">
-            <header class="t-head">
-               <b>🥀🕯️🦇🦢🍒</b>
-               <img src="https://i.imgur.com/TWmRW2c.png" class="verified">
-               <div class="user-time">@vesperings · Aug 17 2026</div>
-               <img src="/WEBSITE/MICROBLOG/options.png" class="options">
-            </header>
-            Ana&#239s Nine Inch Nails.
-            <footer class="t-footer">
-               <img src="/WEBSITE/MICROBLOG/comment.png">
-               <div class="stat"></div>
-               <img src="/WEBSITE/MICROBLOG/retweet.png">
-               <div class="stat"></div>
-               <img src="/WEBSITE/MICROBLOG/like.png">
-               <div class="stat"></div>
-               <img src="/WEBSITE/MICROBLOG/share.png" class="share">
-            </footer>
-         </section>
-      </article>
-      <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
-         <source src=/WEBSITE/MICROBLOG/nbhd_hatemachine.mp3>
-      </audio>
-      <script>
-         document.addEventListener("visibilitychange", function() {
-           document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
-         })
-      </script>
-      <!-- CREDIT - DO NOT REMOVE -->
-      <a href="http://tessisamess.insanejournal.com/" id="credit">TESSISAMESS</a>
-   </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>&#10032; MICROBLOG &#10032;</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        cursor: url(/WEBSITE/cursor.png), auto !important;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --background: #000;
+        --borders: #4b0101;
+        --text: red;
+        --alt-text: red;
+        --accent: #4b0101;
+        --verified: none;
+        /* CHANGE TO block IF VERIFIED USER */
+        --profile-pic: url(/WEBSITE/MICROBLOG/pfp.jpg) center;
+        /* MUST BE AT LEAST 134px by 134px */
+        --header-bg: url(/WEBSITE/MICROBLOG/header.jpg) center;
+        /* MUST BE AT LEAST 600px by 200px */
+      }
+
+      /* GENERAL */
+
+      ::selection {
+        background: var(--accent);
+        color: var(--lightest);
+      }
+
+      ::-moz-selection {
+        background: var(--accent);
+        color: var(--lightest);
+      }
+
+      html {
+        background: var(--accent);
+      }
+
+      body {
+        margin: 0;
+        background: url(/WEBSITE/MICROBLOG/glitterbats.gif) center fixed;
+        background-size: 200px;
+        color: var(--text);
+        font-size: 14px;
+        min-height: 100vh;
+        line-height: 2;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--accent);
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+      }
+
+      a:hover {
+        color: var(--accent);
+      }
+
+      .alt {
+        color: var(--alt-text);
+      }
+
+      #credit {
+        position: fixed;
+        left: 10px;
+        bottom: 10px;
+        display: block;
+        font-weight: bold;
+        font-size: 8px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        white-space: nowrap;
+        color: #fff;
+      }
+
+      /* CONTAINER */
+
+      #twitter {
+        width: 600px;
+        margin: 0 auto;
+        background: var(--background);
+        border: 1px solid var(--borders);
+        border-bottom: none;
+        color: var(--text);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+      }
+
+      .verified {
+        margin: 0 0 0 3px;
+        display: var(--verified);
+      }
+
+      /* HEADER */
+
+      #profile-header {
+        height: 200px;
+        background: var(--borders) var(--header-bg);
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      #profile-pic {
+        width: 134px;
+        height: 134px;
+        margin: 0 0 calc((134px / 2) * -1) 15px;
+        background: var(--accent) var(--profile-pic);
+        background-size: cover;
+        border-radius: 100%;
+        border: 2px solid var(--background);
+      }
+
+      #follow {
+        background: var(--accent);
+        color: #fff;
+        margin: 0 15px -54px auto;
+        padding: 0 25px;
+        height: 39px;
+        line-height: 39px;
+        border-radius: 30px;
+      }
+
+      /* PROFILE */
+
+      #profile {
+        padding: calc((134px / 2) + 10px) 15px 15px 15px;
+        line-height: 1.2;
+      }
+
+      #display-name {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+      }
+
+      #bio {
+        margin: 10px 0;
+      }
+
+      #account-details {
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      #account-details img {
+        margin: 0 5px;
+      }
+
+      #account-details img:first-of-type,
+      #account-details img:last-of-type {
+        margin: 0 5px 0 0;
+      }
+
+      #divide {
+        width: 100%;
+        height: 5px;
+      }
+
+      /* VIEWBAR */
+
+      #viewbar {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: 52px;
+        border-bottom: 1px solid var(--borders);
+      }
+
+      .selected {
+        border-bottom: 3px solid var(--accent);
+        color: var(--accent);
+      }
+
+      .option {
+        height: 49px;
+        line-height: 52px;
+        width: 100%;
+        margin: 0 0 -1px 0;
+      }
+
+      /* TWEETS */
+
+      .tweet {
+        padding: 15px;
+        border-bottom: 1px solid var(--borders);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .pfp {
+        width: 49px;
+        height: 49px;
+        margin: 0;
+        background: var(--accent) var(--profile-pic);
+        background-size: cover;
+        border-radius: 100%;
+      }
+
+      .t-body {
+        width: calc(100% - 49px - 10px);
+      }
+
+      .t-head {
+        display: flex;
+        align-items: center;
+      }
+
+      .user-time {
+        color: var(--alt-text);
+        margin: 0 0 0 5px;
+      }
+
+      .options {
+        margin: 0 0 0 auto;
+      }
+
+      .t-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--alt-text);
+        font-size: 12px;
+        margin: 10px 0 0 0;
+      }
+
+      .stat {
+        margin: 0 auto 0 5px;
+      }
+
+      .share {
+        margin: 0 auto 0 0;
+      }
+
+      .sm-head {
+        width: 100%;
+        margin: 0 0 5px 40px;
+        font-size: 11px;
+        color: var(--alt-text);
+        display: flex;
+        align-items: center;
+      }
+
+      .sm-head img {
+        margin: 0 5px 0 0;
+      }
+
+      /* PINNED TWEET */
+
+      .pinned {
+        margin: 0 0 10px 0;
+        box-shadow: 0 10px 0 0 var(--borders);
+      }
+    </style>
+  </head>
+
+  <body>
+    <article id="twitter">
+      <header id="profile-header">
+        <div id="profile-pic"></div>
+        <b id="follow">Follow</b>
+      </header>
+
+      <main id="profile">
+        <h1 id="display-name">🥀🕯️🦇🦢</h1>
+
+        <div class="alt">@vesperings</div>
+
+        <div id="bio">
+          voidposting.<br />
+          excerpts from my diary and other musings.
+        </div>
+
+        <div id="account-details">
+          <img src="/WEBSITE/MICROBLOG/location.png" alt="" />
+          Aleka's Attic
+
+          <img src="/WEBSITE/MICROBLOG/link.png" alt="" />
+          <a href="/index">vesperings.com</a>
+
+          <img src="/WEBSITE/MICROBLOG/birth.png" alt="" />
+          Born October 31
+
+          <span id="divide"></span>
+
+          <img src="/WEBSITE/MICROBLOG/joined.png" alt="" />
+          Joined October 2024
+        </div>
+
+        <b>69</b>
+        <span class="alt">Following</span>
+
+        <b>127</b>
+        <span class="alt">Followers</span>
+      </main>
+
+      <nav id="viewbar">
+        <b class="selected option">Tweets</b>
+        <b class="option">Tweets &amp; Replies</b>
+        <b class="option">Media</b>
+        <b class="option">Likes</b>
+      </nav>
+
+      <!-- PINNED TWEET -->
+
+      <section class="pinned tweet">
+        <div class="sm-head">
+          <img src="/WEBSITE/MICROBLOG/pinned.png" alt="" />
+          Pinned Tweet
+        </div>
+
+        <div class="pfp"></div>
+
+        <main class="t-body">
+          <header class="t-head">
+            <b>🥀🕯️🦇🦢🍒</b>
+            <div class="user-time">@vesperings · Mar 16 2025</div>
+          </header>
+
+          <img src="/WEBSITE/MICROBLOG/pinned.gif" alt="" />
+
+          <footer class="t-footer">
+            <img src="/WEBSITE/MICROBLOG/comment.png" alt="" />
+            <div class="stat"></div>
+
+            <img src="/WEBSITE/MICROBLOG/retweet.png" alt="" />
+            <div class="stat"></div>
+
+            <img src="/WEBSITE/MICROBLOG/like.png" alt="" />
+            <div class="stat"></div>
+
+            <img src="/WEBSITE/MICROBLOG/share.png" class="share" alt="" />
+          </footer>
+        </main>
+      </section>
+
+      <!-- TWEET -->
+
+      <section class="tweet">
+        <div class="pfp"></div>
+
+        <main class="t-body">
+          <header class="t-head">
+            <b>🥀🕯️🦇🦢🍒</b>
+            <img
+              src="https://i.imgur.com/TWmRW2c.png"
+              class="verified"
+              alt="Verified"
+            />
+
+            <div class="user-time">@vesperings · Aug 18 2026</div>
+
+            <img
+              src="/WEBSITE/MICROBLOG/options.png"
+              class="options"
+              alt="Options"
+            />
+          </header>
+
+          When I say I am allergic to the sun I am afraid I mean that quite
+          literally. The moment day breaks I am seized by a fit of sneezes and
+          hayfever. I am such a cliche it pains me.
+
+          <footer class="t-footer">
+            <img src="/WEBSITE/MICROBLOG/comment.png" alt="" />
+            <div class="stat"></div>
+
+            <img src="/WEBSITE/MICROBLOG/retweet.png" alt="" />
+            <div class="stat"></div>
+
+            <img src="/WEBSITE/MICROBLOG/like.png" alt="" />
+            <div class="stat"></div>
+
+            <img src="/WEBSITE/MICROBLOG/share.png" class="share" alt="" />
+          </footer>
+        </main>
+      </section>
+
+      <!-- TWEET -->
+
+      <section class="tweet">
+        <div class="pfp"></div>
+
+        <main class="t-body">
+          <header class="t-head">
+            <b>🥀🕯️🦇🦢🍒</b>
+            <img
+              src="https://i.imgur.com/TWmRW2c.png"
+              class="verified"
+              alt="Verified"
+            />
+
+            <div class="user-time">@vesperings · Aug 17 2026</div>
+
+            <img
+              src="/WEBSITE/MICROBLOG/options.png"
+              class="options"
+              alt="Options"
+            />
+          </header>
+
+          Ana&#239;s Nine Inch Nails.
+
+          <footer class="t-footer">
+            <img src="/WEBSITE/MICROBLOG/comment.png" alt="" />
+            <div class="stat"></div>
+
+            <img src="/WEBSITE/MICROBLOG/retweet.png" alt="" />
+            <div class="stat"></div>
+
+            <img src="/WEBSITE/MICROBLOG/like.png" alt="" />
+            <div class="stat"></div>
+
+            <img src="/WEBSITE/MICROBLOG/share.png" class="share" alt="" />
+          </footer>
+        </main>
+      </section>
+    </article>
+
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+    >
+      <source src="/WEBSITE/MICROBLOG/nbhd_hatemachine.mp3" />
+    </audio>
+
+    <script>
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          document.getElementById("myAudio").pause();
+        } else {
+          document.getElementById("myAudio").play();
+        }
+      });
+    </script>
+
+    <!-- CREDIT - DO NOT REMOVE -->
+    <a href="http://tessisamess.insanejournal.com/" id="credit">
+      TESSISAMESS
+    </a>
+  </body>
 </html>
