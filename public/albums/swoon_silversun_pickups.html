@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&#x2730; SWOON (SILVERSUN PICKUPS) &#x2730;</title>
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        color: red;
+        background-color: black;
+        background-image: url("/WEBSITE/ALBUMS/background.gif");
+        padding-left: 150px;
+        padding-right: 150px;
+      }
+
+      .content-box {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px 32px;
+        background-color: rgba(0, 0, 0, 0.75);
+        box-sizing: border-box;
+      }
+
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .recordPlayer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+      }
+
+      .cd {
+        height: 275px;
+        margin-left: 300px;
+        padding: 10px;
+        animation: spin 1.88s linear infinite;
+        position: absolute;
+      }
+
+      .cdCover {
+        height: 300px;
+        position: relative;
+        z-index: 1;
+        margin-right: 55px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+    >
+      <source src="/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/sort_of.mp3" />
+    </audio>
+
+    <script>
+      const audio = document.getElementById("myAudio");
+      audio.volume = 0.3;
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          audio.pause();
+        } else {
+          audio.play();
+        }
+      });
+    </script>
+
+    <div style="text-align: center">
+      <h1 style="color: white">Swoon</h1>
+      <h2 style="color: white">Silversun Pickups</h2>
+
+      <br />
+
+      <div class="recordPlayer">
+        <img
+          class="cd"
+          src="/WEBSITE/ALBUMS/swoon_silversun_pickups_cd.png"
+          alt=""
+        />
+
+        <img
+          class="cdCover"
+          src="/WEBSITE/ALBUMS/swoon_silversun_pickups_jewelcase.png"
+          alt=""
+        />
+      </div>
+
+      <br />
+
+      <div class="content-box">
+        <h2>My Review</h2>
+
+        <p>
+          It has been a while since I have sought out new music, let alone
+          discovered any organically, and am glad to have found this album. It
+          is nice to come across new (to me) music as an adult because it helps
+          me understand what I actually enjoy as opposed to what I like because
+          of nostalgic and sentimental reasons. <i>Swoon</i> is a perfect
+          sountrackalbum, the type of thing that plays in my headphones when I
+          want to evoke a mood rather than listen to something specific. The
+          general cohesion of the album works great to this effect without
+          getting so repetetive it feels boring. I like the instrumentals and
+          lyrics a lot, and the vocals really bring it all together perfectly.
+          The vocalist is vaguely (very vaguely) reminiscent of Vic Fuentes or
+          Kellin Quinn, oweing to a similar youthful androgyny, which
+          vompliments the instrumental and prevents the album feeling generic. I
+          am struggling to distinguish between several of the softer tracks at
+          the moment, though I think I just need to listen again a few more
+          times.
+        </p>
+
+        <br />
+
+        <h2>Favourite Tracks</h2>
+
+        <ul>
+          <li>Sort Of</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

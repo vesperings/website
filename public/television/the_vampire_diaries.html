@@ -1,252 +1,398 @@
-<HTML>
-   <!doctypehtml>
-   <meta charset="UTF-8">
-   <meta content="width=device-width,initial-scale=1" name="viewport">
-   <title>&#x2606; THE VAMPIRE DIARIES &#x2606;</title>
-   <style>* {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-      }
-      .block-1 {
-      flex-grow: 2;
-      flex-basis: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      row-gap: 10px;
-      background-color: #3a453d;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow-y: auto;
-      }
-      li::after {
-      content: "";
-      display: block;
-      height: 0;
-      }
-      li {
-      margin-bottom: 0.35em;
-      }
-      body {
-      margin: 0;
-      background-color: #3a453d;
-      background-image: url(/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/background.jpg);
-      background-size: cover;
-      color: #f0ead8;
-      padding: 20px
-      }
-      #filmnav {
-      font-family: garamond;
-      }
-      .title {
-      padding-left: .5rem;
-      font-size: 40px;
-      line-height: 20px;
-      position: relative;
-      z-index: 1
-      }
-      .container {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem
-      }
-      .block-1 {
-      flex-grow: 2;
-      flex-basis: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      row-gap: 10px;
-      background-color: #3a453d
-      }
-      .block-2 {
-      flex-grow: 8;
-      flex-basis: 0
-      }
-      .pfp {
-      width: 100%;
-      border: 2px solid #f0ead8
-      }
-      .headers {
-      font-family: garamond,
-      }
-      .block-1 ul {
-      padding-left: 2.5em
-      }
-      .content {
-      display: flex;
-      flex-direction: column;
-      row-gap: 1rem
-      }
-      .area {
-      background-color: #3a453d;
-      padding: 1rem;
-      border-left: 4px solid #f0ead8;
-      display: flex;
-      flex-direction: column;
-      row-gap: 1rem
-      }
-      .postheadwrapper {
-      display: flex;
-      justify-content: space-between
-      }
-      .posthead {
-      align-self: center
-      }
-      .posth2 {
-      font-size: 26px
-      }
-      .date {
-      font-size: 13px
-      }
-      .icon {
-      width: 150px;
-      opacity: 1;
-      border: 2px solid #f0ead8;
-      align-self: center;
-      }
-      @media(max-width:480px) {
-      .container {
-      flex-direction: column
-      }
-      .block-1 {
-      height: auto;
-      text-align: center
-      }
-      .pfpwrapper {
-      display: flex;
-      justify-content: center
-      }
-      .pfp {
-      width: 80%
-      }
-      .block-1 ul,
-      li {
-      display: inline;
-      }
-      .block-1 li {
-      margin-left: 5px
-      }
-      .title {
-      text-align: center;
-      font-size: 44px
-      }
-      }
-      a {
-      color: #f0ead8;
-      }
-      a:visited {
-      color: whitesmoke;
-      }
-      a:hover {
-      color: whitesmoke;
-      }
-      ::-webkit-scrollbar {
-      width: 6px
-      }
-      ::-webkit-scrollbar-track {
-      background-color: transparent
-      }
-      ::-webkit-scrollbar-thumb {
-      background-color:#f0ead8;
-      }
-      #credit {
-      font-size: 12px;
-      position: fixed;
-      bottom: 0;
-      right: 0
-      }
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>&#x2606; THE VAMPIRE DIARIES &#x2606;</title>
+
+    <style>
       * {
-      cursor: url(/WEBSITE/cursor.png),
-      auto !important;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
-   </style>
-   <audio autoplay controls id=myAudio loop style=width:.1%;height:.1% volume=0.3>
-      <source src=/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/sort_of.mp3>
-   </audio>
-   <script>
-      document.addEventListener("visibilitychange", function() {
-       document.hidden ? document.getElementById("myAudio").pause() : document.getElementById("myAudio").play()
-      })
-   </script>
-   <center>
-      <h1 class="headers title">&starf; THE VAMPIRE DIARIES &starf;</h1>
-   </center>
-   <div class="container">
-   <div class="block block-1">
-      <div id="filmnav">
-         <h2 class="headers">NAVIGATE</h2>
-         <br>
-         <h3>Season 1</h3>
-         <ul>
-         <!--TEMPLATE FOR LINKS--
+
+      .block-1 {
+        flex-grow: 2;
+        flex-basis: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        background-color: #3a453d;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      li::after {
+        content: "";
+        display: block;
+        height: 0;
+      }
+
+      li {
+        margin-bottom: 0.35em;
+      }
+
+      body {
+        margin: 0;
+        background-color: #3a453d;
+        background-image: url("/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/background.jpg");
+        background-size: cover;
+        color: #f0ead8;
+        padding: 20px;
+      }
+
+      #filmnav {
+        font-family: Garamond, serif;
+      }
+
+      .title {
+        padding-left: 0.5rem;
+        font-size: 40px;
+        line-height: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
+
+      .block-1 {
+        flex-grow: 2;
+        flex-basis: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        background-color: #3a453d;
+      }
+
+      .block-2 {
+        flex-grow: 8;
+        flex-basis: 0;
+      }
+
+      .pfp {
+        width: 100%;
+        border: 2px solid #f0ead8;
+      }
+
+      .headers {
+        font-family: Garamond, serif;
+      }
+
+      .block-1 ul {
+        padding-left: 2.5em;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+      }
+
+      .area {
+        background-color: #3a453d;
+        padding: 1rem;
+        border-left: 4px solid #f0ead8;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+      }
+
+      .postheadwrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .posthead {
+        align-self: center;
+      }
+
+      .posth2 {
+        font-size: 26px;
+      }
+
+      .date {
+        font-size: 13px;
+      }
+
+      .icon {
+        width: 150px;
+        opacity: 1;
+        border: 2px solid #f0ead8;
+        align-self: center;
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .block-1 {
+          height: auto;
+          text-align: center;
+        }
+
+        .pfpwrapper {
+          display: flex;
+          justify-content: center;
+        }
+
+        .pfp {
+          width: 80%;
+        }
+
+        .block-1 ul,
+        li {
+          display: inline;
+        }
+
+        .block-1 li {
+          margin-left: 5px;
+        }
+
+        .title {
+          text-align: center;
+          font-size: 44px;
+        }
+      }
+
+      a {
+        color: #f0ead8;
+      }
+
+      a:visited {
+        color: whitesmoke;
+      }
+
+      a:hover {
+        color: whitesmoke;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #f0ead8;
+      }
+
+      #credit {
+        font-size: 12px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+      }
+
+      * {
+        cursor: url("/WEBSITE/cursor.png"), auto !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+    >
+      <source src="/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/sort_of.mp3" />
+    </audio>
+
+    <script>
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          document.getElementById("myAudio").pause();
+        } else {
+          document.getElementById("myAudio").play();
+        }
+      });
+    </script>
+
+    <h1 class="headers title" style="text-align: center">
+      &starf; THE VAMPIRE DIARIES &starf;
+    </h1>
+
+    <div class="container">
+      <div class="block block-1">
+        <div id="filmnav">
+          <h2 class="headers">NAVIGATE</h2>
+          <br />
+
+          <h3>Season 1</h3>
+
+          <ul>
+            <!-- TEMPLATE FOR LINKS
             <li><a href="#sxex">Title (SXEX)</a></li>
-            !--TEMPLATE FOR LINK-->
+            END TEMPLATE FOR LINK -->
+
+            <li><a href="#s1e4">Title (S1E4)</a></li>
             <li><a href="#s1e3">Friday Night Bites (S1E3)</a></li>
             <li><a href="#s1e2">The Night of the Comet (S1E2)</a></li>
             <li><a href="#s1e1">Pilot (S1E1)</a></li>
-         <ul>
-         </ul>
+          </ul>
+        </div>
       </div>
-   </div>
-   <div class="block block-2">
-   <div class=content>
-      <a id=s1e3>
-         <div class=area>
-            <div class=postheadwrapper>
-               <div class=posthead>
+
+      <div class="block block-2">
+        <div class="content">
+          <a id="s1e4">
+            <div class="area">
+              <div class="postheadwrapper">
+                <div class="posthead">
+                  <h2 class="headers posth2">(S1E4)</h2>
+                  <h3></h3>
+                  <p class="date"></p>
+                </div>
+
+                <img
+                  class="icon"
+                  src="/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/s1e4.jpg"
+                  alt=""
+                />
+              </div>
+
+              <p></p>
+            </div>
+          </a>
+
+          <a id="s1e3">
+            <div class="area">
+              <div class="postheadwrapper">
+                <div class="posthead">
                   <h2 class="headers posth2">Friday Night Bites (S1E3)</h2>
-      				<h3>&#9733 &#9733 &frac12;</h3>
-                  <p class=date>20-08-2026</p>
-               </div>
-                  <img class=icon src=/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/s1e3.jpg>
+
+                  <h3>&#9733; &#9733; &frac12;</h3>
+                  <p class="date">20-08-2026</p>
+                </div>
+
+                <img
+                  class="icon"
+                  src="/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/s1e3.jpg"
+                  alt=""
+                />
+              </div>
+
+              <p>
+                Both brothers being able to walk in the sun due to their rings
+                feels like a bit of a cop-out, but I am glad it is balanced out
+                somewhat by vampires still requiring an invitation to enter
+                someone’s home. This episode is still not that special overall,
+                but more enjoyable due to Damon. He is so manipulative and
+                selfish, monstrously impulsive and predatory in every sense of
+                the word - everything a vampire ought to be. He also already has
+                so much more chemistry with Elena than Stefan. Stefan is still
+                boring. Damon might be a bit cartoonish, but he and Bonnie are
+                the only interesting characters as of now.
+              </p>
             </div>
-            <p>Both brothers being able to walk in the sun due to their rings feels like a bit of a cop-out, but I am glad it is balanced out somewhat by vampires still requiring an invitation to enter someone’s home. This episode is still not that special overall, but more enjoyable due to Damon. He is so manipulative and selfish, monstrously impulsive and predatory in every sense of the word - everything a vampire ought to be. He also already has so much more chemistry with Elena than Stefan. Stefan is still boring. Damon might be a bit cartoonish, but he and Bonnie are the only interesting characters as of now.
-</p>
-         </div>
-      </a>
-      <a id=s1e2>
-         <div class=area>
-            <div class=postheadwrapper>
-               <div class=posthead>
+          </a>
+
+          <a id="s1e2">
+            <div class="area">
+              <div class="postheadwrapper">
+                <div class="posthead">
                   <h2 class="headers posth2">The Night of the Comet (S1E2)</h2>
-      				<h3>&#9733 &#9733 &frac12;</h3>
-                  <p class=date>20-08-2026</p>
-               </div>
-                  <img class=icon src=/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/s1e2.jpg>
+
+                  <h3>&#9733; &#9733; &frac12;</h3>
+                  <p class="date">20-08-2026</p>
+                </div>
+
+                <img
+                  class="icon"
+                  src="/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/s1e2.jpg"
+                  alt=""
+                />
+              </div>
+
+              <p>
+                So far I am feeling absolutely none of the chemistry that would
+                warrant all these strong feelings Elena is supposedly having for
+                Stefan. He is so boringggg, and the whole “tortured by his own
+                nature” thing is not really working for me here. This man makes
+                BILL COMPTON feel like the most compelling character of all
+                time. To be fair, for a protagonist, Elena is also quite flat,
+                but hopefully her personality will come through when the plot
+                becomes more active. I find the fact they do not show Bonnie’s
+                visions directly so far quite interesting, and wonder if they
+                will do anything with that. Of course, it could just be to save
+                time and money LOL.
+              </p>
             </div>
-            <p>So far I am feeling absolutely none of the chemistry that would warrant all these strong feelings Elena is supposedly having for Stefan. He is so boringggg, and the whole “tortured by his own nature” thing is not really working for me here. This man makes BILL COMPTON feel like the most compelling character of all time. To be fair, for a protagonist, Elena is also quite flat, but hopefully her personality will come through when the plot becomes more active. I find the fact they do not show Bonnie’s visions directly so far quite interesting, and wonder if they will do anything with that. Of course, it could just be to save time and money LOL. 
-</p>
-         </div>
-      </a>
-      <a id=s1e1>
-         <div class=area>
-            <div class=postheadwrapper>
-               <div class=posthead>
+          </a>
+
+          <a id="s1e1">
+            <div class="area">
+              <div class="postheadwrapper">
+                <div class="posthead">
                   <h2 class="headers posth2">Pilot (S1E1)</h2>
-      				<h3>&#9733 &#9733 &frac12;</h3>
-                  <p class=date>19-08-2026</p>
-               </div>
-                  <img class=icon src=/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/s1e1.jpg>
+
+                  <h3>&#9733; &#9733; &frac12;</h3>
+                  <p class="date">19-08-2026</p>
+                </div>
+
+                <img
+                  class="icon"
+                  src="/WEBSITE/TELEVISION/THE_VAMPIRE_DIARIES/s1e1.jpg"
+                  alt=""
+                />
+              </div>
+
+              <p>
+                A very generic first-day-of-school episode save for the
+                smattering of vampires. It sets up all the characters and their
+                future storylines well enough, but is generally a little boring
+                for a pilot. I wish they had lingered on the Stefan-being-the-
+                primary-danger red herring a little longer, for at least another
+                episode, but he is quickly set up as a good reformed vampire
+                unlike his murderous brother. Damon is supposed to be
+                dangerously sexy, I think, though he is acted almost exactly
+                like Devon Bostick's Rodrick. Not that Rodrick does not have his
+                appeal, but it feels out of place in a semi-serious teen drama.
+                I do enjoy this stylistically though; Elena's outfits, the Pete
+                Wentz reference, an extra who shows up for a split second with
+                the most authentic emo hair of all time, all resonate with me
+                deeply. More so than the vampires, funnily enough.
+              </p>
             </div>
-            <p>A very generic first-day-of-school episode save for the smattering of vampires. It sets up all the characters and their future storylines well enough, but is generally a little boring for a pilot. I wish they had lingered on the Stefan-being-the-primary-danger red herring a little longer, for at least another episode, but he is quickly set up as a good reformed vampire unlike his murderous brother. Damon is supposed to be dangerously sexy, I think, though he is acted almost exactly like Devon Bostick's Rodrick. Not that Rodrick does not have his appeal, but it feels out of place in a semi-serious teen drama. I do enjoy this stylistically though; Elena's outfits, the Pete Wentz reference, an extra who shows up for a split second with the most authentic emo hair of all time, all resonate with me deeply. More so than the vampires, funnily enough.</p>
-         </div>
-      </a>
-    <!--TEMPLATE FOR REVIEW--
-      <a id=sxex>
-         <div class=area>
-            <div class=postheadwrapper>
-               <div class=posthead>
+          </a>
+
+          <!-- TEMPLATE FOR REVIEW
+          <a id="sxex">
+            <div class="area">
+              <div class="postheadwrapper">
+                <div class="posthead">
                   <h2 class="headers posth2">Title (SXEX)</h2>
-      				<h3>&#9733 &#9733 &#9733 &#9733 &#9733 &frac12;</h3>
-                  <p class=date>Date Watched in DMY Format</p>
-               </div>
-                  <img class=icon src=/WEBSITE/TELEVISION/.jpg>
+                  <h3>&#9733; &#9733; &#9733; &#9733; &#9733; &frac12;</h3>
+                  <p class="date">Date Watched in DMY Format</p>
+                </div>
+
+                <img
+                  class="icon"
+                  src="/WEBSITE/TELEVISION/.jpg"
+                  alt=""
+                >
+              </div>
+
+              <p>Review</p>
             </div>
-            <p>Review</p>
-         </div>
-      </a>
-      --TEMPLATE FOR REVIEW-->
- 
+          </a>
+          END TEMPLATE FOR REVIEW -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

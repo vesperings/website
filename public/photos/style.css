@@ -1,6 +1,4 @@
-
-
-  /* unvisited link */
+/* unvisited link */
 a:link {
   color: #820404;
 }
@@ -18,11 +16,10 @@ a:hover {
 /* selected link */
 a:active {
   color: #ff0000;
-
 }
 
 button {
-background-color:transparent;
-color:#ff0000;
-border:none;
+  background-color: transparent;
+  color: #ff0000;
+  border: none;
 }
