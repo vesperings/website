@@ -35,6 +35,7 @@ let postsArray = [
   //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
   //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
 
+  ["posts/Sonnet-1.html", encodeURI("Sonnet #1")],
   ["posts/Death-Note-The-Musical.html", encodeURI("Death Note: The Musical")],
   ["posts/Who-We-Owe-to-Others.html"],
   ["posts/Webpage-Ideas.html"],
