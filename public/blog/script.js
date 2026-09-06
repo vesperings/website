@@ -34,7 +34,16 @@ let postsArray = [
   //[ "posts/2020-11-10-Special-Characters-Example.html", encodeURI( 'Spéci@l "Character\'s" Examp|e' ) ],
   //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
   //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
- ["posts/Sonnet-2.html", encodeURI("RE: This Is a Line Straight Out of a 2000s Metalcore Hit (Sonnet #2)")],
+  [
+    "posts/A-Scene-By-Scene-Analysis-of-Scream-1997.html",
+    encodeURI("A Scene by Scene Analysis of Scream (1997)"),
+  ],
+  [
+    "posts/Sonnet-2.html",
+    encodeURI(
+      "RE: This Is a Line Straight Out of a 2000s Metalcore Hit (Sonnet #2)",
+    ),
+  ],
   ["posts/Sonnet-1.html", encodeURI("Foxes on Atherton Street (Sonnet #1)")],
   ["posts/Death-Note-The-Musical.html", encodeURI("Death Note: The Musical")],
   ["posts/Who-We-Owe-to-Others.html"],
