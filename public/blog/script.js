@@ -35,6 +35,10 @@ let postsArray = [
   //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
   //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
   [
+    "posts/The-Neighbourhood-Wourld-Tour.html",
+    encodeURI("The Neighbourhood: THE WOURLD TOUR at OVO Arena Wembley"),
+  ],
+  [
     "posts/A-Scene-By-Scene-Analysis-of-Scream-1997.html",
     encodeURI("A Scene by Scene Analysis of Scream (1997)"),
   ],

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&#x2730; BLOG &#x2730;</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="/blog/style.css" rel="stylesheet" />
+    <script src="https://u.widget.st/ar.js"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <header>
+        <div class="header-image">
+          <img
+            src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png"
+            alt=""
+          />
+        </div>
+        <div class="header-content"></div>
+      </header>
+      <aside class="left-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-title"><h5>PROFILE</h5></div>
+          <blockquote>
+            <p>
+              My name is Vesper Tenebr'sity Anesthesia Carrion Bieber and I have
+              chopped up raven black hair (that's how I got my name) that
+              cascades like waterfalls down my back and ambery gold eyes like
+              pools of honey and a lot of people tell me I look like L Lawliet
+              (AN: if u don&#39;t know who he is get da hell out of here!)
+            </p>
+          </blockquote>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title"><h5>RECENT POSTS</h5></div>
+          <div id="recentpostlistdiv"></div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            <a href="/blog/archive"><h5>ARCHIVE</h5></a>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            <a href="/microblog"><h5>MICROBLOG</h5></a>
+          </div>
+        </div>
+      </aside>
+      <main id="content">
+        <section>
+          <h1 id="postTitleH1"></h1>
+          <h4 id="postDate"></h4>
+          <p>
+            I could talk about waking up at 3AM to get to Wembley, taking four
+            buses and two hours to get there, being numbered #12 for the General
+            Amission queue only for newcomers to completely disregard the queue
+            and push to the front, the complete lack of organisation on behalf
+            of the arena, the rude Israeli girls in front of us, or a whole
+            manner of other things, but they all instantly melt away once we are
+            in the arena.
+          </p>
+          <p>
+            Miraculously, we end up exactly where we would have according to our
+            original queue position, if not only slightly further back. My view
+            is technically great, Demonia boots meaning I can see more than the
+            backs of people's heads, if not for the compulsion of seemingly
+            everyone in front of me to film the entire concert with their phones
+            held up as high as humanly possible.
+          </p>
+          <p>
+            I think the speakers at this venue must suck, because noise dept.
+            sounds a litle muffled, though the crowd (from where I am standing
+            at least) is quite receptive. I am glad, because I like his gloomy
+            sound, especially <i>Given</i> and <i>Somebody</i>, and he just
+            generally seems like a sweet guy.
+          </p>
+          <p>
+            After a significant break to get set up (during which I sit to
+            conserve my energy), Nessa Barrett follows. I had no knowledge of
+            her beyond being a TikToker, so I am pleasantly surprised to
+            discover she can actually sing. Her music is very reminiscent of
+            Lana del Rey, and goodness I had no idea she was so popular because
+            the crowd goes WILD, and a significant number of people leave when
+            she finishes her set. I also must point out how stunning the blue
+            dress she performed in was and I want it I want it I want it.
+          </p>
+          <p>
+            Another break, some more sitting (my poor feet are so very
+            grateful), and then finally... The Neighbourhood. God. I have never
+            felt so free and alive. I can see Jesse perfectly well and sing and
+            dance along the entire time. I joke that it is my concert as much as
+            it is theirs. I do not take a single photo or video, which is a
+            great idea in the moment, but I retrospectively regret it a tiny
+            bit. No matter, because my experience belongs solely to me this way.
+          </p>
+          <p>
+            I had made a sign the other day, just words typed onto a word
+            document in 80px font and printed out, and hold it up from time to
+            time during the show. I think I catch Zach Abels notice it, and
+            later, during <i>Softcore</i> of all songs, Jesse points at it!
+          </p>
+          <p>
+            The band does not interact with the crowd much during the show, and
+            Jesse's voice seems slightly strained. Not bad at all, but I do
+            wonder if he is ill. Nevertheless it is still an amazing performance
+            and I have so much fun. I have no complaints, other than it being
+            over far too soon (and not a single song from the mixtape being
+            performed, but that's a pipe dream anyway.)
+          </p>
+          <br /><img src="/WEBSITE/BLOG/divider.png" /><br />
+          <div id="nextprev"></div>
+          <br />
+          <h1>Add a Comment</h1>
+          <br /><ws-widget type="comments" iid="6846"></ws-widget>
+        </section>
+      </main>
+    </div>
+    <script src="/blog/script.js"></script>
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+      volume="0.3"
+    >
+      <source src="/WEBSITE/BLOG/cure_burn.mp3" />
+    </audio>
+    <script>
+      document.addEventListener("visibilitychange", function () {
+        document.hidden
+          ? document.getElementById("myAudio").pause()
+          : document.getElementById("myAudio").play();
+      });
+    </script>
+  </body>
+</html>
