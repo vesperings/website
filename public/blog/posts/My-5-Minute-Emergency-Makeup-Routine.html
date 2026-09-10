@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&#x2730; BLOG &#x2730;</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="/blog/style.css" rel="stylesheet" />
+    <script src="https://u.widget.st/ar.js"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <header>
+        <div class="header-image">
+          <img
+            src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png"
+            alt=""
+          />
+        </div>
+        <div class="header-content"></div>
+      </header>
+      <aside class="left-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-title"><h5>PROFILE</h5></div>
+          <blockquote>
+            <p>
+              My name is Vesper Tenebr'sity Anesthesia Carrion Bieber and I have
+              chopped up raven black hair (that's how I got my name) that
+              cascades like waterfalls down my back and ambery gold eyes like
+              pools of honey and a lot of people tell me I look like L Lawliet
+              (AN: if u don&#39;t know who he is get da hell out of here!)
+            </p>
+          </blockquote>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title"><h5>RECENT POSTS</h5></div>
+          <div id="recentpostlistdiv"></div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            <a href="/blog/archive"><h5>ARCHIVE</h5></a>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            <a href="/microblog"><h5>MICROBLOG</h5></a>
+          </div>
+        </div>
+      </aside>
+      <main id="content">
+        <section>
+          <h1 id="postTitleH1"></h1>
+          <h4 id="postDate"></h4>
+          <p>
+            Have you ever been out bare faced because you recognise how harmful
+            makeup is as a patriarchal tool of oppression even though you use it
+            for self-expression and don&rsquo;t want to become to reliant on it,
+            only to find yourself around a bunch of goths and emos and screaming
+            inside because you look normal and they won&rsquo;t be able to tell
+            you have the same music taste? Well this is the makeup routine for
+            you! Simply duck behind the manga shelf at Waterstones and complete
+            this look in three minutes, and everyone will ask you for a wrist
+            check when you re-emerge! (I don&rsquo;t have any photos of the
+            steps which is kind of stupid because makeup is visual, but
+            it&rsquo;s self explanatory use your common sense)
+          </p>
+          <ol>
+            <li>
+              <p>
+                Apply a BB cream or tinted moisturiser over your face. I like
+                these because they are pretty foolproof and don&rsquo;t require
+                any effort to blend. I currently keep a Garnier BB cream in my
+                bag for precisely this reason.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use a kohl pencil to draw a thick, heavy ring around your eye.
+                Thicker than you think it should be. Smudge it out using your
+                fingers until you look like you lost a fight at a gunpowder
+                factory. Tightline your upper and lower lid.
+              </p>
+            </li>
+            <li>
+              <p>
+                Optionally, draw a wing using liquid liner and add mascara. Skip
+                this for a more Rodrick Heffley look.
+              </p>
+            </li>
+            <li>
+              <p>
+                Add a little bit of glitter to at least the inner third of your
+                eye using your ring fingers.
+              </p>
+            </li>
+            <li>
+              <p>
+                Apply lipstick. Usually for me this is MAC&rsquo;s Coffee and
+                Cigs, though on a rare occasion I might go for red. While the
+                eye makeup in non-negotiable, I might forego lipstick entirely
+                if I am dressed a bit more masculine.
+              </p>
+            </li>
+          </ol>
+          <p>
+            Is this flattering? No. Does it look like it took more effort than
+            it did? No. Do I recommend it? No. But I like it so I am posting
+            about it. Okay, bye.
+          </p>
+          <br /><img src="/WEBSITE/BLOG/divider.png" /><br />
+          <div id="nextprev"></div>
+          <br />
+          <h1>Add a Comment</h1>
+          <br /><ws-widget type="comments" iid="6846"></ws-widget>
+        </section>
+      </main>
+    </div>
+    <script src="/blog/script.js"></script>
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+      volume="0.3"
+    >
+      <source src="/WEBSITE/BLOG/cure_burn.mp3" />
+    </audio>
+    <script>
+      document.addEventListener("visibilitychange", function () {
+        document.hidden
+          ? document.getElementById("myAudio").pause()
+          : document.getElementById("myAudio").play();
+      });
+    </script>
+  </body>
+</html>
