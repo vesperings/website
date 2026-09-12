@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 📝 EDIT ME: browser tab title -->
+    <title>&#x2730; BLOODBITES &#x2730;</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://file.garden" />
+    <!-- your stylesheet -->
+    <link rel="stylesheet" href="/bloodbites/iphone.css" />
+  </head>
+
+  <body>
+    <!-- =========================================================
+       PHONE FRAME
+       the outer "bezel" that makes this look like a physical
+       iphone. you generally don't need to touch this part —
+       just the content inside .iphone6-screen below.
+  ========================================================== -->
+    <div class="iphone6-container">
+      <div class="iphone6-bezel">
+        <div class="iphone6-top-elements">
+          <div class="camera"></div>
+          <div class="speaker"></div>
+        </div>
+
+        <div class="iphone6-screen">
+          <!-- status bar: live clock (updated by script.js) + battery/signal icons -->
+          <div class="ipad-status-bar">
+            <div id="real-time" class="status-left">9:41 am</div>
+            <div
+              class="status-right"
+              style="
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                line-height: 1;
+              "
+            >
+              <span>✈︎</span>
+              <span>100%</span>
+              <div class="status-battery-icon">
+                <div class="status-battery-juice"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =====================================================
+             POPUP NOTIFICATION
+             the little "message received" card shown on load,
+             like a lock-screen notification. hidden automatically
+             once any chat is opened.
+             📝 EDIT ME: title + preview text below
+        ====================================================== -->
+          <div class="win-window">
+            <div class="win-header">
+              <div class="win-title">vesperings sent a message (1)</div>
+              <div class="win-controls">
+                <div class="win-btn"></div>
+                <div class="win-btn close"></div>
+              </div>
+            </div>
+            <div class="win-body">
+              <p style="margin: 0">
+                Welcome to Bloodbites! Click any icon to open a chat and read an
+                interview!
+              </p>
+            </div>
+          </div>
+
+          <div class="iphone-home-grid">
+            <div class="app-item" onclick="openApp('seiken-habukawa')">
+              <div
+                class="app-icon"
+                style="
+                  background-image: url(/WEBSITE/BLOODBITES/seiken-habukawa.jpg);
+                "
+              ></div>
+              <div class="app-label">Seiken H.</div>
+            </div>
+          </div>
+
+          <!-- =====================================================
+             DOCK
+             📝 EDIT ME: swap background-image urls for your own icons
+        ====================================================== -->
+          <div class="iphone6-dock-container" id="iphoneDockContainer">
+            <div class="iphone6-dock">
+              <div class="dock-item">
+                <div class="dock-icon" style="background-image: url()"></div>
+              </div>
+
+              <div class="dock-item">
+                <div class="dock-icon" style="background-image: url()"></div>
+              </div>
+
+              <div class="dock-item">
+                <div class="dock-icon" style="background-image: url()"></div>
+              </div>
+
+              <div class="dock-item">
+                <div class="dock-icon" style="background-image: url()"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- home button — also closes whatever chat is open -->
+        <button class="iphone6-home-button" onclick="closeActiveApp()"></button>
+      </div>
+    </div>
+
+    <!-- your JS logic lives in this external file (clock, open/close, music) -->
+    <script src="/bloodbites/iphone.js"></script>
+  </body>
+</html>

@@ -51,7 +51,6 @@ let postsArray = [
   ],
   ["posts/Sonnet-1.html", encodeURI("Foxes on Atherton Street (Sonnet #1)")],
   ["posts/Death-Note-The-Musical.html", encodeURI("Death Note: The Musical")],
-  ["posts/Bloodbites-with-Seiken-Habukawa.html"],
   ["posts/Who-We-Owe-to-Others.html"],
   ["posts/Webpage-Ideas.html"],
 ];
