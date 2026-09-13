@@ -208,7 +208,6 @@ a:hover {
   }
 }
 
-/* extra scale-down specifically for short screens (e.g. landscape phones) */
 @media (max-height: 600px) {
   .iphone6-bezel {
     transform: scale(calc((100vh / 656px) * 0.72)) !important;
@@ -488,8 +487,8 @@ a:hover {
 }
 
 .imessage-header {
-  background: black;
-  border-bottom: 1px solid #212121;
+  background: #131313;
+  border-bottom: 1px solid black;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -548,7 +547,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: black;
+  background: #121111;
 }
 
 .message-bubble {

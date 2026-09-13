@@ -117,5 +117,27 @@
 
     <!-- your JS logic lives in this external file (clock, open/close, music) -->
     <script src="/bloodbites/iphone.js"></script>
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+    >
+      <source src="/WEBSITE/BLOODBITES/if_you_cant_hang.mp3" />
+    </audio>
+
+    <script>
+      const audio = document.getElementById("myAudio");
+      audio.volume = 0.3;
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          audio.pause();
+        } else {
+          audio.play();
+        }
+      });
+    </script>
   </body>
 </html>
