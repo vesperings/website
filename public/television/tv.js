@@ -3,8 +3,8 @@ img_array = new Array(
   { src: "/WEBSITE/TELEVISION/mgm.gif", link: "/films" },
   { src: "/WEBSITE/TELEVISION/dvd.gif", link: "/dvd_collection" },
   {
-    src: "/WEBSITE/TELEVISION/tvd.gif",
-    link: "/television/the_vampire_diaries",
+    src: "/WEBSITE/TELEVISION/show.gif",
+    link: "/television/show",
   },
 );
 let i = 0;
