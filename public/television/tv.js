@@ -3,8 +3,12 @@ img_array = new Array(
   { src: "/WEBSITE/TELEVISION/mgm.gif", link: "/films" },
   { src: "/WEBSITE/TELEVISION/dvd.gif", link: "/dvd_collection" },
   {
-    src: "/WEBSITE/TELEVISION/show.gif",
-    link: "/television/show",
+    src: "/WEBSITE/TELEVISION/batmancc.gif",
+    link: "/television/batman_caped_crusader",
+  },
+  {
+    src: "/WEBSITE/TELEVISION/nge.gif",
+    link: "/television/neon_genesis_evangelion",
   },
 );
 let i = 0;

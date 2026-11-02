@@ -1,0 +1,317 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>&#x2606; BATMAN: CAPED CRUSADER &#x2606;</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .block-1 {
+        flex-grow: 2;
+        flex-basis: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        background-color: #061626;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      li::after {
+        content: "";
+        display: block;
+        height: 0;
+      }
+
+      li {
+        margin-bottom: 0.35em;
+      }
+
+      body {
+        margin: 0;
+        background-color: #061626;
+        background-image: url("/WEBSITE/TELEVISION/BATMAN_CAPED_CRUSADER/background.jpg");
+        background-size: cover;
+        color: #93a2b7;
+        padding: 20px;
+      }
+
+      #filmnav {
+        font-family: Garamond, serif;
+      }
+
+      .title {
+        padding-left: 0.5rem;
+        font-size: 40px;
+        line-height: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
+
+      .block-1 {
+        flex-grow: 2;
+        flex-basis: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        background-color: #061626;
+      }
+
+      .block-2 {
+        flex-grow: 8;
+        flex-basis: 0;
+      }
+
+      .pfp {
+        width: 100%;
+        border: 2px solid #93a2b7;
+      }
+
+      .headers {
+        font-family: Garamond, serif;
+      }
+
+      .block-1 ul {
+        padding-left: 2.5em;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+      }
+
+      .area {
+        background-color: #061626;
+        padding: 1rem;
+        border-left: 4px solid #93a2b7;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+      }
+
+      .postheadwrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .posthead {
+        align-self: center;
+      }
+
+      .posth2 {
+        font-size: 26px;
+      }
+
+      .date {
+        font-size: 13px;
+      }
+
+      .icon {
+        width: 150px;
+        opacity: 1;
+        border: 2px solid #93a2b7;
+        align-self: center;
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .block-1 {
+          height: auto;
+          text-align: center;
+        }
+
+        .pfpwrapper {
+          display: flex;
+          justify-content: center;
+        }
+
+        .pfp {
+          width: 80%;
+        }
+
+        .block-1 ul,
+        li {
+          display: inline;
+        }
+
+        .block-1 li {
+          margin-left: 5px;
+        }
+
+        .title {
+          text-align: center;
+          font-size: 44px;
+        }
+      }
+
+      a {
+        color: #93a2b7;
+      }
+
+      a:visited {
+        color: whitesmoke;
+      }
+
+      a:hover {
+        color: whitesmoke;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #93a2b7;
+      }
+
+      #credit {
+        font-size: 12px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+      }
+
+      * {
+        cursor: url("/WEBSITE/cursor.png"), auto !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+    >
+      <source src="/WEBSITE/TELEVISION/BATMAN_CAPED_CRUSADER/.mp3" />
+    </audio>
+
+    <script>
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          document.getElementById("myAudio").pause();
+        } else {
+          document.getElementById("myAudio").play();
+        }
+      });
+    </script>
+
+    <h1 class="headers title" style="text-align: center">
+      &starf; BATMAN: CAPED CRUSADER &starf;
+    </h1>
+
+    <div class="container">
+      <div class="block block-1">
+        <div id="filmnav">
+          <h2 class="headers">NAVIGATE</h2>
+          <br />
+
+          <h3>Season 1</h3>
+
+          <ul>
+            <!-- TEMPLATE FOR LINKS
+            <li><a href="#sxex">Title (SXEX)</a></li>
+            END TEMPLATE FOR LINK -->
+
+            <li><a href="#s1e1"> (S1E1)</a></li>
+            <li><a href="#s1e2"> (S1E2)</a></li>
+            <li><a href="#s1e3">(S1E3)</a></li>
+            <li><a href="#s1e4"> (S1E4)</a></li>
+            <li><a href="#s1e5"> (S1E5)</a></li>
+            <li><a href="#s1e6"> (S1E6)</a></li>
+            <li><a href="#s1e7"> (S1E7)</a></li>
+            <li><a href="#s1e8"> (S1E8)</a></li>
+            <li><a href="#s1e9"> (S1E9)</a></li>
+            <li><a href="#s1e10">(S1E10)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="block block-2">
+        <div class="content">
+          <a id="s1e1">
+            <div class="area">
+              <div class="postheadwrapper">
+                <div class="posthead">
+                  <h2 class="headers posth2">In Treacherous Waters (S1E1)</h2>
+                  <h3>&#9733; &#9733; &#9733;</h3>
+                  <p class="date">01-11-2026</p>
+                </div>
+
+                <img
+                  class="icon"
+                  src="/WEBSITE/TELEVISION/BATMAN_CAPED_CRUSADER/s1e1.jpg"
+                  alt=""
+                />
+              </div>
+
+              <p>
+                For a moment, I thought Penguin was a drag queen and was
+                completely shocked. Turns out she is just a woman, which is also
+                pretty cool. I was also suprised to hear her make an outright
+                sex joke. Barbara in particular seems like such a strong
+                character already, which makes me wonder if Batgirl will make an
+                appearance. Her disdain of Bruce and admiration for Batman
+                immediaely made me suspect there would be a relationship between
+                them, so on a hunch I checked if Bruce Timm was involved with
+                this show, which he is, so safe to say it is inevitable. At
+                lease she is close in age to Bruce, I suppose. The animation is
+                far less interesting than the poster and credits suggest, and
+                Batman's ears are very long, which is cute, actually. It might
+                take me a while to get used to his voice though.
+              </p>
+            </div>
+          </a>
+
+          <!-- TEMPLATE FOR REVIEW
+          <a id="sxex">
+            <div class="area">
+              <div class="postheadwrapper">
+                <div class="posthead">
+                  <h2 class="headers posth2">Title (SXEX)</h2>
+                  <h3>&#9733; &#9733; &#9733; &#9733; &#9733; &frac12;</h3>
+                  <p class="date">Date Watched in DMY Format</p>
+                </div>
+
+                <img
+                  class="icon"
+                  src="/WEBSITE/TELEVISION/.jpg"
+                  alt=""
+                >
+              </div>
+
+              <p>Review</p>
+            </div>
+          </a>
+          END TEMPLATE FOR REVIEW -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
