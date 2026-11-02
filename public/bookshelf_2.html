@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✰ BOOKSHELF ✰</title>
+
+    <style>
+      :root {
+        --height: 200px;
+        --width: 100%;
+        --depth: 200px;
+        --color-shelf-back-panel: #562c11;
+        --color-shelf-bottom-panel: #4b260e;
+        --color-shelf-bottom-panel-front: #563016;
+        --color-shelf-side-panel: #532a10;
+        --color-shelf-shadow: #3b1806;
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #ab8786;
+        color: #5b0101;
+      }
+
+      * {
+        cursor: url("/WEBSITE/cursor.png"), auto !important;
+      }
+
+      .container {
+        width: var(--width);
+        height: var(--height);
+        perspective: 500px;
+        overflow: hidden;
+        background-color: var(--color-shelf-side-panel);
+        position: absolute;
+      }
+
+      .cuboid {
+        position: relative;
+        width: var(--width);
+        height: var(--height);
+        transform-style: preserve-3d;
+      }
+
+      .cuboid__face {
+        width: var(--width);
+        height: var(--height);
+        position: absolute;
+        opacity: 0.5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        box-shadow:
+          0 1px 3px 0 black,
+          0 1px 2px -1px black;
+      }
+
+      .cuboid__face--front {
+        background: transparent;
+      }
+
+      .cuboid__face--back {
+        --extra-height: 3rem;
+        transform: translateY(calc(var(--extra-height) * -1))
+          translateZ(calc(var(--depth) * -1)) rotateY(180deg);
+        height: calc(var(--height) + var(--extra-height));
+        background: var(--color-shelf-back-panel);
+      }
+
+      .cuboid__face--top {
+        transform: translateZ(calc(var(--depth) * -0.5))
+          translateY(calc(var(--height) * -0.5)) rotateX(90deg);
+        height: var(--depth);
+      }
+
+      .cuboid__face--bottom {
+        transform: translateZ(calc(var(--depth) * -0.5))
+          translateY(calc(var(--height) * 0.5)) rotateX(-90deg);
+        height: var(--depth);
+        background: var(--color-shelf-bottom-panel);
+      }
+
+      .books-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 3rem;
+        position: relative;
+        height: var(--height);
+        padding-bottom: 0.8rem;
+        box-sizing: border-box;
+        box-shadow: inset 0 10px 10px 0
+          var(--shadow-color, var(--color-shelf-shadow));
+      }
+
+      .book {
+        height: calc(var(--height) - 3rem);
+        width: 7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .book a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .book img {
+        display: block;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 0.4s ease;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .book:hover .overlay {
+        opacity: 1;
+      }
+
+      .text {
+        color: red;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .floor-thickness {
+        height: 1rem;
+        width: 100%;
+        background: var(--color-shelf-bottom-panel-front);
+      }
+
+      #myAudio {
+        width: 0.1%;
+        height: 0.1%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h1>✰ MY BOOKSHELF ✰</h1>
+    </center>
+
+    <!-- SHELF 1 -->
+    <section class="shelf">
+      <div class="container">
+        <div class="cuboid">
+          <div class="cuboid__face cuboid__face--bottom"></div>
+          <div class="cuboid__face cuboid__face--front"></div>
+          <div class="cuboid__face cuboid__face--back"></div>
+        </div>
+      </div>
+
+      <div class="books-container">
+        <div class="book">
+          <a href="/books">
+            <img
+              src="/WEBSITE/BOOKSHELF/readingrecord.jpg"
+              style="
+                height: calc(var(--height) - 3rem);
+                width: 7em;
+                object-fit: contain;
+              "
+              alt="See All"
+            />
+            <div class="overlay">
+              <div class="text">See All</div>
+            </div>
+          </a>
+        </div>
+        <div class="book">
+          <a href="/books">
+            <img
+              src="/WEBSITE/BOOKSHELF/absolutebatman1.jpg"
+              style="
+                height: calc(var(--height) - 3rem);
+                width: 7em;
+                object-fit: contain;
+              "
+              alt="Absolute Batman #1"
+            />
+            <div class="overlay">
+              <div class="text">Absolute Batman #1</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="floor-thickness"></div>
+    </section>
+
+    <!-- SHELF 2 -->
+    <section class="shelf">
+      <div class="container">
+        <div class="cuboid">
+          <div class="cuboid__face cuboid__face--bottom"></div>
+          <div class="cuboid__face cuboid__face--front"></div>
+          <div class="cuboid__face cuboid__face--back"></div>
+        </div>
+      </div>
+
+      <div class="books-container"></div>
+
+      <div class="floor-thickness"></div>
+    </section>
+
+    <!-- SHELF 3 -->
+    <section class="shelf">
+      <div class="container">
+        <div class="cuboid">
+          <div class="cuboid__face cuboid__face--bottom"></div>
+          <div class="cuboid__face cuboid__face--front"></div>
+          <div class="cuboid__face cuboid__face--back"></div>
+        </div>
+      </div>
+
+      <div class="books-container"></div>
+
+      <div class="floor-thickness"></div>
+    </section>
+
+    <!-- AUDIO -->
+    <audio autoplay controls id="myAudio" loop volume="0.3">
+      <source src="/WEBSITE/BOOKSHELF/dress_buck_tick.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      document.addEventListener("visibilitychange", function () {
+        const audio = document.getElementById("myAudio");
+
+        if (document.hidden) {
+          audio.pause();
+        } else {
+          audio.play().catch(function () {
+            // Autoplay may be blocked by the browser.
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
