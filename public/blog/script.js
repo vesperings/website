@@ -34,6 +34,7 @@ let postsArray = [
   //[ "posts/2020-11-10-Special-Characters-Example.html", encodeURI( 'Spéci@l "Character\'s" Examp|e' ) ],
   //[ "posts/2020-11-10-My-Third-Post-Example.html" ],
   //[ "posts/2020-11-10-My-Second-Post-Example.html" ],
+  ["posts/Septuary_I.html"],
   ["posts/My-5-Minute-Emergency-Makeup-Routine.html"],
   [
     "posts/A-Scene-By-Scene-Analysis-of-Scream-1997.html",
