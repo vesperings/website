@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&#x2730; BLOG &#x2730;</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="/blog/style.css" rel="stylesheet" />
+    <script src="https://u.widget.st/ar.js"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <header>
+        <div class="header-image">
+          <img
+            src="/WEBSITE/BLOG/Screenshot%202025-04-18%20015708.png"
+            alt=""
+          />
+        </div>
+        <div class="header-content"></div>
+      </header>
+      <aside class="left-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-title"><h5>PROFILE</h5></div>
+          <blockquote>
+            <p>
+              My name is Vesper Tenebr'sity Anesthesia Carrion Bieber and I have
+              chopped up raven black hair (that's how I got my name) that
+              cascades like waterfalls down my back and ambery gold eyes like
+              pools of honey and a lot of people tell me I look like L Lawliet
+              (AN: if u don&#39;t know who he is get da hell out of here!)
+            </p>
+          </blockquote>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title"><h5>RECENT POSTS</h5></div>
+          <div id="recentpostlistdiv"></div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            <a href="/blog/archive"><h5>ARCHIVE</h5></a>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            <a href="/microblog"><h5>MICROBLOG</h5></a>
+          </div>
+        </div>
+      </aside>
+      <main id="content">
+        <section>
+          <h1 id="postTitleH1"></h1>
+          <h4 id="postDate"></h4>
+          <p>In the night god's cruel moonlight I unfold</p>
+          <p>Beat my moth wings against his gentle palm</p>
+          <p>Principles crumble under his control</p>
+          <p>And I become sanctified by his harm</p>
+          <p>I pray the moonstorm's burn will never cease</p>
+          <p>As familiar as my hand or eye</p>
+          <p>Chasing sleep so I might meet him in dreams</p>
+          <p>Indulge with what I in waking decry</p>
+          <p>Frenziful bats blur the lacuna's mouth</p>
+          <p>In the secret garden where he first came</p>
+          <p>He promises fiction, allays my doubts</p>
+          <p>All while with precise strokes writing my name</p>
+          <p>I learn to live from those who are long dead</p>
+          <p>While the night god eludes, consumes, my head</p>
+          <br /><img src="/WEBSITE/BLOG/divider.png" /><br />
+          <div id="nextprev"></div>
+          <br />
+          <h1>Add a Comment</h1>
+          <br /><ws-widget type="comments" iid="6846"></ws-widget>
+        </section>
+      </main>
+    </div>
+    <script src="/blog/script.js"></script>
+    <audio
+      autoplay
+      controls
+      id="myAudio"
+      loop
+      style="width: 0.1%; height: 0.1%"
+      volume="0.3"
+    >
+      <source src="/WEBSITE/BLOG/cure_burn.mp3" />
+    </audio>
+    <script>
+      document.addEventListener("visibilitychange", function () {
+        document.hidden
+          ? document.getElementById("myAudio").pause()
+          : document.getElementById("myAudio").play();
+      });
+    </script>
+  </body>
+</html>
