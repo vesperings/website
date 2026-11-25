@@ -7,6 +7,10 @@ img_array = new Array(
     link: "/television/batman_caped_crusader",
   },
   {
+    src: "/WEBSITE/TELEVISION/thebatman2004.gif",
+    link: "/television/the_batman_2004",
+  },
+  {
     src: "/WEBSITE/TELEVISION/nge.gif",
     link: "/television/neon_genesis_evangelion",
   },
