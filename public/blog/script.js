@@ -38,6 +38,7 @@ let postsArray = [
   ["posts/SEPTUARY-II.html"],
   ["posts/SEPTUARY-I.html"],
   ["posts/My-5-Minute-Emergency-Makeup-Routine.html"],
+  ["posts/Death-Note-The-Musical.html"],
   [
     "posts/A-Scene-By-Scene-Analysis-of-Scream-1997.html",
     encodeURI("A Scene by Scene Analysis of Scream (1997)"),
